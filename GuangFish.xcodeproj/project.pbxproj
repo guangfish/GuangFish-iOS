@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6584EB4520F63F9B009A381D /* AppDelegate.m */; };
-		6584EB4920F63F9B009A381D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6584EB4820F63F9B009A381D /* ViewController.m */; };
 		6584EB4C20F63F9B009A381D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6584EB4A20F63F9B009A381D /* Main.storyboard */; };
 		6584EB4E20F63F9D009A381D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6584EB4D20F63F9D009A381D /* Assets.xcassets */; };
 		6584EB5120F63F9D009A381D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6584EB4F20F63F9D009A381D /* LaunchScreen.storyboard */; };
 		6584EB5420F63F9D009A381D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6584EB5320F63F9D009A381D /* main.m */; };
+		6584EB6820F653AD009A381D /* img_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6584EB6620F653AD009A381D /* img_setting@2x.png */; };
+		6584EB6920F653AD009A381D /* img_setting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6584EB6720F653AD009A381D /* img_setting@3x.png */; };
+		6584EB6C20F654B2009A381D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6584EB6B20F654B2009A381D /* HomeViewController.m */; };
 		9924FE4CD6C0634BFA7D3697 /* libPods-GuangFish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 719DCBD3BAF4D380BC45BBC5 /* libPods-GuangFish.a */; };
 /* End PBXBuildFile section */
 
@@ -21,13 +23,15 @@
 		6584EB4120F63F9B009A381D /* GuangFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuangFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6584EB4420F63F9B009A381D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6584EB4520F63F9B009A381D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6584EB4720F63F9B009A381D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6584EB4820F63F9B009A381D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6584EB4B20F63F9B009A381D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6584EB4D20F63F9D009A381D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6584EB5020F63F9D009A381D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6584EB5220F63F9D009A381D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6584EB5320F63F9D009A381D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6584EB6620F653AD009A381D /* img_setting@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_setting@2x.png"; sourceTree = "<group>"; };
+		6584EB6720F653AD009A381D /* img_setting@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_setting@3x.png"; sourceTree = "<group>"; };
+		6584EB6A20F654B2009A381D /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		6584EB6B20F654B2009A381D /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		719DCBD3BAF4D380BC45BBC5 /* libPods-GuangFish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GuangFish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC8F74D5F1BE7B8071D765E /* Pods-GuangFish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuangFish.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuangFish/Pods-GuangFish.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,8 +98,8 @@
 		6584EB5B20F6412A009A381D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6584EB4720F63F9B009A381D /* ViewController.h */,
-				6584EB4820F63F9B009A381D /* ViewController.m */,
+				6584EB6A20F654B2009A381D /* HomeViewController.h */,
+				6584EB6B20F654B2009A381D /* HomeViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -114,6 +118,8 @@
 		6584EB5D20F6412A009A381D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6584EB6620F653AD009A381D /* img_setting@2x.png */,
+				6584EB6720F653AD009A381D /* img_setting@3x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -186,6 +192,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6584EB5120F63F9D009A381D /* LaunchScreen.storyboard in Resources */,
+				6584EB6920F653AD009A381D /* img_setting@3x.png in Resources */,
+				6584EB6820F653AD009A381D /* img_setting@2x.png in Resources */,
 				6584EB4E20F63F9D009A381D /* Assets.xcassets in Resources */,
 				6584EB4C20F63F9B009A381D /* Main.storyboard in Resources */,
 			);
@@ -219,9 +227,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6584EB4920F63F9B009A381D /* ViewController.m in Sources */,
 				6584EB5420F63F9D009A381D /* main.m in Sources */,
 				6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */,
+				6584EB6C20F654B2009A381D /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
