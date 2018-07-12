@@ -8,6 +8,9 @@
 
 #import "GuangfishAPIBaseManager.h"
 
+extern NSString * const kOrderrewardlistAPIManagerParamsKeyPageNo;
+extern NSString * const kOrderrewardlistAPIManagerParamsKeySize;
+
 @interface GuangfishOrderrewardlistAPIManager : GuangfishAPIBaseManager<GuangfishAPIManager>
 
 @end

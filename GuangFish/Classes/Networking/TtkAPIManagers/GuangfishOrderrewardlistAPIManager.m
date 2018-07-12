@@ -8,6 +8,9 @@
 
 #import "GuangfishOrderrewardlistAPIManager.h"
 
+NSString * const kOrderrewardlistAPIManagerParamsKeyPageNo = @"pageNo";
+NSString * const kOrderrewardlistAPIManagerParamsKeySize = @"size";
+
 @implementation GuangfishOrderrewardlistAPIManager
 
 - (NSString*)methodName {

@@ -8,6 +8,7 @@
 
 #import "GuangfishAPIBaseManager.h"
 
+extern NSString * const kLoginAPIManagerParamsKeyApp;                  //客户端名称：iOS or Android
 extern NSString * const kLoginAPIManagerParamsKeyMobile;
 extern NSString * const kLoginAPIManagerParamsKeyCode;
 

@@ -8,10 +8,12 @@
 
 #import "GuangfishAPIBaseManager.h"
 
+extern NSString * const kRegisterAPIManagerParamsKeyInviteApp;                  //客户端名称：iOS or Android
 extern NSString * const kRegisterAPIManagerParamsKeyInviteCode;                 //邀请码
 extern NSString * const kRegisterAPIManagerParamsKeyCode;                       //短信验证码
 extern NSString * const kRegisterAPIManagerParamsKeyInviteMobile;               //手机号
 extern NSString * const kRegisterAPIManagerParamsKeyInviteAlipay;               //支付宝账号
+extern NSString * const kRegisterAPIManagerParamsKeyInviteSex;                  //1:女 2:男
 extern NSString * const kRegisterAPIManagerParamsKeyInviteWeixin;               //微信账号
 
 @interface GuangfishRegisterAPIManager : GuangfishAPIBaseManager<GuangfishAPIManager>

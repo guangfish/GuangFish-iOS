@@ -8,6 +8,7 @@
 
 #import "GuangfishLoginAPIManager.h"
 
+NSString * const kLoginAPIManagerParamsKeyApp = @"app";
 NSString * const kLoginAPIManagerParamsKeyMobile = @"mobile";
 NSString * const kLoginAPIManagerParamsKeyCode = @"code";
 

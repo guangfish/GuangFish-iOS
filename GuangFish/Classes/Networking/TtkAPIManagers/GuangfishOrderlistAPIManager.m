@@ -9,6 +9,8 @@
 #import "GuangfishOrderlistAPIManager.h"
 
 NSString * const kOrderlistAPIManagerParamsKeyOrderStatus = @"orderStatus";
+NSString * const kOrderlistAPIManagerParamsKeyPageNo = @"pageNo";
+NSString * const kOrderlistAPIManagerParamsKeySize = @"size";
 
 @implementation GuangfishOrderlistAPIManager
 

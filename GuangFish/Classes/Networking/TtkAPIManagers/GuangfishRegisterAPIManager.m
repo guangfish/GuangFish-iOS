@@ -8,6 +8,8 @@
 
 #import "GuangfishRegisterAPIManager.h"
 
+NSString * const kRegisterAPIManagerParamsKeyInviteApp = @"app";
+NSString * const kRegisterAPIManagerParamsKeyInviteSex = @"sex";
 NSString * const kRegisterAPIManagerParamsKeyInviteCode = @"inviteCode";
 NSString * const kRegisterAPIManagerParamsKeyCode = @"code";
 NSString * const kRegisterAPIManagerParamsKeyInviteMobile = @"mobile";
