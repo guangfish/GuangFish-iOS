@@ -17,10 +17,6 @@ NSString * const kLoginAPIManagerParamsKeyCode = @"code";
     return API_LoginUrl;
 }
 
-- (GuangfishAPIManagerRequestType)requestType {
-    return GuangfishAPIManagerRequestTypePost;
-}
-
 - (BOOL)useCode {
     return NO;
 }

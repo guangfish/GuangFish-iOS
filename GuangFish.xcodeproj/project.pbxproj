@@ -16,6 +16,16 @@
 		6554A51420F71F380052BDA5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6554A51320F71F380052BDA5 /* Login.storyboard */; };
 		6554A51820F721440052BDA5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A51720F721440052BDA5 /* LoginViewController.m */; };
 		6554A51B20F721770052BDA5 /* LoginVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A51A20F721770052BDA5 /* LoginVM.m */; };
+		6554A51E20F7283E0052BDA5 /* GuangfishGetSmsCodeAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A51D20F7283E0052BDA5 /* GuangfishGetSmsCodeAPIManager.m */; };
+		6554A52120F7291F0052BDA5 /* GuangfishRegisterAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A52020F7291F0052BDA5 /* GuangfishRegisterAPIManager.m */; };
+		6554A52420F72ADA0052BDA5 /* GuangfishDrawstatsAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A52320F72ADA0052BDA5 /* GuangfishDrawstatsAPIManager.m */; };
+		6554A52720F72EA80052BDA5 /* GuangfishProductInfoAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A52620F72EA80052BDA5 /* GuangfishProductInfoAPIManager.m */; };
+		6554A52A20F72F7D0052BDA5 /* GuangfishOrdersaveAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A52920F72F7D0052BDA5 /* GuangfishOrdersaveAPIManager.m */; };
+		6554A52D20F730290052BDA5 /* GuangfishFriendlistAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A52C20F730290052BDA5 /* GuangfishFriendlistAPIManager.m */; };
+		6554A53020F730910052BDA5 /* GuangfishOrderlistAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A52F20F730910052BDA5 /* GuangfishOrderlistAPIManager.m */; };
+		6554A53320F733970052BDA5 /* GuangfishOrderrewardlistAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A53220F733970052BDA5 /* GuangfishOrderrewardlistAPIManager.m */; };
+		6554A53620F734010052BDA5 /* GuangfishBannerAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A53520F734010052BDA5 /* GuangfishBannerAPIManager.m */; };
+		6554A53920F734530052BDA5 /* GuangfishDrawAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A53820F734530052BDA5 /* GuangfishDrawAPIManager.m */; };
 		6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6584EB4520F63F9B009A381D /* AppDelegate.m */; };
 		6584EB4C20F63F9B009A381D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6584EB4A20F63F9B009A381D /* Main.storyboard */; };
 		6584EB4E20F63F9D009A381D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6584EB4D20F63F9D009A381D /* Assets.xcassets */; };
@@ -46,6 +56,26 @@
 		6554A51720F721440052BDA5 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		6554A51920F721770052BDA5 /* LoginVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVM.h; sourceTree = "<group>"; };
 		6554A51A20F721770052BDA5 /* LoginVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVM.m; sourceTree = "<group>"; };
+		6554A51C20F7283E0052BDA5 /* GuangfishGetSmsCodeAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishGetSmsCodeAPIManager.h; sourceTree = "<group>"; };
+		6554A51D20F7283E0052BDA5 /* GuangfishGetSmsCodeAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuangfishGetSmsCodeAPIManager.m; sourceTree = "<group>"; };
+		6554A51F20F7291F0052BDA5 /* GuangfishRegisterAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishRegisterAPIManager.h; sourceTree = "<group>"; };
+		6554A52020F7291F0052BDA5 /* GuangfishRegisterAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuangfishRegisterAPIManager.m; sourceTree = "<group>"; };
+		6554A52220F72ADA0052BDA5 /* GuangfishDrawstatsAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishDrawstatsAPIManager.h; sourceTree = "<group>"; };
+		6554A52320F72ADA0052BDA5 /* GuangfishDrawstatsAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuangfishDrawstatsAPIManager.m; sourceTree = "<group>"; };
+		6554A52520F72EA80052BDA5 /* GuangfishProductInfoAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishProductInfoAPIManager.h; sourceTree = "<group>"; };
+		6554A52620F72EA80052BDA5 /* GuangfishProductInfoAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuangfishProductInfoAPIManager.m; sourceTree = "<group>"; };
+		6554A52820F72F7D0052BDA5 /* GuangfishOrdersaveAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishOrdersaveAPIManager.h; sourceTree = "<group>"; };
+		6554A52920F72F7D0052BDA5 /* GuangfishOrdersaveAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuangfishOrdersaveAPIManager.m; sourceTree = "<group>"; };
+		6554A52B20F730290052BDA5 /* GuangfishFriendlistAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishFriendlistAPIManager.h; sourceTree = "<group>"; };
+		6554A52C20F730290052BDA5 /* GuangfishFriendlistAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuangfishFriendlistAPIManager.m; sourceTree = "<group>"; };
+		6554A52E20F730910052BDA5 /* GuangfishOrderlistAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishOrderlistAPIManager.h; sourceTree = "<group>"; };
+		6554A52F20F730910052BDA5 /* GuangfishOrderlistAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuangfishOrderlistAPIManager.m; sourceTree = "<group>"; };
+		6554A53120F733970052BDA5 /* GuangfishOrderrewardlistAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishOrderrewardlistAPIManager.h; sourceTree = "<group>"; };
+		6554A53220F733970052BDA5 /* GuangfishOrderrewardlistAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuangfishOrderrewardlistAPIManager.m; sourceTree = "<group>"; };
+		6554A53420F734010052BDA5 /* GuangfishBannerAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishBannerAPIManager.h; sourceTree = "<group>"; };
+		6554A53520F734010052BDA5 /* GuangfishBannerAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuangfishBannerAPIManager.m; sourceTree = "<group>"; };
+		6554A53720F734530052BDA5 /* GuangfishDrawAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishDrawAPIManager.h; sourceTree = "<group>"; };
+		6554A53820F734530052BDA5 /* GuangfishDrawAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuangfishDrawAPIManager.m; sourceTree = "<group>"; };
 		6584EB4120F63F9B009A381D /* GuangFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuangFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6584EB4420F63F9B009A381D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6584EB4520F63F9B009A381D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -112,6 +142,26 @@
 			children = (
 				6554A4CE20F6F7670052BDA5 /* GuangfishLoginAPIManager.h */,
 				6554A4E220F6F7670052BDA5 /* GuangfishLoginAPIManager.m */,
+				6554A51C20F7283E0052BDA5 /* GuangfishGetSmsCodeAPIManager.h */,
+				6554A51D20F7283E0052BDA5 /* GuangfishGetSmsCodeAPIManager.m */,
+				6554A51F20F7291F0052BDA5 /* GuangfishRegisterAPIManager.h */,
+				6554A52020F7291F0052BDA5 /* GuangfishRegisterAPIManager.m */,
+				6554A52220F72ADA0052BDA5 /* GuangfishDrawstatsAPIManager.h */,
+				6554A52320F72ADA0052BDA5 /* GuangfishDrawstatsAPIManager.m */,
+				6554A52520F72EA80052BDA5 /* GuangfishProductInfoAPIManager.h */,
+				6554A52620F72EA80052BDA5 /* GuangfishProductInfoAPIManager.m */,
+				6554A52820F72F7D0052BDA5 /* GuangfishOrdersaveAPIManager.h */,
+				6554A52920F72F7D0052BDA5 /* GuangfishOrdersaveAPIManager.m */,
+				6554A52B20F730290052BDA5 /* GuangfishFriendlistAPIManager.h */,
+				6554A52C20F730290052BDA5 /* GuangfishFriendlistAPIManager.m */,
+				6554A52E20F730910052BDA5 /* GuangfishOrderlistAPIManager.h */,
+				6554A52F20F730910052BDA5 /* GuangfishOrderlistAPIManager.m */,
+				6554A53120F733970052BDA5 /* GuangfishOrderrewardlistAPIManager.h */,
+				6554A53220F733970052BDA5 /* GuangfishOrderrewardlistAPIManager.m */,
+				6554A53420F734010052BDA5 /* GuangfishBannerAPIManager.h */,
+				6554A53520F734010052BDA5 /* GuangfishBannerAPIManager.m */,
+				6554A53720F734530052BDA5 /* GuangfishDrawAPIManager.h */,
+				6554A53820F734530052BDA5 /* GuangfishDrawAPIManager.m */,
 			);
 			path = TtkAPIManagers;
 			sourceTree = "<group>";
@@ -304,13 +354,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				6584EB5420F63F9D009A381D /* main.m in Sources */,
+				6554A52720F72EA80052BDA5 /* GuangfishProductInfoAPIManager.m in Sources */,
+				6554A51E20F7283E0052BDA5 /* GuangfishGetSmsCodeAPIManager.m in Sources */,
 				6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */,
+				6554A52420F72ADA0052BDA5 /* GuangfishDrawstatsAPIManager.m in Sources */,
+				6554A53620F734010052BDA5 /* GuangfishBannerAPIManager.m in Sources */,
+				6554A53320F733970052BDA5 /* GuangfishOrderrewardlistAPIManager.m in Sources */,
+				6554A52A20F72F7D0052BDA5 /* GuangfishOrdersaveAPIManager.m in Sources */,
+				6554A53020F730910052BDA5 /* GuangfishOrderlistAPIManager.m in Sources */,
 				6584EB6C20F654B2009A381D /* HomeViewController.m in Sources */,
 				6554A50320F6F7680052BDA5 /* GuangfishLoginAPIManager.m in Sources */,
 				6554A51B20F721770052BDA5 /* LoginVM.m in Sources */,
 				6554A51820F721440052BDA5 /* LoginViewController.m in Sources */,
 				6554A4AF20F6F2090052BDA5 /* HomeHeaderReusableView.m in Sources */,
+				6554A52D20F730290052BDA5 /* GuangfishFriendlistAPIManager.m in Sources */,
 				6554A51220F6F7680052BDA5 /* GuangfishAPIUrlConfigManager.m in Sources */,
+				6554A52120F7291F0052BDA5 /* GuangfishRegisterAPIManager.m in Sources */,
+				6554A53920F734530052BDA5 /* GuangfishDrawAPIManager.m in Sources */,
 				6554A4FA20F6F7680052BDA5 /* GuangfishAPIBaseManager.m in Sources */,
 				6554A4FB20F6F7680052BDA5 /* GuangfishNetworkingManager.m in Sources */,
 				6554A51120F6F7680052BDA5 /* GuangfishNetworking.m in Sources */,
