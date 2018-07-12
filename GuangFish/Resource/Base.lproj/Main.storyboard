@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZXo-Bh-F3c">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--欢迎使用逛鱼-->
+        <!--欢迎使用-->
         <scene sceneID="sMj-z1-Lx4">
             <objects>
                 <collectionViewController id="JcP-9D-tH7" customClass="HomeViewController" sceneMemberID="viewController">
@@ -33,7 +33,7 @@
                                 </view>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HomeHeaderView" id="QkA-ui-kda">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HomeHeaderReusableView" id="QkA-ui-kda" customClass="HomeHeaderReusableView">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
@@ -54,7 +54,7 @@
                             <outlet property="delegate" destination="JcP-9D-tH7" id="jJx-1g-3mg"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="欢迎使用逛鱼" id="lxO-IS-HCo">
+                    <navigationItem key="navigationItem" title="欢迎使用" id="lxO-IS-HCo">
                         <barButtonItem key="rightBarButtonItem" image="img_setting.png" id="ec4-WN-QOw"/>
                     </navigationItem>
                 </collectionViewController>
@@ -65,7 +65,7 @@
         <!--Navigation Controller-->
         <scene sceneID="N0x-tJ-Su7">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZXo-Bh-F3c" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ZXo-Bh-F3c" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xbo-kZ-B6t">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

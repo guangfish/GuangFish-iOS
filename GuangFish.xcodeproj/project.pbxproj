@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6554A4AF20F6F2090052BDA5 /* HomeHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A4AE20F6F2090052BDA5 /* HomeHeaderReusableView.m */; };
+		6554A4FA20F6F7680052BDA5 /* GuangfishAPIBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A4C720F6F7660052BDA5 /* GuangfishAPIBaseManager.m */; };
+		6554A4FB20F6F7680052BDA5 /* GuangfishNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A4C820F6F7660052BDA5 /* GuangfishNetworkingManager.m */; };
+		6554A50320F6F7680052BDA5 /* GuangfishLoginAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A4E220F6F7670052BDA5 /* GuangfishLoginAPIManager.m */; };
+		6554A51120F6F7680052BDA5 /* GuangfishNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A4F520F6F7670052BDA5 /* GuangfishNetworking.m */; };
+		6554A51220F6F7680052BDA5 /* GuangfishAPIUrlConfigManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A4F920F6F7670052BDA5 /* GuangfishAPIUrlConfigManager.m */; };
+		6554A51420F71F380052BDA5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6554A51320F71F380052BDA5 /* Login.storyboard */; };
+		6554A51820F721440052BDA5 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A51720F721440052BDA5 /* LoginViewController.m */; };
+		6554A51B20F721770052BDA5 /* LoginVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A51A20F721770052BDA5 /* LoginVM.m */; };
 		6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6584EB4520F63F9B009A381D /* AppDelegate.m */; };
 		6584EB4C20F63F9B009A381D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6584EB4A20F63F9B009A381D /* Main.storyboard */; };
 		6584EB4E20F63F9D009A381D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6584EB4D20F63F9D009A381D /* Assets.xcassets */; };
@@ -20,6 +29,23 @@
 
 /* Begin PBXFileReference section */
 		4F4B50EB13D9012ED8AE1DA8 /* Pods-GuangFish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuangFish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuangFish/Pods-GuangFish.debug.xcconfig"; sourceTree = "<group>"; };
+		6554A4AD20F6F2090052BDA5 /* HomeHeaderReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeHeaderReusableView.h; sourceTree = "<group>"; };
+		6554A4AE20F6F2090052BDA5 /* HomeHeaderReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHeaderReusableView.m; sourceTree = "<group>"; };
+		6554A4C720F6F7660052BDA5 /* GuangfishAPIBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuangfishAPIBaseManager.m; sourceTree = "<group>"; };
+		6554A4C820F6F7660052BDA5 /* GuangfishNetworkingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuangfishNetworkingManager.m; sourceTree = "<group>"; };
+		6554A4C920F6F7660052BDA5 /* GuangfishNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuangfishNetworking.h; sourceTree = "<group>"; };
+		6554A4CE20F6F7670052BDA5 /* GuangfishLoginAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuangfishLoginAPIManager.h; sourceTree = "<group>"; };
+		6554A4E220F6F7670052BDA5 /* GuangfishLoginAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuangfishLoginAPIManager.m; sourceTree = "<group>"; };
+		6554A4F520F6F7670052BDA5 /* GuangfishNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuangfishNetworking.m; sourceTree = "<group>"; };
+		6554A4F620F6F7670052BDA5 /* GuangfishAPIUrlConfigManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuangfishAPIUrlConfigManager.h; sourceTree = "<group>"; };
+		6554A4F720F6F7670052BDA5 /* GuangfishNetworkingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuangfishNetworkingManager.h; sourceTree = "<group>"; };
+		6554A4F820F6F7670052BDA5 /* GuangfishAPIBaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuangfishAPIBaseManager.h; sourceTree = "<group>"; };
+		6554A4F920F6F7670052BDA5 /* GuangfishAPIUrlConfigManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuangfishAPIUrlConfigManager.m; sourceTree = "<group>"; };
+		6554A51320F71F380052BDA5 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		6554A51620F721440052BDA5 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		6554A51720F721440052BDA5 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		6554A51920F721770052BDA5 /* LoginVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVM.h; sourceTree = "<group>"; };
+		6554A51A20F721770052BDA5 /* LoginVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVM.m; sourceTree = "<group>"; };
 		6584EB4120F63F9B009A381D /* GuangFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuangFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6584EB4420F63F9B009A381D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6584EB4520F63F9B009A381D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,6 +82,51 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6554A4AC20F6F1EA0052BDA5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6554A4AD20F6F2090052BDA5 /* HomeHeaderReusableView.h */,
+				6554A4AE20F6F2090052BDA5 /* HomeHeaderReusableView.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6554A4B020F6F62D0052BDA5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				6554A4CA20F6F7670052BDA5 /* TtkAPIManagers */,
+				6554A4F820F6F7670052BDA5 /* GuangfishAPIBaseManager.h */,
+				6554A4C720F6F7660052BDA5 /* GuangfishAPIBaseManager.m */,
+				6554A4F620F6F7670052BDA5 /* GuangfishAPIUrlConfigManager.h */,
+				6554A4F920F6F7670052BDA5 /* GuangfishAPIUrlConfigManager.m */,
+				6554A4F720F6F7670052BDA5 /* GuangfishNetworkingManager.h */,
+				6554A4C820F6F7660052BDA5 /* GuangfishNetworkingManager.m */,
+				6554A4C920F6F7660052BDA5 /* GuangfishNetworking.h */,
+				6554A4F520F6F7670052BDA5 /* GuangfishNetworking.m */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		6554A4CA20F6F7670052BDA5 /* TtkAPIManagers */ = {
+			isa = PBXGroup;
+			children = (
+				6554A4CE20F6F7670052BDA5 /* GuangfishLoginAPIManager.h */,
+				6554A4E220F6F7670052BDA5 /* GuangfishLoginAPIManager.m */,
+			);
+			path = TtkAPIManagers;
+			sourceTree = "<group>";
+		};
+		6554A51520F721330052BDA5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				6554A51620F721440052BDA5 /* LoginViewController.h */,
+				6554A51720F721440052BDA5 /* LoginViewController.m */,
+				6554A51920F721770052BDA5 /* LoginVM.h */,
+				6554A51A20F721770052BDA5 /* LoginVM.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		6584EB3820F63F9B009A381D = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +150,7 @@
 			children = (
 				6584EB5C20F6412A009A381D /* Resource */,
 				6584EB5A20F6412A009A381D /* Manager */,
+				6554A4AC20F6F1EA0052BDA5 /* Views */,
 				6584EB5B20F6412A009A381D /* Classes */,
 				6584EB4420F63F9B009A381D /* AppDelegate.h */,
 				6584EB4520F63F9B009A381D /* AppDelegate.m */,
@@ -98,6 +170,8 @@
 		6584EB5B20F6412A009A381D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6554A51520F721330052BDA5 /* Login */,
+				6554A4B020F6F62D0052BDA5 /* Networking */,
 				6584EB6A20F654B2009A381D /* HomeViewController.h */,
 				6584EB6B20F654B2009A381D /* HomeViewController.m */,
 			);
@@ -109,6 +183,7 @@
 			children = (
 				6584EB5D20F6412A009A381D /* images */,
 				6584EB4A20F63F9B009A381D /* Main.storyboard */,
+				6554A51320F71F380052BDA5 /* Login.storyboard */,
 				6584EB4D20F63F9D009A381D /* Assets.xcassets */,
 				6584EB4F20F63F9D009A381D /* LaunchScreen.storyboard */,
 			);
@@ -193,6 +268,7 @@
 			files = (
 				6584EB5120F63F9D009A381D /* LaunchScreen.storyboard in Resources */,
 				6584EB6920F653AD009A381D /* img_setting@3x.png in Resources */,
+				6554A51420F71F380052BDA5 /* Login.storyboard in Resources */,
 				6584EB6820F653AD009A381D /* img_setting@2x.png in Resources */,
 				6584EB4E20F63F9D009A381D /* Assets.xcassets in Resources */,
 				6584EB4C20F63F9B009A381D /* Main.storyboard in Resources */,
@@ -230,6 +306,14 @@
 				6584EB5420F63F9D009A381D /* main.m in Sources */,
 				6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */,
 				6584EB6C20F654B2009A381D /* HomeViewController.m in Sources */,
+				6554A50320F6F7680052BDA5 /* GuangfishLoginAPIManager.m in Sources */,
+				6554A51B20F721770052BDA5 /* LoginVM.m in Sources */,
+				6554A51820F721440052BDA5 /* LoginViewController.m in Sources */,
+				6554A4AF20F6F2090052BDA5 /* HomeHeaderReusableView.m in Sources */,
+				6554A51220F6F7680052BDA5 /* GuangfishAPIUrlConfigManager.m in Sources */,
+				6554A4FA20F6F7680052BDA5 /* GuangfishAPIBaseManager.m in Sources */,
+				6554A4FB20F6F7680052BDA5 /* GuangfishNetworkingManager.m in Sources */,
+				6554A51120F6F7680052BDA5 /* GuangfishNetworking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
