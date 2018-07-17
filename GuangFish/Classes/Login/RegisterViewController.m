@@ -1,41 +1,33 @@
 //
-//  LoginViewController.m
+//  RegisterViewController.m
 //  GuangFish
 //
-//  Created by 顾越超 on 2018/7/12.
+//  Created by 顾越超 on 2018/7/17.
 //  Copyright © 2018年 guangfish. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "RegisterViewController.h"
 
-@interface LoginViewController ()
+@interface RegisterViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *inviteCodeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *mobileTextField;
+@property (weak, nonatomic) IBOutlet UITextField *alipayTextField;
+@property (weak, nonatomic) IBOutlet UITextField *weixinTextField;
+@property (weak, nonatomic) IBOutlet UITextField *sexTextField;
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
+@property (weak, nonatomic) IBOutlet UIButton *alipayCopyButton;
+@property (weak, nonatomic) IBOutlet UIButton *weixinCopyButton;
 @property (weak, nonatomic) IBOutlet UIButton *codeButton;
-@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
-@property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 
 @end
 
-@implementation LoginViewController
+@implementation RegisterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     [self initialzieModel];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,13 +50,12 @@
 - (void)initialzieModel {
     RAC(self.viewModel, mobile) = self.mobileTextField.rac_textSignal;
     RAC(self.viewModel, code) = self.codeTextField.rac_textSignal;
+    RAC(self.viewModel, alipay) = self.alipayTextField.rac_textSignal;
+    RAC(self.viewModel, weixin) = self.weixinTextField.rac_textSignal;
+    RAC(self.viewModel, sex) = self.sexTextField.rac_textSignal;
+    RAC(self.viewModel, inviteCode) = self.inviteCodeTextField.rac_textSignal;
     
     @weakify(self);
-    
-    [RACObserve(self.viewModel, version) subscribeNext:^(id  _Nullable x) {
-        @strongify(self)
-        self.versionLabel.text = [NSString stringWithFormat:@"逛鱼:%@", x];
-    }];
     
     [RACObserve(self.viewModel, sendCodeButtonTitleStr) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
@@ -86,15 +77,13 @@
         }
     }];
     
-    [self.viewModel.requestLoginSignal subscribeNext:^(id  _Nullable x) {
+    [self.viewModel.requestRegisterSignal subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         [self hideActivityHud];
         if ([x isKindOfClass:[NSError class]]) {
             [self showTextHud:[(NSError *)x domain]];
         } else {
-            UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UINavigationController *homeNavigationController = [homeStoryboard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
-            [UIApplication sharedApplication].keyWindow.rootViewController = homeNavigationController;
+            [self.navigationController popViewControllerAnimated:YES];
         }
     }];
     
@@ -107,11 +96,11 @@
         return [RACSignal empty];
     }];
     
-    self.loginButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+    self.registerButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         @strongify(self);
         if ([self.viewModel isValidInput]) {
             [self showActivityHudByText:@""];
-            [self.viewModel doLogin];
+            [self.viewModel doRegister];
         }
         return [RACSignal empty];
     }];
@@ -119,9 +108,9 @@
 
 #pragma mark - getters and setters
 
-- (LoginVM*)viewModel {
+- (RegisterVM*)viewModel {
     if (_viewModel == nil) {
-        self.viewModel = [LoginVM new];
+        self.viewModel = [RegisterVM new];
     }
     return _viewModel;
 }

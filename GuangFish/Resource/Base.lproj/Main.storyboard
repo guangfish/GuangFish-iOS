@@ -55,7 +55,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="欢迎使用" id="lxO-IS-HCo">
-                        <barButtonItem key="rightBarButtonItem" image="img_setting.png" id="ec4-WN-QOw"/>
+                        <barButtonItem key="rightBarButtonItem" image="img_search.png" id="ec4-WN-QOw"/>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBe-Tu-eG7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -83,6 +83,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="img_setting.png" width="22" height="22"/>
+        <image name="img_search.png" width="22" height="22"/>
     </resources>
 </document>

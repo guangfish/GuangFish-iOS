@@ -11,7 +11,16 @@
 @interface LoginVM : GLViewModel
 
 @property (nonatomic, strong) RACSubject *requestLoginSignal;
+@property (nonatomic, strong) RACSubject *requestSendCodeSignal;
+@property (nonatomic, strong) NSString *mobile;
+@property (nonatomic, strong) NSString *code;
+@property (nonatomic, strong) NSString *sendCodeButtonTitleStr;
+@property (nonatomic, strong) NSNumber *sendCodeButtonEnable;
+@property (nonatomic, strong) NSString *version;
 
+- (void)doSendCode;
 - (void)doLogin;
+- (BOOL)isValidSendCodeInput;
+- (BOOL)isValidInput;
 
 @end

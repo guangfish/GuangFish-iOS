@@ -6,10 +6,10 @@
 //  Copyright © 2018年 guangfish. All rights reserved.
 //
 
-#import "GLBaseTableViewController.h"
+#import "GLBaseViewController.h"
 #import "LoginVM.h"
 
-@interface LoginViewController : GLBaseTableViewController
+@interface LoginViewController : GLBaseViewController
 
 @property (nonatomic, strong) LoginVM *viewModel;
 

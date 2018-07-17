@@ -104,4 +104,13 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 */
 
+#pragma mark - getters and setters
+
+- (HomeVM*)viewModel {
+    if (_viewModel == nil) {
+        self.viewModel = [HomeVM new];
+    }
+    return _viewModel;
+}
+
 @end

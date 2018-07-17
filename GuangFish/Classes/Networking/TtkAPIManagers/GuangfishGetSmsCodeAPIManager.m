@@ -16,7 +16,7 @@ NSString * const kGetSmsCodeAPIManagerParamsKeyMobile = @"mobile";
     return API_GetSmsCodeUrl;
 }
 
-- (BOOL)useCode {
+- (BOOL)useUserId {
     return NO;
 }
 

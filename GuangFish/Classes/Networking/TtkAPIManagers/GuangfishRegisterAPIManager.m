@@ -8,13 +8,13 @@
 
 #import "GuangfishRegisterAPIManager.h"
 
-NSString * const kRegisterAPIManagerParamsKeyInviteApp = @"app";
-NSString * const kRegisterAPIManagerParamsKeyInviteSex = @"sex";
+NSString * const kRegisterAPIManagerParamsKeyApp = @"app";
+NSString * const kRegisterAPIManagerParamsKeySex = @"sex";
 NSString * const kRegisterAPIManagerParamsKeyInviteCode = @"inviteCode";
 NSString * const kRegisterAPIManagerParamsKeyCode = @"code";
-NSString * const kRegisterAPIManagerParamsKeyInviteMobile = @"mobile";
-NSString * const kRegisterAPIManagerParamsKeyInviteAlipay = @"alipay";
-NSString * const kRegisterAPIManagerParamsKeyInviteWeixin = @"weixin";
+NSString * const kRegisterAPIManagerParamsKeyMobile = @"mobile";
+NSString * const kRegisterAPIManagerParamsKeyAlipay = @"alipay";
+NSString * const kRegisterAPIManagerParamsKeyWeixin = @"weixin";
 
 @implementation GuangfishRegisterAPIManager
 

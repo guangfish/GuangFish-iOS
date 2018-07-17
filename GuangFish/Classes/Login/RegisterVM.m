@@ -1,30 +1,29 @@
 //
-//  LoginVM.m
+//  RegisterVM.m
 //  GuangFish
 //
-//  Created by 顾越超 on 2018/7/12.
+//  Created by 顾越超 on 2018/7/17.
 //  Copyright © 2018年 guangfish. All rights reserved.
 //
 
-#import "LoginVM.h"
-#import "GuangfishLoginAPIManager.h"
+#import "RegisterVM.h"
 #import "GuangfishGetSmsCodeAPIManager.h"
+#import "GuangfishRegisterAPIManager.h"
 
-@interface LoginVM()<GuangfishAPIManagerParamSource, GuangfishAPIManagerCallBackDelegate>
+@interface RegisterVM()<GuangfishAPIManagerParamSource, GuangfishAPIManagerCallBackDelegate>
 
-@property (nonatomic, strong) GuangfishLoginAPIManager *loginAPIManager;
 @property (nonatomic, strong) GuangfishGetSmsCodeAPIManager *getSmsCodeAPIManager;
+@property (nonatomic, strong) GuangfishRegisterAPIManager *registerAPIManager;
 
 @end
 
-@implementation LoginVM
+@implementation RegisterVM
 
 - (void)initializeData {
-    self.requestLoginSignal = [RACSubject subject];
+    self.requestRegisterSignal = [RACSubject subject];
     self.requestSendCodeSignal = [RACSubject subject];
     self.sendCodeButtonTitleStr = @"获取验证码";
     self.sendCodeButtonEnable = [NSNumber numberWithBool:YES];
-    self.version = [NSString stringWithFormat:@"V%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
     
     [self startTimer];
 }
@@ -34,11 +33,15 @@
 - (NSDictionary*)paramsForApi:(GuangfishAPIBaseManager *)manager {
     NSDictionary *params = @{};
     
-    if (manager == self.loginAPIManager) {
+    if (manager == self.registerAPIManager) {
         params = @{
-                   kLoginAPIManagerParamsKeyMobile: self.mobile,
-                   kLoginAPIManagerParamsKeyCode: self.code,
-                   kLoginAPIManagerParamsKeyApp: @"ios"
+                   kRegisterAPIManagerParamsKeyCode: self.code,
+                   kRegisterAPIManagerParamsKeyApp: @"ios",
+                   kRegisterAPIManagerParamsKeySex: [self.sex isEqualToString:@"女"] ? @"1" : @"2",
+                   kRegisterAPIManagerParamsKeyAlipay: self.alipay,
+                   kRegisterAPIManagerParamsKeyMobile: self.mobile,
+                   kRegisterAPIManagerParamsKeyWeixin: self.weixin,
+                   kRegisterAPIManagerParamsKeyInviteCode: self.inviteCode
                    };
     } else if (manager == self.getSmsCodeAPIManager) {
         params = @{
@@ -52,10 +55,9 @@
 #pragma mark - GuangfishAPIManagerCallBackDelegate
 
 - (void)managerCallAPIDidSuccess:(GuangfishAPIBaseManager *)manager {
-    if (manager == self.loginAPIManager) {
+    if (manager == self.registerAPIManager) {
         [self hiddenEmptyView];
-        NSLog(@"%@", [manager fetchDataWithReformer:nil]);
-        [self.requestLoginSignal sendNext:@"登录成功"];
+        [self.requestRegisterSignal sendNext:@"注册成功"];
     } else if (manager == self.getSmsCodeAPIManager) {
         [self saveGetVerificationCodeTime];
         [self startTimer];
@@ -64,8 +66,8 @@
 }
 
 - (void)managerCallAPIDidFailed:(GuangfishAPIBaseManager *)manager {
-    if (manager == self.loginAPIManager) {
-        [self.requestLoginSignal sendNext:manager.managerError];
+    if (manager == self.registerAPIManager) {
+        [self.requestRegisterSignal sendNext:manager.managerError];
     } else if (manager == self.getSmsCodeAPIManager) {
         [self.requestSendCodeSignal sendNext:manager.managerError];
     }
@@ -83,10 +85,10 @@
 
 - (BOOL)isValidInput {
     if (self.mobile.length == 0) {
-        [self.requestLoginSignal sendNext:[NSError errorWithDomain:@"请输入手机号" code:1 userInfo:nil]];
+        [self.requestRegisterSignal sendNext:[NSError errorWithDomain:@"请输入手机号" code:1 userInfo:nil]];
         return NO;
     } else if (self.code.length == 0) {
-        [self.requestLoginSignal sendNext:[NSError errorWithDomain:@"请输入验证码" code:1 userInfo:nil]];
+        [self.requestRegisterSignal sendNext:[NSError errorWithDomain:@"请输入验证码" code:1 userInfo:nil]];
         return NO;
     }
     return YES;
@@ -96,8 +98,8 @@
     [self.getSmsCodeAPIManager loadData];
 }
 
-- (void)doLogin {
-    [self.loginAPIManager loadData];
+- (void)doRegister {
+    [self.registerAPIManager loadData];
 }
 
 #pragma mark - private methods
@@ -106,14 +108,14 @@
     NSInteger time = [[NSDate date] timeIntervalSince1970];
     //保存获取验证码的时间
     NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
-    [userDef setInteger:time forKey:@"VerificationCodeTime"];
+    [userDef setInteger:time forKey:@"VerificationCodeForRegisterTime"];
     [userDef synchronize];
 }
 
 - (void)startTimer {
     __block NSInteger timeout = 59;
     
-    NSInteger yzmtime = [[NSUserDefaults standardUserDefaults] integerForKey:@"VerificationCodeTime"];
+    NSInteger yzmtime = [[NSUserDefaults standardUserDefaults] integerForKey:@"VerificationCodeForRegisterTime"];
     NSInteger nowtime = [[NSDate date] timeIntervalSince1970];
     if (nowtime - yzmtime > 59) {
         timeout = 0;
@@ -145,15 +147,6 @@
 
 #pragma mark - getters and setters
 
-- (GuangfishLoginAPIManager*)loginAPIManager {
-    if (_loginAPIManager == nil) {
-        self.loginAPIManager = [[GuangfishLoginAPIManager alloc] init];
-        self.loginAPIManager.delegate = self;
-        self.loginAPIManager.paramSource = self;
-    }
-    return _loginAPIManager;
-}
-
 - (GuangfishGetSmsCodeAPIManager*)getSmsCodeAPIManager {
     if (_getSmsCodeAPIManager == nil) {
         self.getSmsCodeAPIManager = [[GuangfishGetSmsCodeAPIManager alloc] init];
@@ -161,6 +154,15 @@
         self.getSmsCodeAPIManager.paramSource = self;
     }
     return _getSmsCodeAPIManager;
+}
+
+- (GuangfishRegisterAPIManager*)registerAPIManager {
+    if (_registerAPIManager == nil) {
+        self.registerAPIManager = [[GuangfishRegisterAPIManager alloc] init];
+        self.registerAPIManager.delegate = self;
+        self.registerAPIManager.paramSource = self;
+    }
+    return _registerAPIManager;
 }
 
 @end

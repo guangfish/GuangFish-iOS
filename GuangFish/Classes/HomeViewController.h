@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeVM.h"
 
 @interface HomeViewController : UICollectionViewController
+
+@property (nonatomic, strong) HomeVM *viewModel;
 
 @end
