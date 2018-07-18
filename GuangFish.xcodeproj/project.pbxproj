@@ -40,6 +40,12 @@
 		6584EB5120F63F9D009A381D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6584EB4F20F63F9D009A381D /* LaunchScreen.storyboard */; };
 		6584EB5420F63F9D009A381D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6584EB5320F63F9D009A381D /* main.m */; };
 		6584EB6C20F654B2009A381D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6584EB6B20F654B2009A381D /* HomeViewController.m */; };
+		659D8C6420FF0F0300E590E5 /* img_order_input@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 659D8C6020FF0F0200E590E5 /* img_order_input@3x.png */; };
+		659D8C6520FF0F0300E590E5 /* img_order_input@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 659D8C6120FF0F0200E590E5 /* img_order_input@2x.png */; };
+		659D8C6620FF0F0300E590E5 /* img_order_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 659D8C6220FF0F0300E590E5 /* img_order_search@2x.png */; };
+		659D8C6720FF0F0300E590E5 /* img_order_search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 659D8C6320FF0F0300E590E5 /* img_order_search@3x.png */; };
+		659D8C6A20FF159E00E590E5 /* HomeMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 659D8C6920FF159E00E590E5 /* HomeMenuCell.m */; };
+		659D8C6D20FF15BF00E590E5 /* HomeMenuCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 659D8C6C20FF15BF00E590E5 /* HomeMenuCellVM.m */; };
 		9924FE4CD6C0634BFA7D3697 /* libPods-GuangFish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 719DCBD3BAF4D380BC45BBC5 /* libPods-GuangFish.a */; };
 /* End PBXBuildFile section */
 
@@ -103,6 +109,14 @@
 		6584EB5320F63F9D009A381D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6584EB6A20F654B2009A381D /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		6584EB6B20F654B2009A381D /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		659D8C6020FF0F0200E590E5 /* img_order_input@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_order_input@3x.png"; sourceTree = "<group>"; };
+		659D8C6120FF0F0200E590E5 /* img_order_input@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_order_input@2x.png"; sourceTree = "<group>"; };
+		659D8C6220FF0F0300E590E5 /* img_order_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_order_search@2x.png"; sourceTree = "<group>"; };
+		659D8C6320FF0F0300E590E5 /* img_order_search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_order_search@3x.png"; sourceTree = "<group>"; };
+		659D8C6820FF159E00E590E5 /* HomeMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeMenuCell.h; sourceTree = "<group>"; };
+		659D8C6920FF159E00E590E5 /* HomeMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeMenuCell.m; sourceTree = "<group>"; };
+		659D8C6B20FF15BF00E590E5 /* HomeMenuCellVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeMenuCellVM.h; sourceTree = "<group>"; };
+		659D8C6C20FF15BF00E590E5 /* HomeMenuCellVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeMenuCellVM.m; sourceTree = "<group>"; };
 		719DCBD3BAF4D380BC45BBC5 /* libPods-GuangFish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GuangFish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC8F74D5F1BE7B8071D765E /* Pods-GuangFish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuangFish.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuangFish/Pods-GuangFish.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -239,12 +253,16 @@
 		6584EB5B20F6412A009A381D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6554A51520F721330052BDA5 /* Login */,
 				6554A4B020F6F62D0052BDA5 /* Networking */,
+				6554A51520F721330052BDA5 /* Login */,
 				6584EB6A20F654B2009A381D /* HomeViewController.h */,
 				6584EB6B20F654B2009A381D /* HomeViewController.m */,
 				6560C83820F87B3B0083F8BD /* HomeVM.h */,
 				6560C83920F87B3B0083F8BD /* HomeVM.m */,
+				659D8C6820FF159E00E590E5 /* HomeMenuCell.h */,
+				659D8C6920FF159E00E590E5 /* HomeMenuCell.m */,
+				659D8C6B20FF15BF00E590E5 /* HomeMenuCellVM.h */,
+				659D8C6C20FF15BF00E590E5 /* HomeMenuCellVM.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -265,6 +283,10 @@
 		6584EB5D20F6412A009A381D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				659D8C6120FF0F0200E590E5 /* img_order_input@2x.png */,
+				659D8C6020FF0F0200E590E5 /* img_order_input@3x.png */,
+				659D8C6220FF0F0300E590E5 /* img_order_search@2x.png */,
+				659D8C6320FF0F0300E590E5 /* img_order_search@3x.png */,
 				654813D520FDC21400122CEF /* img_head@2x.png */,
 				654813D620FDC21400122CEF /* img_head@3x.png */,
 				6560C83220F873B40083F8BD /* img_search@2x.png */,
@@ -341,13 +363,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				6584EB5120F63F9D009A381D /* LaunchScreen.storyboard in Resources */,
+				659D8C6620FF0F0300E590E5 /* img_order_search@2x.png in Resources */,
 				6560C83520F873B50083F8BD /* img_search@3x.png in Resources */,
 				654813D820FDC21400122CEF /* img_head@3x.png in Resources */,
 				654813D720FDC21400122CEF /* img_head@2x.png in Resources */,
 				6560C83720F874710083F8BD /* HomeMenu.plist in Resources */,
 				6554A51420F71F380052BDA5 /* Login.storyboard in Resources */,
+				659D8C6520FF0F0300E590E5 /* img_order_input@2x.png in Resources */,
 				6584EB4E20F63F9D009A381D /* Assets.xcassets in Resources */,
+				659D8C6420FF0F0300E590E5 /* img_order_input@3x.png in Resources */,
 				6560C83420F873B50083F8BD /* img_search@2x.png in Resources */,
+				659D8C6720FF0F0300E590E5 /* img_order_search@3x.png in Resources */,
 				6584EB4C20F63F9B009A381D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,11 +420,13 @@
 				654813DB20FDD6D700122CEF /* RegisterViewController.m in Sources */,
 				6554A51B20F721770052BDA5 /* LoginVM.m in Sources */,
 				6554A51820F721440052BDA5 /* LoginViewController.m in Sources */,
+				659D8C6A20FF159E00E590E5 /* HomeMenuCell.m in Sources */,
 				6554A4AF20F6F2090052BDA5 /* HomeHeaderReusableView.m in Sources */,
 				6554A52D20F730290052BDA5 /* GuangfishFriendlistAPIManager.m in Sources */,
 				6554A51220F6F7680052BDA5 /* GuangfishAPIUrlConfigManager.m in Sources */,
 				6554A52120F7291F0052BDA5 /* GuangfishRegisterAPIManager.m in Sources */,
 				6554A53920F734530052BDA5 /* GuangfishDrawAPIManager.m in Sources */,
+				659D8C6D20FF15BF00E590E5 /* HomeMenuCellVM.m in Sources */,
 				6554A4FA20F6F7680052BDA5 /* GuangfishAPIBaseManager.m in Sources */,
 				6560C83A20F87B3B0083F8BD /* HomeVM.m in Sources */,
 				6554A4FB20F6F7680052BDA5 /* GuangfishNetworkingManager.m in Sources */,

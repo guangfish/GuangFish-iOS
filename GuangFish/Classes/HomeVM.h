@@ -10,4 +10,9 @@
 
 @interface HomeVM : GLViewModel
 
+@property (nonatomic, strong) NSMutableArray *menuSectionsList;
+
+- (void)getBanner;
+- (void)getHomeMenu;
+
 @end

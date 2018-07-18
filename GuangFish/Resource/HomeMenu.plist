@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>section1</key>
+<array>
 	<array>
 		<dict>
 			<key>segueId</key>
-			<string>ShowBadj</string>
+			<string>ShowOrderInput</string>
 			<key>imgName</key>
-			<string>img_badj</string>
+			<string>img_order_input</string>
 			<key>title</key>
-			<string>备案登记</string>
+			<string>绑定订单</string>
+		</dict>
+		<dict>
+			<key>segueId</key>
+			<string>ShowOrderSearch</string>
+			<key>imgName</key>
+			<string>img_order_search</string>
+			<key>title</key>
+			<string>查看订单</string>
 		</dict>
 	</array>
-</dict>
+</array>
 </plist>

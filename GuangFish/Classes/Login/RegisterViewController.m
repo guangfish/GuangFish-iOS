@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *weixinCopyButton;
 @property (weak, nonatomic) IBOutlet UIButton *codeButton;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (nonatomic, strong) UIAlertController *sexAlertController;
 
 @end
 
@@ -33,6 +34,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0 && indexPath.row == 5) {
+        [self presentViewController:self.sexAlertController animated:YES completion:nil];
+    }
 }
 
 /*
@@ -113,6 +122,26 @@
         self.viewModel = [RegisterVM new];
     }
     return _viewModel;
+}
+
+- (UIAlertController*)sexAlertController {
+    if (_sexAlertController == nil) {
+        self.sexAlertController = [UIAlertController alertControllerWithTitle:@"性别" message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
+        @weakify(self);
+        UIAlertAction *womenAction = [UIAlertAction actionWithTitle:@"女" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            @strongify(self);
+            self.sexTextField.text = @"女";
+        }];
+        UIAlertAction *manAction = [UIAlertAction actionWithTitle:@"男" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            @strongify(self);
+            self.sexTextField.text = @"男";
+        }];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
+        [self.sexAlertController addAction:womenAction];
+        [self.sexAlertController addAction:manAction];
+        [self.sexAlertController addAction:cancelAction];
+    }
+    return _sexAlertController;
 }
 
 @end

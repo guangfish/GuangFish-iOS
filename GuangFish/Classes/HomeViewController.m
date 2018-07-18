@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "HomeHeaderReusableView.h"
+#import "HomeMenuCell.h"
 
 @interface HomeViewController ()
 
@@ -15,7 +16,7 @@
 
 @implementation HomeViewController
 
-static NSString * const reuseIdentifier = @"Cell";
+static NSString * const reuseIdentifier = @"HomeMenuCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,9 +25,11 @@ static NSString * const reuseIdentifier = @"Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+//    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
-    // Do any additional setup after loading the view.
+    [self initialzieModel];
+    
+    [self.viewModel getHomeMenu];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,20 +50,26 @@ static NSString * const reuseIdentifier = @"Cell";
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    return self.viewModel.menuSectionsList.count;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
+    NSMutableArray *cellArray = [self.viewModel.menuSectionsList objectAtIndex:section];
+    return cellArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    HomeMenuCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
+    NSMutableArray *cellArray = [self.viewModel.menuSectionsList objectAtIndex:indexPath.section];
+    cell.viewModel = [cellArray objectAtIndex:indexPath.row];
     
     return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake((self.view.frame.size.width) / 3.0, (self.view.frame.size.width) / 3.0);
 }
 
 - (UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
@@ -71,6 +80,10 @@ static NSString * const reuseIdentifier = @"Cell";
         reusableview = headerView;
     }
     return reusableview;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%ld", indexPath.row);
 }
 
 #pragma mark <UICollectionViewDelegate>
@@ -103,6 +116,12 @@ static NSString * const reuseIdentifier = @"Cell";
 	
 }
 */
+
+#pragma mark - private methods
+
+- (void)initialzieModel {
+    
+}
 
 #pragma mark - getters and setters
 
