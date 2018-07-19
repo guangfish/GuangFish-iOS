@@ -209,7 +209,7 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlJ-FX-l7l">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlJ-FX-l7l">
                                                             <rect key="frame" x="0.0" y="31" width="86" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="15" id="JXV-dJ-tOq"/>
@@ -300,6 +300,14 @@
                                 <constraint firstItem="Tzh-ex-kS1" firstAttribute="top" secondItem="wg1-uB-AoM" secondAttribute="bottom" constant="15" id="uZ0-5l-6mi"/>
                                 <constraint firstItem="wg1-uB-AoM" firstAttribute="leading" secondItem="QkA-ui-kda" secondAttribute="leading" constant="15" id="yOc-CW-sdL"/>
                             </constraints>
+                            <connections>
+                                <outlet property="drawButton" destination="GHp-6F-22Q" id="ZNu-de-vvU"/>
+                                <outlet property="friendNumLabel" destination="RlJ-FX-l7l" id="wgg-qg-Icq"/>
+                                <outlet property="inviteRewardLabel" destination="Rap-ab-8su" id="YNh-QX-4nd"/>
+                                <outlet property="orderMoneyLabel" destination="7jS-X6-i7q" id="s5D-zu-T6K"/>
+                                <outlet property="paltformRewardLabel" destination="ou1-1S-pi6" id="wag-zh-Hoh"/>
+                                <outlet property="totalMoneyLabel" destination="cwf-tD-eGk" id="WYW-zH-lXa"/>
+                            </connections>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="JcP-9D-tH7" id="VZ2-gL-e42"/>

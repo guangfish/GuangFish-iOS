@@ -12,6 +12,12 @@
 @interface HomeHeaderReusableView()<GLScrollViewDelegate>
 
 @property (nonatomic, strong) GLScrollView *bannerView;
+@property (weak, nonatomic) IBOutlet UILabel *totalMoneyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *orderMoneyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *inviteRewardLabel;
+@property (weak, nonatomic) IBOutlet UILabel *paltformRewardLabel;
+@property (weak, nonatomic) IBOutlet UILabel *friendNumLabel;
+@property (weak, nonatomic) IBOutlet UIButton *drawButton;
 
 @end
 
@@ -39,14 +45,33 @@
 
 - (void)initialzieModel {
     @weakify(self)
-//    [RACObserve(self.viewModel, imageArray) subscribeNext:^(id  _Nullable x) {
-//        @strongify(self)
-//        self.bannerView.imageArray = x;
-//    }];
-    
     [self.viewModel.downloadImageSignal subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         self.bannerView.imageArray = self.viewModel.imageArray;
+    }];
+    
+    [RACObserve(self.viewModel, totalMoney) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        self.totalMoneyLabel.text = [NSString stringWithFormat:@"¥%@", x];
+    }];
+    [RACObserve(self.viewModel, inviteReward) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        self.inviteRewardLabel.text = [NSString stringWithFormat:@"¥%@", x];
+    }];
+    [RACObserve(self.viewModel, orderMoney) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        self.orderMoneyLabel.text = [NSString stringWithFormat:@"¥%@", x];
+    }];
+    
+    RAC(self.friendNumLabel, text) = [RACObserve(self.viewModel, friendNum) takeUntil:self.rac_prepareForReuseSignal];
+    
+    [RACObserve(self.viewModel, drawBtnEnable) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        if ([x boolValue]) {
+            self.drawButton.enabled = YES;
+        } else {
+            self.drawButton.enabled = NO;
+        }
     }];
 }
 

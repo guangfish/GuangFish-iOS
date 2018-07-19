@@ -33,6 +33,12 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
     [self.viewModel getBanner];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.viewModel getDrawStats];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

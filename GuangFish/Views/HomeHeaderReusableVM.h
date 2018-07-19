@@ -13,5 +13,11 @@
 @property (nonatomic, strong) RACSubject *downloadImageSignal;
 @property (nonatomic, strong) NSMutableArray *bannerDicArray;
 @property (nonatomic, strong) NSMutableArray *imageArray;
+@property (nonatomic, strong) NSDictionary *drawStatsDic;
+@property (nonatomic, strong) NSString *totalMoney;
+@property (nonatomic, strong) NSString *orderMoney;
+@property (nonatomic, strong) NSString *inviteReward;
+@property (nonatomic, strong) NSString *friendNum;
+@property (nonatomic, strong) NSNumber *drawBtnEnable;
 
 @end

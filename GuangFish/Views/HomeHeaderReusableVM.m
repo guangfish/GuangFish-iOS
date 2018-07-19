@@ -14,6 +14,11 @@
 - (void)initializeData {
     self.downloadImageSignal = [RACSubject subject];
     self.imageArray = [[NSMutableArray alloc] init];
+    self.totalMoney = @"0.0";
+    self.inviteReward = @"0.0";
+    self.orderMoney = @"0.0";
+    self.friendNum = @"0";
+    self.drawBtnEnable = [NSNumber numberWithBool:NO];
 }
 
 #pragma mark - private methods
@@ -29,6 +34,18 @@
         [self.imageArray addObject:[dic objectForKey:@"imgUrl"]];
     }
     [self.downloadImageSignal sendNext:@""];
+}
+
+- (void)setDrawStatsDic:(NSDictionary *)drawStatsDic {
+    if (_drawStatsDic != drawStatsDic) {
+        _drawStatsDic = drawStatsDic;
+    }
+    
+    self.totalMoney = [self.drawStatsDic objectForKey:@"totalMoney"];
+    self.inviteReward = [self.drawStatsDic objectForKey:@"inviteReward"];
+    self.orderMoney = [self.drawStatsDic objectForKey:@"orderMoney"];
+    self.friendNum = [self.drawStatsDic objectForKey:@"friendNum"];
+    self.drawBtnEnable = [self.drawStatsDic objectForKey:@"canDraw"];
 }
 
 @end

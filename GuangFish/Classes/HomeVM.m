@@ -9,10 +9,12 @@
 #import "HomeVM.h"
 #import "HomeMenuCellVM.h"
 #import "GuangfishBannerAPIManager.h"
+#import "GuangfishDrawstatsAPIManager.h"
 
 @interface HomeVM()<GuangfishAPIManagerParamSource, GuangfishAPIManagerCallBackDelegate>
 
 @property (nonatomic, strong) GuangfishBannerAPIManager *bannerAPIManager;
+@property (nonatomic, strong) GuangfishDrawstatsAPIManager *drawstatsAPIManager;
 
 @end
 
@@ -20,6 +22,7 @@
 
 - (void)initializeData {
     self.requestGetBannerSignal = [RACSubject subject];
+    self.requestGetdrawStatsSignal = [RACSubject subject];
     self.menuSectionsList = [[NSMutableArray alloc] init];
     self.homeHeaderReusableVM = [[HomeHeaderReusableVM alloc] init];
 }
@@ -30,6 +33,8 @@
     NSDictionary *params = @{};
     
     if (manager == self.bannerAPIManager) {
+        params = @{};
+    } else if (manager == self.drawstatsAPIManager) {
         params = @{};
     }
     
@@ -43,12 +48,19 @@
         NSDictionary *responseDic = [manager fetchDataWithReformer:nil];
         self.homeHeaderReusableVM.bannerDicArray = [responseDic objectForKey:@"data"];
         [self.requestGetBannerSignal sendNext:@"banner获取成功"];
+    } else if (manager == self.drawstatsAPIManager) {
+        NSDictionary *responseDic = [manager fetchDataWithReformer:nil];
+        NSLog(@"%@", responseDic);
+        self.homeHeaderReusableVM.drawStatsDic = [responseDic objectForKey:@"data"];
+        [self.requestGetdrawStatsSignal sendNext:@"返利信息获取成功"];
     }
 }
 
 - (void)managerCallAPIDidFailed:(GuangfishAPIBaseManager *)manager {
     if (manager == self.bannerAPIManager) {
         [self.requestGetBannerSignal sendNext:manager.managerError];
+    } else if (manager == self.drawstatsAPIManager) {
+        [self.requestGetdrawStatsSignal sendNext:manager.managerError];
     }
 }
 
@@ -56,6 +68,10 @@
 
 - (void)getBanner {
     [self.bannerAPIManager loadData];
+}
+
+- (void)getDrawStats {
+    [self.drawstatsAPIManager loadData];
 }
 
 - (void)getHomeMenu {
@@ -84,6 +100,15 @@
         self.bannerAPIManager.paramSource = self;
     }
     return _bannerAPIManager;
+}
+
+- (GuangfishDrawstatsAPIManager*)drawstatsAPIManager {
+    if (_drawstatsAPIManager == nil) {
+        self.drawstatsAPIManager = [[GuangfishDrawstatsAPIManager alloc] init];
+        self.drawstatsAPIManager.delegate = self;
+        self.drawstatsAPIManager.paramSource = self;
+    }
+    return _drawstatsAPIManager;
 }
 
 @end
