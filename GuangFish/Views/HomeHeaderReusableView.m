@@ -7,7 +7,74 @@
 //
 
 #import "HomeHeaderReusableView.h"
+#import "GLScrollView.h"
+
+@interface HomeHeaderReusableView()<GLScrollViewDelegate>
+
+@property (nonatomic, strong) GLScrollView *bannerView;
+
+@end
 
 @implementation HomeHeaderReusableView
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if ((self = [super initWithCoder:aDecoder])) {
+        [self initialzieView];
+    }
+    return self;
+}
+
+#pragma mark - GLScrollViewDelegate
+
+- (void)glScrollViewDidTouchImage:(NSInteger)index {
+    NSDictionary *dic = [self.viewModel.bannerDicArray objectAtIndex:index];
+    NSLog(@"%@", [dic objectForKey:@"link"]);
+}
+
+#pragma mark - private methods
+
+- (void)initialzieView {
+    [self addSubview:self.bannerView];
+}
+
+- (void)initialzieModel {
+    @weakify(self)
+//    [RACObserve(self.viewModel, imageArray) subscribeNext:^(id  _Nullable x) {
+//        @strongify(self)
+//        self.bannerView.imageArray = x;
+//    }];
+    
+    [self.viewModel.downloadImageSignal subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        self.bannerView.imageArray = self.viewModel.imageArray;
+    }];
+}
+
+#pragma mark - getters and setters
+
+- (void)setViewModel:(HomeHeaderReusableVM *)viewModel {
+    if (_viewModel != viewModel) {
+        _viewModel = viewModel;
+    }
+    
+    [self initialzieModel];
+}
+
+- (GLScrollView*)bannerView {
+    if (_bannerView == nil) {
+        self.bannerView = [[GLScrollView alloc] initWithFrame:CGRectMake(0, 210, self.bounds.size.width, 150)];
+        
+        self.bannerView.imageInterval = 30;                //设置图片间距
+        self.bannerView.leftMargin = 0;                   //设置左边图片露出屏幕的距离
+        self.bannerView.topMargin = 0;                    //设置顶部边距
+        self.bannerView.bottomMargin = 0;                 //设置底部边距
+        self.bannerView.autoSelectPageTime = 3;
+        
+        self.bannerView.pageControl.frame = CGRectMake(0, self.bannerView.frame.size.height - 30, self.bannerView.frame.size.width, 30);
+        
+        self.bannerView.delegate = self;
+    }
+    return _bannerView;
+}
 
 @end

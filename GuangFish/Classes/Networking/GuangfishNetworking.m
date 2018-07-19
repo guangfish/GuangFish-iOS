@@ -51,7 +51,7 @@ static GuangfishNetworking *sharedManager = nil;
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         __strong __typeof(self) strongself = weakself;
         NSDictionary *responseDic = [responseObject objectForKey:@"response"];
-        NSLog(@"%@", responseDic);
+//        NSLog(@"%@", responseDic);
         if ([responseDic[@"status"] isEqualToString:@"0"]) {
             if ([apiName isEqualToString:API_LoginUrl]) {
                 [strongself getUserIdFromResponse:responseDic[@"data"]];

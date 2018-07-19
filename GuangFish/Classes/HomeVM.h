@@ -7,10 +7,13 @@
 //
 
 #import "GLViewModel.h"
+#import "HomeHeaderReusableVM.h"
 
 @interface HomeVM : GLViewModel
 
 @property (nonatomic, strong) NSMutableArray *menuSectionsList;
+@property (nonatomic, strong) RACSubject *requestGetBannerSignal;
+@property (nonatomic, strong) HomeHeaderReusableVM *homeHeaderReusableVM;
 
 - (void)getBanner;
 - (void)getHomeMenu;

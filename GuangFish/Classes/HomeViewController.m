@@ -30,6 +30,7 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
     [self initialzieModel];
     
     [self.viewModel getHomeMenu];
+    [self.viewModel getBanner];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,7 +77,7 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
     UICollectionReusableView *reusableview = nil;
     if (kind == UICollectionElementKindSectionHeader) {
         HomeHeaderReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind : UICollectionElementKindSectionHeader withReuseIdentifier : @"HomeHeaderReusableView" forIndexPath :indexPath];
-        
+        headerView.viewModel = self.viewModel.homeHeaderReusableVM;
         reusableview = headerView;
     }
     return reusableview;
@@ -120,7 +121,13 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
 #pragma mark - private methods
 
 - (void)initialzieModel {
-    
+    @weakify(self);
+    [self.viewModel.requestGetBannerSignal subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        if (![x isKindOfClass:[NSError class]]) {
+            [self.collectionView reloadData];
+        }
+    }];
 }
 
 #pragma mark - getters and setters

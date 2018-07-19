@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HomeHeaderReusableVM.h"
 
 @interface HomeHeaderReusableView : UICollectionReusableView
+
+@property (nonatomic, strong) HomeHeaderReusableVM *viewModel;
 
 @end

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		652997CA20FF8F33005B463B /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 652997C720FF8F33005B463B /* 3.jpg */; };
+		652997CB20FF8F33005B463B /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 652997C820FF8F33005B463B /* 1.jpg */; };
+		652997CC20FF8F33005B463B /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 652997C920FF8F33005B463B /* 2.jpg */; };
+		652997CF20FF9232005B463B /* HomeHeaderReusableVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 652997CE20FF9232005B463B /* HomeHeaderReusableVM.m */; };
 		654813D720FDC21400122CEF /* img_head@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 654813D520FDC21400122CEF /* img_head@2x.png */; };
 		654813D820FDC21400122CEF /* img_head@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 654813D620FDC21400122CEF /* img_head@3x.png */; };
 		654813DB20FDD6D700122CEF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654813DA20FDD6D700122CEF /* RegisterViewController.m */; };
@@ -46,11 +50,19 @@
 		659D8C6720FF0F0300E590E5 /* img_order_search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 659D8C6320FF0F0300E590E5 /* img_order_search@3x.png */; };
 		659D8C6A20FF159E00E590E5 /* HomeMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 659D8C6920FF159E00E590E5 /* HomeMenuCell.m */; };
 		659D8C6D20FF15BF00E590E5 /* HomeMenuCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 659D8C6C20FF15BF00E590E5 /* HomeMenuCellVM.m */; };
+		65A2EBD821002B2E000BDE39 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 65A2EBD321002B2E000BDE39 /* LICENSE */; };
+		65A2EBD921002B2E000BDE39 /* GLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A2EBD621002B2E000BDE39 /* GLScrollView.m */; };
+		65A2EBDA21002B2E000BDE39 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 65A2EBD721002B2E000BDE39 /* README.md */; };
 		9924FE4CD6C0634BFA7D3697 /* libPods-GuangFish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 719DCBD3BAF4D380BC45BBC5 /* libPods-GuangFish.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4F4B50EB13D9012ED8AE1DA8 /* Pods-GuangFish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuangFish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuangFish/Pods-GuangFish.debug.xcconfig"; sourceTree = "<group>"; };
+		652997C720FF8F33005B463B /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		652997C820FF8F33005B463B /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		652997C920FF8F33005B463B /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		652997CD20FF9232005B463B /* HomeHeaderReusableVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeHeaderReusableVM.h; sourceTree = "<group>"; };
+		652997CE20FF9232005B463B /* HomeHeaderReusableVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHeaderReusableVM.m; sourceTree = "<group>"; };
 		654813D520FDC21400122CEF /* img_head@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_head@2x.png"; sourceTree = "<group>"; };
 		654813D620FDC21400122CEF /* img_head@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_head@3x.png"; sourceTree = "<group>"; };
 		654813D920FDD6D700122CEF /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -117,6 +129,10 @@
 		659D8C6920FF159E00E590E5 /* HomeMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeMenuCell.m; sourceTree = "<group>"; };
 		659D8C6B20FF15BF00E590E5 /* HomeMenuCellVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeMenuCellVM.h; sourceTree = "<group>"; };
 		659D8C6C20FF15BF00E590E5 /* HomeMenuCellVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeMenuCellVM.m; sourceTree = "<group>"; };
+		65A2EBD321002B2E000BDE39 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		65A2EBD521002B2E000BDE39 /* GLScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLScrollView.h; sourceTree = "<group>"; };
+		65A2EBD621002B2E000BDE39 /* GLScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLScrollView.m; sourceTree = "<group>"; };
+		65A2EBD721002B2E000BDE39 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		719DCBD3BAF4D380BC45BBC5 /* libPods-GuangFish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GuangFish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC8F74D5F1BE7B8071D765E /* Pods-GuangFish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuangFish.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuangFish/Pods-GuangFish.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +162,8 @@
 			children = (
 				6554A4AD20F6F2090052BDA5 /* HomeHeaderReusableView.h */,
 				6554A4AE20F6F2090052BDA5 /* HomeHeaderReusableView.m */,
+				652997CD20FF9232005B463B /* HomeHeaderReusableVM.h */,
+				652997CE20FF9232005B463B /* HomeHeaderReusableVM.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +251,7 @@
 			children = (
 				6584EB5C20F6412A009A381D /* Resource */,
 				6584EB5A20F6412A009A381D /* Manager */,
+				65A2EBD121002B1E000BDE39 /* Vendor */,
 				6554A4AC20F6F1EA0052BDA5 /* Views */,
 				6584EB5B20F6412A009A381D /* Classes */,
 				6584EB4420F63F9B009A381D /* AppDelegate.h */,
@@ -283,6 +302,9 @@
 		6584EB5D20F6412A009A381D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				652997C820FF8F33005B463B /* 1.jpg */,
+				652997C920FF8F33005B463B /* 2.jpg */,
+				652997C720FF8F33005B463B /* 3.jpg */,
 				659D8C6120FF0F0200E590E5 /* img_order_input@2x.png */,
 				659D8C6020FF0F0200E590E5 /* img_order_input@3x.png */,
 				659D8C6220FF0F0300E590E5 /* img_order_search@2x.png */,
@@ -293,6 +315,33 @@
 				6560C83320F873B50083F8BD /* img_search@3x.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		65A2EBD121002B1E000BDE39 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				65A2EBD221002B2E000BDE39 /* GLScrollView */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		65A2EBD221002B2E000BDE39 /* GLScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				65A2EBD321002B2E000BDE39 /* LICENSE */,
+				65A2EBD421002B2E000BDE39 /* GLScrollView */,
+				65A2EBD721002B2E000BDE39 /* README.md */,
+			);
+			path = GLScrollView;
+			sourceTree = "<group>";
+		};
+		65A2EBD421002B2E000BDE39 /* GLScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				65A2EBD521002B2E000BDE39 /* GLScrollView.h */,
+				65A2EBD621002B2E000BDE39 /* GLScrollView.m */,
+			);
+			path = GLScrollView;
 			sourceTree = "<group>";
 		};
 		ECF09B8419F7CE083D2E8D84 /* Pods */ = {
@@ -367,9 +416,14 @@
 				6560C83520F873B50083F8BD /* img_search@3x.png in Resources */,
 				654813D820FDC21400122CEF /* img_head@3x.png in Resources */,
 				654813D720FDC21400122CEF /* img_head@2x.png in Resources */,
+				652997CA20FF8F33005B463B /* 3.jpg in Resources */,
+				65A2EBDA21002B2E000BDE39 /* README.md in Resources */,
+				652997CC20FF8F33005B463B /* 2.jpg in Resources */,
 				6560C83720F874710083F8BD /* HomeMenu.plist in Resources */,
+				65A2EBD821002B2E000BDE39 /* LICENSE in Resources */,
 				6554A51420F71F380052BDA5 /* Login.storyboard in Resources */,
 				659D8C6520FF0F0300E590E5 /* img_order_input@2x.png in Resources */,
+				652997CB20FF8F33005B463B /* 1.jpg in Resources */,
 				6584EB4E20F63F9D009A381D /* Assets.xcassets in Resources */,
 				659D8C6420FF0F0300E590E5 /* img_order_input@3x.png in Resources */,
 				6560C83420F873B50083F8BD /* img_search@2x.png in Resources */,
@@ -410,11 +464,13 @@
 				6554A52720F72EA80052BDA5 /* GuangfishProductInfoAPIManager.m in Sources */,
 				6554A51E20F7283E0052BDA5 /* GuangfishGetSmsCodeAPIManager.m in Sources */,
 				6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */,
+				652997CF20FF9232005B463B /* HomeHeaderReusableVM.m in Sources */,
 				6554A52420F72ADA0052BDA5 /* GuangfishDrawstatsAPIManager.m in Sources */,
 				6554A53620F734010052BDA5 /* GuangfishBannerAPIManager.m in Sources */,
 				6554A53320F733970052BDA5 /* GuangfishOrderrewardlistAPIManager.m in Sources */,
 				6554A52A20F72F7D0052BDA5 /* GuangfishOrdersaveAPIManager.m in Sources */,
 				6554A53020F730910052BDA5 /* GuangfishOrderlistAPIManager.m in Sources */,
+				65A2EBD921002B2E000BDE39 /* GLScrollView.m in Sources */,
 				6584EB6C20F654B2009A381D /* HomeViewController.m in Sources */,
 				6554A50320F6F7680052BDA5 /* GuangfishLoginAPIManager.m in Sources */,
 				654813DB20FDD6D700122CEF /* RegisterViewController.m in Sources */,

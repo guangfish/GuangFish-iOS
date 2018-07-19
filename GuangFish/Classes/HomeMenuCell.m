@@ -18,12 +18,15 @@
 @implementation HomeMenuCell
 
 - (void)initialzieModel {
-    RAC(self.menuTitleLabel, text) = RACObserve(self.viewModel, menuTitle);
-    
     @weakify(self)
     [RACObserve(self.viewModel, menuImgName) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
         self.menuImageView.image = [UIImage imageNamed:x];
+    }];
+    
+    [RACObserve(self.viewModel, menuTitle) subscribeNext:^(id  _Nullable x) {
+        @strongify(self)
+        self.menuTitleLabel.text = x;
     }];
 }
 
