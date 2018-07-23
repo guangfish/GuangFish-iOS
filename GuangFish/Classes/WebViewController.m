@@ -24,9 +24,19 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.viewModel.urlStr]]];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    [self.webView removeObserver:self forKeyPath:@"title"];
 }
 
 /*
@@ -38,6 +48,20 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark KVO的监听代理
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    //网页title
+    if ([keyPath isEqualToString:@"title"]) {
+        if (object == self.webView) {
+            self.title = self.webView.title;
+        } else {
+            [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+        }
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
 
 #pragma mark - setters and getters
 
