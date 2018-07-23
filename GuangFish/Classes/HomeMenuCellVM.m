@@ -10,4 +10,10 @@
 
 @implementation HomeMenuCellVM
 
+- (WebVM*)getWebVM {
+    WebVM *webVM = [[WebVM alloc] init];
+    webVM.urlStr = self.urlStr;
+    return webVM;
+}
+
 @end

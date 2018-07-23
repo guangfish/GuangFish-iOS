@@ -10,6 +10,8 @@
 			<string>img_order_input</string>
 			<key>title</key>
 			<string>绑定订单</string>
+            <key>url</key>
+            <string></string>
 		</dict>
 		<dict>
 			<key>segueId</key>
@@ -18,7 +20,49 @@
 			<string>img_order_search</string>
 			<key>title</key>
 			<string>查看订单</string>
+            <key>url</key>
+            <string></string>
 		</dict>
+        <dict>
+            <key>segueId</key>
+            <string>ShowOrderSearch</string>
+            <key>imgName</key>
+            <string>img_order_search</string>
+            <key>title</key>
+            <string>个人中心</string>
+            <key>url</key>
+            <string></string>
+        </dict>
+        <dict>
+            <key>segueId</key>
+            <string>ShowWebViewControllerSegue</string>
+            <key>imgName</key>
+            <string>img_order_search</string>
+            <key>title</key>
+            <string>使用帮助</string>
+            <key>url</key>
+            <string>https://www.guangfish.com/app/api/help</string>
+        </dict>
+        <dict>
+            <key>segueId</key>
+            <string>ShowWebViewControllerSegue</string>
+            <key>imgName</key>
+            <string>img_order_search</string>
+            <key>title</key>
+            <string>邀请赚钱</string>
+            <key>url</key>
+            <string>https://www.guangfish.com/app/api/invite</string>
+        </dict>
+        <dict>
+            <key>segueId</key>
+            <string>ShowWebViewControllerSegue</string>
+            <key>imgName</key>
+            <string>img_order_search</string>
+            <key>title</key>
+            <string>专属客服</string>
+            <key>url</key>
+            <string>https://www.guangfish.com/app/api/kefu</string>
+        </dict>
 	</array>
 </array>
 </plist>

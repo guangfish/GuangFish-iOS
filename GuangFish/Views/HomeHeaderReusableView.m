@@ -8,6 +8,7 @@
 
 #import "HomeHeaderReusableView.h"
 #import "GLScrollView.h"
+#import "WebViewController.h"
 
 @interface HomeHeaderReusableView()<GLScrollViewDelegate>
 
@@ -34,7 +35,12 @@
 
 - (void)glScrollViewDidTouchImage:(NSInteger)index {
     NSDictionary *dic = [self.viewModel.bannerDicArray objectAtIndex:index];
-    NSLog(@"%@", [dic objectForKey:@"link"]);
+    UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    WebViewController *webViewController = [homeStoryboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+    WebVM *webVM = [[WebVM alloc] init];
+    webVM.urlStr = [dic objectForKey:@"link"];
+    webViewController.viewModel = webVM;
+    [[self viewController] showViewController:webViewController sender:nil];
 }
 
 #pragma mark - private methods
@@ -73,6 +79,20 @@
             self.drawButton.enabled = NO;
         }
     }];
+}
+
+- (UIViewController *)viewController
+{
+    //获取当前view的superView对应的控制器
+    UIResponder *next = [self nextResponder];
+    do {
+        if ([next isKindOfClass:[UIViewController class]]) {
+            return (UIViewController *)next;
+        }
+        next = [next nextResponder];
+    } while (next != nil);
+    return nil;
+    
 }
 
 #pragma mark - getters and setters

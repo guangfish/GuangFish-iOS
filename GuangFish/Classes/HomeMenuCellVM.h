@@ -7,10 +7,15 @@
 //
 
 #import "GLViewModel.h"
+#import "WebVM.h"
 
 @interface HomeMenuCellVM : GLViewModel
 
 @property (nonatomic, strong) NSString *menuImgName;
 @property (nonatomic, strong) NSString *menuTitle;
+@property (nonatomic, strong) NSString *urlStr;
+@property (nonatomic, strong) NSString *segueId;
+
+- (WebVM*)getWebVM;
 
 @end

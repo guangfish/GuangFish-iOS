@@ -85,6 +85,8 @@
             HomeMenuCellVM *homeMenuCellVM = [[HomeMenuCellVM alloc] init];
             homeMenuCellVM.menuImgName = [dic objectForKey:@"imgName"];
             homeMenuCellVM.menuTitle = [dic objectForKey:@"title"];
+            homeMenuCellVM.urlStr = [dic objectForKey:@"url"];
+            homeMenuCellVM.segueId = [dic objectForKey:@"segueId"];
             [menuCellVMList addObject:homeMenuCellVM];
         }
         [self.menuSectionsList addObject:menuCellVMList];

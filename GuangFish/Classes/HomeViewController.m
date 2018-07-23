@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "HomeHeaderReusableView.h"
 #import "HomeMenuCell.h"
+#import "WebViewController.h"
 
 @interface HomeViewController ()
 
@@ -44,15 +45,15 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
     // Dispose of any resources that can be recreated.
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ShowWebViewControllerSegue"]) {
+        WebViewController *webViewController = [segue destinationViewController];
+        webViewController.viewModel = [((HomeMenuCellVM*)sender) getWebVM];
+    }
 }
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -90,7 +91,9 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%ld", indexPath.row);
+    NSMutableArray *cellArray = [self.viewModel.menuSectionsList objectAtIndex:indexPath.section];
+    HomeMenuCellVM *menuCellVM = [cellArray objectAtIndex:indexPath.row];
+    [self performSegueWithIdentifier:menuCellVM.segueId sender:menuCellVM];
 }
 
 #pragma mark <UICollectionViewDelegate>
