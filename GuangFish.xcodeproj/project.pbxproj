@@ -55,6 +55,10 @@
 		65A2EBDA21002B2E000BDE39 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 65A2EBD721002B2E000BDE39 /* README.md */; };
 		65E45AF0210569180051E912 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E45AEF210569180051E912 /* WebViewController.m */; };
 		65E45AF3210569510051E912 /* WebVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E45AF2210569510051E912 /* WebVM.m */; };
+		65E45AF72105828F0051E912 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E45AF62105828F0051E912 /* MineViewController.m */; };
+		65E45AFA2105829C0051E912 /* MineVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E45AF92105829C0051E912 /* MineVM.m */; };
+		65E45AFE2105AB3F0051E912 /* OrderSaveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E45AFD2105AB3F0051E912 /* OrderSaveViewController.m */; };
+		65E45B012105AB500051E912 /* OrderSaveVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E45B002105AB500051E912 /* OrderSaveVM.m */; };
 		9924FE4CD6C0634BFA7D3697 /* libPods-GuangFish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 719DCBD3BAF4D380BC45BBC5 /* libPods-GuangFish.a */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +143,14 @@
 		65E45AEF210569180051E912 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		65E45AF1210569510051E912 /* WebVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebVM.h; sourceTree = "<group>"; };
 		65E45AF2210569510051E912 /* WebVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebVM.m; sourceTree = "<group>"; };
+		65E45AF52105828F0051E912 /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		65E45AF62105828F0051E912 /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		65E45AF82105829C0051E912 /* MineVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineVM.h; sourceTree = "<group>"; };
+		65E45AF92105829C0051E912 /* MineVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineVM.m; sourceTree = "<group>"; };
+		65E45AFC2105AB3F0051E912 /* OrderSaveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderSaveViewController.h; sourceTree = "<group>"; };
+		65E45AFD2105AB3F0051E912 /* OrderSaveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderSaveViewController.m; sourceTree = "<group>"; };
+		65E45AFF2105AB500051E912 /* OrderSaveVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderSaveVM.h; sourceTree = "<group>"; };
+		65E45B002105AB500051E912 /* OrderSaveVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderSaveVM.m; sourceTree = "<group>"; };
 		719DCBD3BAF4D380BC45BBC5 /* libPods-GuangFish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GuangFish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC8F74D5F1BE7B8071D765E /* Pods-GuangFish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuangFish.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuangFish/Pods-GuangFish.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -279,7 +291,9 @@
 			isa = PBXGroup;
 			children = (
 				6554A4B020F6F62D0052BDA5 /* Networking */,
+				65E45AF42105827E0051E912 /* Mine */,
 				6554A51520F721330052BDA5 /* Login */,
+				65E45AFB2105AB2C0051E912 /* OrderSave */,
 				6584EB6A20F654B2009A381D /* HomeViewController.h */,
 				6584EB6B20F654B2009A381D /* HomeViewController.m */,
 				6560C83820F87B3B0083F8BD /* HomeVM.h */,
@@ -352,6 +366,28 @@
 				65A2EBD621002B2E000BDE39 /* GLScrollView.m */,
 			);
 			path = GLScrollView;
+			sourceTree = "<group>";
+		};
+		65E45AF42105827E0051E912 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				65E45AF52105828F0051E912 /* MineViewController.h */,
+				65E45AF62105828F0051E912 /* MineViewController.m */,
+				65E45AF82105829C0051E912 /* MineVM.h */,
+				65E45AF92105829C0051E912 /* MineVM.m */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		65E45AFB2105AB2C0051E912 /* OrderSave */ = {
+			isa = PBXGroup;
+			children = (
+				65E45AFC2105AB3F0051E912 /* OrderSaveViewController.h */,
+				65E45AFD2105AB3F0051E912 /* OrderSaveViewController.m */,
+				65E45AFF2105AB500051E912 /* OrderSaveVM.h */,
+				65E45B002105AB500051E912 /* OrderSaveVM.m */,
+			);
+			path = OrderSave;
 			sourceTree = "<group>";
 		};
 		ECF09B8419F7CE083D2E8D84 /* Pods */ = {
@@ -470,10 +506,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E45AF72105828F0051E912 /* MineViewController.m in Sources */,
 				6584EB5420F63F9D009A381D /* main.m in Sources */,
 				6554A52720F72EA80052BDA5 /* GuangfishProductInfoAPIManager.m in Sources */,
 				6554A51E20F7283E0052BDA5 /* GuangfishGetSmsCodeAPIManager.m in Sources */,
 				65E45AF0210569180051E912 /* WebViewController.m in Sources */,
+				65E45AFE2105AB3F0051E912 /* OrderSaveViewController.m in Sources */,
 				6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */,
 				652997CF20FF9232005B463B /* HomeHeaderReusableVM.m in Sources */,
 				6554A52420F72ADA0052BDA5 /* GuangfishDrawstatsAPIManager.m in Sources */,
@@ -484,6 +522,7 @@
 				65A2EBD921002B2E000BDE39 /* GLScrollView.m in Sources */,
 				6584EB6C20F654B2009A381D /* HomeViewController.m in Sources */,
 				6554A50320F6F7680052BDA5 /* GuangfishLoginAPIManager.m in Sources */,
+				65E45AFA2105829C0051E912 /* MineVM.m in Sources */,
 				654813DB20FDD6D700122CEF /* RegisterViewController.m in Sources */,
 				65E45AF3210569510051E912 /* WebVM.m in Sources */,
 				6554A51B20F721770052BDA5 /* LoginVM.m in Sources */,
@@ -493,6 +532,7 @@
 				6554A52D20F730290052BDA5 /* GuangfishFriendlistAPIManager.m in Sources */,
 				6554A51220F6F7680052BDA5 /* GuangfishAPIUrlConfigManager.m in Sources */,
 				6554A52120F7291F0052BDA5 /* GuangfishRegisterAPIManager.m in Sources */,
+				65E45B012105AB500051E912 /* OrderSaveVM.m in Sources */,
 				6554A53920F734530052BDA5 /* GuangfishDrawAPIManager.m in Sources */,
 				659D8C6D20FF15BF00E590E5 /* HomeMenuCellVM.m in Sources */,
 				6554A4FA20F6F7680052BDA5 /* GuangfishAPIBaseManager.m in Sources */,

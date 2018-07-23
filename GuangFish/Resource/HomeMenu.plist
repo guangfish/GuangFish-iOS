@@ -5,7 +5,7 @@
 	<array>
 		<dict>
 			<key>segueId</key>
-			<string>ShowOrderInput</string>
+			<string>ShowOrderSaveSegue</string>
 			<key>imgName</key>
 			<string>img_order_input</string>
 			<key>title</key>
@@ -25,7 +25,7 @@
 		</dict>
         <dict>
             <key>segueId</key>
-            <string>ShowOrderSearch</string>
+            <string>ShowMineInfo</string>
             <key>imgName</key>
             <string>img_order_search</string>
             <key>title</key>

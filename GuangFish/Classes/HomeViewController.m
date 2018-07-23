@@ -22,11 +22,9 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
-//    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] init];
+    barButtonItem.title = @"";
+    self.navigationItem.backBarButtonItem = barButtonItem;
     
     [self initialzieModel];
     

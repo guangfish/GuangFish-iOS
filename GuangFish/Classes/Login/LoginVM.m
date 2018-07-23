@@ -55,6 +55,7 @@
     if (manager == self.loginAPIManager) {
         [self hiddenEmptyView];
         NSLog(@"%@", [manager fetchDataWithReformer:nil]);
+        [self saveUserData:[[manager fetchDataWithReformer:nil] objectForKey:@"data"]];
         [self.requestLoginSignal sendNext:@"登录成功"];
     } else if (manager == self.getSmsCodeAPIManager) {
         [self saveGetVerificationCodeTime];
@@ -101,6 +102,13 @@
 }
 
 #pragma mark - private methods
+
+- (void)saveUserData:(NSDictionary*)userDic {
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithDictionary:userDic];
+    [dic setValue:self.mobile forKey:@"mobile"];
+    [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"UserDic"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
 - (void)saveGetVerificationCodeTime {
     NSInteger time = [[NSDate date] timeIntervalSince1970];
