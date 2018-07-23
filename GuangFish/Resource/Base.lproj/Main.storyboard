@@ -14,7 +14,7 @@
         <scene sceneID="sMj-z1-Lx4">
             <objects>
                 <collectionViewController id="JcP-9D-tH7" customClass="HomeViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Bwc-Ti-Z9h">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="Bwc-Ti-Z9h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -649,6 +649,6 @@
         <image name="img_search.png" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="J8e-NY-AO0"/>
+        <segue reference="iEI-RJ-295"/>
     </inferredMetricsTieBreakers>
 </document>
