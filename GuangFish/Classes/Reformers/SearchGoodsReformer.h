@@ -13,6 +13,7 @@
 extern NSString * const kSearchGoodsDataKeyHaveMorePage;
 extern NSString * const kSearchGoodsDataKeyPage;
 extern NSString * const kSearchGoodsDataKeyGoodsCellVMList;
+extern NSString * const kSearchGoodsDataKeyMall;
 
 @interface SearchGoodsReformer : NSObject<GuangfishAPIManagerDataReformer>
 

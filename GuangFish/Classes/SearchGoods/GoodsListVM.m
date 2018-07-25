@@ -52,6 +52,7 @@
         }
         [self.goodsListCellVMList addObjectsFromArray:[resultDic objectForKey:kSearchGoodsDataKeyGoodsCellVMList]];
         self.haveMore = [resultDic objectForKey:kSearchGoodsDataKeyHaveMorePage];
+        self.isTaobao = [[resultDic objectForKey:kSearchGoodsDataKeyMall] isEqualToString:@"taobao"] ? YES : NO;
         [self.requestGetGoodsListSignal sendNext:@""];
     }
 }

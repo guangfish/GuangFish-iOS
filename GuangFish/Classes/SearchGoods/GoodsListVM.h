@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSMutableArray *goodsListCellVMList;
 @property (nonatomic, strong) NSNumber *haveMore;
 @property (nonatomic, strong) NSString *searchStr;
+@property (nonatomic, assign) BOOL isTaobao;
 
 - (void)reloadGoodsList;
 - (void)loadNextPageGoodsList;

@@ -68,6 +68,16 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    GoodsCellVM *goodsCellVM = [self.viewModel.goodsListCellVMList objectAtIndex:indexPath.row];
+    if (self.viewModel.isTaobao) {
+        [goodsCellVM openTaobao];
+    } else {
+        [goodsCellVM openSafari];
+    }
+}
+
 /*
 #pragma mark - Navigation
 

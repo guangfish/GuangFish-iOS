@@ -11,6 +11,7 @@
 NSString * const kSearchGoodsDataKeyHaveMorePage = @"have_more";
 NSString * const kSearchGoodsDataKeyPage = @"page";
 NSString * const kSearchGoodsDataKeyGoodsCellVMList = @"GoodsCellVMList";
+NSString * const kSearchGoodsDataKeyMall = @"mall";
 
 @implementation SearchGoodsReformer
 
@@ -31,7 +32,8 @@ NSString * const kSearchGoodsDataKeyGoodsCellVMList = @"GoodsCellVMList";
         resultData = @{
                        kSearchGoodsDataKeyHaveMorePage: ifHasNextPage,
                        kSearchGoodsDataKeyGoodsCellVMList: goodsCellVMList,
-                       kSearchGoodsDataKeyPage: page
+                       kSearchGoodsDataKeyPage: page,
+                       kSearchGoodsDataKeyMall: dic[@"mall"]
                        };
     }
     

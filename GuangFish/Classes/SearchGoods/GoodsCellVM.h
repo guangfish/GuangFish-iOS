@@ -19,5 +19,7 @@
 @property (nonatomic, strong) NSString *labelStr2;
 
 - (id)initWithResponseDic:(NSDictionary*)dic;
+- (void)openTaobao;
+- (void)openSafari;
 
 @end

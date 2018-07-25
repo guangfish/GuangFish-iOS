@@ -39,4 +39,22 @@
     }
 }
 
+- (void)openTaobao {
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = [self.dataDic objectForKey:@"tkl"];
+    if (@available(iOS 10.0, *)) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"taobao://item.taobao.com/item.htm"] options:@{UIApplicationOpenURLOptionUniversalLinksOnly: @NO} completionHandler:^(BOOL success) {}];
+    } else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"taobao://item.taobao.com/item.htm"]];
+    }
+}
+
+- (void)openSafari {
+    if (@available(iOS 10.0, *)) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[self.dataDic objectForKey:@"tkl"]] options:@{UIApplicationOpenURLOptionUniversalLinksOnly: @NO} completionHandler:^(BOOL success) {}];
+    } else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[self.dataDic objectForKey:@"tkl"]]];
+    }
+}
+
 @end

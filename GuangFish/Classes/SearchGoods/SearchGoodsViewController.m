@@ -20,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.searchTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
+    
     [self initialzieModel];
 }
 
