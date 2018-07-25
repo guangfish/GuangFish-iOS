@@ -8,6 +8,7 @@
 
 #import "GLViewModel.h"
 #import "HomeHeaderReusableVM.h"
+#import "MineVM.h"
 
 @interface HomeVM : GLViewModel
 
@@ -19,5 +20,6 @@
 - (void)getBanner;
 - (void)getDrawStats;
 - (void)getHomeMenu;
+- (MineVM*)getMineVM;
 
 @end

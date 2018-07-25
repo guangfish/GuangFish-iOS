@@ -53,6 +53,13 @@
 		65A2EBD821002B2E000BDE39 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 65A2EBD321002B2E000BDE39 /* LICENSE */; };
 		65A2EBD921002B2E000BDE39 /* GLScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A2EBD621002B2E000BDE39 /* GLScrollView.m */; };
 		65A2EBDA21002B2E000BDE39 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 65A2EBD721002B2E000BDE39 /* README.md */; };
+		65C4B19321080F9B00968A25 /* SearchGoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4B19221080F9B00968A25 /* SearchGoodsViewController.m */; };
+		65C4B19621080FAA00968A25 /* SearchGoodsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4B19521080FAA00968A25 /* SearchGoodsVM.m */; };
+		65C4B1992108144100968A25 /* GoodsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4B1982108144100968A25 /* GoodsListViewController.m */; };
+		65C4B19C2108145100968A25 /* GoodsListVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4B19B2108145100968A25 /* GoodsListVM.m */; };
+		65C4B19F2108236E00968A25 /* GoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4B19E2108236E00968A25 /* GoodsCell.m */; };
+		65C4B1A22108237E00968A25 /* GoodsCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4B1A12108237E00968A25 /* GoodsCellVM.m */; };
+		65C4B1A6210828E900968A25 /* SearchGoodsReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4B1A5210828E900968A25 /* SearchGoodsReformer.m */; };
 		65E45AF0210569180051E912 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E45AEF210569180051E912 /* WebViewController.m */; };
 		65E45AF3210569510051E912 /* WebVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E45AF2210569510051E912 /* WebVM.m */; };
 		65E45AF72105828F0051E912 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E45AF62105828F0051E912 /* MineViewController.m */; };
@@ -139,6 +146,20 @@
 		65A2EBD521002B2E000BDE39 /* GLScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLScrollView.h; sourceTree = "<group>"; };
 		65A2EBD621002B2E000BDE39 /* GLScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLScrollView.m; sourceTree = "<group>"; };
 		65A2EBD721002B2E000BDE39 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		65C4B19121080F9B00968A25 /* SearchGoodsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchGoodsViewController.h; sourceTree = "<group>"; };
+		65C4B19221080F9B00968A25 /* SearchGoodsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchGoodsViewController.m; sourceTree = "<group>"; };
+		65C4B19421080FAA00968A25 /* SearchGoodsVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchGoodsVM.h; sourceTree = "<group>"; };
+		65C4B19521080FAA00968A25 /* SearchGoodsVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchGoodsVM.m; sourceTree = "<group>"; };
+		65C4B1972108144100968A25 /* GoodsListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsListViewController.h; sourceTree = "<group>"; };
+		65C4B1982108144100968A25 /* GoodsListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsListViewController.m; sourceTree = "<group>"; };
+		65C4B19A2108145100968A25 /* GoodsListVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsListVM.h; sourceTree = "<group>"; };
+		65C4B19B2108145100968A25 /* GoodsListVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsListVM.m; sourceTree = "<group>"; };
+		65C4B19D2108236E00968A25 /* GoodsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsCell.h; sourceTree = "<group>"; };
+		65C4B19E2108236E00968A25 /* GoodsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsCell.m; sourceTree = "<group>"; };
+		65C4B1A02108237E00968A25 /* GoodsCellVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GoodsCellVM.h; sourceTree = "<group>"; };
+		65C4B1A12108237E00968A25 /* GoodsCellVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsCellVM.m; sourceTree = "<group>"; };
+		65C4B1A4210828E900968A25 /* SearchGoodsReformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchGoodsReformer.h; sourceTree = "<group>"; };
+		65C4B1A5210828E900968A25 /* SearchGoodsReformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchGoodsReformer.m; sourceTree = "<group>"; };
 		65E45AEE210569180051E912 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		65E45AEF210569180051E912 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		65E45AF1210569510051E912 /* WebVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebVM.h; sourceTree = "<group>"; };
@@ -290,10 +311,12 @@
 		6584EB5B20F6412A009A381D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				65C4B1A3210828BE00968A25 /* Reformers */,
 				6554A4B020F6F62D0052BDA5 /* Networking */,
 				65E45AF42105827E0051E912 /* Mine */,
 				6554A51520F721330052BDA5 /* Login */,
 				65E45AFB2105AB2C0051E912 /* OrderSave */,
+				65C4B19021080F7F00968A25 /* SearchGoods */,
 				6584EB6A20F654B2009A381D /* HomeViewController.h */,
 				6584EB6B20F654B2009A381D /* HomeViewController.m */,
 				6560C83820F87B3B0083F8BD /* HomeVM.h */,
@@ -368,6 +391,34 @@
 			path = GLScrollView;
 			sourceTree = "<group>";
 		};
+		65C4B19021080F7F00968A25 /* SearchGoods */ = {
+			isa = PBXGroup;
+			children = (
+				65C4B19121080F9B00968A25 /* SearchGoodsViewController.h */,
+				65C4B19221080F9B00968A25 /* SearchGoodsViewController.m */,
+				65C4B19421080FAA00968A25 /* SearchGoodsVM.h */,
+				65C4B19521080FAA00968A25 /* SearchGoodsVM.m */,
+				65C4B1972108144100968A25 /* GoodsListViewController.h */,
+				65C4B1982108144100968A25 /* GoodsListViewController.m */,
+				65C4B19A2108145100968A25 /* GoodsListVM.h */,
+				65C4B19B2108145100968A25 /* GoodsListVM.m */,
+				65C4B19D2108236E00968A25 /* GoodsCell.h */,
+				65C4B19E2108236E00968A25 /* GoodsCell.m */,
+				65C4B1A02108237E00968A25 /* GoodsCellVM.h */,
+				65C4B1A12108237E00968A25 /* GoodsCellVM.m */,
+			);
+			path = SearchGoods;
+			sourceTree = "<group>";
+		};
+		65C4B1A3210828BE00968A25 /* Reformers */ = {
+			isa = PBXGroup;
+			children = (
+				65C4B1A4210828E900968A25 /* SearchGoodsReformer.h */,
+				65C4B1A5210828E900968A25 /* SearchGoodsReformer.m */,
+			);
+			path = Reformers;
+			sourceTree = "<group>";
+		};
 		65E45AF42105827E0051E912 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +461,7 @@
 				6584EB3D20F63F9B009A381D /* Sources */,
 				6584EB3E20F63F9B009A381D /* Frameworks */,
 				6584EB3F20F63F9B009A381D /* Resources */,
+				60F1BFCA4DB54E8340C073DF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -499,6 +551,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		60F1BFCA4DB54E8340C073DF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GuangFish/Pods-GuangFish-resources.sh",
+				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuangFish/Pods-GuangFish-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -507,7 +577,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				65E45AF72105828F0051E912 /* MineViewController.m in Sources */,
+				65C4B1992108144100968A25 /* GoodsListViewController.m in Sources */,
 				6584EB5420F63F9D009A381D /* main.m in Sources */,
+				65C4B19321080F9B00968A25 /* SearchGoodsViewController.m in Sources */,
 				6554A52720F72EA80052BDA5 /* GuangfishProductInfoAPIManager.m in Sources */,
 				6554A51E20F7283E0052BDA5 /* GuangfishGetSmsCodeAPIManager.m in Sources */,
 				65E45AF0210569180051E912 /* WebViewController.m in Sources */,
@@ -519,6 +591,7 @@
 				6554A53320F733970052BDA5 /* GuangfishOrderrewardlistAPIManager.m in Sources */,
 				6554A52A20F72F7D0052BDA5 /* GuangfishOrdersaveAPIManager.m in Sources */,
 				6554A53020F730910052BDA5 /* GuangfishOrderlistAPIManager.m in Sources */,
+				65C4B1A22108237E00968A25 /* GoodsCellVM.m in Sources */,
 				65A2EBD921002B2E000BDE39 /* GLScrollView.m in Sources */,
 				6584EB6C20F654B2009A381D /* HomeViewController.m in Sources */,
 				6554A50320F6F7680052BDA5 /* GuangfishLoginAPIManager.m in Sources */,
@@ -531,15 +604,19 @@
 				6554A4AF20F6F2090052BDA5 /* HomeHeaderReusableView.m in Sources */,
 				6554A52D20F730290052BDA5 /* GuangfishFriendlistAPIManager.m in Sources */,
 				6554A51220F6F7680052BDA5 /* GuangfishAPIUrlConfigManager.m in Sources */,
+				65C4B19C2108145100968A25 /* GoodsListVM.m in Sources */,
 				6554A52120F7291F0052BDA5 /* GuangfishRegisterAPIManager.m in Sources */,
 				65E45B012105AB500051E912 /* OrderSaveVM.m in Sources */,
+				65C4B1A6210828E900968A25 /* SearchGoodsReformer.m in Sources */,
 				6554A53920F734530052BDA5 /* GuangfishDrawAPIManager.m in Sources */,
 				659D8C6D20FF15BF00E590E5 /* HomeMenuCellVM.m in Sources */,
 				6554A4FA20F6F7680052BDA5 /* GuangfishAPIBaseManager.m in Sources */,
 				6560C83A20F87B3B0083F8BD /* HomeVM.m in Sources */,
+				65C4B19F2108236E00968A25 /* GoodsCell.m in Sources */,
 				6554A4FB20F6F7680052BDA5 /* GuangfishNetworkingManager.m in Sources */,
 				6554A51120F6F7680052BDA5 /* GuangfishNetworking.m in Sources */,
 				654813DE20FDD6E600122CEF /* RegisterVM.m in Sources */,
+				65C4B19621080FAA00968A25 /* SearchGoodsVM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -684,10 +761,7 @@
 				DEVELOPMENT_TEAM = ZQZZ66UC68;
 				INFOPLIST_FILE = GuangFish/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.guangfish.GuangFish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -703,10 +777,7 @@
 				DEVELOPMENT_TEAM = ZQZZ66UC68;
 				INFOPLIST_FILE = GuangFish/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.guangfish.GuangFish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;

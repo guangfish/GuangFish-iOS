@@ -13,5 +13,6 @@ target 'GuangFish' do
   pod 'AFNetworking', '~> 3.2.1'
   pod 'GLBaseProject', '~> 1.1.0'
   pod 'SDWebImage', '~> 4.4.2'
+  pod 'MJRefresh', '~> 3.1.15.3'
 
 end

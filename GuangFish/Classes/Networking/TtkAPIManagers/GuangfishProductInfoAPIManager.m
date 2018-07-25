@@ -9,7 +9,8 @@
 #import "GuangfishProductInfoAPIManager.h"
 
 NSString * const kProductInfoAPIManagerParamsKeyProductUrl = @"productUrl";
-NSString * const kProductInfoAPIManagerParamsKeyImei = @"imei";
+NSString * const kProductInfoAPIManagerParamsKeyPageNo = @"pageNo";
+NSString * const kProductInfoAPIManagerParamsKeySize = @"size";
 
 @implementation GuangfishProductInfoAPIManager
 

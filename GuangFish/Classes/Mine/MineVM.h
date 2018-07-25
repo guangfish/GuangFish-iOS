@@ -14,6 +14,7 @@
 @property (nonatomic, strong) RACSubject *inviteCodeSignal;
 @property (nonatomic, strong) NSString *typeStr;
 @property (nonatomic, strong) NSString *mobile;
+@property (nonatomic, strong) NSString *totalBuySave;
 
 - (void)logout;
 - (void)getUserData;

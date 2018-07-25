@@ -10,6 +10,7 @@
 #import "HomeHeaderReusableView.h"
 #import "HomeMenuCell.h"
 #import "WebViewController.h"
+#import "MineViewController.h"
 
 @interface HomeViewController ()
 
@@ -50,6 +51,9 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
     if ([segue.identifier isEqualToString:@"ShowWebViewControllerSegue"]) {
         WebViewController *webViewController = [segue destinationViewController];
         webViewController.viewModel = [((HomeMenuCellVM*)sender) getWebVM];
+    } else if ([segue.identifier isEqualToString:@"ShowMineInfo"]) {
+        MineViewController *mineViewController = segue.destinationViewController;
+        mineViewController.viewModel = [self.viewModel getMineVM];
     }
 }
 

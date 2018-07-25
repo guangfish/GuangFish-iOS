@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property (weak, nonatomic) IBOutlet UILabel *mobileLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalBuySaveLabel;
 
 @end
 
@@ -60,6 +61,7 @@
 - (void)initialzieModel {
     RAC(self.typeLabel, text) = RACObserve(self.viewModel, typeStr);
     RAC(self.mobileLabel, text) = RACObserve(self.viewModel, mobile);
+    RAC(self.totalBuySaveLabel, text) = RACObserve(self.viewModel, totalBuySave);
     
     @weakify(self);
     [self.viewModel.inviteCodeSignal subscribeNext:^(id  _Nullable x) {

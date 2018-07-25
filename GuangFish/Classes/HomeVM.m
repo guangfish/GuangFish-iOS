@@ -16,6 +16,8 @@
 @property (nonatomic, strong) GuangfishBannerAPIManager *bannerAPIManager;
 @property (nonatomic, strong) GuangfishDrawstatsAPIManager *drawstatsAPIManager;
 
+@property (nonatomic, strong) NSString *totalBuySave;
+
 @end
 
 @implementation HomeVM
@@ -52,6 +54,7 @@
         NSDictionary *responseDic = [manager fetchDataWithReformer:nil];
         NSLog(@"%@", responseDic);
         self.homeHeaderReusableVM.drawStatsDic = [responseDic objectForKey:@"data"];
+        self.totalBuySave = [[responseDic objectForKey:@"data"] objectForKey:@"totalBuySave"];
         [self.requestGetdrawStatsSignal sendNext:@"返利信息获取成功"];
     }
 }
@@ -91,6 +94,12 @@
         }
         [self.menuSectionsList addObject:menuCellVMList];
     }
+}
+
+- (MineVM*)getMineVM {
+    MineVM *mineVM = [[MineVM alloc] init];
+    mineVM.totalBuySave = [NSString stringWithFormat:@"¥%@", self.totalBuySave];
+    return mineVM;
 }
 
 #pragma mark - getters and setters

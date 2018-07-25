@@ -9,7 +9,8 @@
 #import "GuangfishAPIBaseManager.h"
 
 extern NSString * const kProductInfoAPIManagerParamsKeyProductUrl;
-extern NSString * const kProductInfoAPIManagerParamsKeyImei;
+extern NSString * const kProductInfoAPIManagerParamsKeyPageNo;
+extern NSString * const kProductInfoAPIManagerParamsKeySize;
 
 @interface GuangfishProductInfoAPIManager : GuangfishAPIBaseManager<GuangfishAPIManager>
 
