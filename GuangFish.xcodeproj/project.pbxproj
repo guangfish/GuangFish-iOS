@@ -46,6 +46,11 @@
 		6584EB6C20F654B2009A381D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6584EB6B20F654B2009A381D /* HomeViewController.m */; };
 		658ACFDC21096006006FD017 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658ACFDB21096006006FD017 /* DrawViewController.m */; };
 		658ACFDF21096013006FD017 /* DrawVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 658ACFDE21096013006FD017 /* DrawVM.m */; };
+		658ACFE32109A4C7006FD017 /* QCSlideSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 658ACFE12109A4C7006FD017 /* QCSlideSwitchView.m */; };
+		658ACFE72109A510006FD017 /* FriendsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658ACFE62109A510006FD017 /* FriendsHomeViewController.m */; };
+		658ACFEA2109A524006FD017 /* FriendsHomeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 658ACFE92109A524006FD017 /* FriendsHomeVM.m */; };
+		658ACFED2109A645006FD017 /* FriendsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658ACFEC2109A645006FD017 /* FriendsListViewController.m */; };
+		658ACFF02109A653006FD017 /* FriendsListVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 658ACFEF2109A653006FD017 /* FriendsListVM.m */; };
 		659D8C6420FF0F0300E590E5 /* img_order_input@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 659D8C6020FF0F0200E590E5 /* img_order_input@3x.png */; };
 		659D8C6520FF0F0300E590E5 /* img_order_input@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 659D8C6120FF0F0200E590E5 /* img_order_input@2x.png */; };
 		659D8C6620FF0F0300E590E5 /* img_order_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 659D8C6220FF0F0300E590E5 /* img_order_search@2x.png */; };
@@ -140,6 +145,16 @@
 		658ACFDB21096006006FD017 /* DrawViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
 		658ACFDD21096013006FD017 /* DrawVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawVM.h; sourceTree = "<group>"; };
 		658ACFDE21096013006FD017 /* DrawVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawVM.m; sourceTree = "<group>"; };
+		658ACFE12109A4C7006FD017 /* QCSlideSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCSlideSwitchView.m; sourceTree = "<group>"; };
+		658ACFE22109A4C7006FD017 /* QCSlideSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCSlideSwitchView.h; sourceTree = "<group>"; };
+		658ACFE52109A510006FD017 /* FriendsHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsHomeViewController.h; sourceTree = "<group>"; };
+		658ACFE62109A510006FD017 /* FriendsHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendsHomeViewController.m; sourceTree = "<group>"; };
+		658ACFE82109A524006FD017 /* FriendsHomeVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsHomeVM.h; sourceTree = "<group>"; };
+		658ACFE92109A524006FD017 /* FriendsHomeVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendsHomeVM.m; sourceTree = "<group>"; };
+		658ACFEB2109A645006FD017 /* FriendsListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsListViewController.h; sourceTree = "<group>"; };
+		658ACFEC2109A645006FD017 /* FriendsListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendsListViewController.m; sourceTree = "<group>"; };
+		658ACFEE2109A653006FD017 /* FriendsListVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsListVM.h; sourceTree = "<group>"; };
+		658ACFEF2109A653006FD017 /* FriendsListVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendsListVM.m; sourceTree = "<group>"; };
 		659D8C6020FF0F0200E590E5 /* img_order_input@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_order_input@3x.png"; sourceTree = "<group>"; };
 		659D8C6120FF0F0200E590E5 /* img_order_input@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_order_input@2x.png"; sourceTree = "<group>"; };
 		659D8C6220FF0F0300E590E5 /* img_order_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_order_search@2x.png"; sourceTree = "<group>"; };
@@ -324,6 +339,7 @@
 				6554A51520F721330052BDA5 /* Login */,
 				65E45AFB2105AB2C0051E912 /* OrderSave */,
 				65C4B19021080F7F00968A25 /* SearchGoods */,
+				658ACFE42109A4F5006FD017 /* Friends */,
 				6584EB6A20F654B2009A381D /* HomeViewController.h */,
 				6584EB6B20F654B2009A381D /* HomeViewController.m */,
 				6560C83820F87B3B0083F8BD /* HomeVM.h */,
@@ -382,9 +398,34 @@
 			path = Draw;
 			sourceTree = "<group>";
 		};
+		658ACFE02109A4C7006FD017 /* QCSlideSwitchView */ = {
+			isa = PBXGroup;
+			children = (
+				658ACFE22109A4C7006FD017 /* QCSlideSwitchView.h */,
+				658ACFE12109A4C7006FD017 /* QCSlideSwitchView.m */,
+			);
+			path = QCSlideSwitchView;
+			sourceTree = "<group>";
+		};
+		658ACFE42109A4F5006FD017 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				658ACFE52109A510006FD017 /* FriendsHomeViewController.h */,
+				658ACFE62109A510006FD017 /* FriendsHomeViewController.m */,
+				658ACFE82109A524006FD017 /* FriendsHomeVM.h */,
+				658ACFE92109A524006FD017 /* FriendsHomeVM.m */,
+				658ACFEB2109A645006FD017 /* FriendsListViewController.h */,
+				658ACFEC2109A645006FD017 /* FriendsListViewController.m */,
+				658ACFEE2109A653006FD017 /* FriendsListVM.h */,
+				658ACFEF2109A653006FD017 /* FriendsListVM.m */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
 		65A2EBD121002B1E000BDE39 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				658ACFE02109A4C7006FD017 /* QCSlideSwitchView */,
 				65A2EBD221002B2E000BDE39 /* GLScrollView */,
 			);
 			path = Vendor;
@@ -615,11 +656,14 @@
 				6554A50320F6F7680052BDA5 /* GuangfishLoginAPIManager.m in Sources */,
 				65E45AFA2105829C0051E912 /* MineVM.m in Sources */,
 				654813DB20FDD6D700122CEF /* RegisterViewController.m in Sources */,
+				658ACFEA2109A524006FD017 /* FriendsHomeVM.m in Sources */,
 				65E45AF3210569510051E912 /* WebVM.m in Sources */,
 				6554A51B20F721770052BDA5 /* LoginVM.m in Sources */,
+				658ACFED2109A645006FD017 /* FriendsListViewController.m in Sources */,
 				6554A51820F721440052BDA5 /* LoginViewController.m in Sources */,
 				659D8C6A20FF159E00E590E5 /* HomeMenuCell.m in Sources */,
 				6554A4AF20F6F2090052BDA5 /* HomeHeaderReusableView.m in Sources */,
+				658ACFE72109A510006FD017 /* FriendsHomeViewController.m in Sources */,
 				6554A52D20F730290052BDA5 /* GuangfishFriendlistAPIManager.m in Sources */,
 				6554A51220F6F7680052BDA5 /* GuangfishAPIUrlConfigManager.m in Sources */,
 				658ACFDF21096013006FD017 /* DrawVM.m in Sources */,
@@ -627,6 +671,7 @@
 				6554A52120F7291F0052BDA5 /* GuangfishRegisterAPIManager.m in Sources */,
 				658ACFDC21096006006FD017 /* DrawViewController.m in Sources */,
 				65E45B012105AB500051E912 /* OrderSaveVM.m in Sources */,
+				658ACFF02109A653006FD017 /* FriendsListVM.m in Sources */,
 				65C4B1A6210828E900968A25 /* SearchGoodsReformer.m in Sources */,
 				6554A53920F734530052BDA5 /* GuangfishDrawAPIManager.m in Sources */,
 				659D8C6D20FF15BF00E590E5 /* HomeMenuCellVM.m in Sources */,
@@ -634,6 +679,7 @@
 				6560C83A20F87B3B0083F8BD /* HomeVM.m in Sources */,
 				65C4B19F2108236E00968A25 /* GoodsCell.m in Sources */,
 				6554A4FB20F6F7680052BDA5 /* GuangfishNetworkingManager.m in Sources */,
+				658ACFE32109A4C7006FD017 /* QCSlideSwitchView.m in Sources */,
 				6554A51120F6F7680052BDA5 /* GuangfishNetworking.m in Sources */,
 				654813DE20FDD6E600122CEF /* RegisterVM.m in Sources */,
 				65C4B19621080FAA00968A25 /* SearchGoodsVM.m in Sources */,

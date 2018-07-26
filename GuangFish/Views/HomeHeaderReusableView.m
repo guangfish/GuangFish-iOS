@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *paltformRewardLabel;
 @property (weak, nonatomic) IBOutlet UILabel *friendNumLabel;
 @property (weak, nonatomic) IBOutlet UIButton *drawButton;
+@property (weak, nonatomic) IBOutlet UIButton *friendsButton;
 
 @end
 
@@ -78,6 +79,12 @@
         } else {
             [self.delegate canDraw:NO withErrorMsg:self.viewModel.reason];
         }
+        return [RACSignal empty];
+    }];
+    
+    self.friendsButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        @strongify(self);
+        [[self viewController] performSegueWithIdentifier:@"ShowFriendsHomeSegue" sender:nil];
         return [RACSignal empty];
     }];
 }
