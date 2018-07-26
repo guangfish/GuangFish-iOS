@@ -11,8 +11,9 @@
 #import "HomeMenuCell.h"
 #import "WebViewController.h"
 #import "MineViewController.h"
+#import "MBProgressHUD.h"
 
-@interface HomeViewController ()
+@interface HomeViewController ()<HomeHeaderReusableViewDelegate>
 
 @end
 
@@ -57,6 +58,16 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
     }
 }
 
+#pragma mark - HomeHeaderReusableViewDelegate
+
+- (void)canDraw:(BOOL)canDraw withErrorMsg:(NSString *)errorMsg {
+    if (canDraw) {
+        [self performSegueWithIdentifier:@"ShowDrawSegue" sender:nil];
+    } else {
+        [self showTextHud:errorMsg];
+    }
+}
+
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -87,6 +98,7 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
     if (kind == UICollectionElementKindSectionHeader) {
         HomeHeaderReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind : UICollectionElementKindSectionHeader withReuseIdentifier : @"HomeHeaderReusableView" forIndexPath :indexPath];
         headerView.viewModel = self.viewModel.homeHeaderReusableVM;
+        headerView.delegate = self;
         reusableview = headerView;
     }
     return reusableview;
@@ -139,6 +151,15 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
             [self.collectionView reloadData];
         }
     }];
+}
+
+- (void)showTextHud:(NSString*)msg {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = msg;
+    hud.margin = 10.0f;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hideAnimated:YES afterDelay:1.5];
 }
 
 #pragma mark - getters and setters

@@ -9,8 +9,15 @@
 #import <UIKit/UIKit.h>
 #import "HomeHeaderReusableVM.h"
 
+@protocol HomeHeaderReusableViewDelegate <NSObject>
+
+- (void)canDraw:(BOOL)canDraw withErrorMsg:(NSString*)errorMsg;
+
+@end
+
 @interface HomeHeaderReusableView : UICollectionReusableView
 
 @property (nonatomic, strong) HomeHeaderReusableVM *viewModel;
+@property (nonatomic, weak) id<HomeHeaderReusableViewDelegate> delegate;
 
 @end

@@ -19,5 +19,6 @@
 @property (nonatomic, strong) NSString *inviteReward;
 @property (nonatomic, strong) NSString *friendNum;
 @property (nonatomic, strong) NSNumber *drawBtnEnable;
+@property (nonatomic, strong) NSString *reason;
 
 @end

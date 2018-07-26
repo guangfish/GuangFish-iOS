@@ -71,13 +71,14 @@
     
     RAC(self.friendNumLabel, text) = [RACObserve(self.viewModel, friendNum) takeUntil:self.rac_prepareForReuseSignal];
     
-    [RACObserve(self.viewModel, drawBtnEnable) subscribeNext:^(id  _Nullable x) {
+    self.drawButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         @strongify(self);
-        if ([x boolValue]) {
-            self.drawButton.enabled = YES;
+        if ([self.viewModel.drawBtnEnable boolValue]) {
+            [self.delegate canDraw:YES withErrorMsg:nil];
         } else {
-            self.drawButton.enabled = NO;
+            [self.delegate canDraw:NO withErrorMsg:self.viewModel.reason];
         }
+        return [RACSignal empty];
     }];
 }
 
