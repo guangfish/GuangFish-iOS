@@ -30,6 +30,8 @@
     self.slideSwitchView.isTopHide = YES;
     self.slideSwitchView.slideSwitchViewDelegate = self;
     [self.slideSwitchView buildUI];
+    
+    [self initialzieModel];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,6 +70,27 @@
 */
 
 #pragma mark - private methods
+
+- (void)initialzieModel {
+    @weakify(self)
+    self.wjhButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        @strongify(self)
+        [self chooseWJH];
+        return [RACSignal empty];
+    }];
+    
+    self.wlqButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        @strongify(self)
+        [self chooseWLQ];
+        return [RACSignal empty];
+    }];
+    
+    self.ylqButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        @strongify(self)
+        [self chooseYLQ];
+        return [RACSignal empty];
+    }];
+}
 
 - (void)chooseWJH {
     [self.wjhButton setTitleColor:[UIColor colorWithRed:0.90 green:0.31 blue:0.33 alpha:1.00] forState:(UIControlStateNormal)];

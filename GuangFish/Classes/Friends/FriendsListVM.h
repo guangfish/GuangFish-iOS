@@ -17,6 +17,7 @@ typedef enum {
 @interface FriendsListVM : GLViewModel
 
 @property (nonatomic, strong) RACSubject *requestGetFriendsSignal;
+@property (nonatomic, strong) NSMutableArray *friendCellVMList;
 @property (nonatomic, assign) FriendType friendType;
 @property (nonatomic, strong) NSNumber *haveMore;
 

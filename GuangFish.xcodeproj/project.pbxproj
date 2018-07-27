@@ -67,6 +67,9 @@
 		65C4B19F2108236E00968A25 /* GoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4B19E2108236E00968A25 /* GoodsCell.m */; };
 		65C4B1A22108237E00968A25 /* GoodsCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4B1A12108237E00968A25 /* GoodsCellVM.m */; };
 		65C4B1A6210828E900968A25 /* SearchGoodsReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C4B1A5210828E900968A25 /* SearchGoodsReformer.m */; };
+		65DEDC1A210AACDF004DE2DB /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DEDC19210AACDF004DE2DB /* FriendCell.m */; };
+		65DEDC1D210AACED004DE2DB /* FriendCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DEDC1C210AACED004DE2DB /* FriendCellVM.m */; };
+		65DEDC20210AB066004DE2DB /* FriendsListReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DEDC1F210AB066004DE2DB /* FriendsListReformer.m */; };
 		65E45AF0210569180051E912 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E45AEF210569180051E912 /* WebViewController.m */; };
 		65E45AF3210569510051E912 /* WebVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E45AF2210569510051E912 /* WebVM.m */; };
 		65E45AF72105828F0051E912 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E45AF62105828F0051E912 /* MineViewController.m */; };
@@ -181,6 +184,12 @@
 		65C4B1A12108237E00968A25 /* GoodsCellVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsCellVM.m; sourceTree = "<group>"; };
 		65C4B1A4210828E900968A25 /* SearchGoodsReformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchGoodsReformer.h; sourceTree = "<group>"; };
 		65C4B1A5210828E900968A25 /* SearchGoodsReformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchGoodsReformer.m; sourceTree = "<group>"; };
+		65DEDC18210AACDF004DE2DB /* FriendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
+		65DEDC19210AACDF004DE2DB /* FriendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
+		65DEDC1B210AACED004DE2DB /* FriendCellVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendCellVM.h; sourceTree = "<group>"; };
+		65DEDC1C210AACED004DE2DB /* FriendCellVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendCellVM.m; sourceTree = "<group>"; };
+		65DEDC1E210AB066004DE2DB /* FriendsListReformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsListReformer.h; sourceTree = "<group>"; };
+		65DEDC1F210AB066004DE2DB /* FriendsListReformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendsListReformer.m; sourceTree = "<group>"; };
 		65E45AEE210569180051E912 /* WebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		65E45AEF210569180051E912 /* WebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		65E45AF1210569510051E912 /* WebVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebVM.h; sourceTree = "<group>"; };
@@ -418,6 +427,10 @@
 				658ACFEC2109A645006FD017 /* FriendsListViewController.m */,
 				658ACFEE2109A653006FD017 /* FriendsListVM.h */,
 				658ACFEF2109A653006FD017 /* FriendsListVM.m */,
+				65DEDC18210AACDF004DE2DB /* FriendCell.h */,
+				65DEDC19210AACDF004DE2DB /* FriendCell.m */,
+				65DEDC1B210AACED004DE2DB /* FriendCellVM.h */,
+				65DEDC1C210AACED004DE2DB /* FriendCellVM.m */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -474,6 +487,8 @@
 			children = (
 				65C4B1A4210828E900968A25 /* SearchGoodsReformer.h */,
 				65C4B1A5210828E900968A25 /* SearchGoodsReformer.m */,
+				65DEDC1E210AB066004DE2DB /* FriendsListReformer.h */,
+				65DEDC1F210AB066004DE2DB /* FriendsListReformer.m */,
 			);
 			path = Reformers;
 			sourceTree = "<group>";
@@ -637,6 +652,7 @@
 			files = (
 				65E45AF72105828F0051E912 /* MineViewController.m in Sources */,
 				65C4B1992108144100968A25 /* GoodsListViewController.m in Sources */,
+				65DEDC20210AB066004DE2DB /* FriendsListReformer.m in Sources */,
 				6584EB5420F63F9D009A381D /* main.m in Sources */,
 				65C4B19321080F9B00968A25 /* SearchGoodsViewController.m in Sources */,
 				6554A52720F72EA80052BDA5 /* GuangfishProductInfoAPIManager.m in Sources */,
@@ -647,6 +663,7 @@
 				652997CF20FF9232005B463B /* HomeHeaderReusableVM.m in Sources */,
 				6554A52420F72ADA0052BDA5 /* GuangfishDrawstatsAPIManager.m in Sources */,
 				6554A53620F734010052BDA5 /* GuangfishBannerAPIManager.m in Sources */,
+				65DEDC1A210AACDF004DE2DB /* FriendCell.m in Sources */,
 				6554A53320F733970052BDA5 /* GuangfishOrderrewardlistAPIManager.m in Sources */,
 				6554A52A20F72F7D0052BDA5 /* GuangfishOrdersaveAPIManager.m in Sources */,
 				6554A53020F730910052BDA5 /* GuangfishOrderlistAPIManager.m in Sources */,
@@ -674,6 +691,7 @@
 				658ACFF02109A653006FD017 /* FriendsListVM.m in Sources */,
 				65C4B1A6210828E900968A25 /* SearchGoodsReformer.m in Sources */,
 				6554A53920F734530052BDA5 /* GuangfishDrawAPIManager.m in Sources */,
+				65DEDC1D210AACED004DE2DB /* FriendCellVM.m in Sources */,
 				659D8C6D20FF15BF00E590E5 /* HomeMenuCellVM.m in Sources */,
 				6554A4FA20F6F7680052BDA5 /* GuangfishAPIBaseManager.m in Sources */,
 				6560C83A20F87B3B0083F8BD /* HomeVM.m in Sources */,

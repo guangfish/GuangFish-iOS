@@ -7,6 +7,8 @@
 //
 
 #import "FriendsListViewController.h"
+#import "MJRefresh.h"
+#import "FriendCell.h"
 
 @interface FriendsListViewController ()
 
@@ -16,6 +18,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.tableView.tableFooterView = [[UIView alloc]init];
+    
+    [self initialzieModel];
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        if (self.tableView.mj_footer.isRefreshing) {
+            [self.tableView.mj_header endRefreshing];
+        } else {
+            [self.viewModel reloadFriendsList];
+        }
+    }];
+    MJRefreshAutoStateFooter *footer = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
+        if (self.tableView.mj_header.isRefreshing) {
+            [self.tableView.mj_footer endRefreshing];
+        } else {
+            [self.viewModel loadNextPageFriendsList];
+        }
+    }];
+    [footer setTitle:@"" forState:(MJRefreshStateNoMoreData)];
+    [footer setTitle:@"" forState:(MJRefreshStateIdle)];
+    self.tableView.mj_footer = footer;
     
     [self.viewModel loadNextPageFriendsList];
 }
@@ -28,58 +52,25 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.viewModel.friendCellVMList.count;
 }
 
-/*
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 65.0f;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    FriendCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FriendCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    FriendCellVM *friendCellVM = [self.viewModel.friendCellVMList objectAtIndex:indexPath.row];
+    cell.viewModel = friendCellVM;
     
     return cell;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation
@@ -90,6 +81,26 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - private methods
+
+- (void)initialzieModel {
+    @weakify(self);
+    [self.viewModel.requestGetFriendsSignal subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        [self.tableView.mj_header endRefreshing];
+        if ([self.viewModel.haveMore boolValue]) {
+            [self.tableView.mj_footer endRefreshing];
+        } else {
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        }
+        if ([x isKindOfClass:[NSError class]]) {
+            [self showTextHud:[(NSError *)x domain]];
+        } else {
+            [self.tableView reloadData];
+        }
+    }];
+}
 
 #pragma mark - getters and setters
 

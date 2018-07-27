@@ -8,10 +8,12 @@
 
 #import "FriendsListVM.h"
 #import "GuangfishFriendlistAPIManager.h"
+#import "FriendsListReformer.h"
 
 @interface FriendsListVM()<GuangfishAPIManagerParamSource, GuangfishAPIManagerCallBackDelegate>
 
 @property (nonatomic, strong) GuangfishFriendlistAPIManager *friendlistAPIManager;
+@property (nonatomic, strong) FriendsListReformer *friendsListReformer;
 @property (nonatomic, assign) NSInteger page;
 
 @end
@@ -43,14 +45,12 @@
 - (void)managerCallAPIDidSuccess:(GuangfishAPIBaseManager *)manager {
     if (manager == self.friendlistAPIManager) {
         self.page ++;
-        NSLog(@"%@", [manager fetchDataWithReformer:nil]);
-//        NSDictionary *resultDic = [manager fetchDataWithReformer:self.searchGoodsReformer];
-//        if ([[resultDic objectForKey:kSearchGoodsDataKeyPage] isEqualToNumber:@1]) {
-//            [self.goodsListCellVMList removeAllObjects];
-//        }
-//        [self.goodsListCellVMList addObjectsFromArray:[resultDic objectForKey:kSearchGoodsDataKeyGoodsCellVMList]];
-//        self.haveMore = [resultDic objectForKey:kSearchGoodsDataKeyHaveMorePage];
-//        self.isTaobao = [[resultDic objectForKey:kSearchGoodsDataKeyMall] isEqualToString:@"taobao"] ? YES : NO;
+        NSDictionary *resultDic = [manager fetchDataWithReformer:self.friendsListReformer];
+        if ([[resultDic objectForKey:kFriendsListDataKeyPage] isEqualToNumber:@1]) {
+            [self.friendCellVMList removeAllObjects];
+        }
+        [self.friendCellVMList addObjectsFromArray:[resultDic objectForKey:kFriendsListDataKeyFriendCellVMList]];
+        self.haveMore = [resultDic objectForKey:kFriendsListDataKeyHaveMorePage];
         [self.requestGetFriendsSignal sendNext:@""];
     }
 }
@@ -74,6 +74,13 @@
 
 #pragma mark - getters and setters
 
+- (NSMutableArray*)friendCellVMList {
+    if (_friendCellVMList == nil) {
+        self.friendCellVMList = [[NSMutableArray alloc] initWithCapacity:30];
+    }
+    return _friendCellVMList;
+}
+
 - (GuangfishFriendlistAPIManager*)friendlistAPIManager {
     if (_friendlistAPIManager == nil) {
         self.friendlistAPIManager = [[GuangfishFriendlistAPIManager alloc] init];
@@ -81,6 +88,13 @@
         self.friendlistAPIManager.paramSource = self;
     }
     return _friendlistAPIManager;
+}
+
+- (FriendsListReformer*)friendsListReformer {
+    if (_friendsListReformer == nil) {
+        self.friendsListReformer = [[FriendsListReformer alloc] init];
+    }
+    return _friendsListReformer;
 }
 
 @end
