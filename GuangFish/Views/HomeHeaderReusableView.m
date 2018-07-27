@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *friendNumLabel;
 @property (weak, nonatomic) IBOutlet UIButton *drawButton;
 @property (weak, nonatomic) IBOutlet UIButton *friendsButton;
+@property (weak, nonatomic) IBOutlet UIButton *orderRewardButton;
 
 @end
 
@@ -85,6 +86,12 @@
     self.friendsButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         @strongify(self);
         [[self viewController] performSegueWithIdentifier:@"ShowFriendsHomeSegue" sender:nil];
+        return [RACSignal empty];
+    }];
+    
+    self.orderRewardButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        @strongify(self);
+        [[self viewController] performSegueWithIdentifier:@"ShowOrderRewardSegue" sender:nil];
         return [RACSignal empty];
     }];
 }

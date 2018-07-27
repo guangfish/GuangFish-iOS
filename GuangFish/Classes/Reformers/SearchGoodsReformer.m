@@ -18,7 +18,6 @@ NSString * const kSearchGoodsDataKeyMall = @"mall";
 - (id)manager:(GuangfishAPIBaseManager *)manager reformData:(NSDictionary *)data {
     NSDictionary *resultData = nil;
     NSDictionary *dic = [data objectForKey:@"data"];
-    NSLog(@"%@", dic);
     if ([manager isKindOfClass:[GuangfishProductInfoAPIManager class]]) {
         NSNumber *page = dic[@"curPage"];
         NSNumber *ifHasNextPage = dic[@"hasNext"];

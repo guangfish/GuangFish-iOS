@@ -11,6 +11,11 @@
 		652997CB20FF8F33005B463B /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 652997C820FF8F33005B463B /* 1.jpg */; };
 		652997CC20FF8F33005B463B /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 652997C920FF8F33005B463B /* 2.jpg */; };
 		652997CF20FF9232005B463B /* HomeHeaderReusableVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 652997CE20FF9232005B463B /* HomeHeaderReusableVM.m */; };
+		6545F60E210AE8B600A31A97 /* OrderRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545F60D210AE8B600A31A97 /* OrderRewardViewController.m */; };
+		6545F611210AE8CF00A31A97 /* OrderRewardVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545F610210AE8CF00A31A97 /* OrderRewardVM.m */; };
+		6545F614210AECBE00A31A97 /* OrderRewardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545F613210AECBE00A31A97 /* OrderRewardCell.m */; };
+		6545F617210AECD300A31A97 /* OrderRewardCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545F616210AECD300A31A97 /* OrderRewardCellVM.m */; };
+		6545F61A210AF3B100A31A97 /* OrderRewardReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6545F619210AF3B100A31A97 /* OrderRewardReformer.m */; };
 		654813D720FDC21400122CEF /* img_head@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 654813D520FDC21400122CEF /* img_head@2x.png */; };
 		654813D820FDC21400122CEF /* img_head@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 654813D620FDC21400122CEF /* img_head@3x.png */; };
 		654813DB20FDD6D700122CEF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654813DA20FDD6D700122CEF /* RegisterViewController.m */; };
@@ -86,6 +91,16 @@
 		652997C920FF8F33005B463B /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		652997CD20FF9232005B463B /* HomeHeaderReusableVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeHeaderReusableVM.h; sourceTree = "<group>"; };
 		652997CE20FF9232005B463B /* HomeHeaderReusableVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHeaderReusableVM.m; sourceTree = "<group>"; };
+		6545F60C210AE8B600A31A97 /* OrderRewardViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderRewardViewController.h; sourceTree = "<group>"; };
+		6545F60D210AE8B600A31A97 /* OrderRewardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderRewardViewController.m; sourceTree = "<group>"; };
+		6545F60F210AE8CF00A31A97 /* OrderRewardVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderRewardVM.h; sourceTree = "<group>"; };
+		6545F610210AE8CF00A31A97 /* OrderRewardVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderRewardVM.m; sourceTree = "<group>"; };
+		6545F612210AECBE00A31A97 /* OrderRewardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderRewardCell.h; sourceTree = "<group>"; };
+		6545F613210AECBE00A31A97 /* OrderRewardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderRewardCell.m; sourceTree = "<group>"; };
+		6545F615210AECD300A31A97 /* OrderRewardCellVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderRewardCellVM.h; sourceTree = "<group>"; };
+		6545F616210AECD300A31A97 /* OrderRewardCellVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderRewardCellVM.m; sourceTree = "<group>"; };
+		6545F618210AF3B100A31A97 /* OrderRewardReformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderRewardReformer.h; sourceTree = "<group>"; };
+		6545F619210AF3B100A31A97 /* OrderRewardReformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderRewardReformer.m; sourceTree = "<group>"; };
 		654813D520FDC21400122CEF /* img_head@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_head@2x.png"; sourceTree = "<group>"; };
 		654813D620FDC21400122CEF /* img_head@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_head@3x.png"; sourceTree = "<group>"; };
 		654813D920FDD6D700122CEF /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -226,6 +241,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6545F60B210AE88100A31A97 /* OrderReward */ = {
+			isa = PBXGroup;
+			children = (
+				6545F60C210AE8B600A31A97 /* OrderRewardViewController.h */,
+				6545F60D210AE8B600A31A97 /* OrderRewardViewController.m */,
+				6545F60F210AE8CF00A31A97 /* OrderRewardVM.h */,
+				6545F610210AE8CF00A31A97 /* OrderRewardVM.m */,
+				6545F612210AECBE00A31A97 /* OrderRewardCell.h */,
+				6545F613210AECBE00A31A97 /* OrderRewardCell.m */,
+				6545F615210AECD300A31A97 /* OrderRewardCellVM.h */,
+				6545F616210AECD300A31A97 /* OrderRewardCellVM.m */,
+			);
+			path = OrderReward;
+			sourceTree = "<group>";
+		};
 		6554A4AC20F6F1EA0052BDA5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,8 +371,9 @@
 		6584EB5B20F6412A009A381D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				658ACFD921095FE3006FD017 /* Draw */,
 				65C4B1A3210828BE00968A25 /* Reformers */,
+				6545F60B210AE88100A31A97 /* OrderReward */,
+				658ACFD921095FE3006FD017 /* Draw */,
 				6554A4B020F6F62D0052BDA5 /* Networking */,
 				65E45AF42105827E0051E912 /* Mine */,
 				6554A51520F721330052BDA5 /* Login */,
@@ -489,6 +520,8 @@
 				65C4B1A5210828E900968A25 /* SearchGoodsReformer.m */,
 				65DEDC1E210AB066004DE2DB /* FriendsListReformer.h */,
 				65DEDC1F210AB066004DE2DB /* FriendsListReformer.m */,
+				6545F618210AF3B100A31A97 /* OrderRewardReformer.h */,
+				6545F619210AF3B100A31A97 /* OrderRewardReformer.m */,
 			);
 			path = Reformers;
 			sourceTree = "<group>";
@@ -661,6 +694,7 @@
 				65E45AFE2105AB3F0051E912 /* OrderSaveViewController.m in Sources */,
 				6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */,
 				652997CF20FF9232005B463B /* HomeHeaderReusableVM.m in Sources */,
+				6545F61A210AF3B100A31A97 /* OrderRewardReformer.m in Sources */,
 				6554A52420F72ADA0052BDA5 /* GuangfishDrawstatsAPIManager.m in Sources */,
 				6554A53620F734010052BDA5 /* GuangfishBannerAPIManager.m in Sources */,
 				65DEDC1A210AACDF004DE2DB /* FriendCell.m in Sources */,
@@ -672,8 +706,10 @@
 				6584EB6C20F654B2009A381D /* HomeViewController.m in Sources */,
 				6554A50320F6F7680052BDA5 /* GuangfishLoginAPIManager.m in Sources */,
 				65E45AFA2105829C0051E912 /* MineVM.m in Sources */,
+				6545F60E210AE8B600A31A97 /* OrderRewardViewController.m in Sources */,
 				654813DB20FDD6D700122CEF /* RegisterViewController.m in Sources */,
 				658ACFEA2109A524006FD017 /* FriendsHomeVM.m in Sources */,
+				6545F611210AE8CF00A31A97 /* OrderRewardVM.m in Sources */,
 				65E45AF3210569510051E912 /* WebVM.m in Sources */,
 				6554A51B20F721770052BDA5 /* LoginVM.m in Sources */,
 				658ACFED2109A645006FD017 /* FriendsListViewController.m in Sources */,
@@ -688,11 +724,13 @@
 				6554A52120F7291F0052BDA5 /* GuangfishRegisterAPIManager.m in Sources */,
 				658ACFDC21096006006FD017 /* DrawViewController.m in Sources */,
 				65E45B012105AB500051E912 /* OrderSaveVM.m in Sources */,
+				6545F617210AECD300A31A97 /* OrderRewardCellVM.m in Sources */,
 				658ACFF02109A653006FD017 /* FriendsListVM.m in Sources */,
 				65C4B1A6210828E900968A25 /* SearchGoodsReformer.m in Sources */,
 				6554A53920F734530052BDA5 /* GuangfishDrawAPIManager.m in Sources */,
 				65DEDC1D210AACED004DE2DB /* FriendCellVM.m in Sources */,
 				659D8C6D20FF15BF00E590E5 /* HomeMenuCellVM.m in Sources */,
+				6545F614210AECBE00A31A97 /* OrderRewardCell.m in Sources */,
 				6554A4FA20F6F7680052BDA5 /* GuangfishAPIBaseManager.m in Sources */,
 				6560C83A20F87B3B0083F8BD /* HomeVM.m in Sources */,
 				65C4B19F2108236E00968A25 /* GoodsCell.m in Sources */,

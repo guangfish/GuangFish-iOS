@@ -17,7 +17,6 @@ NSString * const kFriendsListDataKeyFriendCellVMList = @"FriendCellVMList";
 - (id)manager:(GuangfishAPIBaseManager *)manager reformData:(NSDictionary *)data {
     NSDictionary *resultData = nil;
     NSDictionary *dic = [data objectForKey:@"data"];
-    NSLog(@"%@", dic);
     if ([manager isKindOfClass:[GuangfishFriendlistAPIManager class]]) {
         NSNumber *page = dic[@"curPage"];
         NSNumber *ifHasNextPage = dic[@"hasNext"];
