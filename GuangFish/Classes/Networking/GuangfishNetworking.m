@@ -27,7 +27,7 @@ static GuangfishNetworking *sharedManager = nil;
     dispatch_once(&once,^{
         sharedManager = [[self alloc] init];
         sharedManager.manager = [AFHTTPSessionManager manager];
-        sharedManager.manager.requestSerializer.timeoutInterval = 15.f;
+        sharedManager.manager.requestSerializer.timeoutInterval = 20.0f;
         sharedManager.manager.responseSerializer = [AFJSONResponseSerializer serializer];
         sharedManager.manager.requestSerializer = [AFJSONRequestSerializer serializer];
         sharedManager.guangfishAPIUrlConfigManager = [GuangfishAPIUrlConfigManager sharedManager];

@@ -58,7 +58,7 @@
 
 - (void)managerCallAPIDidFailed:(GuangfishAPIBaseManager *)manager {
     if (manager == self.productInfoAPIManager) {
-        [self.requestGetGoodsListSignal sendNext:manager.managerError];
+        [self.requestGetGoodsListSignal sendNext:@"未搜索到商品"];
     }
 }
 
