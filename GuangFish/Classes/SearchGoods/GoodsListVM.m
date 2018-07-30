@@ -45,7 +45,6 @@
 - (void)managerCallAPIDidSuccess:(GuangfishAPIBaseManager *)manager {
     if (manager == self.productInfoAPIManager) {
         self.page ++;
-        
         NSDictionary *resultDic = [manager fetchDataWithReformer:self.searchGoodsReformer];
         if ([[resultDic objectForKey:kSearchGoodsDataKeyPage] isEqualToNumber:@1]) {
             [self.goodsListCellVMList removeAllObjects];

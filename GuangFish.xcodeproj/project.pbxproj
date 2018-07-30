@@ -79,6 +79,7 @@
 		65C955CE210EA3E800BD5FC8 /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C955CD210EA3E800BD5FC8 /* OrderCell.m */; };
 		65C955D1210EA3FC00BD5FC8 /* OrderCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C955D0210EA3FC00BD5FC8 /* OrderCellVM.m */; };
 		65C955D4210EA5DF00BD5FC8 /* OrderListReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C955D3210EA5DF00BD5FC8 /* OrderListReformer.m */; };
+		65C955D7210EAC0F00BD5FC8 /* SmartSearchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C955D6210EAC0F00BD5FC8 /* SmartSearchManager.m */; };
 		65DEDC1A210AACDF004DE2DB /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DEDC19210AACDF004DE2DB /* FriendCell.m */; };
 		65DEDC1D210AACED004DE2DB /* FriendCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DEDC1C210AACED004DE2DB /* FriendCellVM.m */; };
 		65DEDC20210AB066004DE2DB /* FriendsListReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DEDC1F210AB066004DE2DB /* FriendsListReformer.m */; };
@@ -220,6 +221,8 @@
 		65C955D0210EA3FC00BD5FC8 /* OrderCellVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderCellVM.m; sourceTree = "<group>"; };
 		65C955D2210EA5DF00BD5FC8 /* OrderListReformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderListReformer.h; sourceTree = "<group>"; };
 		65C955D3210EA5DF00BD5FC8 /* OrderListReformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderListReformer.m; sourceTree = "<group>"; };
+		65C955D5210EAC0F00BD5FC8 /* SmartSearchManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmartSearchManager.h; sourceTree = "<group>"; };
+		65C955D6210EAC0F00BD5FC8 /* SmartSearchManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartSearchManager.m; sourceTree = "<group>"; };
 		65DEDC18210AACDF004DE2DB /* FriendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
 		65DEDC19210AACDF004DE2DB /* FriendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
 		65DEDC1B210AACED004DE2DB /* FriendCellVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendCellVM.h; sourceTree = "<group>"; };
@@ -385,6 +388,8 @@
 		6584EB5A20F6412A009A381D /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				65C955D5210EAC0F00BD5FC8 /* SmartSearchManager.h */,
+				65C955D6210EAC0F00BD5FC8 /* SmartSearchManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -392,10 +397,10 @@
 		6584EB5B20F6412A009A381D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6554A4B020F6F62D0052BDA5 /* Networking */,
 				65C4B1A3210828BE00968A25 /* Reformers */,
 				6545F60B210AE88100A31A97 /* OrderReward */,
 				658ACFD921095FE3006FD017 /* Draw */,
-				6554A4B020F6F62D0052BDA5 /* Networking */,
 				65E45AF42105827E0051E912 /* Mine */,
 				6554A51520F721330052BDA5 /* Login */,
 				65E45AFB2105AB2C0051E912 /* OrderSave */,
@@ -733,6 +738,7 @@
 				65C4B19321080F9B00968A25 /* SearchGoodsViewController.m in Sources */,
 				6554A52720F72EA80052BDA5 /* GuangfishProductInfoAPIManager.m in Sources */,
 				6554A51E20F7283E0052BDA5 /* GuangfishGetSmsCodeAPIManager.m in Sources */,
+				65C955D7210EAC0F00BD5FC8 /* SmartSearchManager.m in Sources */,
 				65E45AF0210569180051E912 /* WebViewController.m in Sources */,
 				65E45AFE2105AB3F0051E912 /* OrderSaveViewController.m in Sources */,
 				6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */,

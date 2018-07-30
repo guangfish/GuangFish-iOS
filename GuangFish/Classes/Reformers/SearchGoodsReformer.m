@@ -18,21 +18,30 @@ NSString * const kSearchGoodsDataKeyMall = @"mall";
 - (id)manager:(GuangfishAPIBaseManager *)manager reformData:(NSDictionary *)data {
     NSDictionary *resultData = nil;
     NSDictionary *dic = [data objectForKey:@"data"];
-    if ([manager isKindOfClass:[GuangfishProductInfoAPIManager class]]) {
-        NSNumber *page = dic[@"curPage"];
-        NSNumber *ifHasNextPage = dic[@"hasNext"];
-        NSMutableArray *goodsCellVMList = [[NSMutableArray alloc] initWithCapacity:30];
-        
-        for (NSDictionary *itemDic in dic[@"items"]) {
-            GoodsCellVM *goodsCellVM = [[GoodsCellVM alloc] initWithResponseDic:itemDic];
-            [goodsCellVMList addObject:goodsCellVM];
+    if ((NSNull *)dic != [NSNull null]) {
+        if ([manager isKindOfClass:[GuangfishProductInfoAPIManager class]]) {
+            NSNumber *page = dic[@"curPage"];
+            NSNumber *ifHasNextPage = dic[@"hasNext"];
+            NSMutableArray *goodsCellVMList = [[NSMutableArray alloc] initWithCapacity:30];
+            
+            for (NSDictionary *itemDic in dic[@"items"]) {
+                GoodsCellVM *goodsCellVM = [[GoodsCellVM alloc] initWithResponseDic:itemDic];
+                [goodsCellVMList addObject:goodsCellVM];
+            }
+            
+            resultData = @{
+                           kSearchGoodsDataKeyHaveMorePage: ifHasNextPage,
+                           kSearchGoodsDataKeyGoodsCellVMList: goodsCellVMList,
+                           kSearchGoodsDataKeyPage: page,
+                           kSearchGoodsDataKeyMall: dic[@"mall"]
+                           };
         }
-        
+    } else {
         resultData = @{
-                       kSearchGoodsDataKeyHaveMorePage: ifHasNextPage,
-                       kSearchGoodsDataKeyGoodsCellVMList: goodsCellVMList,
-                       kSearchGoodsDataKeyPage: page,
-                       kSearchGoodsDataKeyMall: dic[@"mall"]
+                       kSearchGoodsDataKeyHaveMorePage: @0,
+                       kSearchGoodsDataKeyGoodsCellVMList: [[NSMutableArray alloc] init],
+                       kSearchGoodsDataKeyPage: @1,
+                       kSearchGoodsDataKeyMall: @""
                        };
     }
     
