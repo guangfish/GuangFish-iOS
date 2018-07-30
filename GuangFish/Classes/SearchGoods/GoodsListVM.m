@@ -74,6 +74,22 @@
     [self.productInfoAPIManager loadData];
 }
 
+- (BOOL)needAutoShowGoods {
+    if (self.goodsListCellVMList.count == 1) {
+        return YES;
+    }
+    return NO;
+}
+
+- (void)autoShowGoods {
+    GoodsCellVM *goodsCellVM = self.goodsListCellVMList.firstObject;
+    if (self.isTaobao) {
+        [goodsCellVM openTaobao];
+    } else {
+        [goodsCellVM openSafari];
+    }
+}
+
 #pragma mark - getters and setters
 
 - (GuangfishProductInfoAPIManager*)productInfoAPIManager {

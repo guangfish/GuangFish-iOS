@@ -18,5 +18,7 @@
 
 - (void)reloadGoodsList;
 - (void)loadNextPageGoodsList;
+- (BOOL)needAutoShowGoods;
+- (void)autoShowGoods;
 
 @end

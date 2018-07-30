@@ -46,8 +46,11 @@ static SmartSearchManager *sharedManager = nil;
 #pragma mark - private methods
 
 - (void)showGoodsListViewController {
-//    [[self getCurrentVC] presentViewController:self.goodsListViewController animated:YES completion:nil];
-    [[self getCurrentVC] showViewController:self.goodsListViewController sender:nil];
+    if ([self getCurrentVC] == self.goodsListViewController) {
+        [self.goodsListViewController.viewModel reloadGoodsList];
+    } else {
+        [[self getCurrentVC] showViewController:self.goodsListViewController sender:nil];
+    }
 }
 
 - (UIViewController *)getCurrentVC
