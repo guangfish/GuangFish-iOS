@@ -122,13 +122,16 @@
 
 - (GLScrollView*)bannerView {
     if (_bannerView == nil) {
-        self.bannerView = [[GLScrollView alloc] initWithFrame:CGRectMake(0, 210, self.bounds.size.width, 150)];
+        self.bannerView = [[GLScrollView alloc] initWithFrame:CGRectMake(0, 210, self.bounds.size.width, 180)];
+        
+        self.bannerView.backgroundColor = [UIColor clearColor];
         
         self.bannerView.imageInterval = 30;                //设置图片间距
         self.bannerView.leftMargin = 0;                   //设置左边图片露出屏幕的距离
         self.bannerView.topMargin = 0;                    //设置顶部边距
         self.bannerView.bottomMargin = 0;                 //设置底部边距
         self.bannerView.autoSelectPageTime = 3;
+        self.bannerView.imageViewCornerRadius = 10;
         
         self.bannerView.pageControl.frame = CGRectMake(0, self.bannerView.frame.size.height - 30, self.bannerView.frame.size.width, 30);
         

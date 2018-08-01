@@ -24,6 +24,8 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] init];
     barButtonItem.title = @"";
     self.navigationItem.backBarButtonItem = barButtonItem;
@@ -32,6 +34,10 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
     
     [self.viewModel getHomeMenu];
     [self.viewModel getBanner];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -90,7 +96,7 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake((self.view.frame.size.width) / 3.0, (self.view.frame.size.width) / 3.0);
+    return CGSizeMake((self.view.frame.size.width - 30) / 3.0, (self.view.frame.size.width - 30) / 3.0);
 }
 
 - (UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {

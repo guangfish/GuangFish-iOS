@@ -11,7 +11,6 @@
 @interface HomeMenuCell()
 
 @property (weak, nonatomic) IBOutlet UIImageView *menuImageView;
-@property (weak, nonatomic) IBOutlet UILabel *menuTitleLabel;
 
 @end
 
@@ -24,10 +23,10 @@
         self.menuImageView.image = [UIImage imageNamed:x];
     }];
     
-    [RACObserve(self.viewModel, menuTitle) subscribeNext:^(id  _Nullable x) {
-        @strongify(self)
-        self.menuTitleLabel.text = x;
-    }];
+//    [RACObserve(self.viewModel, menuTitle) subscribeNext:^(id  _Nullable x) {
+//        @strongify(self)
+//        self.menuTitleLabel.text = x;
+//    }];
 }
 
 #pragma mark - getters and setters

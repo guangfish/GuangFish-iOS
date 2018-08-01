@@ -7,7 +7,7 @@
 			<key>segueId</key>
 			<string>ShowOrderSaveSegue</string>
 			<key>imgName</key>
-			<string>img_order_input</string>
+			<string>img_bddd</string>
 			<key>title</key>
 			<string>绑定订单</string>
             <key>url</key>
@@ -17,7 +17,7 @@
 			<key>segueId</key>
 			<string>ShowOrderListSegue</string>
 			<key>imgName</key>
-			<string>img_order_search</string>
+			<string>img_ddss</string>
 			<key>title</key>
 			<string>查看订单</string>
             <key>url</key>
@@ -27,7 +27,7 @@
             <key>segueId</key>
             <string>ShowMineInfo</string>
             <key>imgName</key>
-            <string>img_order_search</string>
+            <string>img_grzx</string>
             <key>title</key>
             <string>个人中心</string>
             <key>url</key>
@@ -37,7 +37,7 @@
             <key>segueId</key>
             <string>ShowWebViewControllerSegue</string>
             <key>imgName</key>
-            <string>img_order_search</string>
+            <string>img_sybz</string>
             <key>title</key>
             <string>使用帮助</string>
             <key>url</key>
@@ -47,7 +47,7 @@
             <key>segueId</key>
             <string>ShowWebViewControllerSegue</string>
             <key>imgName</key>
-            <string>img_order_search</string>
+            <string>img_yqzq</string>
             <key>title</key>
             <string>邀请赚钱</string>
             <key>url</key>
@@ -57,7 +57,7 @@
             <key>segueId</key>
             <string>ShowWebViewControllerSegue</string>
             <key>imgName</key>
-            <string>img_order_search</string>
+            <string>img_zskf</string>
             <key>title</key>
             <string>专属客服</string>
             <key>url</key>
