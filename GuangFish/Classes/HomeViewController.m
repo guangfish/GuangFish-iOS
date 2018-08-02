@@ -103,6 +103,10 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
     UICollectionReusableView *reusableview = nil;
     if (kind == UICollectionElementKindSectionHeader) {
         HomeHeaderReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind : UICollectionElementKindSectionHeader withReuseIdentifier : @"HomeHeaderReusableView" forIndexPath :indexPath];
+        headerView.codeCopyButton.layer.borderWidth = 1.0f;
+        headerView.codeCopyButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        headerView.codeCopyButton.layer.cornerRadius = headerView.codeCopyButton.frame.size.height / 2.0f;
+        headerView.codeCopyButton.layer.masksToBounds = YES;
         headerView.viewModel = self.viewModel.homeHeaderReusableVM;
         headerView.delegate = self;
         reusableview = headerView;

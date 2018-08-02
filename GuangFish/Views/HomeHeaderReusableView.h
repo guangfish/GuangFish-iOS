@@ -17,6 +17,7 @@
 
 @interface HomeHeaderReusableView : UICollectionReusableView
 
+@property (weak, nonatomic) IBOutlet UIButton *codeCopyButton;
 @property (nonatomic, strong) HomeHeaderReusableVM *viewModel;
 @property (nonatomic, weak) id<HomeHeaderReusableViewDelegate> delegate;
 

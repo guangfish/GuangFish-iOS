@@ -13,12 +13,23 @@
 
 - (void)initializeData {
     self.downloadImageSignal = [RACSubject subject];
+    self.codeCopySignal = [RACSubject subject];
     self.imageArray = [[NSMutableArray alloc] init];
     self.totalMoney = @"0.0";
     self.inviteReward = @"0.0";
     self.orderMoney = @"0.0";
     self.friendNum = @"0";
     self.drawBtnEnable = [NSNumber numberWithBool:NO];
+}
+
+#pragma mark - public methods
+
+- (void)codeCopy {
+    NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserDic"];
+    NSString *inviteCodeShort = [userDic objectForKey:@"inviteCodeShort"];
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = inviteCodeShort;
+    [self.codeCopySignal sendNext:@"邀请码已复制"];
 }
 
 #pragma mark - private methods
@@ -47,6 +58,7 @@
     self.friendNum = [self.drawStatsDic objectForKey:@"friendNum"];
     self.drawBtnEnable = [self.drawStatsDic objectForKey:@"canDraw"];
     self.reason = [self.drawStatsDic objectForKey:@"reason"];
+    self.hongbao = [self.drawStatsDic objectForKey:@"hongbao"];
 }
 
 @end

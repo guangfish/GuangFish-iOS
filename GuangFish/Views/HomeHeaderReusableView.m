@@ -9,6 +9,7 @@
 #import "HomeHeaderReusableView.h"
 #import "GLScrollView.h"
 #import "WebViewController.h"
+#import "MBProgressHUD.h"
 
 @interface HomeHeaderReusableView()<GLScrollViewDelegate>
 
@@ -16,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalMoneyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *orderMoneyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *inviteRewardLabel;
+@property (weak, nonatomic) IBOutlet UILabel *hongbaoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *paltformRewardLabel;
 @property (weak, nonatomic) IBOutlet UILabel *friendNumLabel;
 @property (weak, nonatomic) IBOutlet UIButton *drawButton;
@@ -58,20 +60,26 @@
         self.bannerView.imageArray = self.viewModel.imageArray;
     }];
     
+    [self.viewModel.codeCopySignal subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        [self showTextHud:x];
+    }];
+    
     [RACObserve(self.viewModel, totalMoney) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-        self.totalMoneyLabel.text = [NSString stringWithFormat:@"¥%@", x];
+        self.totalMoneyLabel.text = [NSString stringWithFormat:@"%@", x];
     }];
     [RACObserve(self.viewModel, inviteReward) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-        self.inviteRewardLabel.text = [NSString stringWithFormat:@"¥%@", x];
+        self.inviteRewardLabel.text = [NSString stringWithFormat:@"%@", x];
     }];
     [RACObserve(self.viewModel, orderMoney) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-        self.orderMoneyLabel.text = [NSString stringWithFormat:@"¥%@", x];
+        self.orderMoneyLabel.text = [NSString stringWithFormat:@"%@", x];
     }];
     
     RAC(self.friendNumLabel, text) = [RACObserve(self.viewModel, friendNum) takeUntil:self.rac_prepareForReuseSignal];
+    RAC(self.hongbaoLabel, text) = [RACObserve(self.viewModel, hongbao) takeUntil:self.rac_prepareForReuseSignal];
     
     self.drawButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         @strongify(self);
@@ -94,6 +102,21 @@
         [[self viewController] performSegueWithIdentifier:@"ShowOrderRewardSegue" sender:nil];
         return [RACSignal empty];
     }];
+    
+    self.codeCopyButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        @strongify(self);
+        [self.viewModel codeCopy];
+        return [RACSignal empty];
+    }];
+}
+
+- (void)showTextHud:(NSString*)msg {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[self viewController].view animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = msg;
+    hud.margin = 10.0f;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hideAnimated:YES afterDelay:1.5];
 }
 
 - (UIViewController *)viewController

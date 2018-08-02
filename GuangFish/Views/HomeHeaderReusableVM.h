@@ -11,14 +11,18 @@
 @interface HomeHeaderReusableVM : GLViewModel
 
 @property (nonatomic, strong) RACSubject *downloadImageSignal;
+@property (nonatomic, strong) RACSubject *codeCopySignal;
 @property (nonatomic, strong) NSMutableArray *bannerDicArray;
 @property (nonatomic, strong) NSMutableArray *imageArray;
 @property (nonatomic, strong) NSDictionary *drawStatsDic;
 @property (nonatomic, strong) NSString *totalMoney;
 @property (nonatomic, strong) NSString *orderMoney;
 @property (nonatomic, strong) NSString *inviteReward;
+@property (nonatomic, strong) NSString *hongbao;
 @property (nonatomic, strong) NSString *friendNum;
 @property (nonatomic, strong) NSNumber *drawBtnEnable;
 @property (nonatomic, strong) NSString *reason;
+
+- (void)codeCopy;
 
 @end
