@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *mobileLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalBuySaveLabel;
+@property (weak, nonatomic) IBOutlet UIButton *codeCopyButton;
 
 @end
 
@@ -21,6 +22,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.logoutButton.layer.borderColor = [UIColor colorWithRed:0.95 green:0.00 blue:0.33 alpha:1.00].CGColor;
+    self.logoutButton.layer.borderWidth = 1.0f;
+    self.logoutButton.layer.cornerRadius = 8.0f;
     
     [self initialzieModel];
     
@@ -35,13 +40,11 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0 && indexPath.row == 1) {
-        [self.viewModel copyInviteCode];
-    } else if (indexPath.section == 1 && indexPath.row == 0) {
+    if (indexPath.section == 0 && indexPath.row == 3) {
         [self performSegueWithIdentifier:@"ShowWebViewControllerSegue" sender:[self.viewModel getHelpWebVM]];
-    } else if (indexPath.section == 1 && indexPath.row == 1) {
+    } else if (indexPath.section == 0 && indexPath.row == 4) {
         [self performSegueWithIdentifier:@"ShowWebViewControllerSegue" sender:[self.viewModel getKeFuWebVM]];
-    } else if (indexPath.section == 2 && indexPath.row == 0) {
+    } else if (indexPath.section == 0 && indexPath.row == 6) {
         [self performSegueWithIdentifier:@"ShowWebViewControllerSegue" sender:[self.viewModel getAboutUsWebVM]];
     }
 }
@@ -80,6 +83,12 @@
         UINavigationController *loginNavigationController = [loginStoryboard instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
         [UIApplication sharedApplication].keyWindow.rootViewController = loginNavigationController;
         
+        return [RACSignal empty];
+    }];
+    
+    self.codeCopyButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        @strongify(self);
+        [self.viewModel copyInviteCode];
         return [RACSignal empty];
     }];
 }

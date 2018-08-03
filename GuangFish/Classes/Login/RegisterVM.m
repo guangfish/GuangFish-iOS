@@ -38,9 +38,7 @@
                    kRegisterAPIManagerParamsKeyCode: self.code,
                    kRegisterAPIManagerParamsKeyApp: @"ios",
                    kRegisterAPIManagerParamsKeySex: [self.sex isEqualToString:@"女"] ? @"1" : @"2",
-                   kRegisterAPIManagerParamsKeyAlipay: self.alipay,
                    kRegisterAPIManagerParamsKeyMobile: self.mobile,
-                   kRegisterAPIManagerParamsKeyWeixin: self.weixin,
                    kRegisterAPIManagerParamsKeyInviteCode: self.inviteCode
                    };
     } else if (manager == self.getSmsCodeAPIManager) {
@@ -102,6 +100,14 @@
     [self.registerAPIManager loadData];
 }
 
+- (NSString*)getInviteCode {
+    NSString *code = [UIPasteboard generalPasteboard].string;
+    if ([self deptNumInputShouldNumber:code]) {
+        return code;
+    }
+    return @"";
+}
+
 #pragma mark - private methods
 
 - (void)saveGetVerificationCodeTime {
@@ -143,6 +149,19 @@
         }
     });
     dispatch_resume(_timer);
+}
+
+- (BOOL)deptNumInputShouldNumber:(NSString *)str
+{
+    if (str.length == 0) {
+        return NO;
+    }
+    NSString *regex = @"[0-9]*";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    if ([pred evaluateWithObject:str]) {
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark - getters and setters

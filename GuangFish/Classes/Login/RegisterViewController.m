@@ -11,12 +11,8 @@
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *inviteCodeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *mobileTextField;
-@property (weak, nonatomic) IBOutlet UITextField *alipayTextField;
-@property (weak, nonatomic) IBOutlet UITextField *weixinTextField;
 @property (weak, nonatomic) IBOutlet UITextField *sexTextField;
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
-@property (weak, nonatomic) IBOutlet UIButton *alipayCopyButton;
-@property (weak, nonatomic) IBOutlet UIButton *weixinCopyButton;
 @property (weak, nonatomic) IBOutlet UIButton *codeButton;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
 @property (nonatomic, strong) UIAlertController *sexAlertController;
@@ -27,6 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.inviteCodeTextField.text = [self.viewModel getInviteCode];
     
     [self initialzieModel];
 }
@@ -39,7 +37,7 @@
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0 && indexPath.row == 5) {
+    if (indexPath.section == 0 && indexPath.row == 3) {
         [self presentViewController:self.sexAlertController animated:YES completion:nil];
     }
 }
@@ -59,8 +57,6 @@
 - (void)initialzieModel {
     RAC(self.viewModel, mobile) = self.mobileTextField.rac_textSignal;
     RAC(self.viewModel, code) = self.codeTextField.rac_textSignal;
-    RAC(self.viewModel, alipay) = self.alipayTextField.rac_textSignal;
-    RAC(self.viewModel, weixin) = self.weixinTextField.rac_textSignal;
     RAC(self.viewModel, sex) = self.sexTextField.rac_textSignal;
     RAC(self.viewModel, inviteCode) = self.inviteCodeTextField.rac_textSignal;
     

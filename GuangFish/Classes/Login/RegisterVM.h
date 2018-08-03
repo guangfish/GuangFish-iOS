@@ -16,8 +16,6 @@
 @property (nonatomic, strong) NSNumber *sendCodeButtonEnable;
 @property (nonatomic, strong) NSString *mobile;
 @property (nonatomic, strong) NSString *inviteCode;
-@property (nonatomic, strong) NSString *alipay;
-@property (nonatomic, strong) NSString *weixin;
 @property (nonatomic, strong) NSString *sex;
 @property (nonatomic, strong) NSString *code;
 
@@ -25,5 +23,6 @@
 - (void)doRegister;
 - (BOOL)isValidSendCodeInput;
 - (BOOL)isValidInput;
+- (NSString*)getInviteCode;
 
 @end
