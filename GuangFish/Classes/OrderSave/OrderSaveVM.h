@@ -15,5 +15,6 @@
 
 - (BOOL)isValidInput;
 - (void)saveOrderID;
+- (NSString*)getOrderIdFromPasteboard;
 
 @end

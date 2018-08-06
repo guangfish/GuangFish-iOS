@@ -118,7 +118,11 @@
     __block NSInteger num = 6;
     MBProgressHUD *autoShowGoodsHUD = [MBProgressHUD showHUDAddedTo:self.view.window animated:YES];
     autoShowGoodsHUD.mode = MBProgressHUDModeText;
-    autoShowGoodsHUD.label.text = [NSString stringWithFormat:@"将在%ld秒后进入商品", (long)num];
+    if (self.viewModel.isTaobao) {
+        autoShowGoodsHUD.label.text = [NSString stringWithFormat:@"%ld秒钟后自动打开淘宝", (long)num];
+    } else {
+        autoShowGoodsHUD.label.text = [NSString stringWithFormat:@"%ld秒钟后自动跳转到京东", (long)num];
+    }
     [autoShowGoodsHUD showAnimated:YES];
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
@@ -133,7 +137,11 @@
         } else {
             num --;
             dispatch_async(dispatch_get_main_queue(), ^{
-                autoShowGoodsHUD.label.text = [NSString stringWithFormat:@"将在%ld秒后进入商品", (long)num];
+                if (self.viewModel.isTaobao) {
+                    autoShowGoodsHUD.label.text = [NSString stringWithFormat:@"%ld秒钟后自动打开淘宝", (long)num];
+                } else {
+                    autoShowGoodsHUD.label.text = [NSString stringWithFormat:@"%ld秒钟后自动跳转到京东", (long)num];
+                }
             });
         }
     });

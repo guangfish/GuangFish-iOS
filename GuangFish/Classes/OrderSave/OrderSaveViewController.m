@@ -10,7 +10,6 @@
 
 @interface OrderSaveViewController ()
 
-@property (weak, nonatomic) IBOutlet UITextField *orderIdTextField;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (nonatomic, strong) UIAlertController *alertController;
 
@@ -22,6 +21,8 @@
     [super viewDidLoad];
     
     [self initialzieModel];
+    
+    self.orderIdTextField.text = [self.viewModel getOrderIdFromPasteboard];
 }
 
 - (void)didReceiveMemoryWarning {

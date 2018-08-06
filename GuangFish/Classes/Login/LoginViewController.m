@@ -36,6 +36,10 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    
+    if ([self.viewModel shouldShowRegisterViewController]) {
+        [self performSegueWithIdentifier:@"ShowRegisterSegue" sender:nil];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

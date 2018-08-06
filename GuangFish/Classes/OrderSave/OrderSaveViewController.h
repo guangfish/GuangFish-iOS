@@ -11,6 +11,7 @@
 
 @interface OrderSaveViewController : GLBaseTableViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *orderIdTextField;
 @property (nonatomic, strong) OrderSaveVM *viewModel;
 
 @end

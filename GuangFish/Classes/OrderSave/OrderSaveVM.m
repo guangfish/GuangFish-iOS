@@ -65,6 +65,27 @@
     [self.orderSaveAPIManager loadData];
 }
 
+- (NSString*)getOrderIdFromPasteboard {
+    NSString *order = [UIPasteboard generalPasteboard].string;
+    if ([self isOrderNum:order]) {
+        self.orderId = order;
+        [UIPasteboard generalPasteboard].string = @"";
+        return self.orderId;
+    }
+    return @"";
+}
+
+#pragma mark - private methods
+
+- (BOOL)isOrderNum:(NSString*)str {
+    NSString *regex = @"[0-9]*";
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
+    if ([pred evaluateWithObject:str] && (str.length == 11 || str.length == 18)) {
+        return YES;
+    }
+    return NO;
+}
+
 #pragma mark - getters and setters
 
 - (GuangfishOrdersaveAPIManager*)orderSaveAPIManager {

@@ -26,7 +26,7 @@
 
 - (void)codeCopy {
     NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserDic"];
-    NSString *inviteCodeShort = [userDic objectForKey:@"inviteCodeShort"];
+    NSString *inviteCodeShort = [userDic objectForKey:@"inviteCode"];
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = inviteCodeShort;
     [self.codeCopySignal sendNext:@"邀请码已复制"];
