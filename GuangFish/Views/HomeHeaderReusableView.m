@@ -90,10 +90,14 @@
     
     self.drawButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         @strongify(self);
-        if ([self.viewModel.drawBtnEnable boolValue]) {
-            [self.delegate canDraw:YES withErrorMsg:nil];
+        if ([self.viewModel.hasBindAccount boolValue]) {
+            if ([self.viewModel.drawBtnEnable boolValue]) {
+                [self.delegate canDraw:YES withErrorMsg:nil];
+            } else {
+                [self.delegate canDraw:NO withErrorMsg:self.viewModel.reason];
+            }
         } else {
-            [self.delegate canDraw:NO withErrorMsg:self.viewModel.reason];
+            [self.delegate hasNotBindAccount];
         }
         return [RACSignal empty];
     }];

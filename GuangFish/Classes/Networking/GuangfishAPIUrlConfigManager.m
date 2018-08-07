@@ -6,8 +6,8 @@
 //  Copyright © 2018年 gulu. All rights reserved.
 //
 
-#define API_URL_DEV @"https://www.guangfish.com"
-#define API_URL @"https://www.guangfish.com"
+#define API_URL_DEV @"https://sou.guangfish.com"
+#define API_URL @"https://sou.guangfish.com"
 
 #import "GuangfishAPIUrlConfigManager.h"
 

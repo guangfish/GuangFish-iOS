@@ -76,6 +76,10 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
     }
 }
 
+- (void)hasNotBindAccount {
+    [self performSegueWithIdentifier:@"ShowBindAccountSegue" sender:nil];
+}
+
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {

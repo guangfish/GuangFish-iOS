@@ -12,6 +12,7 @@
 @protocol HomeHeaderReusableViewDelegate <NSObject>
 
 - (void)canDraw:(BOOL)canDraw withErrorMsg:(NSString*)errorMsg;
+- (void)hasNotBindAccount;
 
 @end
 

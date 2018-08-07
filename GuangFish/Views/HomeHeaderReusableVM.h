@@ -23,6 +23,7 @@
 @property (nonatomic, strong) NSNumber *drawBtnEnable;
 @property (nonatomic, strong) NSString *reason;
 @property (nonatomic, strong) NSString *paltformReward;
+@property (nonatomic, strong) NSNumber *hasBindAccount;
 
 - (void)codeCopy;
 

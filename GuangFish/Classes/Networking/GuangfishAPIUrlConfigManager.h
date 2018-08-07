@@ -30,6 +30,8 @@
 #define API_BannerUrl                            @"/app/api/banner"
 //提现接口
 #define API_DrawUrl                              @"/app/api/draw"
+//用户信息更新接口
+#define API_UserUpdateUrl                        @"/app/api/userUpdate"
 
 @interface GuangfishAPIUrlConfigManager : NSObject
 

@@ -34,6 +34,9 @@
 		654813D820FDC21400122CEF /* img_head@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 654813D620FDC21400122CEF /* img_head@3x.png */; };
 		654813DB20FDD6D700122CEF /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654813DA20FDD6D700122CEF /* RegisterViewController.m */; };
 		654813DE20FDD6E600122CEF /* RegisterVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 654813DD20FDD6E600122CEF /* RegisterVM.m */; };
+		654914A6211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 654914A5211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m */; };
+		654914A92119381A006ED0C4 /* UserUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654914A82119381A006ED0C4 /* UserUpdateViewController.m */; };
+		654914AC2119382A006ED0C4 /* UserUpdateVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 654914AB2119382A006ED0C4 /* UserUpdateVM.m */; };
 		6554A4AF20F6F2090052BDA5 /* HomeHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A4AE20F6F2090052BDA5 /* HomeHeaderReusableView.m */; };
 		6554A4FA20F6F7680052BDA5 /* GuangfishAPIBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A4C720F6F7660052BDA5 /* GuangfishAPIBaseManager.m */; };
 		6554A4FB20F6F7680052BDA5 /* GuangfishNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A4C820F6F7660052BDA5 /* GuangfishNetworkingManager.m */; };
@@ -143,6 +146,12 @@
 		654813DA20FDD6D700122CEF /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		654813DC20FDD6E600122CEF /* RegisterVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterVM.h; sourceTree = "<group>"; };
 		654813DD20FDD6E600122CEF /* RegisterVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterVM.m; sourceTree = "<group>"; };
+		654914A4211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishUserUpdateAPIManager.h; sourceTree = "<group>"; };
+		654914A5211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuangfishUserUpdateAPIManager.m; sourceTree = "<group>"; };
+		654914A72119381A006ED0C4 /* UserUpdateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserUpdateViewController.h; sourceTree = "<group>"; };
+		654914A82119381A006ED0C4 /* UserUpdateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserUpdateViewController.m; sourceTree = "<group>"; };
+		654914AA2119382A006ED0C4 /* UserUpdateVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserUpdateVM.h; sourceTree = "<group>"; };
+		654914AB2119382A006ED0C4 /* UserUpdateVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserUpdateVM.m; sourceTree = "<group>"; };
 		6554A4AD20F6F2090052BDA5 /* HomeHeaderReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeHeaderReusableView.h; sourceTree = "<group>"; };
 		6554A4AE20F6F2090052BDA5 /* HomeHeaderReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHeaderReusableView.m; sourceTree = "<group>"; };
 		6554A4C720F6F7660052BDA5 /* GuangfishAPIBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuangfishAPIBaseManager.m; sourceTree = "<group>"; };
@@ -361,6 +370,8 @@
 				6554A53520F734010052BDA5 /* GuangfishBannerAPIManager.m */,
 				6554A53720F734530052BDA5 /* GuangfishDrawAPIManager.h */,
 				6554A53820F734530052BDA5 /* GuangfishDrawAPIManager.m */,
+				654914A4211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.h */,
+				654914A5211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m */,
 			);
 			path = TtkAPIManagers;
 			sourceTree = "<group>";
@@ -625,6 +636,10 @@
 				65E45AF62105828F0051E912 /* MineViewController.m */,
 				65E45AF82105829C0051E912 /* MineVM.h */,
 				65E45AF92105829C0051E912 /* MineVM.m */,
+				654914A72119381A006ED0C4 /* UserUpdateViewController.h */,
+				654914A82119381A006ED0C4 /* UserUpdateViewController.m */,
+				654914AA2119382A006ED0C4 /* UserUpdateVM.h */,
+				654914AB2119382A006ED0C4 /* UserUpdateVM.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -814,6 +829,8 @@
 				65C955CE210EA3E800BD5FC8 /* OrderCell.m in Sources */,
 				6584EB6C20F654B2009A381D /* HomeViewController.m in Sources */,
 				6554A50320F6F7680052BDA5 /* GuangfishLoginAPIManager.m in Sources */,
+				654914A6211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m in Sources */,
+				654914A92119381A006ED0C4 /* UserUpdateViewController.m in Sources */,
 				65E45AFA2105829C0051E912 /* MineVM.m in Sources */,
 				6545F60E210AE8B600A31A97 /* OrderRewardViewController.m in Sources */,
 				654813DB20FDD6D700122CEF /* RegisterViewController.m in Sources */,
@@ -849,6 +866,7 @@
 				6560C83A20F87B3B0083F8BD /* HomeVM.m in Sources */,
 				65C4B19F2108236E00968A25 /* GoodsCell.m in Sources */,
 				6554A4FB20F6F7680052BDA5 /* GuangfishNetworkingManager.m in Sources */,
+				654914AC2119382A006ED0C4 /* UserUpdateVM.m in Sources */,
 				658ACFE32109A4C7006FD017 /* QCSlideSwitchView.m in Sources */,
 				6554A51120F6F7680052BDA5 /* GuangfishNetworking.m in Sources */,
 				654813DE20FDD6E600122CEF /* RegisterVM.m in Sources */,
