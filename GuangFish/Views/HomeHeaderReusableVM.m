@@ -59,6 +59,7 @@
     self.drawBtnEnable = [self.drawStatsDic objectForKey:@"canDraw"];
     self.reason = [self.drawStatsDic objectForKey:@"reason"];
     self.hongbao = [self.drawStatsDic objectForKey:@"hongbao"];
+    self.paltformReward = [self.drawStatsDic objectForKey:@"platformReward"];
 }
 
 @end

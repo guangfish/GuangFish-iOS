@@ -50,9 +50,9 @@
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_home_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="DLO-xv-3Zs">
-                                    <rect key="frame" x="0.0" y="-1" width="375" height="314"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="315"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="314" id="K7W-iV-duc"/>
+                                        <constraint firstAttribute="height" constant="315" id="K7W-iV-duc"/>
                                     </constraints>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wg1-uB-AoM">
@@ -300,13 +300,21 @@
                                                 <constraint firstAttribute="width" constant="36" id="JMV-am-kbW"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U94-ST-bTg">
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="92"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="92" id="mMV-Ka-pCx"/>
+                                            </constraints>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="FjG-aK-ZJo" firstAttribute="top" secondItem="cwf-tD-eGk" secondAttribute="bottom" constant="8" id="2cw-3Y-PUT"/>
                                         <constraint firstItem="dYh-Vc-UQm" firstAttribute="top" secondItem="wg1-uB-AoM" secondAttribute="top" constant="15" id="885-Db-GcB"/>
                                         <constraint firstItem="cwf-tD-eGk" firstAttribute="top" secondItem="GHp-6F-22Q" secondAttribute="bottom" id="FfI-P0-WX0"/>
+                                        <constraint firstAttribute="trailing" secondItem="U94-ST-bTg" secondAttribute="trailing" id="NA4-SO-hiJ"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dYh-Vc-UQm" secondAttribute="trailing" constant="20" symbolic="YES" id="NVN-6T-GiW"/>
+                                        <constraint firstItem="U94-ST-bTg" firstAttribute="top" secondItem="wg1-uB-AoM" secondAttribute="top" id="Njy-Ne-6AF"/>
                                         <constraint firstItem="dYh-Vc-UQm" firstAttribute="leading" secondItem="wg1-uB-AoM" secondAttribute="leading" id="PbY-YP-KEh"/>
                                         <constraint firstAttribute="bottom" secondItem="FjG-aK-ZJo" secondAttribute="bottom" id="Rgr-iZ-JxF"/>
                                         <constraint firstAttribute="height" constant="180" id="XpZ-hI-PwZ"/>
@@ -319,6 +327,7 @@
                                         <constraint firstItem="GHp-6F-22Q" firstAttribute="top" secondItem="wg1-uB-AoM" secondAttribute="top" constant="10" id="tWf-j6-hSj"/>
                                         <constraint firstAttribute="trailing" secondItem="FjG-aK-ZJo" secondAttribute="trailing" id="uGY-gl-ep7"/>
                                         <constraint firstItem="FjG-aK-ZJo" firstAttribute="leading" secondItem="wg1-uB-AoM" secondAttribute="leading" id="vAc-lf-Q16"/>
+                                        <constraint firstItem="U94-ST-bTg" firstAttribute="leading" secondItem="wg1-uB-AoM" secondAttribute="leading" id="wj3-vD-1cg"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -328,7 +337,7 @@
                                 </view>
                             </subviews>
                             <constraints>
-                                <constraint firstItem="DLO-xv-3Zs" firstAttribute="top" secondItem="QkA-ui-kda" secondAttribute="top" constant="-1" id="8jW-wx-Qbe"/>
+                                <constraint firstItem="DLO-xv-3Zs" firstAttribute="top" secondItem="QkA-ui-kda" secondAttribute="top" id="8jW-wx-Qbe"/>
                                 <constraint firstAttribute="trailing" secondItem="wg1-uB-AoM" secondAttribute="trailing" constant="15" id="Dn3-JG-Ap3"/>
                                 <constraint firstItem="DLO-xv-3Zs" firstAttribute="leading" secondItem="QkA-ui-kda" secondAttribute="leading" id="F3x-Dk-jSv"/>
                                 <constraint firstItem="wg1-uB-AoM" firstAttribute="top" secondItem="QkA-ui-kda" secondAttribute="top" constant="15" id="rut-kC-a7d"/>
@@ -337,7 +346,7 @@
                             </constraints>
                             <connections>
                                 <outlet property="codeCopyButton" destination="wrN-ED-HAm" id="E7Q-rY-YhH"/>
-                                <outlet property="drawButton" destination="GHp-6F-22Q" id="ZNu-de-vvU"/>
+                                <outlet property="drawButton" destination="U94-ST-bTg" id="ZlA-Ci-XY5"/>
                                 <outlet property="friendNumLabel" destination="RlJ-FX-l7l" id="wgg-qg-Icq"/>
                                 <outlet property="friendsButton" destination="d10-Qz-itm" id="N9X-ZO-ejq"/>
                                 <outlet property="hongbaoLabel" destination="XOV-VW-uI7" id="vqJ-Sn-Tjl"/>
@@ -356,33 +365,33 @@
                     <navigationItem key="navigationItem" id="lxO-IS-HCo">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="KeO-3u-PK3">
-                            <rect key="frame" x="12.5" y="0.0" width="350" height="44"/>
+                            <rect key="frame" x="8" y="0.0" width="359" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="逛鱼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3I-SN-RO1">
-                                    <rect key="frame" x="8" y="12" width="35" height="21"/>
+                                    <rect key="frame" x="8" y="12" width="39" height="21"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IDw-xz-cJd">
-                                    <rect key="frame" x="55" y="5" width="287" height="35"/>
+                                    <rect key="frame" x="55" y="5" width="307" height="35"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请输入商品相关关键词" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaP-HA-Lts">
-                                            <rect key="frame" x="15" y="9" width="230" height="17"/>
+                                            <rect key="frame" x="15" y="9" width="252" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.96862745098039216" green="0.5725490196078431" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_search.png" translatesAutoresizingMaskIntoConstraints="NO" id="aDc-Dy-6BL">
-                                            <rect key="frame" x="253" y="7" width="19" height="21"/>
+                                            <rect key="frame" x="275" y="7" width="19" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSB-Yp-8Yi">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="35"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="307" height="35"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <connections>
                                                 <segue destination="Dv7-70-t3d" kind="show" id="zrz-Vz-i7G"/>
@@ -1845,6 +1854,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Xbo-kZ-B6t">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.14117647059999999" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.94509803921568625" green="0.14117647058823529" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">

@@ -34,6 +34,8 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
     
     [self.viewModel getHomeMenu];
     [self.viewModel getBanner];
+    
+    self.collectionView.bounces = NO;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

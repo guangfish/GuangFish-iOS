@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSString *friendNum;
 @property (nonatomic, strong) NSNumber *drawBtnEnable;
 @property (nonatomic, strong) NSString *reason;
+@property (nonatomic, strong) NSString *paltformReward;
 
 - (void)codeCopy;
 

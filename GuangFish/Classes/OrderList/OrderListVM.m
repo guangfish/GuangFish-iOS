@@ -46,7 +46,7 @@
     if (manager == self.orderlistAPIManager) {
         self.page ++;
         NSDictionary *resultDic = [manager fetchDataWithReformer:self.orderListReformer];
-        if ([[resultDic objectForKey:kOrderListDataKeyHaveMorePage] isEqualToNumber:@1]) {
+        if ([[resultDic objectForKey:kOrderListDataKeyPage] isEqualToNumber:@1]) {
             [self.orderCellVMList removeAllObjects];
         }
         [self.orderCellVMList addObjectsFromArray:[resultDic objectForKey:kOrderListDataKeyOrderListCellVMList]];

@@ -41,15 +41,15 @@
 }
 
 - (void)initialzieModel {
-    RAC(self.productNameLabel, text) = RACObserve(self.viewModel, productName);
-    RAC(self.orderTimeLabel, text) = RACObserve(self.viewModel, orderTime);
-    RAC(self.orderStatusLabel, text) = RACObserve(self.viewModel, orderStatus);
-    RAC(self.commissionLabel, text) = RACObserve(self.viewModel, commission);
+    RAC(self.productNameLabel, text) = [RACObserve(self.viewModel, productName) takeUntil:self.rac_prepareForReuseSignal];
+    RAC(self.orderTimeLabel, text) = [RACObserve(self.viewModel, orderTime) takeUntil:self.rac_prepareForReuseSignal];
+    RAC(self.orderStatusLabel, text) = [RACObserve(self.viewModel, orderStatus) takeUntil:self.rac_prepareForReuseSignal];
+    RAC(self.commissionLabel, text) = [RACObserve(self.viewModel, commission) takeUntil:self.rac_prepareForReuseSignal];
     
     @weakify(self)
     [RACObserve(self.viewModel, imageURL) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        [self.imageView sd_setImageWithURL:x];
+        [self.orderImageView sd_setImageWithURL:x];
     }];
 }
 

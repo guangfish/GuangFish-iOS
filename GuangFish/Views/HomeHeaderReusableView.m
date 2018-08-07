@@ -54,10 +54,17 @@
 }
 
 - (void)initialzieModel {
+    RAC(self.paltformRewardLabel, text) = [RACObserve(self.viewModel, paltformReward) takeUntil:self.rac_prepareForReuseSignal];
+    
     @weakify(self)
     [self.viewModel.downloadImageSignal subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         self.bannerView.imageArray = self.viewModel.imageArray;
+        if (self.bannerView.imageArray.count <= 1) {
+            self.bannerView.pageControl.hidden = YES;
+        } else {
+            self.bannerView.pageControl.hidden = NO;
+        }
     }];
     
     [self.viewModel.codeCopySignal subscribeNext:^(id  _Nullable x) {
@@ -145,7 +152,7 @@
 
 - (GLScrollView*)bannerView {
     if (_bannerView == nil) {
-        self.bannerView = [[GLScrollView alloc] initWithFrame:CGRectMake(0, 210, self.bounds.size.width, 180)];
+        self.bannerView = [[GLScrollView alloc] initWithFrame:CGRectMake(0, 210, [[UIScreen mainScreen] bounds].size.width, 180)];
         
         self.bannerView.backgroundColor = [UIColor clearColor];
         
