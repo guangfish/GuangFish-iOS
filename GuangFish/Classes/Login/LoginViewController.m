@@ -36,15 +36,29 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
-    if ([self.viewModel shouldShowRegisterViewController]) {
-        [self performSegueWithIdentifier:@"ShowRegisterSegue" sender:nil];
-    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appWillEnterForegroundNotification) name:UIApplicationWillEnterForegroundNotification object:nil];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)appWillEnterForegroundNotification {
+    if ([self.viewModel shouldShowRegisterViewController]) {
+        [self performSegueWithIdentifier:@"ShowRegisterSegue" sender:nil];
+    }
 }
 
 /*

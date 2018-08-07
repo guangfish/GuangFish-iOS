@@ -13,6 +13,8 @@
 
 @interface GoodsListViewController ()
 
+
+
 @end
 
 @implementation GoodsListViewController
@@ -24,23 +26,22 @@
     
     [self initialzieModel];
     
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        if (self.tableView.mj_footer.isRefreshing) {
-            [self.tableView.mj_header endRefreshing];
-        } else {
-            [self.viewModel reloadGoodsList];
-        }
-    }];
+//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+//        if (self.tableView.mj_footer.isRefreshing) {
+//            [self.tableView.mj_header endRefreshing];
+//        } else {
+//            [self.viewModel reloadGoodsList];
+//        }
+//    }];
     MJRefreshAutoStateFooter *footer = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
-        if (self.tableView.mj_header.isRefreshing) {
-            [self.tableView.mj_footer endRefreshing];
-        } else {
-            [self.viewModel loadNextPageGoodsList];
-        }
+        [self showActivityHudByText:@""];
+        [self.viewModel loadNextPageGoodsList];
     }];
     [footer setTitle:@"" forState:(MJRefreshStateNoMoreData)];
     [footer setTitle:@"" forState:(MJRefreshStateIdle)];
     self.tableView.mj_footer = footer;
+    
+    [self reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,13 +95,21 @@
 }
 */
 
+#pragma mark - public methods
+
+- (void)reloadData {
+    [self.viewModel reloadGoodsList];
+    [MBProgressHUD showHUDAddedTo:self.navigationController.view.window animated:YES];
+}
+
 #pragma mark - private methods
 
 - (void)initialzieModel {
     @weakify(self);
     [self.viewModel.requestGetGoodsListSignal subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-        [self.tableView.mj_header endRefreshing];
+//        [self.tableView.mj_header endRefreshing];
+        [MBProgressHUD hideHUDForView:self.navigationController.view.window animated:YES];
         if ([self.viewModel.haveMore boolValue]) {
             [self.tableView.mj_footer endRefreshing];
         } else {

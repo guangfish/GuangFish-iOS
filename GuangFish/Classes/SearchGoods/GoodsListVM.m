@@ -52,13 +52,17 @@
         [self.goodsListCellVMList addObjectsFromArray:[resultDic objectForKey:kSearchGoodsDataKeyGoodsCellVMList]];
         self.haveMore = [resultDic objectForKey:kSearchGoodsDataKeyHaveMorePage];
         self.isTaobao = [[resultDic objectForKey:kSearchGoodsDataKeyMall] isEqualToString:@"taobao"] ? YES : NO;
-        [self.requestGetGoodsListSignal sendNext:@""];
+        if ([[resultDic objectForKey:kSearchGoodsDataKeyPage] isEqualToNumber:@1] && self.goodsListCellVMList.count == 0) {
+            [self.requestGetGoodsListSignal sendNext:[NSError errorWithDomain:@"未搜索到商品" code:0 userInfo:nil]];
+        } else {
+            [self.requestGetGoodsListSignal sendNext:@""];
+        }
     }
 }
 
 - (void)managerCallAPIDidFailed:(GuangfishAPIBaseManager *)manager {
     if (manager == self.productInfoAPIManager) {
-        [self.requestGetGoodsListSignal sendNext:@"未搜索到商品"];
+        [self.requestGetGoodsListSignal sendNext:[NSError errorWithDomain:@"未搜索到商品" code:0 userInfo:nil]];
     }
 }
 
@@ -67,6 +71,8 @@
 
 - (void)reloadGoodsList {
     self.page = 1;
+    [self.goodsListCellVMList removeAllObjects];
+    [self.requestGetGoodsListSignal sendNext:@""];
     [self loadNextPageGoodsList];
 }
 

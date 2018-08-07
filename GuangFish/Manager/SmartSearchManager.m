@@ -17,8 +17,8 @@
 
 @property (nonatomic, strong) UIAlertController *alertController;
 @property (nonatomic, strong) NSString *searchStr;
-@property (nonatomic, strong) GoodsListVM *goodsListVM;
-@property (nonatomic, strong) GoodsListViewController *goodsListViewController;
+//@property (nonatomic, strong) GoodsListVM *goodsListVM;
+//@property (nonatomic, strong) GoodsListViewController *goodsListViewController;
 
 @end
 
@@ -50,8 +50,7 @@ static SmartSearchManager *sharedManager = nil;
         } else {
             [[self getCurrentVC] presentViewController:self.alertController animated:YES completion:nil];
             self.alertController.message = self.searchStr;
-            self.goodsListVM.searchStr = self.searchStr;
-            [self.goodsListVM loadNextPageGoodsList];
+//            self.goodsListVM.searchStr = self.searchStr;
             [UIPasteboard generalPasteboard].string = @"";
         }
     }
@@ -60,10 +59,23 @@ static SmartSearchManager *sharedManager = nil;
 #pragma mark - private methods
 
 - (void)showGoodsListViewController {
-    if ([self getCurrentVC] == self.goodsListViewController) {
-        [self.goodsListViewController.viewModel reloadGoodsList];
+//    if ([self getCurrentVC] == self.goodsListViewController) {
+//        [self.goodsListViewController.viewModel reloadGoodsList];
+//    } else {
+//        [[self getCurrentVC] showViewController:self.goodsListViewController sender:nil];
+//    }
+    
+    if ([[self getCurrentVC] isKindOfClass:GoodsListViewController.class]) {
+        GoodsListViewController *goodsListViewController = (GoodsListViewController*)[self getCurrentVC];
+        goodsListViewController.viewModel.searchStr = self.searchStr;
+        [goodsListViewController reloadData];
     } else {
-        [[self getCurrentVC] showViewController:self.goodsListViewController sender:nil];
+        UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        GoodsListViewController *goodsListViewController = [homeStoryboard instantiateViewControllerWithIdentifier:@"GoodsListViewController"];
+        GoodsListVM *goodsListVM = [[GoodsListVM alloc] init];
+        goodsListVM.searchStr = self.searchStr;
+        goodsListViewController.viewModel = goodsListVM;
+        [[self getCurrentVC] showViewController:goodsListViewController sender:nil];
     }
 }
 
@@ -207,20 +219,20 @@ static SmartSearchManager *sharedManager = nil;
     return _alertController;
 }
 
-- (GoodsListVM*)goodsListVM {
-    if (_goodsListVM == nil) {
-        self.goodsListVM = [[GoodsListVM alloc] init];
-    }
-    return _goodsListVM;
-}
-
-- (GoodsListViewController*)goodsListViewController {
-    if (_goodsListViewController == nil) {
-        UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        self.goodsListViewController = [homeStoryboard instantiateViewControllerWithIdentifier:@"GoodsListViewController"];
-        self.goodsListViewController.viewModel = self.goodsListVM;
-    }
-    return _goodsListViewController;
-}
+//- (GoodsListVM*)goodsListVM {
+//    if (_goodsListVM == nil) {
+//        self.goodsListVM = [[GoodsListVM alloc] init];
+//    }
+//    return _goodsListVM;
+//}
+//
+//- (GoodsListViewController*)goodsListViewController {
+//    if (_goodsListViewController == nil) {
+//        UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        self.goodsListViewController = [homeStoryboard instantiateViewControllerWithIdentifier:@"GoodsListViewController"];
+//        self.goodsListViewController.viewModel = self.goodsListVM;
+//    }
+//    return _goodsListViewController;
+//}
 
 @end

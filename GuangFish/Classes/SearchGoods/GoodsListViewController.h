@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) GoodsListVM *viewModel;
 
+- (void)reloadData;
+
 @end
