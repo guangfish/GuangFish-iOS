@@ -11,11 +11,9 @@
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *inviteCodeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *mobileTextField;
-@property (weak, nonatomic) IBOutlet UITextField *sexTextField;
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *codeButton;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
-@property (nonatomic, strong) UIAlertController *sexAlertController;
 
 @end
 
@@ -34,14 +32,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UITableViewDelegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0 && indexPath.row == 3) {
-        [self presentViewController:self.sexAlertController animated:YES completion:nil];
-    }
-}
-
 /*
 #pragma mark - Navigation
 
@@ -57,7 +47,6 @@
 - (void)initialzieModel {
     RAC(self.viewModel, mobile) = self.mobileTextField.rac_textSignal;
     RAC(self.viewModel, code) = self.codeTextField.rac_textSignal;
-    RAC(self.viewModel, sex) = self.sexTextField.rac_textSignal;
     RAC(self.viewModel, inviteCode) = self.inviteCodeTextField.rac_textSignal;
     
     @weakify(self);
@@ -118,26 +107,6 @@
         self.viewModel = [RegisterVM new];
     }
     return _viewModel;
-}
-
-- (UIAlertController*)sexAlertController {
-    if (_sexAlertController == nil) {
-        self.sexAlertController = [UIAlertController alertControllerWithTitle:@"性别" message:nil preferredStyle:(UIAlertControllerStyleActionSheet)];
-        @weakify(self);
-        UIAlertAction *womenAction = [UIAlertAction actionWithTitle:@"女" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-            @strongify(self);
-            self.sexTextField.text = @"女";
-        }];
-        UIAlertAction *manAction = [UIAlertAction actionWithTitle:@"男" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
-            @strongify(self);
-            self.sexTextField.text = @"男";
-        }];
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:(UIAlertActionStyleCancel) handler:nil];
-        [self.sexAlertController addAction:womenAction];
-        [self.sexAlertController addAction:manAction];
-        [self.sexAlertController addAction:cancelAction];
-    }
-    return _sexAlertController;
 }
 
 @end

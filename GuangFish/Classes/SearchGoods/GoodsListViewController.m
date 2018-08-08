@@ -13,11 +13,13 @@
 
 @interface GoodsListViewController ()
 
-
+@property (nonatomic, strong) MBProgressHUD *autoShowGoodsHUD;
 
 @end
 
-@implementation GoodsListViewController
+@implementation GoodsListViewController {
+    dispatch_source_t _timer;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -26,13 +28,6 @@
     
     [self initialzieModel];
     
-//    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//        if (self.tableView.mj_footer.isRefreshing) {
-//            [self.tableView.mj_header endRefreshing];
-//        } else {
-//            [self.viewModel reloadGoodsList];
-//        }
-//    }];
     MJRefreshAutoStateFooter *footer = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
         [self showActivityHudByText:@""];
         [self.viewModel loadNextPageGoodsList];
@@ -76,6 +71,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    dispatch_source_cancel(_timer);
+    [self.autoShowGoodsHUD hideAnimated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     GoodsCellVM *goodsCellVM = [self.viewModel.goodsListCellVMList objectAtIndex:indexPath.row];
     if (self.viewModel.isTaobao) {
@@ -108,7 +105,6 @@
     @weakify(self);
     [self.viewModel.requestGetGoodsListSignal subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-//        [self.tableView.mj_header endRefreshing];
         [MBProgressHUD hideHUDForView:self.navigationController.view.window animated:YES];
         if ([self.viewModel.haveMore boolValue]) {
             [self.tableView.mj_footer endRefreshing];
@@ -124,32 +120,34 @@
 }
 
 - (void)beginAutoShowHUD {
+    self.autoShowGoodsHUD = [MBProgressHUD showHUDAddedTo:self.view.window animated:YES];
+    self.autoShowGoodsHUD.mode = MBProgressHUDModeText;
+    self.autoShowGoodsHUD.userInteractionEnabled = NO;
+    
     __block NSInteger num = 6;
-    MBProgressHUD *autoShowGoodsHUD = [MBProgressHUD showHUDAddedTo:self.view.window animated:YES];
-    autoShowGoodsHUD.mode = MBProgressHUDModeText;
     if (self.viewModel.isTaobao) {
-        autoShowGoodsHUD.label.text = [NSString stringWithFormat:@"%ld秒钟后自动打开淘宝", (long)num];
+        self.autoShowGoodsHUD.label.text = [NSString stringWithFormat:@"%ld秒钟后自动打开淘宝", (long)num];
     } else {
-        autoShowGoodsHUD.label.text = [NSString stringWithFormat:@"%ld秒钟后自动跳转到京东", (long)num];
+        self.autoShowGoodsHUD.label.text = [NSString stringWithFormat:@"%ld秒钟后自动跳转到京东", (long)num];
     }
-    [autoShowGoodsHUD showAnimated:YES];
+    [self.autoShowGoodsHUD showAnimated:YES];
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
+    _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
     dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), 1.0 * NSEC_PER_SEC, 0);
     dispatch_source_set_event_handler(_timer, ^{
         if (num <= 0) {
-            dispatch_source_cancel(_timer);
+            dispatch_source_cancel(self->_timer);
             dispatch_async(dispatch_get_main_queue(), ^{
-                [autoShowGoodsHUD hideAnimated:YES];
+                [self.autoShowGoodsHUD hideAnimated:YES];
                 [self.viewModel autoShowGoods];
             });
         } else {
             num --;
             dispatch_async(dispatch_get_main_queue(), ^{
                 if (self.viewModel.isTaobao) {
-                    autoShowGoodsHUD.label.text = [NSString stringWithFormat:@"%ld秒钟后自动打开淘宝", (long)num];
+                    self.autoShowGoodsHUD.label.text = [NSString stringWithFormat:@"%ld秒钟后自动打开淘宝", (long)num];
                 } else {
-                    autoShowGoodsHUD.label.text = [NSString stringWithFormat:@"%ld秒钟后自动跳转到京东", (long)num];
+                    self.autoShowGoodsHUD.label.text = [NSString stringWithFormat:@"%ld秒钟后自动跳转到京东", (long)num];
                 }
             });
         }
