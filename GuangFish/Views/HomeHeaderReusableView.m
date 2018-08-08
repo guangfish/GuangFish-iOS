@@ -156,11 +156,11 @@
 
 - (GLScrollView*)bannerView {
     if (_bannerView == nil) {
-        self.bannerView = [[GLScrollView alloc] initWithFrame:CGRectMake(0, 210, [[UIScreen mainScreen] bounds].size.width, 180)];
+        self.bannerView = [[GLScrollView alloc] initWithFrame:CGRectMake(0, 254, [[UIScreen mainScreen] bounds].size.width, 180)];
         
         self.bannerView.backgroundColor = [UIColor clearColor];
         
-        self.bannerView.imageInterval = 30;               //设置图片间距
+        self.bannerView.imageInterval = 15;               //设置图片间距
         self.bannerView.leftMargin = 0;                   //设置左边图片露出屏幕的距离
         self.bannerView.topMargin = 0;                    //设置顶部边距
         self.bannerView.bottomMargin = 0;                 //设置底部边距
