@@ -24,6 +24,11 @@ NSString * const kOrderRewardListDataKeyOrderRewardCellVMList = @"OrderRewardCel
         
         for (NSDictionary *itemDic in dic[@"items"]) {
             OrderRewardCellVM *orderRewardCellVM = [[OrderRewardCellVM alloc] initWithResponseDic:itemDic];
+            if ([dic[@"items"] indexOfObject:itemDic] % 2 == 0) {
+                orderRewardCellVM.bgColor = [UIColor colorWithRed:1.00 green:0.96 blue:0.98 alpha:1.00];
+            } else {
+                orderRewardCellVM.bgColor = [UIColor whiteColor];
+            }
             [orderRewardCellVMList addObject:orderRewardCellVM];
         }
         

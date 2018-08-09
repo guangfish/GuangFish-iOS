@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSString *rewardMoney;
 @property (nonatomic, strong) NSString *ifreward;
 @property (nonatomic, strong) NSString *status;
+@property (nonatomic, strong) UIColor *statusColor;
+@property (nonatomic, strong) UIColor *ifrewardColor;
 
 - (id)initWithResponseDic:(NSDictionary*)dic;
 

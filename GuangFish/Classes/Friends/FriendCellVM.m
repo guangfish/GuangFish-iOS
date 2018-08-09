@@ -32,6 +32,16 @@
     self.rewardMoney = [self.dataDic objectForKey:@"rewardMoney"];
     self.ifreward = [self.dataDic objectForKey:@"ifreward"];
     self.status = [self.dataDic objectForKey:@"status"];
+    if ([self.status isEqualToString:@"已激活"]) {
+        self.statusColor = [UIColor colorWithRed:0.93 green:0.06 blue:0.32 alpha:1.00];
+    } else {
+        self.statusColor = [UIColor lightGrayColor];
+    }
+    if ([self.ifreward isEqualToString:@"已领取"]) {
+        self.ifrewardColor = [UIColor colorWithRed:0.93 green:0.06 blue:0.32 alpha:1.00];
+    } else {
+        self.ifrewardColor = [UIColor lightGrayColor];
+    }
 }
 
 @end

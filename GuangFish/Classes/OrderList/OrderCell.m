@@ -49,7 +49,7 @@
     @weakify(self)
     [RACObserve(self.viewModel, imageURL) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        [self.orderImageView sd_setImageWithURL:x];
+        [self.orderImageView sd_setImageWithURL:x placeholderImage:[UIImage imageNamed:@"img_no_image"]];
     }];
 }
 

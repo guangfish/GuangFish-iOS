@@ -23,25 +23,14 @@
     
     [self initialzieModel];
     
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        if (self.tableView.mj_footer.isRefreshing) {
-            [self.tableView.mj_header endRefreshing];
-        } else {
-            [self.viewModel reloadOrderList];
-        }
-    }];
     MJRefreshAutoStateFooter *footer = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
-        if (self.tableView.mj_header.isRefreshing) {
-            [self.tableView.mj_footer endRefreshing];
-        } else {
-            [self.viewModel loadNextPageOrderList];
-        }
+        [self.viewModel loadNextPageOrderList];
     }];
     [footer setTitle:@"" forState:(MJRefreshStateNoMoreData)];
     [footer setTitle:@"" forState:(MJRefreshStateIdle)];
     self.tableView.mj_footer = footer;
     
-    [self.viewModel loadNextPageOrderList];
+    [self.viewModel reloadOrderList];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,7 +77,6 @@
     @weakify(self);
     [self.viewModel.requestGetOrderListSignal subscribeNext:^(id _Nullable x) {
         @strongify(self);
-        [self.tableView.mj_header endRefreshing];
         if ([self.viewModel.haveMore boolValue]) {
             [self.tableView.mj_footer endRefreshing];
         } else {

@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *orderReward;
 @property (nonatomic, strong) NSString *commission;
 @property (nonatomic, strong) NSString *orderRewardRate;
+@property (nonatomic, strong) UIColor *bgColor;
 
 - (id)initWithResponseDic:(NSDictionary*)dic;
 

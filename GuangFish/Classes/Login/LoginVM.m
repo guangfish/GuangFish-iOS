@@ -83,8 +83,8 @@
 }
 
 - (BOOL)isValidInput {
-    if (self.mobile.length == 0) {
-        [self.requestLoginSignal sendNext:[NSError errorWithDomain:@"请输入手机号" code:1 userInfo:nil]];
+    if (self.mobile.length != 11) {
+        [self.requestLoginSignal sendNext:[NSError errorWithDomain:@"请输入正确的手机号" code:1 userInfo:nil]];
         return NO;
     } else if (self.code.length == 0) {
         [self.requestLoginSignal sendNext:[NSError errorWithDomain:@"请输入验证码" code:1 userInfo:nil]];

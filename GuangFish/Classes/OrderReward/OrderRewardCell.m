@@ -39,6 +39,8 @@
 }
 
 - (void)initialzieModel {
+    RAC(self, backgroundColor) = [RACObserve(self.viewModel, bgColor) takeUntil:self.rac_prepareForReuseSignal];
+    
     @weakify(self)
     [RACObserve(self.viewModel, mobile) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
@@ -47,18 +49,28 @@
     
     [RACObserve(self.viewModel, orderReward) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        self.orderRewardLabel.text = [NSString stringWithFormat:@"订单奖励:¥%@", x];
+        [self.orderRewardLabel setAttributedText:[self changeLabelWithText:[NSString stringWithFormat:@"订单奖励:¥%@", x]]];
     }];
     
     [RACObserve(self.viewModel, commission) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        self.commissionLabel.text = [NSString stringWithFormat:@"订单返现:¥%@", x];
+        [self.commissionLabel setAttributedText:[self changeLabelWithText:[NSString stringWithFormat:@"订单返现:¥%@", x]]];
     }];
     
     [RACObserve(self.viewModel, orderRewardRate) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        self.orderRewardRateLabel.text = [NSString stringWithFormat:@"奖励比例:%@%%", x];
+        [self.orderRewardRateLabel setAttributedText:[self changeLabelWithText:[NSString stringWithFormat:@"奖励比例:%@%%", x]]];
     }];
+}
+
+-(NSMutableAttributedString*)changeLabelWithText:(NSString*)needText {
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:needText];
+    if ([needText containsString:@":"]) {
+        NSRange range = [needText rangeOfString:@":"];
+        [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.93 green:0.06 blue:0.32 alpha:1.00] range:NSMakeRange(range.location + 1,needText.length-(range.location + 1))];
+    }
+    
+    return attrString;
 }
 
 @end

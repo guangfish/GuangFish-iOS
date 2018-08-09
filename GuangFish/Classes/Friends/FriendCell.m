@@ -41,7 +41,6 @@
 
 - (void)initialzieModel {
     RAC(self.timeLabel, text) = RACObserve(self.viewModel, inviteTime);
-    RAC(self.statusLabel, text) = RACObserve(self.viewModel, status);
     
     @weakify(self)
     [RACObserve(self.viewModel, mobile) subscribeNext:^(id  _Nullable x) {
@@ -51,13 +50,30 @@
     
     [RACObserve(self.viewModel, rewardMoney) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        self.rewardMoneyLabel.text = [NSString stringWithFormat:@"邀请奖励:¥%@", x];
+        [self.rewardMoneyLabel setAttributedText:[self changeLabelWithText:[NSString stringWithFormat:@"邀请奖励:¥%@", x] withChangeColor:nil]];
+    }];
+    
+    [RACObserve(self.viewModel, status) subscribeNext:^(id  _Nullable x) {
+        @strongify(self)
+        [self.statusLabel setAttributedText:[self changeLabelWithText:[NSString stringWithFormat:@"激活状态:%@", x] withChangeColor:self.viewModel.statusColor]];
     }];
     
     [RACObserve(self.viewModel, ifreward) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        self.ifrewardLabel.text = [NSString stringWithFormat:@"奖励状态:%@", x];
+        [self.ifrewardLabel setAttributedText:[self changeLabelWithText:[NSString stringWithFormat:@"奖励状态:%@", x] withChangeColor:self.viewModel.ifrewardColor]];
     }];
+}
+
+-(NSMutableAttributedString*)changeLabelWithText:(NSString*)needText withChangeColor:(UIColor*)color {
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:needText];
+    if ([needText containsString:@":"]) {
+        NSRange range = [needText rangeOfString:@":"];
+        if (color == nil) {
+            color = [UIColor colorWithRed:0.93 green:0.06 blue:0.32 alpha:1.00];
+        }
+        [attrString addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(range.location + 1,needText.length-(range.location + 1))];
+    }
+    return attrString;
 }
 
 @end

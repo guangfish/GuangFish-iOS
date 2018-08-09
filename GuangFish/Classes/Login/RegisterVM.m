@@ -82,8 +82,8 @@
 }
 
 - (BOOL)isValidInput {
-    if (self.mobile.length == 0) {
-        [self.requestRegisterSignal sendNext:[NSError errorWithDomain:@"请输入手机号" code:1 userInfo:nil]];
+    if (self.mobile.length != 11) {
+        [self.requestRegisterSignal sendNext:[NSError errorWithDomain:@"请输入正确的手机号" code:1 userInfo:nil]];
         return NO;
     } else if (self.code.length == 0) {
         [self.requestRegisterSignal sendNext:[NSError errorWithDomain:@"请输入验证码" code:1 userInfo:nil]];
@@ -151,19 +151,6 @@
     });
     dispatch_resume(_timer);
 }
-
-//- (BOOL)deptNumInputShouldNumber:(NSString *)str
-//{
-//    if (str.length == 0) {
-//        return NO;
-//    }
-//    NSString *regex = @"[0-9]*";
-//    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",regex];
-//    if ([pred evaluateWithObject:str]) {
-//        return YES;
-//    }
-//    return NO;
-//}
 
 - (BOOL)isInviteCode:(NSString*)str {
     NSString *resultStr = [self subStringComponentsSeparatedByStrContent:str strPoint:@"Ʊ" firstFlag:1 secondFlag:2];

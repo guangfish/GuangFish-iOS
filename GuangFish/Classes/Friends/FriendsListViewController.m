@@ -23,25 +23,14 @@
     
     [self initialzieModel];
     
-    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        if (self.tableView.mj_footer.isRefreshing) {
-            [self.tableView.mj_header endRefreshing];
-        } else {
-            [self.viewModel reloadFriendsList];
-        }
-    }];
     MJRefreshAutoStateFooter *footer = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
-        if (self.tableView.mj_header.isRefreshing) {
-            [self.tableView.mj_footer endRefreshing];
-        } else {
-            [self.viewModel loadNextPageFriendsList];
-        }
+        [self.viewModel loadNextPageFriendsList];
     }];
     [footer setTitle:@"" forState:(MJRefreshStateNoMoreData)];
     [footer setTitle:@"" forState:(MJRefreshStateIdle)];
     self.tableView.mj_footer = footer;
     
-    [self.viewModel loadNextPageFriendsList];
+    [self.viewModel reloadFriendsList];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,7 +49,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 65.0f;
+    return 60.0f;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -88,7 +77,6 @@
     @weakify(self);
     [self.viewModel.requestGetFriendsSignal subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-        [self.tableView.mj_header endRefreshing];
         if ([self.viewModel.haveMore boolValue]) {
             [self.tableView.mj_footer endRefreshing];
         } else {
