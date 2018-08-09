@@ -75,8 +75,8 @@
 #pragma mark - public methods
 
 - (BOOL)isValidSendCodeInput {
-    if (self.mobile.length == 0) {
-        [self.requestSendCodeSignal sendNext:[NSError errorWithDomain:@"请输入手机号" code:1 userInfo:nil]];
+    if (self.mobile.length != 11) {
+        [self.requestSendCodeSignal sendNext:[NSError errorWithDomain:@"请输入正确的手机号" code:1 userInfo:nil]];
         return NO;
     }
     return YES;

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "92B7A2FE7AF302780C38E8A4A2558E7C"
-               BlueprintName = "SDWebImage"
+               BlueprintIdentifier = "E079843C9C79118289CFD9619070B0B8"
+               BlueprintName = "EAIntroView"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "libSDWebImage.a">
+               BuildableName = "libEAIntroView.a">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

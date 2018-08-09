@@ -32,9 +32,9 @@
     self.sellNum = [NSString stringWithFormat:@"月销量(件):%@", [self.dataDic objectForKey:@"sellNum"]];
     if ([[self.dataDic allKeys] containsObject:@"quanMianzhi"] && ((NSString*)[self.dataDic objectForKey:@"quanMianzhi"]).length > 0) {
         self.labelStr1 = [NSString stringWithFormat:@"领劵省:¥%@", [self.dataDic objectForKey:@"quanMianzhi"]];
-        self.labelStr2 = [NSString stringWithFormat:@"再返现:¥%@", [self.dataDic objectForKey:@"commission"]];
+        self.labelStr2 = [NSString stringWithFormat:@"预估返现:¥%@", [self.dataDic objectForKey:@"commission"]];
     } else {
-        self.labelStr1 = [NSString stringWithFormat:@"返现:¥%@", [self.dataDic objectForKey:@"commission"]];
+        self.labelStr1 = [NSString stringWithFormat:@"预估返现:¥%@", [self.dataDic objectForKey:@"commission"]];
         self.labelStr2 = @"";
     }
 }

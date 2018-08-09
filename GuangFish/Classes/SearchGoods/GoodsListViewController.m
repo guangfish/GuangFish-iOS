@@ -71,7 +71,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    dispatch_source_cancel(_timer);
+    if (_timer != nil) {
+        dispatch_source_cancel(_timer);
+    }
     [self.autoShowGoodsHUD hideAnimated:YES];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     GoodsCellVM *goodsCellVM = [self.viewModel.goodsListCellVMList objectAtIndex:indexPath.row];
