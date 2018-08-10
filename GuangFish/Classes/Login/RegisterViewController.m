@@ -51,6 +51,14 @@
     
     @weakify(self);
     
+    [self.mobileTextField.rac_textSignal subscribeNext:^(NSString * _Nullable x) {
+        @strongify(self);
+        NSString *toBeString = x;
+        if (toBeString.length > 11) {
+            self.mobileTextField.text = [toBeString substringToIndex:11];
+        }
+    }];
+    
     [RACObserve(self.viewModel, sendCodeButtonTitleStr) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         self.codeButton.titleLabel.text = x;

@@ -15,9 +15,9 @@
     self.downloadImageSignal = [RACSubject subject];
     self.codeCopySignal = [RACSubject subject];
     self.imageArray = [[NSMutableArray alloc] init];
-    self.totalMoney = @"0.0";
-    self.inviteReward = @"0.0";
-    self.orderMoney = @"0.0";
+    self.totalMoney = @"0.00";
+    self.inviteReward = @"0.00";
+    self.orderMoney = @"0.00";
     self.friendNum = @"0";
     self.drawBtnEnable = [NSNumber numberWithBool:NO];
 }
