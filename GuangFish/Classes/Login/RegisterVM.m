@@ -104,7 +104,9 @@
     NSString *code = [UIPasteboard generalPasteboard].string;
     if ([self isInviteCode:code]) {
         [UIPasteboard generalPasteboard].string = @"";
-        return [self subStringComponentsSeparatedByStrContent:code strPoint:@"Ʊ" firstFlag:1 secondFlag:2];
+        NSString *resultCode = [self subStringComponentsSeparatedByStrContent:code strPoint:@"Ʊ" firstFlag:1 secondFlag:2];
+        self.code = resultCode;
+        return resultCode;
     }
     return @"";
 }
