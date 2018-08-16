@@ -1087,8 +1087,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.guangfish.GuangFish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9bd75c01-5d2a-48d5-96a2-be577dfd6d33";
-				PROVISIONING_PROFILE_SPECIFIER = "GuangFish dis profile";
+				PROVISIONING_PROFILE = "59011376-9838-4fde-96fa-c667c5139f11";
+				PROVISIONING_PROFILE_SPECIFIER = "GuangFish ADHoc profile";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

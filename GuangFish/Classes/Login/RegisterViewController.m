@@ -97,7 +97,9 @@
         if ([x isKindOfClass:[NSError class]]) {
             [self showTextHud:[(NSError *)x domain]];
         } else {
-            [self.navigationController popViewControllerAnimated:YES];
+            UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UINavigationController *homeNavigationController = [homeStoryboard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
+            [UIApplication sharedApplication].keyWindow.rootViewController = homeNavigationController;
         }
     }];
     

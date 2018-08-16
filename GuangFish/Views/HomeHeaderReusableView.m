@@ -39,10 +39,16 @@
 
 - (void)glScrollViewDidTouchImage:(NSInteger)index {
     NSDictionary *dic = [self.viewModel.bannerDicArray objectAtIndex:index];
+    
+    NSString *link = [dic objectForKey:@"link"];
+    if (link.length == 0) {
+        return;
+    }
+    
     UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     WebViewController *webViewController = [homeStoryboard instantiateViewControllerWithIdentifier:@"WebViewController"];
     WebVM *webVM = [[WebVM alloc] init];
-    webVM.urlStr = [dic objectForKey:@"link"];
+    webVM.urlStr = link;
     webViewController.viewModel = webVM;
     [[self viewController] showViewController:webViewController sender:nil];
 }

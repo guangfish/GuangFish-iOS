@@ -55,6 +55,7 @@
 - (void)managerCallAPIDidSuccess:(GuangfishAPIBaseManager *)manager {
     if (manager == self.registerAPIManager) {
         [self hiddenEmptyView];
+        [self saveUserData:[[manager fetchDataWithReformer:nil] objectForKey:@"data"]];
         [self.requestRegisterSignal sendNext:@"注册成功"];
     } else if (manager == self.getSmsCodeAPIManager) {
         [self saveGetVerificationCodeTime];
@@ -112,6 +113,13 @@
 }
 
 #pragma mark - private methods
+
+- (void)saveUserData:(NSDictionary*)userDic {
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc] initWithDictionary:userDic];
+    [dic setValue:self.mobile forKey:@"mobile"];
+    [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"UserDic"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
 
 - (void)saveGetVerificationCodeTime {
     NSInteger time = [[NSDate date] timeIntervalSince1970];

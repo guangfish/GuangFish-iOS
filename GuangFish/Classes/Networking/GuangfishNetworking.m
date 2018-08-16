@@ -45,7 +45,6 @@ static GuangfishNetworking *sharedManager = nil;
     
     NSString *urlStr = [NSString stringWithFormat:@"%@%@", self.guangfishAPIUrlConfigManager.apiUrl, apiName];
 //    NSLog(@"url:%@", urlStr);
-//    NSLog(@"para:%@", paraDict);
     __weak __typeof(self) weakself = self;
     NSURLSessionDataTask *task = [self.manager POST:urlStr parameters:paraDict progress:^(NSProgress * _Nonnull downloadProgress) {
         // 这里可以获取到目前的数据请求的进度
@@ -54,7 +53,7 @@ static GuangfishNetworking *sharedManager = nil;
         NSDictionary *responseDic = [responseObject objectForKey:@"response"];
         NSLog(@"==%@", responseDic);
         if ([responseDic[@"status"] isEqualToString:@"0"]) {
-            if ([apiName isEqualToString:API_LoginUrl]) {
+            if ([apiName isEqualToString:API_LoginUrl] || [apiName isEqualToString:API_RegisterUrl]) {
                 [strongself getUserIdFromResponse:responseDic[@"data"]];
             }
             postSuccessBlock(responseDic);
