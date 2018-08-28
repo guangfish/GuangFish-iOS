@@ -66,6 +66,10 @@
 		6554A53920F734530052BDA5 /* GuangfishDrawAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A53820F734530052BDA5 /* GuangfishDrawAPIManager.m */; };
 		6560C83720F874710083F8BD /* HomeMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6560C83620F874710083F8BD /* HomeMenu.plist */; };
 		6560C83A20F87B3B0083F8BD /* HomeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6560C83920F87B3B0083F8BD /* HomeVM.m */; };
+		65696BAA2133E14D000D3096 /* img_wdgy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65696BA62133E14B000D3096 /* img_wdgy@2x.png */; };
+		65696BAB2133E14D000D3096 /* img_wdgy@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65696BA72133E14C000D3096 /* img_wdgy@3x.png */; };
+		65696BAC2133E14D000D3096 /* img_ddjl@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65696BA82133E14C000D3096 /* img_ddjl@3x.png */; };
+		65696BAD2133E14D000D3096 /* img_ddjl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65696BA92133E14C000D3096 /* img_ddjl@2x.png */; };
 		6576FED82113EFF2000C64C3 /* img_info_header@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6576FED62113EFF1000C64C3 /* img_info_header@3x.png */; };
 		6576FED92113EFF2000C64C3 /* img_info_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6576FED72113EFF2000C64C3 /* img_info_header@2x.png */; };
 		6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6584EB4520F63F9B009A381D /* AppDelegate.m */; };
@@ -210,6 +214,10 @@
 		6560C83620F874710083F8BD /* HomeMenu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HomeMenu.plist; sourceTree = "<group>"; };
 		6560C83820F87B3B0083F8BD /* HomeVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeVM.h; sourceTree = "<group>"; };
 		6560C83920F87B3B0083F8BD /* HomeVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeVM.m; sourceTree = "<group>"; };
+		65696BA62133E14B000D3096 /* img_wdgy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_wdgy@2x.png"; sourceTree = "<group>"; };
+		65696BA72133E14C000D3096 /* img_wdgy@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_wdgy@3x.png"; sourceTree = "<group>"; };
+		65696BA82133E14C000D3096 /* img_ddjl@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_ddjl@3x.png"; sourceTree = "<group>"; };
+		65696BA92133E14C000D3096 /* img_ddjl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_ddjl@2x.png"; sourceTree = "<group>"; };
 		6576FED62113EFF1000C64C3 /* img_info_header@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_info_header@3x.png"; sourceTree = "<group>"; };
 		6576FED72113EFF2000C64C3 /* img_info_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_info_header@2x.png"; sourceTree = "<group>"; };
 		6584EB4120F63F9B009A381D /* GuangFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuangFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -500,6 +508,10 @@
 		6584EB5D20F6412A009A381D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				65696BA92133E14C000D3096 /* img_ddjl@2x.png */,
+				65696BA82133E14C000D3096 /* img_ddjl@3x.png */,
+				65696BA62133E14B000D3096 /* img_wdgy@2x.png */,
+				65696BA72133E14C000D3096 /* img_wdgy@3x.png */,
 				6590A7D6211D6C86004521CE /* img_ddss@2x.png */,
 				6590A7D5211D6C86004521CE /* img_ddss@3x.png */,
 				6506F759211C2D1B004317B5 /* img_ydy1@2x.png */,
@@ -761,6 +773,8 @@
 				6506F75D211C2D1C004317B5 /* img_ydy1@3x.png in Resources */,
 				6537FF222112010600174141 /* img_zskf@2x.png in Resources */,
 				6506F763211C2D1C004317B5 /* img_ydy4@2x.png in Resources */,
+				65696BAD2133E14D000D3096 /* img_ddjl@2x.png in Resources */,
+				65696BAB2133E14D000D3096 /* img_wdgy@3x.png in Resources */,
 				652997CA20FF8F33005B463B /* 3.jpg in Resources */,
 				6506F75E211C2D1C004317B5 /* img_ydy4@3x.png in Resources */,
 				65A2EBDA21002B2E000BDE39 /* README.md in Resources */,
@@ -789,8 +803,10 @@
 				6537FF102111FBE000174141 /* img_home_bg@3x.png in Resources */,
 				6590A7D8211D6C86004521CE /* img_ddss@2x.png in Resources */,
 				6584EB4E20F63F9D009A381D /* Assets.xcassets in Resources */,
+				65696BAC2133E14D000D3096 /* img_ddjl@3x.png in Resources */,
 				6576FED82113EFF2000C64C3 /* img_info_header@3x.png in Resources */,
 				6537FF112111FBE000174141 /* img_home_bg@2x.png in Resources */,
+				65696BAA2133E14D000D3096 /* img_wdgy@2x.png in Resources */,
 				65CF7B122117E9EF008977FE /* img_yqzq@2x.png in Resources */,
 				6584EB4C20F63F9B009A381D /* Main.storyboard in Resources */,
 				6506F761211C2D1C004317B5 /* img_ydy1@2x.png in Resources */,
@@ -1087,8 +1103,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.guangfish.GuangFish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "59011376-9838-4fde-96fa-c667c5139f11";
-				PROVISIONING_PROFILE_SPECIFIER = "GuangFish ADHoc profile";
+				PROVISIONING_PROFILE = "9bd75c01-5d2a-48d5-96a2-be577dfd6d33";
+				PROVISIONING_PROFILE_SPECIFIER = "GuangFish dis profile";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

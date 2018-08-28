@@ -52,6 +52,12 @@
     return webVM;
 }
 
+- (WebVM*)getInviteWebVM {
+    WebVM *webVM = [[WebVM alloc] init];
+    webVM.urlStr = @"https://www.guangfish.com/app/api/invite";
+    return webVM;
+}
+
 - (WebVM*)getKeFuWebVM {
     WebVM *webVM = [[WebVM alloc] init];
     webVM.urlStr = @"https://www.guangfish.com/app/api/kefu";

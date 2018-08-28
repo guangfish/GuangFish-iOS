@@ -35,23 +35,23 @@
         </dict>
         <dict>
             <key>segueId</key>
-            <string>ShowWebViewControllerSegue</string>
+            <string>ShowOrderRewardSegue</string>
             <key>imgName</key>
-            <string>img_sybz</string>
+            <string>img_ddjl</string>
             <key>title</key>
-            <string>使用帮助</string>
+            <string>订单奖励</string>
             <key>url</key>
-            <string>https://www.guangfish.com/app/api/help</string>
+            <string></string>
         </dict>
         <dict>
             <key>segueId</key>
-            <string>ShowWebViewControllerSegue</string>
+            <string>ShowFriendsHomeSegue</string>
             <key>imgName</key>
-            <string>img_yqzq</string>
+            <string>img_wdgy</string>
             <key>title</key>
-            <string>邀请赚钱</string>
+            <string>我的逛友</string>
             <key>url</key>
-            <string>https://www.guangfish.com/app/api/invite</string>
+            <string></string>
         </dict>
         <dict>
             <key>segueId</key>

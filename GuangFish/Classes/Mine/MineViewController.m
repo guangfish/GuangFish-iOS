@@ -43,8 +43,10 @@
     if (indexPath.section == 0 && indexPath.row == 3) {
         [self performSegueWithIdentifier:@"ShowWebViewControllerSegue" sender:[self.viewModel getHelpWebVM]];
     } else if (indexPath.section == 0 && indexPath.row == 4) {
+        [self performSegueWithIdentifier:@"ShowWebViewControllerSegue" sender:[self.viewModel getInviteWebVM]];
+    } else if (indexPath.section == 0 && indexPath.row == 5) {
         [self performSegueWithIdentifier:@"ShowWebViewControllerSegue" sender:[self.viewModel getKeFuWebVM]];
-    } else if (indexPath.section == 0 && indexPath.row == 6) {
+    } else if (indexPath.section == 0 && indexPath.row == 7) {
         [self performSegueWithIdentifier:@"ShowWebViewControllerSegue" sender:[self.viewModel getAboutUsWebVM]];
     }
 }
