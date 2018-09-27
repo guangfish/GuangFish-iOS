@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "GuangfishNetworkingManager.h"
 #import "SmartSearchManager.h"
+#import "TabBarController.h"
 
 @interface AppDelegate ()
 
@@ -21,9 +22,9 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     if ([[GuangfishNetworkingManager sharedManager] isLogin]) {
-        UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        UINavigationController *homeNavigationController = [homeStoryboard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
-        self.window.rootViewController = homeNavigationController;
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        TabBarController *tabBarController = [mainStoryboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+        self.window.rootViewController = tabBarController;
     } else {
         UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
         UINavigationController *loginNavigationController = [loginStoryboard instantiateViewControllerWithIdentifier:@"LoginNavigationController"];

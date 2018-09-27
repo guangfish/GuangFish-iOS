@@ -148,7 +148,7 @@
 
 - (GLScrollView*)bannerView {
     if (_bannerView == nil) {
-        self.bannerView = [[GLScrollView alloc] initWithFrame:CGRectMake(0, 254, [[UIScreen mainScreen] bounds].size.width, 180)];
+        self.bannerView = [[GLScrollView alloc] initWithFrame:CGRectMake(0, 210, [[UIScreen mainScreen] bounds].size.width, 180)];
         
         self.bannerView.backgroundColor = [UIColor clearColor];
         

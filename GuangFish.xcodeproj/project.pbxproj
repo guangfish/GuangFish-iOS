@@ -45,6 +45,11 @@
 		654914A6211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 654914A5211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m */; };
 		654914A92119381A006ED0C4 /* UserUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654914A82119381A006ED0C4 /* UserUpdateViewController.m */; };
 		654914AC2119382A006ED0C4 /* UserUpdateVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 654914AB2119382A006ED0C4 /* UserUpdateVM.m */; };
+		654D292F215BD04800333B23 /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654D292E215BD04800333B23 /* TabBarController.m */; };
+		654D2931215BD50200333B23 /* HotSell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654D2930215BD50200333B23 /* HotSell.storyboard */; };
+		654D2933215BD69C00333B23 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654D2932215BD69C00333B23 /* Friends.storyboard */; };
+		654D2935215BD6C300333B23 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654D2934215BD6C300333B23 /* Search.storyboard */; };
+		654D2937215BD6D100333B23 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654D2936215BD6D100333B23 /* Mine.storyboard */; };
 		6554A4AF20F6F2090052BDA5 /* HomeHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A4AE20F6F2090052BDA5 /* HomeHeaderReusableView.m */; };
 		6554A4FA20F6F7680052BDA5 /* GuangfishAPIBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A4C720F6F7660052BDA5 /* GuangfishAPIBaseManager.m */; };
 		6554A4FB20F6F7680052BDA5 /* GuangfishNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A4C820F6F7660052BDA5 /* GuangfishNetworkingManager.m */; };
@@ -174,6 +179,12 @@
 		654914A82119381A006ED0C4 /* UserUpdateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserUpdateViewController.m; sourceTree = "<group>"; };
 		654914AA2119382A006ED0C4 /* UserUpdateVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserUpdateVM.h; sourceTree = "<group>"; };
 		654914AB2119382A006ED0C4 /* UserUpdateVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserUpdateVM.m; sourceTree = "<group>"; };
+		654D292D215BD04800333B23 /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		654D292E215BD04800333B23 /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		654D2930215BD50200333B23 /* HotSell.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HotSell.storyboard; sourceTree = "<group>"; };
+		654D2932215BD69C00333B23 /* Friends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
+		654D2934215BD6C300333B23 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		654D2936215BD6D100333B23 /* Mine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
 		6554A4AD20F6F2090052BDA5 /* HomeHeaderReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeHeaderReusableView.h; sourceTree = "<group>"; };
 		6554A4AE20F6F2090052BDA5 /* HomeHeaderReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHeaderReusableView.m; sourceTree = "<group>"; };
 		6554A4C720F6F7660052BDA5 /* GuangfishAPIBaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuangfishAPIBaseManager.m; sourceTree = "<group>"; };
@@ -488,6 +499,8 @@
 				65E45AEF210569180051E912 /* WebViewController.m */,
 				65E45AF1210569510051E912 /* WebVM.h */,
 				65E45AF2210569510051E912 /* WebVM.m */,
+				654D292D215BD04800333B23 /* TabBarController.h */,
+				654D292E215BD04800333B23 /* TabBarController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -501,6 +514,10 @@
 				6584EB4D20F63F9D009A381D /* Assets.xcassets */,
 				6584EB4F20F63F9D009A381D /* LaunchScreen.storyboard */,
 				6560C83620F874710083F8BD /* HomeMenu.plist */,
+				654D2934215BD6C300333B23 /* Search.storyboard */,
+				654D2930215BD50200333B23 /* HotSell.storyboard */,
+				654D2932215BD69C00333B23 /* Friends.storyboard */,
+				654D2936215BD6D100333B23 /* Mine.storyboard */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -782,6 +799,7 @@
 				6506F753211C2C5D004317B5 /* img_launch@3x.png in Resources */,
 				6537FF252112010600174141 /* img_sybz@2x.png in Resources */,
 				6537FF0C2111F95F00174141 /* img_search@2x.png in Resources */,
+				654D2937215BD6D100333B23 /* Mine.storyboard in Resources */,
 				6560C83720F874710083F8BD /* HomeMenu.plist in Resources */,
 				65CF7B112117E9EF008977FE /* img_yqzq@3x.png in Resources */,
 				65A2EBD821002B2E000BDE39 /* LICENSE in Resources */,
@@ -797,15 +815,18 @@
 				652997CB20FF8F33005B463B /* 1.jpg in Resources */,
 				6537FF1E2112010600174141 /* img_bddd@2x.png in Resources */,
 				6537FF262112010600174141 /* img_bddd@3x.png in Resources */,
+				654D2935215BD6C300333B23 /* Search.storyboard in Resources */,
 				6537FF232112010600174141 /* img_grzx@2x.png in Resources */,
 				6506F760211C2D1C004317B5 /* img_ydy2@3x.png in Resources */,
 				65A73ED32113428700D7982B /* img_money@3x.png in Resources */,
 				6537FF102111FBE000174141 /* img_home_bg@3x.png in Resources */,
+				654D2933215BD69C00333B23 /* Friends.storyboard in Resources */,
 				6590A7D8211D6C86004521CE /* img_ddss@2x.png in Resources */,
 				6584EB4E20F63F9D009A381D /* Assets.xcassets in Resources */,
 				65696BAC2133E14D000D3096 /* img_ddjl@3x.png in Resources */,
 				6576FED82113EFF2000C64C3 /* img_info_header@3x.png in Resources */,
 				6537FF112111FBE000174141 /* img_home_bg@2x.png in Resources */,
+				654D2931215BD50200333B23 /* HotSell.storyboard in Resources */,
 				65696BAA2133E14D000D3096 /* img_wdgy@2x.png in Resources */,
 				65CF7B122117E9EF008977FE /* img_yqzq@2x.png in Resources */,
 				6584EB4C20F63F9B009A381D /* Main.storyboard in Resources */,
@@ -925,6 +946,7 @@
 				654914AC2119382A006ED0C4 /* UserUpdateVM.m in Sources */,
 				658ACFE32109A4C7006FD017 /* QCSlideSwitchView.m in Sources */,
 				6554A51120F6F7680052BDA5 /* GuangfishNetworking.m in Sources */,
+				654D292F215BD04800333B23 /* TabBarController.m in Sources */,
 				654813DE20FDD6E600122CEF /* RegisterVM.m in Sources */,
 				65C4B19621080FAA00968A25 /* SearchGoodsVM.m in Sources */,
 			);
