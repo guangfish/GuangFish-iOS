@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "HomeHeaderReusableView.h"
+#import "HomeFooterReusableView.h"
 #import "HomeMenuCell.h"
 #import "WebViewController.h"
 #import "MineViewController.h"
@@ -86,7 +87,6 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
     return self.viewModel.menuSectionsList.count;
 }
 
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     NSMutableArray *cellArray = [self.viewModel.menuSectionsList objectAtIndex:section];
     return cellArray.count;
@@ -102,20 +102,19 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake((self.view.frame.size.width - 30) / 3.0, (self.view.frame.size.width - 30) / 3.0);
+    return CGSizeMake((self.view.frame.size.width - 30) / 3.0, 100);
 }
 
 - (UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     UICollectionReusableView *reusableview = nil;
     if (kind == UICollectionElementKindSectionHeader) {
         HomeHeaderReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind : UICollectionElementKindSectionHeader withReuseIdentifier : @"HomeHeaderReusableView" forIndexPath :indexPath];
-        headerView.codeCopyButton.layer.borderWidth = 1.0f;
-        headerView.codeCopyButton.layer.borderColor = [UIColor whiteColor].CGColor;
-        headerView.codeCopyButton.layer.cornerRadius = headerView.codeCopyButton.frame.size.height / 2.0f;
-        headerView.codeCopyButton.layer.masksToBounds = YES;
         headerView.viewModel = self.viewModel.homeHeaderReusableVM;
         headerView.delegate = self;
         reusableview = headerView;
+    } else if (kind == UICollectionElementKindSectionFooter) {
+        HomeFooterReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind : UICollectionElementKindSectionFooter withReuseIdentifier : @"HomeFooterReusableView" forIndexPath :indexPath];
+        reusableview = footerView;
     }
     return reusableview;
 }

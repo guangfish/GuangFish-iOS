@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import <EAIntroView/EAIntroView.h>
+#import "TabBarController.h"
 
 @interface LoginViewController ()<EAIntroDelegate>
 
@@ -122,9 +123,9 @@
         if ([x isKindOfClass:[NSError class]]) {
             [self showTextHud:[(NSError *)x domain]];
         } else {
-            UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UINavigationController *homeNavigationController = [homeStoryboard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
-            [UIApplication sharedApplication].keyWindow.rootViewController = homeNavigationController;
+            UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            TabBarController *tabBarController = [mainStoryboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+            [UIApplication sharedApplication].keyWindow.rootViewController = tabBarController;
         }
     }];
     

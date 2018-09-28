@@ -3,66 +3,36 @@
 <plist version="1.0">
 <array>
 	<array>
-		<dict>
-			<key>segueId</key>
-			<string>ShowOrderSaveSegue</string>
-			<key>imgName</key>
-			<string>img_bddd</string>
-			<key>title</key>
-			<string>绑定订单</string>
-            <key>url</key>
-            <string></string>
-		</dict>
-		<dict>
-			<key>segueId</key>
-			<string>ShowOrderListSegue</string>
-			<key>imgName</key>
-			<string>img_ddss</string>
-			<key>title</key>
-			<string>查看订单</string>
-            <key>url</key>
-            <string></string>
-		</dict>
         <dict>
             <key>segueId</key>
             <string>ShowMineInfo</string>
             <key>imgName</key>
-            <string>img_grzx</string>
+            <string>img_help</string>
             <key>title</key>
-            <string>个人中心</string>
+            <string>使用帮助</string>
             <key>url</key>
             <string></string>
+        </dict>
+        <dict>
+            <key>segueId</key>
+            <string>ShowWebViewControllerSegue</string>
+            <key>imgName</key>
+            <string>img_kf</string>
+            <key>title</key>
+            <string>专属客服</string>
+            <key>url</key>
+            <string>https://www.guangfish.com/app/api/kefu</string>
         </dict>
         <dict>
             <key>segueId</key>
             <string>ShowOrderRewardSegue</string>
             <key>imgName</key>
-            <string>img_ddjl</string>
+            <string>img_about_us</string>
             <key>title</key>
-            <string>订单奖励</string>
+            <string>关于我们</string>
             <key>url</key>
             <string></string>
         </dict>
-        <dict>
-            <key>segueId</key>
-            <string>ShowFriendsHomeSegue</string>
-            <key>imgName</key>
-            <string>img_wdgy</string>
-            <key>title</key>
-            <string>我的逛友</string>
-            <key>url</key>
-            <string></string>
-        </dict>
-<!--        <dict>-->
-<!--            <key>segueId</key>-->
-<!--            <string>ShowWebViewControllerSegue</string>-->
-<!--            <key>imgName</key>-->
-<!--            <string>img_zskf</string>-->
-<!--            <key>title</key>-->
-<!--            <string>专属客服</string>-->
-<!--            <key>url</key>-->
-<!--            <string>https://www.guangfish.com/app/api/kefu</string>-->
-<!--        </dict>-->
 	</array>
 </array>
 </plist>

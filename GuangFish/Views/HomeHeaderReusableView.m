@@ -19,7 +19,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *inviteRewardLabel;
 @property (weak, nonatomic) IBOutlet UILabel *hongbaoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *paltformRewardLabel;
-@property (weak, nonatomic) IBOutlet UILabel *friendNumLabel;
 @property (weak, nonatomic) IBOutlet UIButton *drawButton;
 
 @end
@@ -89,7 +88,6 @@
         self.orderMoneyLabel.text = [NSString stringWithFormat:@"%@", x];
     }];
     
-    RAC(self.friendNumLabel, text) = [RACObserve(self.viewModel, friendNum) takeUntil:self.rac_prepareForReuseSignal];
     RAC(self.hongbaoLabel, text) = [RACObserve(self.viewModel, hongbao) takeUntil:self.rac_prepareForReuseSignal];
     
     self.drawButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
@@ -103,12 +101,6 @@
         } else {
             [self.delegate hasNotBindAccount];
         }
-        return [RACSignal empty];
-    }];
-    
-    self.codeCopyButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
-        @strongify(self);
-        [self.viewModel codeCopy];
         return [RACSignal empty];
     }];
 }
@@ -148,7 +140,7 @@
 
 - (GLScrollView*)bannerView {
     if (_bannerView == nil) {
-        self.bannerView = [[GLScrollView alloc] initWithFrame:CGRectMake(0, 210, [[UIScreen mainScreen] bounds].size.width, 180)];
+        self.bannerView = [[GLScrollView alloc] initWithFrame:CGRectMake(0, 188, [[UIScreen mainScreen] bounds].size.width, 173)];
         
         self.bannerView.backgroundColor = [UIColor clearColor];
         
