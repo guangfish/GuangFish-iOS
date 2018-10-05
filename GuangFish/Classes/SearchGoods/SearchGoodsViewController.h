@@ -6,10 +6,10 @@
 //  Copyright © 2018年 guangfish. All rights reserved.
 //
 
-#import "GLBaseTableViewController.h"
+#import "GLBaseViewController.h"
 #import "SearchGoodsVM.h"
 
-@interface SearchGoodsViewController : GLBaseTableViewController
+@interface SearchGoodsViewController : GLBaseViewController
 
 @property (nonatomic, strong) SearchGoodsVM *viewModel;
 

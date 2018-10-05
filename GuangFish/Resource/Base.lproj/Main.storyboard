@@ -1175,7 +1175,7 @@
         <!--搜券/搜返利-->
         <scene sceneID="Kwc-OE-B4p">
             <objects>
-                <tableViewController title="搜券/搜返利" id="Dv7-70-t3d" customClass="SearchGoodsViewController" sceneMemberID="viewController">
+                <tableViewController title="搜券/搜返利" id="Dv7-70-t3d" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="hHR-RP-cqx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1246,9 +1246,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="searchButton" destination="gMf-gT-ArV" id="RkF-gk-6o2"/>
-                        <outlet property="searchTextField" destination="tbN-Y4-Zx3" id="RCB-Wo-cjq"/>
-                        <segue destination="csl-A7-akD" kind="show" identifier="ShowGoodsListSegue" id="Bre-Tr-Y69"/>
+                        <segue destination="csl-A7-akD" kind="show" identifier="" id="Bre-Tr-Y69"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HWB-sA-L8E" userLabel="First Responder" sceneMemberID="firstResponder"/>

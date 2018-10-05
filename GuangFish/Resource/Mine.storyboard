@@ -357,7 +357,7 @@
                                 <constraint firstItem="ToT-sK-6sE" firstAttribute="top" secondItem="NfY-LB-G0x" secondAttribute="top" id="dvE-Fv-nE6"/>
                             </constraints>
                             <connections>
-                                <outlet property="drawButton" destination="ekA-C3-PS8" id="nC4-W5-mRo"/>
+                                <outlet property="drawButton" destination="Qx3-ZW-jU4" id="WQb-sD-dB7"/>
                                 <outlet property="hongbaoLabel" destination="aIy-Wd-lHQ" id="jFt-oQ-S4w"/>
                                 <outlet property="inviteRewardLabel" destination="U6e-iS-sJ2" id="z8i-Ra-aKu"/>
                                 <outlet property="orderMoneyLabel" destination="JaQ-W0-o5E" id="isv-cw-brd"/>
