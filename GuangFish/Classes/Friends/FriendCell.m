@@ -40,7 +40,7 @@
 }
 
 - (void)initialzieModel {
-    RAC(self.timeLabel, text) = RACObserve(self.viewModel, inviteTime);
+    RAC(self.timeLabel, text) = [RACObserve(self.viewModel, inviteTime) takeUntil:self.rac_prepareForReuseSignal];
     
     @weakify(self)
     [RACObserve(self.viewModel, mobile) subscribeNext:^(id  _Nullable x) {
@@ -62,6 +62,11 @@
         @strongify(self)
         [self.ifrewardLabel setAttributedText:[self changeLabelWithText:[NSString stringWithFormat:@"奖励状态:%@", x] withChangeColor:self.viewModel.ifrewardColor]];
     }];
+    
+    [RACObserve(self.viewModel, backgroundColor) subscribeNext:^(id  _Nullable x) {
+        @strongify(self)
+        self.backgroundColor = x;
+    }];
 }
 
 -(NSMutableAttributedString*)changeLabelWithText:(NSString*)needText withChangeColor:(UIColor*)color {
@@ -69,7 +74,7 @@
     if ([needText containsString:@":"]) {
         NSRange range = [needText rangeOfString:@":"];
         if (color == nil) {
-            color = [UIColor colorWithRed:0.93 green:0.06 blue:0.32 alpha:1.00];
+            color = [UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00];
         }
         [attrString addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(range.location + 1,needText.length-(range.location + 1))];
     }

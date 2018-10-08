@@ -33,14 +33,14 @@
     self.ifreward = [self.dataDic objectForKey:@"ifreward"];
     self.status = [self.dataDic objectForKey:@"status"];
     if ([self.status isEqualToString:@"已激活"]) {
-        self.statusColor = [UIColor colorWithRed:0.93 green:0.06 blue:0.32 alpha:1.00];
+        self.statusColor = [UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00];
     } else {
-        self.statusColor = [UIColor lightGrayColor];
+        self.statusColor = [UIColor colorWithRed:0.78 green:0.78 blue:0.78 alpha:1.00];
     }
     if ([self.ifreward isEqualToString:@"已领取"]) {
-        self.ifrewardColor = [UIColor colorWithRed:0.93 green:0.06 blue:0.32 alpha:1.00];
+        self.ifrewardColor = [UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00];
     } else {
-        self.ifrewardColor = [UIColor lightGrayColor];
+        self.ifrewardColor = [UIColor colorWithRed:0.78 green:0.78 blue:0.78 alpha:1.00];
     }
 }
 

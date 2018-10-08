@@ -119,6 +119,7 @@
     if (self.buttonImageArray != buttonImageArray) {
         _buttonImageArray = buttonImageArray;
         [self initialzieButtons];
+        [self buttonAction:nil];
     }
 }
 

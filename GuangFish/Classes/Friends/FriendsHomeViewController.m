@@ -9,9 +9,11 @@
 #import "FriendsHomeViewController.h"
 #import "QCSlideSwitchView.h"
 #import "FriendsListViewController.h"
+#import "MenuButton.h"
 
-@interface FriendsHomeViewController ()<QCSlideSwitchViewDelegate>
+@interface FriendsHomeViewController ()<QCSlideSwitchViewDelegate, MenuButtonDelegate>
 
+@property (nonatomic, strong) MenuButton *menuButton;
 @property (nonatomic, strong) NSMutableArray *controllersArray;
 @property (weak, nonatomic) IBOutlet QCSlideSwitchView *slideSwitchView;
 @property (weak, nonatomic) IBOutlet UIButton *wjhButton;
@@ -30,6 +32,7 @@
     self.slideSwitchView.isTopHide = YES;
     self.slideSwitchView.slideSwitchViewDelegate = self;
     [self.slideSwitchView buildUI];
+    [self.view addSubview:self.menuButton];
     
     [self initialzieModel];
 }
@@ -57,6 +60,12 @@
     } else if (number == 2) {
         [self chooseYLQ];
     }
+}
+
+#pragma mark - MenuButtonDelegate
+
+- (void)menuButtonTouch:(NSInteger)indexPath {
+    
 }
 
 /*
@@ -93,7 +102,7 @@
 }
 
 - (void)chooseWJH {
-    [self.wjhButton setTitleColor:[UIColor colorWithRed:0.90 green:0.31 blue:0.33 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.wjhButton setTitleColor:[UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00] forState:(UIControlStateNormal)];
     [self.wlqButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
     [self.ylqButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
     self.wjhSelectedView.hidden = NO;
@@ -104,7 +113,7 @@
 
 - (void)chooseWLQ {
     [self.wjhButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
-    [self.wlqButton setTitleColor:[UIColor colorWithRed:0.90 green:0.31 blue:0.33 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.wlqButton setTitleColor:[UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00] forState:(UIControlStateNormal)];
     [self.ylqButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
     self.wjhSelectedView.hidden = YES;
     self.wlqSelectedView.hidden = NO;
@@ -115,7 +124,7 @@
 - (void)chooseYLQ {
     [self.wjhButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
     [self.wlqButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
-    [self.ylqButton setTitleColor:[UIColor colorWithRed:0.90 green:0.31 blue:0.33 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.ylqButton setTitleColor:[UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00] forState:(UIControlStateNormal)];
     self.wjhSelectedView.hidden = YES;
     self.wlqSelectedView.hidden = YES;
     self.ylqSelectedView.hidden = NO;
@@ -135,22 +144,32 @@
     if (_controllersArray == nil) {
         self.controllersArray = [[NSMutableArray alloc] initWithCapacity:2];
         
-        UIStoryboard *mineStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-        FriendsListViewController *wjhFriendsListViewController = [mineStoryboard instantiateViewControllerWithIdentifier:@"FriendsListViewController"];
+        UIStoryboard *friendsStoryboard = [UIStoryboard storyboardWithName:@"Friends" bundle:[NSBundle mainBundle]];
+        FriendsListViewController *wjhFriendsListViewController = [friendsStoryboard instantiateViewControllerWithIdentifier:@"FriendsListViewController"];
         wjhFriendsListViewController.viewModel = [self.viewModel getWJHFriendListVM];
         wjhFriendsListViewController.title = @"未激活";
         
-        FriendsListViewController *wlqFriendsListViewController = [mineStoryboard instantiateViewControllerWithIdentifier:@"FriendsListViewController"];
+        FriendsListViewController *wlqFriendsListViewController = [friendsStoryboard instantiateViewControllerWithIdentifier:@"FriendsListViewController"];
         wlqFriendsListViewController.viewModel = [self.viewModel getWLQFriendListVM];
         wlqFriendsListViewController.title = @"未领取";
         
-        FriendsListViewController *ylqFriendsListViewController = [mineStoryboard instantiateViewControllerWithIdentifier:@"FriendsListViewController"];
+        FriendsListViewController *ylqFriendsListViewController = [friendsStoryboard instantiateViewControllerWithIdentifier:@"FriendsListViewController"];
         ylqFriendsListViewController.viewModel = [self.viewModel getYLQFriendListVM];
         ylqFriendsListViewController.title = @"已领取";
         
         [self.controllersArray addObjectsFromArray:@[wjhFriendsListViewController, wlqFriendsListViewController, ylqFriendsListViewController]];
     }
     return _controllersArray;
+}
+
+- (MenuButton*)menuButton {
+    if (_menuButton == nil) {
+        CGFloat tabbarH = ((([[UIApplication sharedApplication] statusBarFrame].size.height)>20)?83:49);
+        self.menuButton = [[MenuButton alloc] initWithFrame:CGRectMake(20, self.view.frame.size.height - 48 - 55 - tabbarH, 55, 55)];
+        self.menuButton.buttonImageArray = @[[UIImage imageNamed:@"img_bdyqm"], [UIImage imageNamed:@"img_yqhy"], [UIImage imageNamed:@"img_yqgz"]];
+        self.menuButton.delegate = self;
+    }
+    return _menuButton;
 }
 
 @end

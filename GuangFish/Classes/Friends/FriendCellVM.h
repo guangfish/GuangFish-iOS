@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSString *status;
 @property (nonatomic, strong) UIColor *statusColor;
 @property (nonatomic, strong) UIColor *ifrewardColor;
+@property (nonatomic, strong) UIColor *backgroundColor;
 
 - (id)initWithResponseDic:(NSDictionary*)dic;
 

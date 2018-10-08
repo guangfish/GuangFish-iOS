@@ -426,8 +426,8 @@
 		653FB173216B06E300C705AB /* MenuButton */ = {
 			isa = PBXGroup;
 			children = (
-				653FB174216B06E300C705AB /* MenuButton.m */,
 				653FB175216B06E300C705AB /* MenuButton.h */,
+				653FB174216B06E300C705AB /* MenuButton.m */,
 			);
 			path = MenuButton;
 			sourceTree = "<group>";

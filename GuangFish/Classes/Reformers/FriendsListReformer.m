@@ -22,9 +22,16 @@ NSString * const kFriendsListDataKeyFriendCellVMList = @"FriendCellVMList";
         NSNumber *ifHasNextPage = dic[@"hasNext"];
         NSMutableArray *friendsCellVMList = [[NSMutableArray alloc] initWithCapacity:30];
         
+        int i = 1;
         for (NSDictionary *itemDic in dic[@"items"]) {
             FriendCellVM *friendCellVM = [[FriendCellVM alloc] initWithResponseDic:itemDic];
+            if (i % 2 == 0) {
+                friendCellVM.backgroundColor = [UIColor colorWithRed:1.00 green:0.98 blue:0.99 alpha:1.00];
+            } else {
+                friendCellVM.backgroundColor = [UIColor whiteColor];
+            }
             [friendsCellVMList addObject:friendCellVM];
+            i ++;
         }
         
         resultData = @{
