@@ -10,6 +10,10 @@
 
 @implementation FriendsHomeVM
 
+- (void)initializeData {
+    
+}
+
 #pragma mark - public methods
 
 - (FriendsListVM*)getWJHFriendListVM {
@@ -28,6 +32,16 @@
     FriendsListVM *friendsListVM = [[FriendsListVM alloc] init];
     friendsListVM.friendType = FriendTypeYLQ;
     return friendsListVM;
+}
+
+#pragma mark - setters and getters
+
+- (NSString*)inviteCode {
+    if (_inviteCode == nil) {
+        NSDictionary *userDic = [[NSUserDefaults standardUserDefaults] objectForKey:@"UserDic"];
+        self.inviteCode = [userDic objectForKey:@"inviteCode"];
+    }
+    return _inviteCode;
 }
 
 @end

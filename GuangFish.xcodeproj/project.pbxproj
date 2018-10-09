@@ -19,6 +19,8 @@
 		6506F762211C2D1C004317B5 /* img_ydy3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6506F75A211C2D1B004317B5 /* img_ydy3@2x.png */; };
 		6506F763211C2D1C004317B5 /* img_ydy4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6506F75B211C2D1C004317B5 /* img_ydy4@2x.png */; };
 		6506F764211C2D1C004317B5 /* img_ydy3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6506F75C211C2D1C004317B5 /* img_ydy3@3x.png */; };
+		65269FCE216C36160002D30E /* BindCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65269FCD216C36160002D30E /* BindCodeViewController.m */; };
+		65269FD1216C36270002D30E /* BindCodeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65269FD0216C36270002D30E /* BindCodeVM.m */; };
 		65287B83215E7D6700346335 /* HomeFooterReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65287B82215E7D6700346335 /* HomeFooterReusableView.m */; };
 		65287B86215E7D8700346335 /* HomeFooterReusableVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65287B85215E7D8700346335 /* HomeFooterReusableVM.m */; };
 		65287B8B215E864200346335 /* img_about_us@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65287B87215E864100346335 /* img_about_us@2x.png */; };
@@ -181,6 +183,10 @@
 		6506F75A211C2D1B004317B5 /* img_ydy3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_ydy3@2x.png"; sourceTree = "<group>"; };
 		6506F75B211C2D1C004317B5 /* img_ydy4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_ydy4@2x.png"; sourceTree = "<group>"; };
 		6506F75C211C2D1C004317B5 /* img_ydy3@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_ydy3@3x.png"; sourceTree = "<group>"; };
+		65269FCC216C36160002D30E /* BindCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindCodeViewController.h; sourceTree = "<group>"; };
+		65269FCD216C36160002D30E /* BindCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindCodeViewController.m; sourceTree = "<group>"; };
+		65269FCF216C36270002D30E /* BindCodeVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BindCodeVM.h; sourceTree = "<group>"; };
+		65269FD0216C36270002D30E /* BindCodeVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BindCodeVM.m; sourceTree = "<group>"; };
 		65287B81215E7D6700346335 /* HomeFooterReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFooterReusableView.h; sourceTree = "<group>"; };
 		65287B82215E7D6700346335 /* HomeFooterReusableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFooterReusableView.m; sourceTree = "<group>"; };
 		65287B84215E7D8700346335 /* HomeFooterReusableVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFooterReusableVM.h; sourceTree = "<group>"; };
@@ -734,6 +740,10 @@
 				65DEDC19210AACDF004DE2DB /* FriendCell.m */,
 				65DEDC1B210AACED004DE2DB /* FriendCellVM.h */,
 				65DEDC1C210AACED004DE2DB /* FriendCellVM.m */,
+				65269FCC216C36160002D30E /* BindCodeViewController.h */,
+				65269FCD216C36160002D30E /* BindCodeViewController.m */,
+				65269FCF216C36270002D30E /* BindCodeVM.h */,
+				65269FD0216C36270002D30E /* BindCodeVM.m */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
@@ -1063,6 +1073,7 @@
 				6545F61A210AF3B100A31A97 /* OrderRewardReformer.m in Sources */,
 				65C955C5210E9A6E00BD5FC8 /* OrderListHomeVM.m in Sources */,
 				6554A52420F72ADA0052BDA5 /* GuangfishDrawstatsAPIManager.m in Sources */,
+				65269FD1216C36270002D30E /* BindCodeVM.m in Sources */,
 				6554A53620F734010052BDA5 /* GuangfishBannerAPIManager.m in Sources */,
 				65DEDC1A210AACDF004DE2DB /* FriendCell.m in Sources */,
 				6554A53320F733970052BDA5 /* GuangfishOrderrewardlistAPIManager.m in Sources */,
@@ -1082,6 +1093,7 @@
 				658ACFEA2109A524006FD017 /* FriendsHomeVM.m in Sources */,
 				65C955CB210E9D1D00BD5FC8 /* OrderListVM.m in Sources */,
 				6545F611210AE8CF00A31A97 /* OrderRewardVM.m in Sources */,
+				65269FCE216C36160002D30E /* BindCodeViewController.m in Sources */,
 				65287B86215E7D8700346335 /* HomeFooterReusableVM.m in Sources */,
 				65E45AF3210569510051E912 /* WebVM.m in Sources */,
 				6554A51B20F721770052BDA5 /* LoginVM.m in Sources */,

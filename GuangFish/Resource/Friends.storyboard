@@ -141,11 +141,70 @@
                         <outlet property="wlqSelectedView" destination="U2N-tj-yZ9" id="1Dg-cd-8aH"/>
                         <outlet property="ylqButton" destination="Lfc-GT-iea" id="u5L-E2-QKY"/>
                         <outlet property="ylqSelectedView" destination="Pu6-0a-xXz" id="7By-AC-OUb"/>
+                        <segue destination="30C-ey-qWA" kind="show" identifier="ShowBdyqmSegue" id="mas-P1-bqa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PxH-DE-frh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="938" y="181"/>
+        </scene>
+        <!--绑定邀请码-->
+        <scene sceneID="cON-30-s5B">
+            <objects>
+                <viewController title="绑定邀请码" hidesBottomBarWhenPushed="YES" id="30C-ey-qWA" customClass="BindCodeViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XST-Ad-18Z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VyT-7g-OPe">
+                                <rect key="frame" x="25" y="104" width="325" height="38"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入需要进行绑定的手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PLU-Dm-DIB">
+                                        <rect key="frame" x="15" y="0.0" width="295" height="38"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="13"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="PLU-Dm-DIB" secondAttribute="trailing" constant="15" id="VJG-ZK-B71"/>
+                                    <constraint firstItem="PLU-Dm-DIB" firstAttribute="leading" secondItem="VyT-7g-OPe" secondAttribute="leading" constant="15" id="een-Tg-wiw"/>
+                                    <constraint firstAttribute="height" constant="38" id="ivK-fa-tgb"/>
+                                    <constraint firstAttribute="bottom" secondItem="PLU-Dm-DIB" secondAttribute="bottom" id="rCW-St-IQQ"/>
+                                    <constraint firstItem="PLU-Dm-DIB" firstAttribute="top" secondItem="VyT-7g-OPe" secondAttribute="top" id="wxD-oI-1TU"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqh-zS-9xT">
+                                <rect key="frame" x="25" y="162" width="325" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="7T0-1p-RHy"/>
+                                </constraints>
+                                <state key="normal" title="确定">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Lqh-zS-9xT" firstAttribute="top" secondItem="VyT-7g-OPe" secondAttribute="bottom" constant="20" id="70q-oy-je4"/>
+                            <constraint firstItem="XQV-8M-b6M" firstAttribute="trailing" secondItem="VyT-7g-OPe" secondAttribute="trailing" constant="25" id="KC4-2o-UD1"/>
+                            <constraint firstItem="VyT-7g-OPe" firstAttribute="top" secondItem="XQV-8M-b6M" secondAttribute="top" constant="40" id="iyG-Ts-9cx"/>
+                            <constraint firstItem="XQV-8M-b6M" firstAttribute="trailing" secondItem="Lqh-zS-9xT" secondAttribute="trailing" constant="25" id="k3g-1g-TGd"/>
+                            <constraint firstItem="VyT-7g-OPe" firstAttribute="leading" secondItem="XQV-8M-b6M" secondAttribute="leading" constant="25" id="rO1-nB-apd"/>
+                            <constraint firstItem="Lqh-zS-9xT" firstAttribute="leading" secondItem="XQV-8M-b6M" secondAttribute="leading" constant="25" id="sPZ-Xd-Ho5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XQV-8M-b6M"/>
+                    </view>
+                    <connections>
+                        <outlet property="codeTextField" destination="PLU-Dm-DIB" id="egR-c4-hRN"/>
+                        <outlet property="doneButton" destination="Lqh-zS-9xT" id="6cS-mD-ZqC"/>
+                        <outlet property="textFieldBgView" destination="VyT-7g-OPe" id="O9x-3V-aD4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R22-i1-Q4z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="936.79999999999995" y="907.1964017991005"/>
         </scene>
         <!--Friends List View Controller-->
         <scene sceneID="pXe-Ee-9gA">

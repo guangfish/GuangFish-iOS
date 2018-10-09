@@ -10,6 +10,7 @@
 #import "QCSlideSwitchView.h"
 #import "FriendsListViewController.h"
 #import "MenuButton.h"
+#import "JCAlertController.h"
 
 @interface FriendsHomeViewController ()<QCSlideSwitchViewDelegate, MenuButtonDelegate>
 
@@ -22,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIView *wjhSelectedView;
 @property (weak, nonatomic) IBOutlet UIView *wlqSelectedView;
 @property (weak, nonatomic) IBOutlet UIView *ylqSelectedView;
+@property (nonatomic, strong) JCAlertController *alertController;
 
 @end
 
@@ -65,7 +67,18 @@
 #pragma mark - MenuButtonDelegate
 
 - (void)menuButtonTouch:(NSInteger)indexPath {
-    
+    switch (indexPath) {
+        case 1:
+            [self performSegueWithIdentifier:@"ShowBdyqmSegue" sender:nil];
+            break;
+            
+        case 2:
+            [JCPresentController presentViewControllerLIFO:self.alertController presentCompletion:nil dismissCompletion:nil];
+            break;
+            
+        default:
+            break;
+    }
 }
 
 /*
@@ -77,6 +90,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - actions
+
+- (void)alertDoneBtnAction:(id)sender {
+    [self.alertController dismissViewControllerAnimated:YES completion:nil];
+}
 
 #pragma mark - private methods
 
@@ -170,6 +189,34 @@
         self.menuButton.delegate = self;
     }
     return _menuButton;
+}
+
+- (JCAlertController*)alertController {
+    if (_alertController == nil) {
+        CGFloat width = self.view.frame.size.width - 88;
+        [JCAlertStyle shareStyle].alertView.width = width;
+        
+        UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, 367)];
+        contentView.layer.cornerRadius = 10.0f;
+        contentView.backgroundColor = [UIColor whiteColor];
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 25, width - 40, 367 - 25 - 90)];
+        label.font = [UIFont systemFontOfSize:16.0f];
+        label.numberOfLines = 0;
+        label.textColor = [UIColor colorWithRed:0.55 green:0.55 blue:0.55 alpha:1.00];
+        label.text = self.viewModel.inviteCode;
+        [contentView addSubview:label];
+        
+        UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(42, 302, width - 84, 35)];
+        doneButton.backgroundColor = [UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00];
+        [doneButton setTitle:@"确定" forState:(UIControlStateNormal)];
+        doneButton.layer.cornerRadius = 5.0f;
+        [doneButton addTarget:self action:@selector(alertDoneBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+        [contentView addSubview:doneButton];
+        
+        self.alertController = [JCAlertController alertWithTitle:nil contentView:contentView];
+    }
+    return _alertController;
 }
 
 @end

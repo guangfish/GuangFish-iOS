@@ -11,6 +11,8 @@
 
 @interface FriendsHomeVM : GLViewModel
 
+@property (nonatomic, strong) NSString *inviteCode;
+
 - (FriendsListVM*)getWJHFriendListVM;
 - (FriendsListVM*)getWLQFriendListVM;
 - (FriendsListVM*)getYLQFriendListVM;
