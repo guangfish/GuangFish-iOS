@@ -95,12 +95,21 @@
 
 - (void)alertDoneBtnAction:(id)sender {
     [self.alertController dismissViewControllerAnimated:YES completion:nil];
+    [self.viewModel copyInviteCode];
 }
 
 #pragma mark - private methods
 
 - (void)initialzieModel {
     @weakify(self)
+    [self.viewModel.inviteCodeSignal subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        [self hideActivityHud];
+        if (![x isKindOfClass:[NSError class]]) {
+            [self showTextHud:x];
+        }
+    }];
+    
     self.wjhButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         @strongify(self)
         [self chooseWJH];

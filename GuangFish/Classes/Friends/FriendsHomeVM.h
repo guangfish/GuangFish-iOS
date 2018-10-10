@@ -11,8 +11,10 @@
 
 @interface FriendsHomeVM : GLViewModel
 
+@property (nonatomic, strong) RACSubject *inviteCodeSignal;
 @property (nonatomic, strong) NSString *inviteCode;
 
+- (void)copyInviteCode;
 - (FriendsListVM*)getWJHFriendListVM;
 - (FriendsListVM*)getWLQFriendListVM;
 - (FriendsListVM*)getYLQFriendListVM;

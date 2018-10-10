@@ -14,7 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *mobileLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalBuySaveLabel;
-@property (weak, nonatomic) IBOutlet UIButton *codeCopyButton;
 
 @end
 
@@ -85,12 +84,6 @@
         UINavigationController *loginNavigationController = [loginStoryboard instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
         [UIApplication sharedApplication].keyWindow.rootViewController = loginNavigationController;
         
-        return [RACSignal empty];
-    }];
-    
-    self.codeCopyButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
-        @strongify(self);
-        [self.viewModel copyInviteCode];
         return [RACSignal empty];
     }];
 }

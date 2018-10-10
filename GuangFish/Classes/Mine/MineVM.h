@@ -18,7 +18,6 @@
 
 - (void)logout;
 - (void)getUserData;
-- (void)copyInviteCode;
 - (WebVM*)getHelpWebVM;
 - (WebVM*)getInviteWebVM;
 - (WebVM*)getKeFuWebVM;

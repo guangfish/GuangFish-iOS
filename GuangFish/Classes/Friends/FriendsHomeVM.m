@@ -11,10 +11,16 @@
 @implementation FriendsHomeVM
 
 - (void)initializeData {
-    
+    self.inviteCodeSignal = [RACSubject subject];
 }
 
 #pragma mark - public methods
+
+- (void)copyInviteCode {
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    pasteboard.string = self.inviteCode;
+    [self.inviteCodeSignal sendNext:@"邀请码已复制"];
+}
 
 - (FriendsListVM*)getWJHFriendListVM {
     FriendsListVM *friendsListVM = [[FriendsListVM alloc] init];

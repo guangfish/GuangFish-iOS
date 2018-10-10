@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8aL-g9-2Ea">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_search_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="8aL-g9-2Ea">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" red="0.95547586679999996" green="0.16287618879999999" blue="0.42088681459999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="逛鱼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SG3-D0-aRz">
                                 <rect key="frame" x="16" y="228" width="343" height="37"/>
@@ -665,5 +664,6 @@
         <image name="img_bddd.png" width="24" height="28"/>
         <image name="img_ckdd.png" width="31" height="27"/>
         <image name="img_search.png" width="19" height="21"/>
+        <image name="img_search_bg.png" width="1128" height="1795"/>
     </resources>
 </document>

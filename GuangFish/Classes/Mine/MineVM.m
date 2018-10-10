@@ -40,12 +40,6 @@
     self.inviteCode = [userDic objectForKey:@"inviteCode"];
 }
 
-- (void)copyInviteCode {
-    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.string = self.inviteCode;
-    [self.inviteCodeSignal sendNext:@"邀请码已复制"];
-}
-
 - (WebVM*)getHelpWebVM {
     WebVM *webVM = [[WebVM alloc] init];
     webVM.urlStr = @"https://www.guangfish.com/app/api/help";
