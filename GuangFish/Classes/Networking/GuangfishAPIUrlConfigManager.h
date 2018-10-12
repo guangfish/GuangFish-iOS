@@ -32,6 +32,12 @@
 #define API_DrawUrl                              @"/app/api/draw"
 //用户信息更新接口
 #define API_UserUpdateUrl                        @"/app/api/userUpdate"
+//热卖商品查询接口
+#define API_ProductSearchUrl                     @"/app/api/productSearch"
+//邀请码更新接口
+#define API_UserInviteUpdateUrl                  @"/app/api/userInviteUpdate"
+//提现记录查询接口
+#define API_DrawRecordUrl                        @"/app/api/drawRecord"
 
 @interface GuangfishAPIUrlConfigManager : NSObject
 

@@ -65,6 +65,9 @@
 		6537FF252112010600174141 /* img_sybz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6537FF192112010600174141 /* img_sybz@2x.png */; };
 		6537FF272112010600174141 /* img_sybz@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6537FF1B2112010600174141 /* img_sybz@3x.png */; };
 		6537FF282112010600174141 /* img_grzx@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6537FF1C2112010600174141 /* img_grzx@3x.png */; };
+		653A6FF921707844001AA2E4 /* GuangfishProductSearchAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 653A6FF821707844001AA2E4 /* GuangfishProductSearchAPIManager.m */; };
+		653A6FFC217079B1001AA2E4 /* UserInviteUpdateAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 653A6FFB217079B1001AA2E4 /* UserInviteUpdateAPIManager.m */; };
+		653A6FFF21707A66001AA2E4 /* DrawRecordAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 653A6FFE21707A66001AA2E4 /* DrawRecordAPIManager.m */; };
 		653FB169216B06AB00C705AB /* img_bdyqm@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 653FB15F216B06A900C705AB /* img_bdyqm@3x.png */; };
 		653FB16A216B06AB00C705AB /* img_yqgz@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 653FB160216B06AA00C705AB /* img_yqgz@2x.png */; };
 		653FB16B216B06AB00C705AB /* img_bdyqm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 653FB161216B06AA00C705AB /* img_bdyqm@2x.png */; };
@@ -235,6 +238,12 @@
 		6537FF192112010600174141 /* img_sybz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_sybz@2x.png"; sourceTree = "<group>"; };
 		6537FF1B2112010600174141 /* img_sybz@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_sybz@3x.png"; sourceTree = "<group>"; };
 		6537FF1C2112010600174141 /* img_grzx@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_grzx@3x.png"; sourceTree = "<group>"; };
+		653A6FF721707844001AA2E4 /* GuangfishProductSearchAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishProductSearchAPIManager.h; sourceTree = "<group>"; };
+		653A6FF821707844001AA2E4 /* GuangfishProductSearchAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuangfishProductSearchAPIManager.m; sourceTree = "<group>"; };
+		653A6FFA217079B1001AA2E4 /* UserInviteUpdateAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInviteUpdateAPIManager.h; sourceTree = "<group>"; };
+		653A6FFB217079B1001AA2E4 /* UserInviteUpdateAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInviteUpdateAPIManager.m; sourceTree = "<group>"; };
+		653A6FFD21707A66001AA2E4 /* DrawRecordAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawRecordAPIManager.h; sourceTree = "<group>"; };
+		653A6FFE21707A66001AA2E4 /* DrawRecordAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawRecordAPIManager.m; sourceTree = "<group>"; };
 		653FB15F216B06A900C705AB /* img_bdyqm@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_bdyqm@3x.png"; sourceTree = "<group>"; };
 		653FB160216B06AA00C705AB /* img_yqgz@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_yqgz@2x.png"; sourceTree = "<group>"; };
 		653FB161216B06AA00C705AB /* img_bdyqm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_bdyqm@2x.png"; sourceTree = "<group>"; };
@@ -514,6 +523,12 @@
 				6554A53820F734530052BDA5 /* GuangfishDrawAPIManager.m */,
 				654914A4211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.h */,
 				654914A5211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m */,
+				653A6FF721707844001AA2E4 /* GuangfishProductSearchAPIManager.h */,
+				653A6FF821707844001AA2E4 /* GuangfishProductSearchAPIManager.m */,
+				653A6FFA217079B1001AA2E4 /* UserInviteUpdateAPIManager.h */,
+				653A6FFB217079B1001AA2E4 /* UserInviteUpdateAPIManager.m */,
+				653A6FFD21707A66001AA2E4 /* DrawRecordAPIManager.h */,
+				653A6FFE21707A66001AA2E4 /* DrawRecordAPIManager.m */,
 			);
 			path = TtkAPIManagers;
 			sourceTree = "<group>";
@@ -1074,12 +1089,14 @@
 				65E45AFE2105AB3F0051E912 /* OrderSaveViewController.m in Sources */,
 				6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */,
 				652997CF20FF9232005B463B /* HomeHeaderReusableVM.m in Sources */,
+				653A6FFC217079B1001AA2E4 /* UserInviteUpdateAPIManager.m in Sources */,
 				6545F61A210AF3B100A31A97 /* OrderRewardReformer.m in Sources */,
 				65C955C5210E9A6E00BD5FC8 /* OrderListHomeVM.m in Sources */,
 				6554A52420F72ADA0052BDA5 /* GuangfishDrawstatsAPIManager.m in Sources */,
 				65269FD1216C36270002D30E /* BindCodeVM.m in Sources */,
 				6554A53620F734010052BDA5 /* GuangfishBannerAPIManager.m in Sources */,
 				65DEDC1A210AACDF004DE2DB /* FriendCell.m in Sources */,
+				653A6FFF21707A66001AA2E4 /* DrawRecordAPIManager.m in Sources */,
 				6554A53320F733970052BDA5 /* GuangfishOrderrewardlistAPIManager.m in Sources */,
 				6554A52A20F72F7D0052BDA5 /* GuangfishOrdersaveAPIManager.m in Sources */,
 				6554A53020F730910052BDA5 /* GuangfishOrderlistAPIManager.m in Sources */,
@@ -1111,6 +1128,7 @@
 				6554A51220F6F7680052BDA5 /* GuangfishAPIUrlConfigManager.m in Sources */,
 				658ACFDF21096013006FD017 /* DrawVM.m in Sources */,
 				65C4B19C2108145100968A25 /* GoodsListVM.m in Sources */,
+				653A6FF921707844001AA2E4 /* GuangfishProductSearchAPIManager.m in Sources */,
 				65287B83215E7D6700346335 /* HomeFooterReusableView.m in Sources */,
 				6554A52120F7291F0052BDA5 /* GuangfishRegisterAPIManager.m in Sources */,
 				65C955D4210EA5DF00BD5FC8 /* OrderListReformer.m in Sources */,
