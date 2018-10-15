@@ -26,7 +26,7 @@
 }
 
 - (void)showTextHud:(NSString*)msg {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
     hud.mode = MBProgressHUDModeText;
     hud.label.text = msg;
     hud.margin = 10.0f;
@@ -35,12 +35,12 @@
 }
 
 - (void)showActivityHudByText:(NSString*)text {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view.window animated:YES];
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
     hud.label.text = text;
 }
 
 - (void)hideActivityHud {
-    [MBProgressHUD hideHUDForView:self.view.window animated:YES];
+    [MBProgressHUD hideHUDForView:[UIApplication sharedApplication].keyWindow animated:YES];
 }
 
 - (void)hideKeyBoard {

@@ -33,6 +33,110 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="181.25937031484258"/>
         </scene>
+        <!--邀请规则-->
+        <scene sceneID="DVW-pX-Aqo">
+            <objects>
+                <tableViewController title="邀请规则" hidesBottomBarWhenPushed="YES" id="eqb-oC-XiO" customClass="YqgzViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nwi-eV-gnK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="12U-fh-I71">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="UlJ-aK-8SU">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UlJ-aK-8SU" id="q2D-z7-bj4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="如何邀请好友？" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxs-Cm-guO">
+                                                    <rect key="frame" x="20" y="15" width="335" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.95686274509803915" green="0.16078431372549018" blue="0.41960784313725491" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="答：在逛友页面中，点击“+”按钮，选择邀请好友，通过社交网络、聊天工具等渠道粘贴发送给朋友。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNN-Tj-KjW">
+                                                    <rect key="frame" x="20" y="42" width="335" height="31.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.37254901960784315" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ps：好友输入您的邀请码注册后，将永久成为你的逛友&quot;" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frW-08-wLg">
+                                                    <rect key="frame" x="20" y="78.5" width="335" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.5490196078431373" green="0.5490196078431373" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="frW-08-wLg" firstAttribute="leading" secondItem="q2D-z7-bj4" secondAttribute="leading" constant="20" id="32K-gF-cOb"/>
+                                                <constraint firstAttribute="trailing" secondItem="BNN-Tj-KjW" secondAttribute="trailing" constant="20" id="7Ah-bR-jOP"/>
+                                                <constraint firstItem="yxs-Cm-guO" firstAttribute="top" secondItem="q2D-z7-bj4" secondAttribute="top" constant="15" id="AVt-Wc-1E5"/>
+                                                <constraint firstItem="BNN-Tj-KjW" firstAttribute="top" secondItem="yxs-Cm-guO" secondAttribute="bottom" constant="10" id="Jzw-UP-S2P"/>
+                                                <constraint firstItem="yxs-Cm-guO" firstAttribute="leading" secondItem="q2D-z7-bj4" secondAttribute="leading" constant="20" id="QFh-Mh-IC3"/>
+                                                <constraint firstItem="BNN-Tj-KjW" firstAttribute="leading" secondItem="q2D-z7-bj4" secondAttribute="leading" constant="20" id="Ray-iS-QSd"/>
+                                                <constraint firstAttribute="trailing" secondItem="frW-08-wLg" secondAttribute="trailing" constant="20" id="n31-wH-FNf"/>
+                                                <constraint firstAttribute="bottom" secondItem="frW-08-wLg" secondAttribute="bottom" constant="15.5" id="rX6-BX-gD8"/>
+                                                <constraint firstAttribute="trailing" secondItem="yxs-Cm-guO" secondAttribute="trailing" constant="20" id="wbw-DA-j4F"/>
+                                                <constraint firstItem="frW-08-wLg" firstAttribute="top" secondItem="BNN-Tj-KjW" secondAttribute="bottom" constant="5" id="wcw-DM-y1D"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="JZQ-4D-6Dg">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JZQ-4D-6Dg" id="AtX-f9-Cd0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邀请好友奖励" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gr-l0-Up8">
+                                                    <rect key="frame" x="20" y="15" width="335" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.95686274510000002" green="0.16078431369999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="答：您的逛友下单提现后，您会获得30元封顶的邀请奖励，另外平台还会给你发放逛友每笔订单返现的20%至100%的奖励。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LR5-BT-aGj">
+                                                    <rect key="frame" x="20" y="42" width="335" height="47"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.37254901959999998" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="eg：朋友订单返现20元，那么你最多能得到平台20元的订单奖励" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mV-bc-NLV">
+                                                    <rect key="frame" x="20" y="94" width="335" height="31.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.54901960780000003" green="0.54901960780000003" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="LR5-BT-aGj" secondAttribute="trailing" constant="20" id="0hN-gn-Mje"/>
+                                                <constraint firstItem="LR5-BT-aGj" firstAttribute="top" secondItem="6Gr-l0-Up8" secondAttribute="bottom" constant="10" id="D2e-YX-sO1"/>
+                                                <constraint firstAttribute="trailing" secondItem="6Gr-l0-Up8" secondAttribute="trailing" constant="20" id="DWn-i9-uu5"/>
+                                                <constraint firstAttribute="bottom" secondItem="9mV-bc-NLV" secondAttribute="bottom" constant="15.5" id="NQr-7C-AC0"/>
+                                                <constraint firstItem="9mV-bc-NLV" firstAttribute="leading" secondItem="AtX-f9-Cd0" secondAttribute="leading" constant="20" id="OVr-yc-YID"/>
+                                                <constraint firstItem="6Gr-l0-Up8" firstAttribute="top" secondItem="AtX-f9-Cd0" secondAttribute="top" constant="15" id="eb7-Sq-tMo"/>
+                                                <constraint firstItem="6Gr-l0-Up8" firstAttribute="leading" secondItem="AtX-f9-Cd0" secondAttribute="leading" constant="20" id="hYh-t9-TJ2"/>
+                                                <constraint firstItem="LR5-BT-aGj" firstAttribute="leading" secondItem="AtX-f9-Cd0" secondAttribute="leading" constant="20" id="nk4-va-Fw0"/>
+                                                <constraint firstAttribute="trailing" secondItem="9mV-bc-NLV" secondAttribute="trailing" constant="20" id="sDJ-sz-2Sy"/>
+                                                <constraint firstItem="9mV-bc-NLV" firstAttribute="top" secondItem="LR5-BT-aGj" secondAttribute="bottom" constant="5" id="wpb-7d-ZSj"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="eqb-oC-XiO" id="lBx-l1-KsS"/>
+                            <outlet property="delegate" destination="eqb-oC-XiO" id="Dty-Uf-H2c"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rOI-TF-DDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="936.79999999999995" y="-553.67316341829087"/>
+        </scene>
         <!--我的逛友-->
         <scene sceneID="ZNA-mK-73X">
             <objects>
@@ -142,6 +246,7 @@
                         <outlet property="ylqButton" destination="Lfc-GT-iea" id="u5L-E2-QKY"/>
                         <outlet property="ylqSelectedView" destination="Pu6-0a-xXz" id="7By-AC-OUb"/>
                         <segue destination="30C-ey-qWA" kind="show" identifier="ShowBdyqmSegue" id="mas-P1-bqa"/>
+                        <segue destination="eqb-oC-XiO" kind="show" identifier="ShowYqgzSegue" id="PE0-8n-VoQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PxH-DE-frh" userLabel="First Responder" sceneMemberID="firstResponder"/>

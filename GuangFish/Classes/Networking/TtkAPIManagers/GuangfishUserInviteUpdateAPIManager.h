@@ -10,6 +10,6 @@
 
 extern NSString * const kUserInviteUpdateAPIManagerParamsKeyInviteCode;
 
-@interface UserInviteUpdateAPIManager : GuangfishAPIBaseManager<GuangfishAPIManager>
+@interface GuangfishUserInviteUpdateAPIManager : GuangfishAPIBaseManager<GuangfishAPIManager>
 
 @end

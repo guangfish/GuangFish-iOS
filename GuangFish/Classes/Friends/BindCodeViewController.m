@@ -50,6 +50,26 @@
             self.doneButton.backgroundColor = [UIColor colorWithRed:0.71 green:0.71 blue:0.71 alpha:1.00];
         }
     }];
+    
+    self.doneButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        @strongify(self);
+        if ([self.viewModel isValidInput]) {
+            [self showActivityHudByText:@""];
+            [self.viewModel doBindCode];
+        }
+        return [RACSignal empty];
+    }];
+    
+    [self.viewModel.requestBindCodeSignal subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        [self hideActivityHud];
+        if ([x isKindOfClass:[NSError class]]) {
+            [self showTextHud:[(NSError *)x domain]];
+        } else {
+            [self showTextHud:x];
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
 }
 
 - (void)initialzieView {

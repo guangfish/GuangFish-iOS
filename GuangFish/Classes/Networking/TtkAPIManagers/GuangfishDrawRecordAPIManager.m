@@ -6,12 +6,12 @@
 //  Copyright © 2018 guangfish. All rights reserved.
 //
 
-#import "DrawRecordAPIManager.h"
+#import "GuangfishDrawRecordAPIManager.h"
 
 NSString * const kDrawRecordAPIManagerParamsKeyPageNo = @"pageNo";
 NSString * const kDrawRecordAPIManagerParamsKeySize = @"size";
 
-@implementation DrawRecordAPIManager
+@implementation GuangfishDrawRecordAPIManager
 
 - (NSString*)methodName {
     return API_DrawRecordUrl;

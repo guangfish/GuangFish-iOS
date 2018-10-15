@@ -12,8 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BindCodeVM : GLViewModel
 
+@property (nonatomic, strong) RACSubject *requestBindCodeSignal;
 @property (nonatomic, strong) NSString *code;
 @property (nonatomic, strong) NSNumber *doneBtnEnable;
+
+- (BOOL)isValidInput;
+- (void)doBindCode;
 
 @end
 

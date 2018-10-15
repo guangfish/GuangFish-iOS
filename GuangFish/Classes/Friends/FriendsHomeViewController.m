@@ -76,6 +76,10 @@
             [JCPresentController presentViewControllerLIFO:self.alertController presentCompletion:nil dismissCompletion:nil];
             break;
             
+        case 3:
+            [self performSegueWithIdentifier:@"ShowYqgzSegue" sender:nil];
+            break;
+            
         default:
             break;
     }

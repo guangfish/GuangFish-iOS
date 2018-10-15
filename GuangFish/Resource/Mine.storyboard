@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -393,15 +394,195 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="我的" id="gvv-jB-WUU"/>
+                    <connections>
+                        <segue destination="tgY-Xc-7B6" kind="show" identifier="ShowZskfSegue" id="mE8-Ea-nwE"/>
+                        <segue destination="3xM-S6-Wb0" kind="show" identifier="ShowAboutUsSegue" id="4mD-S8-uoH"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Csw-hM-F1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="885.60000000000002" y="58.920539730134934"/>
         </scene>
+        <!--专属客服-->
+        <scene sceneID="hDS-fc-But">
+            <objects>
+                <viewController title="专属客服" hidesBottomBarWhenPushed="YES" id="tgY-Xc-7B6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XeU-u7-AEI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ve3-9K-YCw">
+                                <rect key="frame" x="16" y="121" width="343" height="361"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_kefu.png" translatesAutoresizingMaskIntoConstraints="NO" id="uu5-of-dzN">
+                                        <rect key="frame" x="93.5" y="0.0" width="156" height="156"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="156" id="mxO-uj-8kk"/>
+                                            <constraint firstAttribute="width" constant="156" id="taD-Yd-sXr"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="See-tZ-nAB">
+                                        <rect key="frame" x="8" y="178" width="327" height="31.5"/>
+                                        <string key="text">扫码或点击二维码复制微信号服务时间：周一至周五9:00-18:00</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.37254901960784315" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="361" id="7XC-7i-jcV"/>
+                                    <constraint firstItem="See-tZ-nAB" firstAttribute="top" secondItem="uu5-of-dzN" secondAttribute="bottom" constant="22" id="B2R-N9-QZS"/>
+                                    <constraint firstAttribute="trailing" secondItem="See-tZ-nAB" secondAttribute="trailing" constant="8" id="M03-IY-ryc"/>
+                                    <constraint firstItem="uu5-of-dzN" firstAttribute="centerX" secondItem="Ve3-9K-YCw" secondAttribute="centerX" id="MjI-sW-O9h"/>
+                                    <constraint firstItem="uu5-of-dzN" firstAttribute="top" secondItem="Ve3-9K-YCw" secondAttribute="top" id="gEG-1x-KLH"/>
+                                    <constraint firstItem="See-tZ-nAB" firstAttribute="leading" secondItem="Ve3-9K-YCw" secondAttribute="leading" constant="8" id="kxp-57-dPd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ve3-9K-YCw" firstAttribute="leading" secondItem="0cE-62-XHT" secondAttribute="leading" constant="16" id="AmJ-bL-9ae"/>
+                            <constraint firstItem="Ve3-9K-YCw" firstAttribute="centerY" secondItem="XeU-u7-AEI" secondAttribute="centerY" id="cbd-db-kWs"/>
+                            <constraint firstItem="0cE-62-XHT" firstAttribute="trailing" secondItem="Ve3-9K-YCw" secondAttribute="trailing" constant="16" id="gfP-DX-d9A"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0cE-62-XHT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v9W-Y7-dSq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1784.8" y="58.920539730134934"/>
+        </scene>
+        <!--关于我们-->
+        <scene sceneID="C4u-uJ-kwU">
+            <objects>
+                <tableViewController title="关于我们" hidesBottomBarWhenPushed="YES" id="3xM-S6-Wb0" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1lt-aq-Ji9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <sections>
+                            <tableViewSection id="e8J-mc-gnT">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="kom-Xt-aqy">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kom-Xt-aqy" id="Bls-DA-Jdg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="逛鱼是什么？" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NX-lH-CQd">
+                                                    <rect key="frame" x="20" y="15" width="335" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.95686274510000002" green="0.16078431369999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="答：逛鱼是一个可以实现精准搜索，拿优惠券、取高额返利的移动端工具，极大幅度地为您节约购物时间。支持淘宝、京东等购物平台。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XS-C7-tGB">
+                                                    <rect key="frame" x="20" y="25" width="335" height="3.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.37254901959999998" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="1XS-C7-tGB" secondAttribute="trailing" constant="20" id="87M-kv-XQ8"/>
+                                                <constraint firstAttribute="trailing" secondItem="5NX-lH-CQd" secondAttribute="trailing" constant="20" id="9Vi-b8-shQ"/>
+                                                <constraint firstItem="5NX-lH-CQd" firstAttribute="leading" secondItem="Bls-DA-Jdg" secondAttribute="leading" constant="20" id="Z8g-2F-QmI"/>
+                                                <constraint firstItem="1XS-C7-tGB" firstAttribute="top" secondItem="5NX-lH-CQd" secondAttribute="bottom" constant="10" id="aUu-Rj-q6P"/>
+                                                <constraint firstAttribute="bottom" secondItem="1XS-C7-tGB" secondAttribute="bottom" constant="15.5" id="asO-AZ-MKV"/>
+                                                <constraint firstItem="5NX-lH-CQd" firstAttribute="top" secondItem="Bls-DA-Jdg" secondAttribute="top" constant="15" id="hFd-Y9-FV1"/>
+                                                <constraint firstItem="1XS-C7-tGB" firstAttribute="leading" secondItem="Bls-DA-Jdg" secondAttribute="leading" constant="20" id="pLi-xk-Ocf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="icf-q0-ipK">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="icf-q0-ipK" id="7tU-zz-4oP">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="逛鱼团队" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NP5-gx-lYw">
+                                                    <rect key="frame" x="20" y="15" width="335" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.95686274510000002" green="0.16078431369999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCO-Bv-CCP">
+                                                    <rect key="frame" x="20" y="25" width="335" height="3.5"/>
+                                                    <string key="text">答：逛鱼团队是一支由技术人员主导的团队。
+我们向您承诺：逛鱼APP是一款不以盈利为目的的产品。</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.37254901959999998" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="zCO-Bv-CCP" firstAttribute="top" secondItem="NP5-gx-lYw" secondAttribute="bottom" constant="10" id="4PI-Uc-om3"/>
+                                                <constraint firstAttribute="trailing" secondItem="NP5-gx-lYw" secondAttribute="trailing" constant="20" id="E3N-mo-aMV"/>
+                                                <constraint firstItem="NP5-gx-lYw" firstAttribute="top" secondItem="7tU-zz-4oP" secondAttribute="top" constant="15" id="Jw3-xU-bjr"/>
+                                                <constraint firstItem="NP5-gx-lYw" firstAttribute="leading" secondItem="7tU-zz-4oP" secondAttribute="leading" constant="20" id="LYa-3m-oEN"/>
+                                                <constraint firstItem="zCO-Bv-CCP" firstAttribute="leading" secondItem="7tU-zz-4oP" secondAttribute="leading" constant="20" id="bDH-Dr-8HD"/>
+                                                <constraint firstAttribute="bottom" secondItem="zCO-Bv-CCP" secondAttribute="bottom" constant="15.5" id="d8W-qz-p4k"/>
+                                                <constraint firstAttribute="trailing" secondItem="zCO-Bv-CCP" secondAttribute="trailing" constant="20" id="ev9-iH-ool"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="pLR-TS-7Bd">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pLR-TS-7Bd" id="HkG-OA-GOb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="逛鱼的优势" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUC-fA-Gfd">
+                                                    <rect key="frame" x="20" y="15" width="335" height="0.0"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.95686274510000002" green="0.16078431369999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Uw-c5-o2l">
+                                                    <rect key="frame" x="20" y="25" width="335" height="3.5"/>
+                                                    <string key="text">答：
+1.全品类搜索，只要淘宝、京东的商品有券或返现，都能在逛鱼平台上搜索到。
+2.其他同类APP根据商品标题搜索会出现其他品类的商品，而逛鱼能精准搜索出您所需的商品，并不做其他商品推送。
+3.逛鱼APP精小简单，操作简单便捷。
+4.无广告，不扰民。
+5.最重要的一点，返现力度高于同类APP。</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <color key="textColor" red="0.37254901959999998" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DUC-fA-Gfd" firstAttribute="top" secondItem="HkG-OA-GOb" secondAttribute="top" constant="15" id="G0S-cd-epM"/>
+                                                <constraint firstAttribute="trailing" secondItem="DUC-fA-Gfd" secondAttribute="trailing" constant="20" id="I7v-QV-rgQ"/>
+                                                <constraint firstItem="5Uw-c5-o2l" firstAttribute="leading" secondItem="HkG-OA-GOb" secondAttribute="leading" constant="20" id="NJn-MA-5cd"/>
+                                                <constraint firstAttribute="bottom" secondItem="5Uw-c5-o2l" secondAttribute="bottom" constant="15.5" id="Z5Q-ju-z50"/>
+                                                <constraint firstItem="5Uw-c5-o2l" firstAttribute="top" secondItem="DUC-fA-Gfd" secondAttribute="bottom" constant="10" id="djp-kd-sUs"/>
+                                                <constraint firstItem="DUC-fA-Gfd" firstAttribute="leading" secondItem="HkG-OA-GOb" secondAttribute="leading" constant="20" id="ex2-g7-1x8"/>
+                                                <constraint firstAttribute="trailing" secondItem="5Uw-c5-o2l" secondAttribute="trailing" constant="20" id="xvv-bz-ihl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="3xM-S6-Wb0" id="GyH-pc-ahp"/>
+                            <outlet property="delegate" destination="3xM-S6-Wb0" id="VU2-cI-s3j"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IVI-BY-UIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1784.8" y="802.848575712144"/>
+        </scene>
     </scenes>
     <resources>
         <image name="img_enter.png" width="5" height="9"/>
         <image name="img_home_bg.png" width="414" height="314"/>
+        <image name="img_kefu.png" width="156" height="156"/>
         <image name="img_money.png" width="36" height="34"/>
     </resources>
 </document>

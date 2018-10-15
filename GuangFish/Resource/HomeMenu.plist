@@ -3,36 +3,36 @@
 <plist version="1.0">
 <array>
 	<array>
-        <dict>
-            <key>segueId</key>
-            <string>ShowMineInfo</string>
-            <key>imgName</key>
-            <string>img_help</string>
-            <key>title</key>
-            <string>使用帮助</string>
-            <key>url</key>
-            <string></string>
-        </dict>
-        <dict>
-            <key>segueId</key>
-            <string>ShowWebViewControllerSegue</string>
-            <key>imgName</key>
-            <string>img_kf</string>
-            <key>title</key>
-            <string>专属客服</string>
-            <key>url</key>
-            <string>https://www.guangfish.com/app/api/kefu</string>
-        </dict>
-        <dict>
-            <key>segueId</key>
-            <string>ShowOrderRewardSegue</string>
-            <key>imgName</key>
-            <string>img_about_us</string>
-            <key>title</key>
-            <string>关于我们</string>
-            <key>url</key>
-            <string></string>
-        </dict>
+		<dict>
+			<key>segueId</key>
+			<string>ShowMineInfo</string>
+			<key>imgName</key>
+			<string>img_help</string>
+			<key>title</key>
+			<string>使用帮助</string>
+			<key>url</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>segueId</key>
+			<string>ShowZskfSegue</string>
+			<key>imgName</key>
+			<string>img_kf</string>
+			<key>title</key>
+			<string>专属客服</string>
+			<key>url</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>segueId</key>
+			<string>ShowAboutUsSegue</string>
+			<key>imgName</key>
+			<string>img_about_us</string>
+			<key>title</key>
+			<string>关于我们</string>
+			<key>url</key>
+			<string></string>
+		</dict>
 	</array>
 </array>
 </plist>

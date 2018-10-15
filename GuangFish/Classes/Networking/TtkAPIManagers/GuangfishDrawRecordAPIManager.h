@@ -11,6 +11,6 @@
 extern NSString * const kDrawRecordAPIManagerParamsKeyPageNo;
 extern NSString * const kDrawRecordAPIManagerParamsKeySize;
 
-@interface DrawRecordAPIManager : GuangfishAPIBaseManager<GuangfishAPIManager>
+@interface GuangfishDrawRecordAPIManager : GuangfishAPIBaseManager<GuangfishAPIManager>
 
 @end
