@@ -162,7 +162,7 @@
     [self addSubview:departImage];
     _shadowImageView = [[UIImageView alloc] init];
 //    [_shadowImageView setImage:_shadowImage];
-    _shadowImageView.backgroundColor = [UIColor yellowColor];
+    _shadowImageView.backgroundColor = [UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00];
     _shadowImageView.layer.cornerRadius = 1.0f;
     [_topScrollView addSubview:_shadowImageView];
     

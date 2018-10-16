@@ -5,7 +5,7 @@
 	<array>
 		<dict>
 			<key>segueId</key>
-			<string>ShowMineInfo</string>
+			<string>ShowHelpSegue</string>
 			<key>imgName</key>
 			<string>img_help</string>
 			<key>title</key>

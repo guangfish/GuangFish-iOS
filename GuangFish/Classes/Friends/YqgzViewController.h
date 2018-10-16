@@ -7,10 +7,13 @@
 //
 
 #import "GLBaseTableViewController.h"
+#import "YqgzVM.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface YqgzViewController : GLBaseTableViewController
+
+@property (nonatomic, strong) YqgzVM *viewModel;
 
 @end
 

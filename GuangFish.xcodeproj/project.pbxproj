@@ -55,6 +55,9 @@
 		652EFC40215D313500ADB6D1 /* img_tabbar_mine_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 652EFC38215D313500ADB6D1 /* img_tabbar_mine_selected@3x.png */; };
 		652EFC43215D321E00ADB6D1 /* img_enter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 652EFC41215D321E00ADB6D1 /* img_enter@2x.png */; };
 		652EFC44215D321E00ADB6D1 /* img_enter@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 652EFC42215D321E00ADB6D1 /* img_enter@3x.png */; };
+		65363AC12175BD8100BAB611 /* HotSellingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 65363AC02175BD8100BAB611 /* HotSellingCell.m */; };
+		65363AC42175BDA800BAB611 /* HotSellingCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65363AC32175BDA800BAB611 /* HotSellingCellVM.m */; };
+		65363AC72175C3D700BAB611 /* ProductSearchReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 65363AC62175C3D700BAB611 /* ProductSearchReformer.m */; };
 		6537FF0C2111F95F00174141 /* img_search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6537FF0A2111F95E00174141 /* img_search@2x.png */; };
 		6537FF0D2111F95F00174141 /* img_search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6537FF0B2111F95F00174141 /* img_search@3x.png */; };
 		6537FF102111FBE000174141 /* img_home_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6537FF0E2111FBDF00174141 /* img_home_bg@3x.png */; };
@@ -126,6 +129,11 @@
 		65696BAD2133E14D000D3096 /* img_ddjl@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65696BA92133E14C000D3096 /* img_ddjl@2x.png */; };
 		6576FED82113EFF2000C64C3 /* img_info_header@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6576FED62113EFF1000C64C3 /* img_info_header@3x.png */; };
 		6576FED92113EFF2000C64C3 /* img_info_header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6576FED72113EFF2000C64C3 /* img_info_header@2x.png */; };
+		65786F65217577C2009D5F54 /* HotSellHomeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65786F64217577C2009D5F54 /* HotSellHomeVM.m */; };
+		65786F68217578E9009D5F54 /* HotSellHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65786F67217578E9009D5F54 /* HotSellHomeViewController.m */; };
+		65786F6A21758C95009D5F54 /* HotSellingKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65786F6921758C95009D5F54 /* HotSellingKeys.plist */; };
+		65786F6D217590AE009D5F54 /* HotSellingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65786F6C217590AE009D5F54 /* HotSellingViewController.m */; };
+		65786F70217590BE009D5F54 /* HotSellingVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65786F6F217590BE009D5F54 /* HotSellingVM.m */; };
 		6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6584EB4520F63F9B009A381D /* AppDelegate.m */; };
 		6584EB4C20F63F9B009A381D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6584EB4A20F63F9B009A381D /* Main.storyboard */; };
 		6584EB4E20F63F9D009A381D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6584EB4D20F63F9D009A381D /* Assets.xcassets */; };
@@ -232,6 +240,12 @@
 		652EFC38215D313500ADB6D1 /* img_tabbar_mine_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_tabbar_mine_selected@3x.png"; sourceTree = "<group>"; };
 		652EFC41215D321E00ADB6D1 /* img_enter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_enter@2x.png"; sourceTree = "<group>"; };
 		652EFC42215D321E00ADB6D1 /* img_enter@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_enter@3x.png"; sourceTree = "<group>"; };
+		65363ABF2175BD8100BAB611 /* HotSellingCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotSellingCell.h; sourceTree = "<group>"; };
+		65363AC02175BD8100BAB611 /* HotSellingCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotSellingCell.m; sourceTree = "<group>"; };
+		65363AC22175BDA800BAB611 /* HotSellingCellVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotSellingCellVM.h; sourceTree = "<group>"; };
+		65363AC32175BDA800BAB611 /* HotSellingCellVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotSellingCellVM.m; sourceTree = "<group>"; };
+		65363AC52175C3D700BAB611 /* ProductSearchReformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProductSearchReformer.h; sourceTree = "<group>"; };
+		65363AC62175C3D700BAB611 /* ProductSearchReformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProductSearchReformer.m; sourceTree = "<group>"; };
 		6537FF0A2111F95E00174141 /* img_search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_search@2x.png"; sourceTree = "<group>"; };
 		6537FF0B2111F95F00174141 /* img_search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_search@3x.png"; sourceTree = "<group>"; };
 		6537FF0E2111FBDF00174141 /* img_home_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_home_bg@3x.png"; sourceTree = "<group>"; };
@@ -339,6 +353,15 @@
 		65696BA92133E14C000D3096 /* img_ddjl@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_ddjl@2x.png"; sourceTree = "<group>"; };
 		6576FED62113EFF1000C64C3 /* img_info_header@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_info_header@3x.png"; sourceTree = "<group>"; };
 		6576FED72113EFF2000C64C3 /* img_info_header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_info_header@2x.png"; sourceTree = "<group>"; };
+		65786F63217577C2009D5F54 /* HotSellHomeVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotSellHomeVM.h; sourceTree = "<group>"; };
+		65786F64217577C2009D5F54 /* HotSellHomeVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotSellHomeVM.m; sourceTree = "<group>"; };
+		65786F66217578E9009D5F54 /* HotSellHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotSellHomeViewController.h; sourceTree = "<group>"; };
+		65786F67217578E9009D5F54 /* HotSellHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotSellHomeViewController.m; sourceTree = "<group>"; };
+		65786F6921758C95009D5F54 /* HotSellingKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = HotSellingKeys.plist; sourceTree = "<group>"; };
+		65786F6B217590AE009D5F54 /* HotSellingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotSellingViewController.h; sourceTree = "<group>"; };
+		65786F6C217590AE009D5F54 /* HotSellingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotSellingViewController.m; sourceTree = "<group>"; };
+		65786F6E217590BE009D5F54 /* HotSellingVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotSellingVM.h; sourceTree = "<group>"; };
+		65786F6F217590BE009D5F54 /* HotSellingVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotSellingVM.m; sourceTree = "<group>"; };
 		6584EB4120F63F9B009A381D /* GuangFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuangFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6584EB4420F63F9B009A381D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6584EB4520F63F9B009A381D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -558,6 +581,25 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		65786F622175779D009D5F54 /* HotSelling */ = {
+			isa = PBXGroup;
+			children = (
+				65786F66217578E9009D5F54 /* HotSellHomeViewController.h */,
+				65786F67217578E9009D5F54 /* HotSellHomeViewController.m */,
+				65786F63217577C2009D5F54 /* HotSellHomeVM.h */,
+				65786F64217577C2009D5F54 /* HotSellHomeVM.m */,
+				65786F6B217590AE009D5F54 /* HotSellingViewController.h */,
+				65786F6C217590AE009D5F54 /* HotSellingViewController.m */,
+				65786F6E217590BE009D5F54 /* HotSellingVM.h */,
+				65786F6F217590BE009D5F54 /* HotSellingVM.m */,
+				65363ABF2175BD8100BAB611 /* HotSellingCell.h */,
+				65363AC02175BD8100BAB611 /* HotSellingCell.m */,
+				65363AC22175BDA800BAB611 /* HotSellingCellVM.h */,
+				65363AC32175BDA800BAB611 /* HotSellingCellVM.m */,
+			);
+			path = HotSelling;
+			sourceTree = "<group>";
+		};
 		6584EB3820F63F9B009A381D = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +655,7 @@
 				6554A51520F721330052BDA5 /* Login */,
 				65E45AFB2105AB2C0051E912 /* OrderSave */,
 				65C4B19021080F7F00968A25 /* SearchGoods */,
+				65786F622175779D009D5F54 /* HotSelling */,
 				658ACFE42109A4F5006FD017 /* Friends */,
 				65C955BF210E9A3500BD5FC8 /* OrderList */,
 				6584EB6A20F654B2009A381D /* HomeViewController.h */,
@@ -642,6 +685,7 @@
 				6584EB4D20F63F9D009A381D /* Assets.xcassets */,
 				6584EB4F20F63F9D009A381D /* LaunchScreen.storyboard */,
 				6560C83620F874710083F8BD /* HomeMenu.plist */,
+				65786F6921758C95009D5F54 /* HotSellingKeys.plist */,
 				654D2934215BD6C300333B23 /* Search.storyboard */,
 				654D2930215BD50200333B23 /* HotSell.storyboard */,
 				654D2932215BD69C00333B23 /* Friends.storyboard */,
@@ -840,6 +884,8 @@
 				6545F619210AF3B100A31A97 /* OrderRewardReformer.m */,
 				65C955D2210EA5DF00BD5FC8 /* OrderListReformer.h */,
 				65C955D3210EA5DF00BD5FC8 /* OrderListReformer.m */,
+				65363AC52175C3D700BAB611 /* ProductSearchReformer.h */,
+				65363AC62175C3D700BAB611 /* ProductSearchReformer.m */,
 			);
 			path = Reformers;
 			sourceTree = "<group>";
@@ -984,6 +1030,7 @@
 				652EFC39215D313500ADB6D1 /* img_tabbar_friends_selected@3x.png in Resources */,
 				652ED39D215FE09600B0CD3D /* img_ckdd@3x.png in Resources */,
 				6537FF252112010600174141 /* img_sybz@2x.png in Resources */,
+				65786F6A21758C95009D5F54 /* HotSellingKeys.plist in Resources */,
 				652EFC44215D321E00ADB6D1 /* img_enter@3x.png in Resources */,
 				6537FF0C2111F95F00174141 /* img_search@2x.png in Resources */,
 				652EFC3E215D313500ADB6D1 /* img_tabbar_hot_selected@2x.png in Resources */,
@@ -1108,8 +1155,11 @@
 				6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */,
 				652997CF20FF9232005B463B /* HomeHeaderReusableVM.m in Sources */,
 				653A6FFC217079B1001AA2E4 /* GuangfishUserInviteUpdateAPIManager.m in Sources */,
+				65786F65217577C2009D5F54 /* HotSellHomeVM.m in Sources */,
 				6545F61A210AF3B100A31A97 /* OrderRewardReformer.m in Sources */,
+				65363AC12175BD8100BAB611 /* HotSellingCell.m in Sources */,
 				65C955C5210E9A6E00BD5FC8 /* OrderListHomeVM.m in Sources */,
+				65363AC42175BDA800BAB611 /* HotSellingCellVM.m in Sources */,
 				6554A52420F72ADA0052BDA5 /* GuangfishDrawstatsAPIManager.m in Sources */,
 				65269FD1216C36270002D30E /* BindCodeVM.m in Sources */,
 				6554A53620F734010052BDA5 /* GuangfishBannerAPIManager.m in Sources */,
@@ -1117,6 +1167,7 @@
 				653A6FFF21707A66001AA2E4 /* GuangfishDrawRecordAPIManager.m in Sources */,
 				6554A53320F733970052BDA5 /* GuangfishOrderrewardlistAPIManager.m in Sources */,
 				6554A52A20F72F7D0052BDA5 /* GuangfishOrdersaveAPIManager.m in Sources */,
+				65363AC72175C3D700BAB611 /* ProductSearchReformer.m in Sources */,
 				6554A53020F730910052BDA5 /* GuangfishOrderlistAPIManager.m in Sources */,
 				65C4B1A22108237E00968A25 /* GoodsCellVM.m in Sources */,
 				65A2EBD921002B2E000BDE39 /* GLScrollView.m in Sources */,
@@ -1125,16 +1176,19 @@
 				6554A50320F6F7680052BDA5 /* GuangfishLoginAPIManager.m in Sources */,
 				654914A6211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m in Sources */,
 				654914A92119381A006ED0C4 /* UserUpdateViewController.m in Sources */,
+				65786F70217590BE009D5F54 /* HotSellingVM.m in Sources */,
 				65E45AFA2105829C0051E912 /* MineVM.m in Sources */,
 				653FB176216B06E300C705AB /* MenuButton.m in Sources */,
 				6545F60E210AE8B600A31A97 /* OrderRewardViewController.m in Sources */,
 				654813DB20FDD6D700122CEF /* RegisterViewController.m in Sources */,
+				65786F6D217590AE009D5F54 /* HotSellingViewController.m in Sources */,
 				658ACFEA2109A524006FD017 /* FriendsHomeVM.m in Sources */,
 				65C955CB210E9D1D00BD5FC8 /* OrderListVM.m in Sources */,
 				6545F611210AE8CF00A31A97 /* OrderRewardVM.m in Sources */,
 				65269FCE216C36160002D30E /* BindCodeViewController.m in Sources */,
 				65287B86215E7D8700346335 /* HomeFooterReusableVM.m in Sources */,
 				65E45AF3210569510051E912 /* WebVM.m in Sources */,
+				65786F68217578E9009D5F54 /* HotSellHomeViewController.m in Sources */,
 				6554A51B20F721770052BDA5 /* LoginVM.m in Sources */,
 				65C955C2210E9A5B00BD5FC8 /* OrderListHomeViewController.m in Sources */,
 				658ACFED2109A645006FD017 /* FriendsListViewController.m in Sources */,
