@@ -97,6 +97,11 @@
 		654D2933215BD69C00333B23 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654D2932215BD69C00333B23 /* Friends.storyboard */; };
 		654D2935215BD6C300333B23 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654D2934215BD6C300333B23 /* Search.storyboard */; };
 		654D2937215BD6D100333B23 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654D2936215BD6D100333B23 /* Mine.storyboard */; };
+		654FB27C2176C72A00ABB64A /* DrawRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654FB27B2176C72A00ABB64A /* DrawRecordViewController.m */; };
+		654FB27F2176C73D00ABB64A /* DrawRecordVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 654FB27E2176C73D00ABB64A /* DrawRecordVM.m */; };
+		654FB2822176CB5000ABB64A /* DrawRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 654FB2812176CB5000ABB64A /* DrawRecordCell.m */; };
+		654FB2852176CB6100ABB64A /* DrawRecordCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 654FB2842176CB6100ABB64A /* DrawRecordCellVM.m */; };
+		654FB2882177083C00ABB64A /* DrawRecordReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 654FB2872177083C00ABB64A /* DrawRecordReformer.m */; };
 		654FEF1821747D6400D3E284 /* img_kefu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 654FEF1621747D6400D3E284 /* img_kefu@2x.png */; };
 		654FEF1921747D6400D3E284 /* img_kefu@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 654FEF1721747D6400D3E284 /* img_kefu@3x.png */; };
 		6554A4AF20F6F2090052BDA5 /* HomeHeaderReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6554A4AE20F6F2090052BDA5 /* HomeHeaderReusableView.m */; };
@@ -300,6 +305,16 @@
 		654D2932215BD69C00333B23 /* Friends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 		654D2934215BD6C300333B23 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		654D2936215BD6D100333B23 /* Mine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
+		654FB27A2176C72A00ABB64A /* DrawRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawRecordViewController.h; sourceTree = "<group>"; };
+		654FB27B2176C72A00ABB64A /* DrawRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawRecordViewController.m; sourceTree = "<group>"; };
+		654FB27D2176C73D00ABB64A /* DrawRecordVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawRecordVM.h; sourceTree = "<group>"; };
+		654FB27E2176C73D00ABB64A /* DrawRecordVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawRecordVM.m; sourceTree = "<group>"; };
+		654FB2802176CB5000ABB64A /* DrawRecordCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawRecordCell.h; sourceTree = "<group>"; };
+		654FB2812176CB5000ABB64A /* DrawRecordCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawRecordCell.m; sourceTree = "<group>"; };
+		654FB2832176CB6100ABB64A /* DrawRecordCellVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawRecordCellVM.h; sourceTree = "<group>"; };
+		654FB2842176CB6100ABB64A /* DrawRecordCellVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawRecordCellVM.m; sourceTree = "<group>"; };
+		654FB2862177083C00ABB64A /* DrawRecordReformer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawRecordReformer.h; sourceTree = "<group>"; };
+		654FB2872177083C00ABB64A /* DrawRecordReformer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawRecordReformer.m; sourceTree = "<group>"; };
 		654FEF1621747D6400D3E284 /* img_kefu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_kefu@2x.png"; sourceTree = "<group>"; };
 		654FEF1721747D6400D3E284 /* img_kefu@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_kefu@3x.png"; sourceTree = "<group>"; };
 		6554A4AD20F6F2090052BDA5 /* HomeHeaderReusableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeHeaderReusableView.h; sourceTree = "<group>"; };
@@ -886,6 +901,8 @@
 				65C955D3210EA5DF00BD5FC8 /* OrderListReformer.m */,
 				65363AC52175C3D700BAB611 /* ProductSearchReformer.h */,
 				65363AC62175C3D700BAB611 /* ProductSearchReformer.m */,
+				654FB2862177083C00ABB64A /* DrawRecordReformer.h */,
+				654FB2872177083C00ABB64A /* DrawRecordReformer.m */,
 			);
 			path = Reformers;
 			sourceTree = "<group>";
@@ -920,6 +937,14 @@
 				654914A82119381A006ED0C4 /* UserUpdateViewController.m */,
 				654914AA2119382A006ED0C4 /* UserUpdateVM.h */,
 				654914AB2119382A006ED0C4 /* UserUpdateVM.m */,
+				654FB27A2176C72A00ABB64A /* DrawRecordViewController.h */,
+				654FB27B2176C72A00ABB64A /* DrawRecordViewController.m */,
+				654FB27D2176C73D00ABB64A /* DrawRecordVM.h */,
+				654FB27E2176C73D00ABB64A /* DrawRecordVM.m */,
+				654FB2802176CB5000ABB64A /* DrawRecordCell.h */,
+				654FB2812176CB5000ABB64A /* DrawRecordCell.m */,
+				654FB2832176CB6100ABB64A /* DrawRecordCellVM.h */,
+				654FB2842176CB6100ABB64A /* DrawRecordCellVM.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1150,6 +1175,7 @@
 				6554A52720F72EA80052BDA5 /* GuangfishProductInfoAPIManager.m in Sources */,
 				6554A51E20F7283E0052BDA5 /* GuangfishGetSmsCodeAPIManager.m in Sources */,
 				65C955D7210EAC0F00BD5FC8 /* SmartSearchManager.m in Sources */,
+				654FB2882177083C00ABB64A /* DrawRecordReformer.m in Sources */,
 				65E45AF0210569180051E912 /* WebViewController.m in Sources */,
 				65E45AFE2105AB3F0051E912 /* OrderSaveViewController.m in Sources */,
 				6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */,
@@ -1166,6 +1192,7 @@
 				65DEDC1A210AACDF004DE2DB /* FriendCell.m in Sources */,
 				653A6FFF21707A66001AA2E4 /* GuangfishDrawRecordAPIManager.m in Sources */,
 				6554A53320F733970052BDA5 /* GuangfishOrderrewardlistAPIManager.m in Sources */,
+				654FB2822176CB5000ABB64A /* DrawRecordCell.m in Sources */,
 				6554A52A20F72F7D0052BDA5 /* GuangfishOrdersaveAPIManager.m in Sources */,
 				65363AC72175C3D700BAB611 /* ProductSearchReformer.m in Sources */,
 				6554A53020F730910052BDA5 /* GuangfishOrderlistAPIManager.m in Sources */,
@@ -1177,6 +1204,7 @@
 				654914A6211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m in Sources */,
 				654914A92119381A006ED0C4 /* UserUpdateViewController.m in Sources */,
 				65786F70217590BE009D5F54 /* HotSellingVM.m in Sources */,
+				654FB2852176CB6100ABB64A /* DrawRecordCellVM.m in Sources */,
 				65E45AFA2105829C0051E912 /* MineVM.m in Sources */,
 				653FB176216B06E300C705AB /* MenuButton.m in Sources */,
 				6545F60E210AE8B600A31A97 /* OrderRewardViewController.m in Sources */,
@@ -1190,6 +1218,7 @@
 				65E45AF3210569510051E912 /* WebVM.m in Sources */,
 				65786F68217578E9009D5F54 /* HotSellHomeViewController.m in Sources */,
 				6554A51B20F721770052BDA5 /* LoginVM.m in Sources */,
+				654FB27F2176C73D00ABB64A /* DrawRecordVM.m in Sources */,
 				65C955C2210E9A5B00BD5FC8 /* OrderListHomeViewController.m in Sources */,
 				658ACFED2109A645006FD017 /* FriendsListViewController.m in Sources */,
 				6554A51820F721440052BDA5 /* LoginViewController.m in Sources */,
@@ -1197,6 +1226,7 @@
 				6554A4AF20F6F2090052BDA5 /* HomeHeaderReusableView.m in Sources */,
 				658ACFE72109A510006FD017 /* FriendsHomeViewController.m in Sources */,
 				6554A52D20F730290052BDA5 /* GuangfishFriendlistAPIManager.m in Sources */,
+				654FB27C2176C72A00ABB64A /* DrawRecordViewController.m in Sources */,
 				6554A51220F6F7680052BDA5 /* GuangfishAPIUrlConfigManager.m in Sources */,
 				658ACFDF21096013006FD017 /* DrawVM.m in Sources */,
 				655514A22174778800CA03AE /* YqgzViewController.m in Sources */,

@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *hongbaoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *paltformRewardLabel;
 @property (weak, nonatomic) IBOutlet UIButton *drawButton;
+@property (weak, nonatomic) IBOutlet UIButton *DrawRecordButton;
 
 @end
 
@@ -101,6 +102,12 @@
         } else {
             [self.delegate hasNotBindAccount];
         }
+        return [RACSignal empty];
+    }];
+    
+    self.DrawRecordButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        @strongify(self);
+        [[self viewController] performSegueWithIdentifier:@"ShowDrawRecordSegue" sender:nil];
         return [RACSignal empty];
     }];
 }
