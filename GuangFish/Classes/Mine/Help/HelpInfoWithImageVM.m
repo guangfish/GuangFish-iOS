@@ -20,7 +20,6 @@
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:self.infoPlistName ofType:@"plist"];
     NSArray *infoArray= [[NSArray alloc] initWithContentsOfFile:plistPath];
     for (NSDictionary *dic in infoArray) {
-        NSLog(@"%@", [dic objectForKey:@"title"]);
         HelpInfoWithImageCellVM *helpInfoWithImageCellVM = [[HelpInfoWithImageCellVM alloc] initWithResponseDic:dic];
         [self.infoCellVMList addObject:helpInfoWithImageCellVM];
     }

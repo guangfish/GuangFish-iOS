@@ -789,6 +789,51 @@
             </objects>
             <point key="canvasLocation" x="2644" y="-662.51874062968523"/>
         </scene>
+        <!--Help Info View Controller-->
+        <scene sceneID="hbY-Me-yRh">
+            <objects>
+                <tableViewController storyboardIdentifier="HelpInfoViewController" id="ncs-40-XLt" customClass="HelpInfoViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="F1x-eV-bgK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="HelpInfoCell" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="HelpInfoCell" id="7J4-Gi-GMV" customClass="HelpInfoCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7J4-Gi-GMV" id="Njt-w1-8MF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjJ-99-Bxe">
+                                            <rect key="frame" x="21" y="14" width="333" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.37254901960784315" green="0.32941176470588235" blue="0.32941176470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="hjJ-99-Bxe" secondAttribute="bottom" constant="14" id="KJq-3j-XNR"/>
+                                        <constraint firstAttribute="trailing" secondItem="hjJ-99-Bxe" secondAttribute="trailing" constant="21" id="rGH-gq-BYl"/>
+                                        <constraint firstItem="hjJ-99-Bxe" firstAttribute="leading" secondItem="Njt-w1-8MF" secondAttribute="leading" constant="21" id="sYy-JK-dT7"/>
+                                        <constraint firstItem="hjJ-99-Bxe" firstAttribute="top" secondItem="Njt-w1-8MF" secondAttribute="top" constant="14" id="zno-Ts-HW7"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contentLabel" destination="hjJ-99-Bxe" id="4Ft-v2-WMv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ncs-40-XLt" id="ozh-j6-KsJ"/>
+                            <outlet property="delegate" destination="ncs-40-XLt" id="D21-76-d7E"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gaa-2K-89V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3493.5999999999999" y="-663.41829085457277"/>
+        </scene>
         <!--专属客服-->
         <scene sceneID="hDS-fc-But">
             <objects>

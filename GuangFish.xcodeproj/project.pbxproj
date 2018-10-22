@@ -113,6 +113,11 @@
 		6548FF25217D9FF2003C27FA /* jdsy4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6548FF1D217D9FF2003C27FA /* jdsy4@2x.png */; };
 		6548FF26217D9FF2003C27FA /* jdsy2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6548FF1E217D9FF2003C27FA /* jdsy2@2x.png */; };
 		6548FF27217D9FF2003C27FA /* jdsy4@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6548FF1F217D9FF2003C27FA /* jdsy4@3x.png */; };
+		6548FF2B217DA41C003C27FA /* HelpInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6548FF2A217DA41C003C27FA /* HelpInfoViewController.m */; };
+		6548FF2E217DA42C003C27FA /* HelpInfoVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6548FF2D217DA42C003C27FA /* HelpInfoVM.m */; };
+		6548FF31217DA838003C27FA /* HelpInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6548FF30217DA838003C27FA /* HelpInfoCell.m */; };
+		6548FF34217DA849003C27FA /* HelpInfoCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6548FF33217DA849003C27FA /* HelpInfoCellVM.m */; };
+		6548FF36217DAB1A003C27FA /* TxxzHelpInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6548FF35217DAB1A003C27FA /* TxxzHelpInfo.plist */; };
 		654914A6211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 654914A5211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m */; };
 		654914A92119381A006ED0C4 /* UserUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654914A82119381A006ED0C4 /* UserUpdateViewController.m */; };
 		654914AC2119382A006ED0C4 /* UserUpdateVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 654914AB2119382A006ED0C4 /* UserUpdateVM.m */; };
@@ -347,6 +352,15 @@
 		6548FF1D217D9FF2003C27FA /* jdsy4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jdsy4@2x.png"; sourceTree = "<group>"; };
 		6548FF1E217D9FF2003C27FA /* jdsy2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jdsy2@2x.png"; sourceTree = "<group>"; };
 		6548FF1F217D9FF2003C27FA /* jdsy4@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jdsy4@3x.png"; sourceTree = "<group>"; };
+		6548FF29217DA41C003C27FA /* HelpInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpInfoViewController.h; sourceTree = "<group>"; };
+		6548FF2A217DA41C003C27FA /* HelpInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpInfoViewController.m; sourceTree = "<group>"; };
+		6548FF2C217DA42C003C27FA /* HelpInfoVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpInfoVM.h; sourceTree = "<group>"; };
+		6548FF2D217DA42C003C27FA /* HelpInfoVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpInfoVM.m; sourceTree = "<group>"; };
+		6548FF2F217DA838003C27FA /* HelpInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpInfoCell.h; sourceTree = "<group>"; };
+		6548FF30217DA838003C27FA /* HelpInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpInfoCell.m; sourceTree = "<group>"; };
+		6548FF32217DA849003C27FA /* HelpInfoCellVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpInfoCellVM.h; sourceTree = "<group>"; };
+		6548FF33217DA849003C27FA /* HelpInfoCellVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpInfoCellVM.m; sourceTree = "<group>"; };
+		6548FF35217DAB1A003C27FA /* TxxzHelpInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TxxzHelpInfo.plist; sourceTree = "<group>"; };
 		654914A4211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishUserUpdateAPIManager.h; sourceTree = "<group>"; };
 		654914A5211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuangfishUserUpdateAPIManager.m; sourceTree = "<group>"; };
 		654914A72119381A006ED0C4 /* UserUpdateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserUpdateViewController.h; sourceTree = "<group>"; };
@@ -566,6 +580,33 @@
 			path = OrderReward;
 			sourceTree = "<group>";
 		};
+		6548FF28217DA3A9003C27FA /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				6548FEF2217D61C2003C27FA /* HelpViewController.h */,
+				6548FEF3217D61C2003C27FA /* HelpViewController.m */,
+				6548FEF5217D61D7003C27FA /* HelpVM.h */,
+				6548FEF6217D61D7003C27FA /* HelpVM.m */,
+				6548FEF8217D6555003C27FA /* HelpInfoWithImageViewController.h */,
+				6548FEF9217D6555003C27FA /* HelpInfoWithImageViewController.m */,
+				6548FEFB217D6570003C27FA /* HelpInfoWithImageVM.h */,
+				6548FEFC217D6570003C27FA /* HelpInfoWithImageVM.m */,
+				6548FF10217D6E7D003C27FA /* HelpInfoWithImageCell.h */,
+				6548FF11217D6E7D003C27FA /* HelpInfoWithImageCell.m */,
+				6548FF13217D6E8D003C27FA /* HelpInfoWithImageCellVM.h */,
+				6548FF14217D6E8D003C27FA /* HelpInfoWithImageCellVM.m */,
+				6548FF29217DA41C003C27FA /* HelpInfoViewController.h */,
+				6548FF2A217DA41C003C27FA /* HelpInfoViewController.m */,
+				6548FF2C217DA42C003C27FA /* HelpInfoVM.h */,
+				6548FF2D217DA42C003C27FA /* HelpInfoVM.m */,
+				6548FF2F217DA838003C27FA /* HelpInfoCell.h */,
+				6548FF30217DA838003C27FA /* HelpInfoCell.m */,
+				6548FF32217DA849003C27FA /* HelpInfoCellVM.h */,
+				6548FF33217DA849003C27FA /* HelpInfoCellVM.m */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
 		6554A4AC20F6F1EA0052BDA5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -753,14 +794,15 @@
 				6584EB4A20F63F9B009A381D /* Main.storyboard */,
 				6554A51320F71F380052BDA5 /* Login.storyboard */,
 				6584EB4F20F63F9D009A381D /* LaunchScreen.storyboard */,
-				6560C83620F874710083F8BD /* HomeMenu.plist */,
-				65786F6921758C95009D5F54 /* HotSellingKeys.plist */,
 				654D2934215BD6C300333B23 /* Search.storyboard */,
 				654D2930215BD50200333B23 /* HotSell.storyboard */,
 				654D2932215BD69C00333B23 /* Friends.storyboard */,
 				654D2936215BD6D100333B23 /* Mine.storyboard */,
+				6560C83620F874710083F8BD /* HomeMenu.plist */,
+				65786F6921758C95009D5F54 /* HotSellingKeys.plist */,
 				6548FEFE217D6880003C27FA /* TbsyHelpInfo.plist */,
 				6548FF16217D9F36003C27FA /* JdsyHelpInfo.plist */,
+				6548FF35217DAB1A003C27FA /* TxxzHelpInfo.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1001,6 +1043,7 @@
 		65E45AF42105827E0051E912 /* Mine */ = {
 			isa = PBXGroup;
 			children = (
+				6548FF28217DA3A9003C27FA /* Help */,
 				65E45AF52105828F0051E912 /* MineViewController.h */,
 				65E45AF62105828F0051E912 /* MineViewController.m */,
 				65E45AF82105829C0051E912 /* MineVM.h */,
@@ -1017,18 +1060,6 @@
 				654FB2812176CB5000ABB64A /* DrawRecordCell.m */,
 				654FB2832176CB6100ABB64A /* DrawRecordCellVM.h */,
 				654FB2842176CB6100ABB64A /* DrawRecordCellVM.m */,
-				6548FEF2217D61C2003C27FA /* HelpViewController.h */,
-				6548FEF3217D61C2003C27FA /* HelpViewController.m */,
-				6548FEF5217D61D7003C27FA /* HelpVM.h */,
-				6548FEF6217D61D7003C27FA /* HelpVM.m */,
-				6548FEF8217D6555003C27FA /* HelpInfoWithImageViewController.h */,
-				6548FEF9217D6555003C27FA /* HelpInfoWithImageViewController.m */,
-				6548FEFB217D6570003C27FA /* HelpInfoWithImageVM.h */,
-				6548FEFC217D6570003C27FA /* HelpInfoWithImageVM.m */,
-				6548FF10217D6E7D003C27FA /* HelpInfoWithImageCell.h */,
-				6548FF11217D6E7D003C27FA /* HelpInfoWithImageCell.m */,
-				6548FF13217D6E8D003C27FA /* HelpInfoWithImageCellVM.h */,
-				6548FF14217D6E8D003C27FA /* HelpInfoWithImageCellVM.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1177,6 +1208,7 @@
 				652EFC3B215D313500ADB6D1 /* img_tabbar_mine_selected@2x.png in Resources */,
 				6548FF09217D6D41003C27FA /* tbsy1@3x.png in Resources */,
 				6537FF282112010600174141 /* img_grzx@3x.png in Resources */,
+				6548FF36217DAB1A003C27FA /* TxxzHelpInfo.plist in Resources */,
 				652EFC40215D313500ADB6D1 /* img_tabbar_mine_selected@3x.png in Resources */,
 				6548FF08217D6D41003C27FA /* tbsy2@2x.png in Resources */,
 				6537FF202112010600174141 /* img_zskf@3x.png in Resources */,
@@ -1269,6 +1301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6548FF31217DA838003C27FA /* HelpInfoCell.m in Sources */,
 				65E45AF72105828F0051E912 /* MineViewController.m in Sources */,
 				65C4B1992108144100968A25 /* GoodsListViewController.m in Sources */,
 				65DEDC20210AB066004DE2DB /* FriendsListReformer.m in Sources */,
@@ -1302,6 +1335,7 @@
 				6554A52A20F72F7D0052BDA5 /* GuangfishOrdersaveAPIManager.m in Sources */,
 				65363AC72175C3D700BAB611 /* ProductSearchReformer.m in Sources */,
 				6554A53020F730910052BDA5 /* GuangfishOrderlistAPIManager.m in Sources */,
+				6548FF2B217DA41C003C27FA /* HelpInfoViewController.m in Sources */,
 				65C4B1A22108237E00968A25 /* GoodsCellVM.m in Sources */,
 				65A2EBD921002B2E000BDE39 /* GLScrollView.m in Sources */,
 				65C955CE210EA3E800BD5FC8 /* OrderCell.m in Sources */,
@@ -1331,6 +1365,7 @@
 				659D8C6A20FF159E00E590E5 /* HomeMenuCell.m in Sources */,
 				6554A4AF20F6F2090052BDA5 /* HomeHeaderReusableView.m in Sources */,
 				658ACFE72109A510006FD017 /* FriendsHomeViewController.m in Sources */,
+				6548FF2E217DA42C003C27FA /* HelpInfoVM.m in Sources */,
 				6554A52D20F730290052BDA5 /* GuangfishFriendlistAPIManager.m in Sources */,
 				654FB27C2176C72A00ABB64A /* DrawRecordViewController.m in Sources */,
 				6554A51220F6F7680052BDA5 /* GuangfishAPIUrlConfigManager.m in Sources */,
@@ -1365,6 +1400,7 @@
 				654813DE20FDD6E600122CEF /* RegisterVM.m in Sources */,
 				65C4B19621080FAA00968A25 /* SearchGoodsVM.m in Sources */,
 				655514A5217477D600CA03AE /* YqgzVM.m in Sources */,
+				6548FF34217DA849003C27FA /* HelpInfoCellVM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

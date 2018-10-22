@@ -28,4 +28,10 @@
     return helpInfoWithImageVM;
 }
 
+- (HelpInfoVM*)getTxxzVM {
+    HelpInfoVM *helpInfoVM = [[HelpInfoVM alloc] init];
+    helpInfoVM.infoPlistName = @"TxxzHelpInfo";
+    return helpInfoVM;
+}
+
 @end
