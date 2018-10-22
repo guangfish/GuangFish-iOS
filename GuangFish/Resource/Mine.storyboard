@@ -774,6 +774,21 @@
             </objects>
             <point key="canvasLocation" x="1784.8" y="802.848575712144"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="fzW-jI-55c">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" hidesBottomBarWhenPushed="YES" id="uWv-2o-uEb" customClass="WebViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YnD-RN-M1O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="h0z-cY-KIY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XAB-Rg-BEG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886" y="-661"/>
+        </scene>
     </scenes>
     <resources>
         <image name="img_enter.png" width="5" height="9"/>

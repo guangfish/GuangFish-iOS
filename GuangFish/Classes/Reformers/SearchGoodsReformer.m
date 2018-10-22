@@ -9,6 +9,7 @@
 #import "SearchGoodsReformer.h"
 
 NSString * const kSearchGoodsDataKeyHaveMorePage = @"have_more";
+NSString * const kSearchGoodsDataKeyIfJump = @"ifJump";
 NSString * const kSearchGoodsDataKeyPage = @"page";
 NSString * const kSearchGoodsDataKeyGoodsCellVMList = @"GoodsCellVMList";
 NSString * const kSearchGoodsDataKeyMall = @"mall";
@@ -22,6 +23,7 @@ NSString * const kSearchGoodsDataKeyMall = @"mall";
         if ([manager isKindOfClass:[GuangfishProductInfoAPIManager class]]) {
             NSNumber *page = dic[@"curPage"];
             NSNumber *ifHasNextPage = dic[@"hasNext"];
+            NSNumber *ifJump = [dic[@"ifJump"] isEqualToString:@"no"] ? @0 : @1;
             NSMutableArray *goodsCellVMList = [[NSMutableArray alloc] initWithCapacity:30];
             
             for (NSDictionary *itemDic in dic[@"items"]) {
@@ -31,6 +33,7 @@ NSString * const kSearchGoodsDataKeyMall = @"mall";
             
             resultData = @{
                            kSearchGoodsDataKeyHaveMorePage: ifHasNextPage,
+                           kSearchGoodsDataKeyIfJump: ifJump,
                            kSearchGoodsDataKeyGoodsCellVMList: goodsCellVMList,
                            kSearchGoodsDataKeyPage: page,
                            kSearchGoodsDataKeyMall: dic[@"mall"]
@@ -39,6 +42,7 @@ NSString * const kSearchGoodsDataKeyMall = @"mall";
     } else {
         resultData = @{
                        kSearchGoodsDataKeyHaveMorePage: @0,
+                       kSearchGoodsDataKeyIfJump: @0,
                        kSearchGoodsDataKeyGoodsCellVMList: [[NSMutableArray alloc] init],
                        kSearchGoodsDataKeyPage: @1,
                        kSearchGoodsDataKeyMall: @""

@@ -43,7 +43,7 @@
         return;
     }
     
-    UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
     WebViewController *webViewController = [homeStoryboard instantiateViewControllerWithIdentifier:@"WebViewController"];
     WebVM *webVM = [[WebVM alloc] init];
     webVM.urlStr = link;

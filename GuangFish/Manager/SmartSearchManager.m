@@ -74,7 +74,7 @@ static SmartSearchManager *sharedManager = nil;
     if ([[self getCurrentVC] isKindOfClass:OrderSaveViewController.class]) {
         return;
     } else {
-        UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Search" bundle:nil];
         OrderSaveViewController *orderSaveViewController = [homeStoryboard instantiateViewControllerWithIdentifier:@"OrderSaveViewController"];
         [[self getCurrentVC] showViewController:orderSaveViewController sender:nil];
     }

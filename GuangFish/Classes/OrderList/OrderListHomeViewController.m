@@ -52,9 +52,9 @@
 
 - (void)slideSwitchView:(QCSlideSwitchView *)view didselectTab:(NSUInteger)number {
     if (number == 0) {
-        [self chooseJS];
-    } else if (number == 1) {
         [self chooseFK];
+    } else if (number == 1) {
+        [self chooseJS];
     } else if (number == 2) {
         [self chooseSX];
     }
@@ -100,7 +100,7 @@
     self.jsSelectedView.hidden = NO;
     self.fkSelectedView.hidden = YES;
     self.sxSelectedView.hidden = YES;
-    [self.slideSwitchView switchByTag:0];
+    [self.slideSwitchView switchByTag:1];
 }
 
 - (void)chooseFK {
@@ -110,7 +110,7 @@
     self.jsSelectedView.hidden = YES;
     self.fkSelectedView.hidden = NO;
     self.sxSelectedView.hidden = YES;
-    [self.slideSwitchView switchByTag:1];
+    [self.slideSwitchView switchByTag:0];
 }
 
 - (void)chooseSX {
@@ -134,7 +134,7 @@
 
 - (NSMutableArray*)controllersArray {
     if (_controllersArray == nil) {
-        self.controllersArray = [[NSMutableArray alloc] initWithCapacity:2];
+        self.controllersArray = [[NSMutableArray alloc] initWithCapacity:3];
         
         UIStoryboard *mineStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
         OrderListViewController *jsFriendsListViewController = [mineStoryboard instantiateViewControllerWithIdentifier:@"OrderListViewController"];
@@ -149,7 +149,7 @@
         sxFriendsListViewController.viewModel = [self.viewModel getSXOrderListVM];
         sxFriendsListViewController.title = @"订单失效";
         
-        [self.controllersArray addObjectsFromArray:@[jsFriendsListViewController, fkFriendsListViewController, sxFriendsListViewController]];
+        [self.controllersArray addObjectsFromArray:@[fkFriendsListViewController,jsFriendsListViewController ,sxFriendsListViewController]];
     }
     return _controllersArray;
 }

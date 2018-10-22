@@ -15,6 +15,7 @@
 @property (nonatomic, strong) GuangfishProductInfoAPIManager *productInfoAPIManager;
 @property (nonatomic, strong) SearchGoodsReformer *searchGoodsReformer;
 @property (nonatomic, assign) NSInteger page;
+@property (nonatomic, assign) BOOL ifJump;
 
 @end
 
@@ -22,6 +23,7 @@
 
 - (void)initializeData {
     self.requestGetGoodsListSignal = [RACSubject subject];
+    self.ifJump = NO;
     self.page = 1;
 }
 
@@ -52,6 +54,7 @@
         [self.goodsListCellVMList addObjectsFromArray:[resultDic objectForKey:kSearchGoodsDataKeyGoodsCellVMList]];
         self.haveMore = [resultDic objectForKey:kSearchGoodsDataKeyHaveMorePage];
         self.isTaobao = [[resultDic objectForKey:kSearchGoodsDataKeyMall] isEqualToString:@"taobao"] ? YES : NO;
+        self.ifJump = [[resultDic objectForKey:kSearchGoodsDataKeyIfJump] isEqualToNumber:@1] ? YES : NO;
         if ([[resultDic objectForKey:kSearchGoodsDataKeyPage] isEqualToNumber:@1] && self.goodsListCellVMList.count == 0) {
             [self.requestGetGoodsListSignal sendNext:[NSError errorWithDomain:@"未搜索到商品" code:0 userInfo:nil]];
         } else {
@@ -81,7 +84,7 @@
 }
 
 - (BOOL)needAutoShowGoods {
-    if (self.goodsListCellVMList.count == 1) {
+    if (self.ifJump) {
         return YES;
     }
     return NO;

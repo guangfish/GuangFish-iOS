@@ -455,14 +455,14 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax1-g9-Min">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="订单结算">
+                                        <state key="normal" title="订单付款">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H0a-6l-5YK">
                                         <rect key="frame" x="125" y="0.0" width="125" height="44"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="订单付款">
+                                        <state key="normal" title="订单结算">
                                             <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
@@ -541,10 +541,10 @@
                         <viewLayoutGuide key="safeArea" id="wsz-m0-Nld"/>
                     </view>
                     <connections>
-                        <outlet property="fkButton" destination="H0a-6l-5YK" id="k9m-Ay-Ha3"/>
-                        <outlet property="fkSelectedView" destination="q8f-sT-QGQ" id="IKj-MI-TVH"/>
-                        <outlet property="jsButton" destination="Ax1-g9-Min" id="3A9-6v-78R"/>
-                        <outlet property="jsSelectedView" destination="tXa-EU-aG0" id="tuU-mW-mbG"/>
+                        <outlet property="fkButton" destination="Ax1-g9-Min" id="ULP-zK-Ek5"/>
+                        <outlet property="fkSelectedView" destination="tXa-EU-aG0" id="KcE-hR-law"/>
+                        <outlet property="jsButton" destination="H0a-6l-5YK" id="7ea-j4-eBJ"/>
+                        <outlet property="jsSelectedView" destination="q8f-sT-QGQ" id="s0S-GN-bsf"/>
                         <outlet property="slideSwitchView" destination="wgy-r9-GEw" id="e3J-ak-1Ac"/>
                         <outlet property="sxButton" destination="MqW-Ap-B93" id="Itx-Xq-Jff"/>
                         <outlet property="sxSelectedView" destination="35k-ht-YCj" id="2Zg-Pi-QlN"/>
