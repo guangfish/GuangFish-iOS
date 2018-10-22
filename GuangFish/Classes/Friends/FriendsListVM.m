@@ -51,6 +51,7 @@
         }
         [self.friendCellVMList addObjectsFromArray:[resultDic objectForKey:kFriendsListDataKeyFriendCellVMList]];
         self.haveMore = [resultDic objectForKey:kFriendsListDataKeyHaveMorePage];
+        self.isShowNodataView = self.friendCellVMList.count == 0 ? @1 : @0;
         [self.requestGetFriendsSignal sendNext:@""];
     }
 }

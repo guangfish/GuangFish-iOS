@@ -118,6 +118,8 @@
 		6548FF31217DA838003C27FA /* HelpInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6548FF30217DA838003C27FA /* HelpInfoCell.m */; };
 		6548FF34217DA849003C27FA /* HelpInfoCellVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6548FF33217DA849003C27FA /* HelpInfoCellVM.m */; };
 		6548FF36217DAB1A003C27FA /* TxxzHelpInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6548FF35217DAB1A003C27FA /* TxxzHelpInfo.plist */; };
+		6548FF39217DC04F003C27FA /* img_no_friend@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6548FF37217DC04E003C27FA /* img_no_friend@3x.png */; };
+		6548FF3A217DC04F003C27FA /* img_no_friend@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6548FF38217DC04E003C27FA /* img_no_friend@2x.png */; };
 		654914A6211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 654914A5211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m */; };
 		654914A92119381A006ED0C4 /* UserUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654914A82119381A006ED0C4 /* UserUpdateViewController.m */; };
 		654914AC2119382A006ED0C4 /* UserUpdateVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 654914AB2119382A006ED0C4 /* UserUpdateVM.m */; };
@@ -361,6 +363,8 @@
 		6548FF32217DA849003C27FA /* HelpInfoCellVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelpInfoCellVM.h; sourceTree = "<group>"; };
 		6548FF33217DA849003C27FA /* HelpInfoCellVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelpInfoCellVM.m; sourceTree = "<group>"; };
 		6548FF35217DAB1A003C27FA /* TxxzHelpInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TxxzHelpInfo.plist; sourceTree = "<group>"; };
+		6548FF37217DC04E003C27FA /* img_no_friend@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_no_friend@3x.png"; sourceTree = "<group>"; };
+		6548FF38217DC04E003C27FA /* img_no_friend@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_no_friend@2x.png"; sourceTree = "<group>"; };
 		654914A4211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishUserUpdateAPIManager.h; sourceTree = "<group>"; };
 		654914A5211936FA006ED0C4 /* GuangfishUserUpdateAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuangfishUserUpdateAPIManager.m; sourceTree = "<group>"; };
 		654914A72119381A006ED0C4 /* UserUpdateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserUpdateViewController.h; sourceTree = "<group>"; };
@@ -810,6 +814,8 @@
 		6584EB5D20F6412A009A381D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6548FF38217DC04E003C27FA /* img_no_friend@2x.png */,
+				6548FF37217DC04E003C27FA /* img_no_friend@3x.png */,
 				6548FF19217D9FF0003C27FA /* jdsy1@2x.png */,
 				6548FF1B217D9FF1003C27FA /* jdsy1@3x.png */,
 				6548FF1E217D9FF2003C27FA /* jdsy2@2x.png */,
@@ -1175,6 +1181,7 @@
 				652EFC39215D313500ADB6D1 /* img_tabbar_friends_selected@3x.png in Resources */,
 				6548FF23217D9FF2003C27FA /* jdsy1@3x.png in Resources */,
 				6548FF0A217D6D41003C27FA /* tbsy1@2x.png in Resources */,
+				6548FF3A217DC04F003C27FA /* img_no_friend@2x.png in Resources */,
 				652ED39D215FE09600B0CD3D /* img_ckdd@3x.png in Resources */,
 				6537FF252112010600174141 /* img_sybz@2x.png in Resources */,
 				6548FF0E217D6D41003C27FA /* tbsy4@3x.png in Resources */,
@@ -1197,6 +1204,7 @@
 				6548FF0F217D6D41003C27FA /* tbsy2@3x.png in Resources */,
 				6548FF21217D9FF2003C27FA /* jdsy1@2x.png in Resources */,
 				6548FF24217D9FF2003C27FA /* jdsy3@3x.png in Resources */,
+				6548FF39217DC04F003C27FA /* img_no_friend@3x.png in Resources */,
 				652EFC2F215D302D00ADB6D1 /* img_tabbar_search_selected@2x.png in Resources */,
 				653FB16E216B06AB00C705AB /* img_add@3x.png in Resources */,
 				6506F764211C2D1C004317B5 /* img_ydy3@3x.png in Resources */,

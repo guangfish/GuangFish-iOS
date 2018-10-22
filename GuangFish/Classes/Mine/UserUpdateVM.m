@@ -42,7 +42,6 @@
 
 - (void)managerCallAPIDidSuccess:(GuangfishAPIBaseManager *)manager {
     if (manager == self.userUpdateAPIManager) {
-        NSLog(@"%@", [manager fetchDataWithReformer:nil]);
         [self.requestUserUpdateSignal sendNext:@"绑定成功"];
     }
 }

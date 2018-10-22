@@ -52,7 +52,6 @@
         [self.requestGetBannerSignal sendNext:@"banner获取成功"];
     } else if (manager == self.drawstatsAPIManager) {
         NSDictionary *responseDic = [manager fetchDataWithReformer:nil];
-        NSLog(@"%@", responseDic);
         self.homeHeaderReusableVM.drawStatsDic = [responseDic objectForKey:@"data"];
         self.totalBuySave = [[responseDic objectForKey:@"data"] objectForKey:@"totalBuySave"];
         [self.requestGetdrawStatsSignal sendNext:@"返利信息获取成功"];

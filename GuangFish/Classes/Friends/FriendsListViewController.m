@@ -10,7 +10,7 @@
 #import "MJRefresh.h"
 #import "FriendCell.h"
 
-@interface FriendsListViewController ()
+@interface FriendsListViewController ()<BaseVCManager>
 
 @end
 
@@ -36,6 +36,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - BaseVCManager
+
+- (UIView*)nodataView {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, -100, 109, 137)];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 109, 137)];
+    imageView.image = [UIImage imageNamed:@"img_no_friend"];
+    [view addSubview:imageView];
+    
+    return view;
 }
 
 #pragma mark - Table view data source
