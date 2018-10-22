@@ -9,6 +9,7 @@
 #import "HelpViewController.h"
 #import "QCSlideSwitchView.h"
 #import "HelpInfoWithImageViewController.h"
+#import "HelpInfoViewController.h"
 
 @interface HelpViewController ()<QCSlideSwitchViewDelegate>
 
@@ -63,7 +64,7 @@
     } else if (number == 1) {
         [self chooseJdsy];
     } else if (number == 2) {
-//        [self chooseSX];
+        [self chooseTxxz];
     }
 }
 
@@ -82,10 +83,16 @@
         [self chooseJdsy];
         return [RACSignal empty];
     }];
+    
+    self.txxzButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        @strongify(self)
+        [self chooseTxxz];
+        return [RACSignal empty];
+    }];
 }
 
 - (void)chooseTbsy {
-    [self.tbsyButton setTitleColor:[UIColor colorWithRed:0.90 green:0.31 blue:0.33 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.tbsyButton setTitleColor:[UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00] forState:(UIControlStateNormal)];
     [self.jdsyButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
     [self.txxzButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
     [self.cjwtButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
@@ -98,7 +105,7 @@
 
 - (void)chooseJdsy {
     [self.tbsyButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
-    [self.jdsyButton setTitleColor:[UIColor colorWithRed:0.90 green:0.31 blue:0.33 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.jdsyButton setTitleColor:[UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00] forState:(UIControlStateNormal)];
     [self.txxzButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
     [self.cjwtButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
     self.tbsySelectedView.hidden = YES;
@@ -106,6 +113,18 @@
     self.txxzSelectedView.hidden = YES;
     self.cjwtSelectedView.hidden = YES;
     [self.slideSwitchView switchByTag:1];
+}
+
+- (void)chooseTxxz {
+    [self.tbsyButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.jdsyButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.txxzButton setTitleColor:[UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.cjwtButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
+    self.tbsySelectedView.hidden = YES;
+    self.jdsySelectedView.hidden = YES;
+    self.txxzSelectedView.hidden = NO;
+    self.cjwtSelectedView.hidden = YES;
+    [self.slideSwitchView switchByTag:2];
 }
 
 #pragma mark - setters and getters
@@ -130,7 +149,11 @@
         jdsyViewController.title = @"京东使用";
         jdsyViewController.viewModel = [self.viewModel getJdsyVM];
         
-        [self.controllersArray addObjectsFromArray:@[tbsyViewController, jdsyViewController]];
+        HelpInfoViewController *txxzViewController = [mineStoryboard instantiateViewControllerWithIdentifier:@"HelpInfoViewController"];
+        txxzViewController.title = @"提现须知";
+        txxzViewController.viewModel = [self.viewModel getTxxzVM];
+        
+        [self.controllersArray addObjectsFromArray:@[tbsyViewController, jdsyViewController, txxzViewController]];
     }
     return _controllersArray;
 }

@@ -7,6 +7,7 @@
 //
 
 #import "HelpInfoViewController.h"
+#import "HelpInfoCell.h"
 
 @interface HelpInfoViewController ()
 
@@ -17,68 +18,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [self initialzieModel];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.viewModel getInfo];
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.viewModel.infoCellVMList.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    HelpInfoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HelpInfoCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    HelpInfoCellVM *helpInfoCellVM = [self.viewModel.infoCellVMList objectAtIndex:indexPath.row];
+    cell.viewModel = helpInfoCellVM;
     
     return cell;
 }
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation
@@ -89,5 +47,24 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - private methods
+
+- (void)initialzieModel {
+    @weakify(self);
+    [self.viewModel.getInfoListSignal subscribeNext:^(id _Nullable x) {
+        @strongify(self);
+        [self.tableView reloadData];
+    }];
+}
+
+#pragma mark - setters and getters
+
+- (HelpInfoVM*)viewModel {
+    if (_viewModel == nil) {
+        self.viewModel = [[HelpInfoVM alloc] init];
+    }
+    return _viewModel;
+}
 
 @end
