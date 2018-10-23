@@ -34,4 +34,10 @@
     return helpInfoVM;
 }
 
+- (HelpInfoWithTitleVM*)getCjwtVM {
+    HelpInfoWithTitleVM *helpInfoWithTitleVM = [[HelpInfoWithTitleVM alloc] init];
+    helpInfoWithTitleVM.infoPlistName = @"CjwtHelpInfo";
+    return helpInfoWithTitleVM;
+}
+
 @end

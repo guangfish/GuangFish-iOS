@@ -10,6 +10,7 @@
 #import "QCSlideSwitchView.h"
 #import "HelpInfoWithImageViewController.h"
 #import "HelpInfoViewController.h"
+#import "HelpInfoWithTitleViewController.h"
 
 @interface HelpViewController ()<QCSlideSwitchViewDelegate>
 
@@ -65,6 +66,8 @@
         [self chooseJdsy];
     } else if (number == 2) {
         [self chooseTxxz];
+    } else if (number == 3) {
+        [self chooseCjwt];
     }
 }
 
@@ -87,6 +90,12 @@
     self.txxzButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         @strongify(self)
         [self chooseTxxz];
+        return [RACSignal empty];
+    }];
+    
+    self.cjwtButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        @strongify(self)
+        [self chooseCjwt];
         return [RACSignal empty];
     }];
 }
@@ -127,6 +136,18 @@
     [self.slideSwitchView switchByTag:2];
 }
 
+- (void)chooseCjwt {
+    [self.tbsyButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.jdsyButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.txxzButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.cjwtButton setTitleColor:[UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00] forState:(UIControlStateNormal)];
+    self.tbsySelectedView.hidden = YES;
+    self.jdsySelectedView.hidden = YES;
+    self.txxzSelectedView.hidden = YES;
+    self.cjwtSelectedView.hidden = NO;
+    [self.slideSwitchView switchByTag:3];
+}
+
 #pragma mark - setters and getters
 
 - (HelpVM*)viewModel {
@@ -153,7 +174,11 @@
         txxzViewController.title = @"提现须知";
         txxzViewController.viewModel = [self.viewModel getTxxzVM];
         
-        [self.controllersArray addObjectsFromArray:@[tbsyViewController, jdsyViewController, txxzViewController]];
+        HelpInfoWithTitleViewController *cjwtViewController = [mineStoryboard instantiateViewControllerWithIdentifier:@"HelpInfoWithTitleViewController"];
+        cjwtViewController.title = @"常见问题";
+        cjwtViewController.viewModel = [self.viewModel getCjwtVM];
+        
+        [self.controllersArray addObjectsFromArray:@[tbsyViewController, jdsyViewController, txxzViewController, cjwtViewController]];
     }
     return _controllersArray;
 }

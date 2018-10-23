@@ -9,6 +9,7 @@
 #import "GLViewModel.h"
 #import "HelpInfoWithImageVM.h"
 #import "HelpInfoVM.h"
+#import "HelpInfoWithTitleVM.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (HelpInfoWithImageVM*)getTbsyVM;
 - (HelpInfoWithImageVM*)getJdsyVM;
 - (HelpInfoVM*)getTxxzVM;
+- (HelpInfoWithTitleVM*)getCjwtVM;
 
 @end
 
