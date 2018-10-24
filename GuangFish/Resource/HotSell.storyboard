@@ -41,23 +41,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kAX-J8-X31" customClass="QCSlideSwitchView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyd-0w-bYp">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTs-zo-c8D" customClass="QCSlideSwitchView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="kAX-J8-X31" firstAttribute="leading" secondItem="3lA-Up-yY5" secondAttribute="leading" id="80s-6r-jlb"/>
-                            <constraint firstItem="kAX-J8-X31" firstAttribute="bottom" secondItem="3lA-Up-yY5" secondAttribute="bottom" id="MQJ-6L-9eY"/>
-                            <constraint firstItem="kAX-J8-X31" firstAttribute="trailing" secondItem="3lA-Up-yY5" secondAttribute="trailing" id="c7O-zq-52G"/>
-                            <constraint firstItem="kAX-J8-X31" firstAttribute="top" secondItem="3lA-Up-yY5" secondAttribute="top" id="hrd-3p-hd1"/>
+                            <constraint firstAttribute="trailing" secondItem="pyd-0w-bYp" secondAttribute="trailing" id="G23-nv-PyV"/>
+                            <constraint firstItem="pyd-0w-bYp" firstAttribute="leading" secondItem="MvB-xd-WLO" secondAttribute="leading" id="HpX-wT-gCF"/>
+                            <constraint firstItem="LTs-zo-c8D" firstAttribute="top" secondItem="3lA-Up-yY5" secondAttribute="top" id="Mlw-0q-O8K"/>
+                            <constraint firstItem="LTs-zo-c8D" firstAttribute="leading" secondItem="3lA-Up-yY5" secondAttribute="leading" id="Tp7-vo-bAN"/>
+                            <constraint firstItem="LTs-zo-c8D" firstAttribute="top" secondItem="pyd-0w-bYp" secondAttribute="bottom" id="diX-HI-wnG"/>
+                            <constraint firstItem="pyd-0w-bYp" firstAttribute="top" secondItem="MvB-xd-WLO" secondAttribute="top" id="otx-ag-MhO"/>
+                            <constraint firstItem="LTs-zo-c8D" firstAttribute="bottom" secondItem="3lA-Up-yY5" secondAttribute="bottom" id="r7O-sh-rN1"/>
+                            <constraint firstItem="LTs-zo-c8D" firstAttribute="trailing" secondItem="3lA-Up-yY5" secondAttribute="trailing" id="xPs-wR-sPk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3lA-Up-yY5"/>
                     </view>
                     <navigationItem key="navigationItem" title="热卖" id="ZMZ-Hc-ywz"/>
                     <connections>
-                        <outlet property="slideSwitchView" destination="kAX-J8-X31" id="mHd-D3-grc"/>
+                        <outlet property="slideSwitchView" destination="LTs-zo-c8D" id="gud-zC-SkH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZf-Y7-KLY" userLabel="First Responder" sceneMemberID="firstResponder"/>

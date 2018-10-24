@@ -7,7 +7,6 @@
 //
 
 #import "HotSellingViewController.h"
-#import "MJRefresh.h"
 #import "HotSellingCell.h"
 
 @interface HotSellingViewController ()

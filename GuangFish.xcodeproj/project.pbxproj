@@ -175,6 +175,9 @@
 		65786F6A21758C95009D5F54 /* HotSellingKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 65786F6921758C95009D5F54 /* HotSellingKeys.plist */; };
 		65786F6D217590AE009D5F54 /* HotSellingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65786F6C217590AE009D5F54 /* HotSellingViewController.m */; };
 		65786F70217590BE009D5F54 /* HotSellingVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 65786F6F217590BE009D5F54 /* HotSellingVM.m */; };
+		6582D07621800F7E00A6AEE3 /* KefuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6582D07521800F7E00A6AEE3 /* KefuViewController.m */; };
+		6582D07921800F8D00A6AEE3 /* KefuVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6582D07821800F8D00A6AEE3 /* KefuVM.m */; };
+		6582D07D2180242E00A6AEE3 /* QCSlideSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6582D07B2180242D00A6AEE3 /* QCSlideSwitchView.m */; };
 		6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6584EB4520F63F9B009A381D /* AppDelegate.m */; };
 		6584EB4C20F63F9B009A381D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6584EB4A20F63F9B009A381D /* Main.storyboard */; };
 		6584EB4E20F63F9D009A381D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6584EB4D20F63F9D009A381D /* Assets.xcassets */; };
@@ -183,7 +186,6 @@
 		6584EB6C20F654B2009A381D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6584EB6B20F654B2009A381D /* HomeViewController.m */; };
 		658ACFDC21096006006FD017 /* DrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658ACFDB21096006006FD017 /* DrawViewController.m */; };
 		658ACFDF21096013006FD017 /* DrawVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 658ACFDE21096013006FD017 /* DrawVM.m */; };
-		658ACFE32109A4C7006FD017 /* QCSlideSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 658ACFE12109A4C7006FD017 /* QCSlideSwitchView.m */; };
 		658ACFE72109A510006FD017 /* FriendsHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658ACFE62109A510006FD017 /* FriendsHomeViewController.m */; };
 		658ACFEA2109A524006FD017 /* FriendsHomeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 658ACFE92109A524006FD017 /* FriendsHomeVM.m */; };
 		658ACFED2109A645006FD017 /* FriendsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 658ACFEC2109A645006FD017 /* FriendsListViewController.m */; };
@@ -463,6 +465,12 @@
 		65786F6C217590AE009D5F54 /* HotSellingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotSellingViewController.m; sourceTree = "<group>"; };
 		65786F6E217590BE009D5F54 /* HotSellingVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HotSellingVM.h; sourceTree = "<group>"; };
 		65786F6F217590BE009D5F54 /* HotSellingVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HotSellingVM.m; sourceTree = "<group>"; };
+		6582D07421800F7E00A6AEE3 /* KefuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KefuViewController.h; sourceTree = "<group>"; };
+		6582D07521800F7E00A6AEE3 /* KefuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KefuViewController.m; sourceTree = "<group>"; };
+		6582D07721800F8D00A6AEE3 /* KefuVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KefuVM.h; sourceTree = "<group>"; };
+		6582D07821800F8D00A6AEE3 /* KefuVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KefuVM.m; sourceTree = "<group>"; };
+		6582D07B2180242D00A6AEE3 /* QCSlideSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCSlideSwitchView.m; sourceTree = "<group>"; };
+		6582D07C2180242D00A6AEE3 /* QCSlideSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCSlideSwitchView.h; sourceTree = "<group>"; };
 		6584EB4120F63F9B009A381D /* GuangFish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuangFish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6584EB4420F63F9B009A381D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6584EB4520F63F9B009A381D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -477,8 +485,6 @@
 		658ACFDB21096006006FD017 /* DrawViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawViewController.m; sourceTree = "<group>"; };
 		658ACFDD21096013006FD017 /* DrawVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawVM.h; sourceTree = "<group>"; };
 		658ACFDE21096013006FD017 /* DrawVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawVM.m; sourceTree = "<group>"; };
-		658ACFE12109A4C7006FD017 /* QCSlideSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCSlideSwitchView.m; sourceTree = "<group>"; };
-		658ACFE22109A4C7006FD017 /* QCSlideSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCSlideSwitchView.h; sourceTree = "<group>"; };
 		658ACFE52109A510006FD017 /* FriendsHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsHomeViewController.h; sourceTree = "<group>"; };
 		658ACFE62109A510006FD017 /* FriendsHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendsHomeViewController.m; sourceTree = "<group>"; };
 		658ACFE82109A524006FD017 /* FriendsHomeVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsHomeVM.h; sourceTree = "<group>"; };
@@ -736,6 +742,15 @@
 			path = HotSelling;
 			sourceTree = "<group>";
 		};
+		6582D07A2180242D00A6AEE3 /* QCSlideSwitchView */ = {
+			isa = PBXGroup;
+			children = (
+				6582D07C2180242D00A6AEE3 /* QCSlideSwitchView.h */,
+				6582D07B2180242D00A6AEE3 /* QCSlideSwitchView.m */,
+			);
+			path = QCSlideSwitchView;
+			sourceTree = "<group>";
+		};
 		6584EB3820F63F9B009A381D = {
 			isa = PBXGroup;
 			children = (
@@ -948,15 +963,6 @@
 			path = Draw;
 			sourceTree = "<group>";
 		};
-		658ACFE02109A4C7006FD017 /* QCSlideSwitchView */ = {
-			isa = PBXGroup;
-			children = (
-				658ACFE22109A4C7006FD017 /* QCSlideSwitchView.h */,
-				658ACFE12109A4C7006FD017 /* QCSlideSwitchView.m */,
-			);
-			path = QCSlideSwitchView;
-			sourceTree = "<group>";
-		};
 		658ACFE42109A4F5006FD017 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
@@ -987,7 +993,7 @@
 		65A2EBD121002B1E000BDE39 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				658ACFE02109A4C7006FD017 /* QCSlideSwitchView */,
+				6582D07A2180242D00A6AEE3 /* QCSlideSwitchView */,
 				65A2EBD221002B2E000BDE39 /* GLScrollView */,
 			);
 			path = Vendor;
@@ -1089,6 +1095,10 @@
 				654FB2812176CB5000ABB64A /* DrawRecordCell.m */,
 				654FB2832176CB6100ABB64A /* DrawRecordCellVM.h */,
 				654FB2842176CB6100ABB64A /* DrawRecordCellVM.m */,
+				6582D07421800F7E00A6AEE3 /* KefuViewController.h */,
+				6582D07521800F7E00A6AEE3 /* KefuViewController.m */,
+				6582D07721800F8D00A6AEE3 /* KefuVM.h */,
+				6582D07821800F8D00A6AEE3 /* KefuVM.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -1361,7 +1371,9 @@
 				65269FD1216C36270002D30E /* BindCodeVM.m in Sources */,
 				6554A53620F734010052BDA5 /* GuangfishBannerAPIManager.m in Sources */,
 				65DEDC1A210AACDF004DE2DB /* FriendCell.m in Sources */,
+				6582D07D2180242E00A6AEE3 /* QCSlideSwitchView.m in Sources */,
 				653A6FFF21707A66001AA2E4 /* GuangfishDrawRecordAPIManager.m in Sources */,
+				6582D07621800F7E00A6AEE3 /* KefuViewController.m in Sources */,
 				6554A53320F733970052BDA5 /* GuangfishOrderrewardlistAPIManager.m in Sources */,
 				654FB2822176CB5000ABB64A /* DrawRecordCell.m in Sources */,
 				6554A52A20F72F7D0052BDA5 /* GuangfishOrdersaveAPIManager.m in Sources */,
@@ -1430,13 +1442,13 @@
 				6548FEFD217D6570003C27FA /* HelpInfoWithImageVM.m in Sources */,
 				6554A4FB20F6F7680052BDA5 /* GuangfishNetworkingManager.m in Sources */,
 				654914AC2119382A006ED0C4 /* UserUpdateVM.m in Sources */,
-				658ACFE32109A4C7006FD017 /* QCSlideSwitchView.m in Sources */,
 				6554A51120F6F7680052BDA5 /* GuangfishNetworking.m in Sources */,
 				654D292F215BD04800333B23 /* TabBarController.m in Sources */,
 				654813DE20FDD6E600122CEF /* RegisterVM.m in Sources */,
 				65C4B19621080FAA00968A25 /* SearchGoodsVM.m in Sources */,
 				655514A5217477D600CA03AE /* YqgzVM.m in Sources */,
 				6548FF34217DA849003C27FA /* HelpInfoCellVM.m in Sources */,
+				6582D07921800F8D00A6AEE3 /* KefuVM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

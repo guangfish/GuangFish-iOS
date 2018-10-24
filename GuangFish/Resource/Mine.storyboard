@@ -912,7 +912,7 @@
         <!--专属客服-->
         <scene sceneID="hDS-fc-But">
             <objects>
-                <viewController title="专属客服" hidesBottomBarWhenPushed="YES" id="tgY-Xc-7B6" sceneMemberID="viewController">
+                <viewController title="专属客服" hidesBottomBarWhenPushed="YES" id="tgY-Xc-7B6" customClass="KefuViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XeU-u7-AEI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -920,7 +920,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ve3-9K-YCw">
                                 <rect key="frame" x="16" y="121" width="343" height="361"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_kefu.png" translatesAutoresizingMaskIntoConstraints="NO" id="uu5-of-dzN">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_kefu.png" translatesAutoresizingMaskIntoConstraints="NO" id="uu5-of-dzN">
                                         <rect key="frame" x="93.5" y="0.0" width="156" height="156"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="156" id="mxO-uj-8kk"/>
@@ -955,6 +955,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0cE-62-XHT"/>
                     </view>
+                    <connections>
+                        <outlet property="ewmImageView" destination="uu5-of-dzN" id="oFY-5F-UeV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9W-Y7-dSq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

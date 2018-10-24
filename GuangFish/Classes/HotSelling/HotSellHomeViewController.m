@@ -23,8 +23,8 @@
     [super viewDidLoad];
     
     [self initialzieView];
-    
     [self.viewModel getHotSellingVMs];
+    [self initialzieControllers];
     [self.slideSwitchView buildUI];
 }
 
@@ -41,19 +41,17 @@
 #pragma mark - QCSlideSwitchViewDelegate
 
 - (NSUInteger)numberOfTab:(QCSlideSwitchView *)view {
-    return self.viewModel.hotSellingVMList.count;
+    return self.controllersArray.count;
 }
 
 - (UIViewController*)slideSwitchView:(QCSlideSwitchView *)view viewOfTab:(NSUInteger)number {
-    UIStoryboard *hotSellStoryboard = [UIStoryboard storyboardWithName:@"HotSell" bundle:[NSBundle mainBundle]];
-    HotSellingViewController *hotSellingViewController = [hotSellStoryboard instantiateViewControllerWithIdentifier:@"HotSellingViewController"];
-    hotSellingViewController.viewModel = [self.viewModel.hotSellingVMList objectAtIndex:number];
+    HotSellingViewController *hotSellingViewController = [self.controllersArray objectAtIndex:number];
     return hotSellingViewController;
 }
 
 - (void)slideSwitchView:(QCSlideSwitchView *)view didselectTab:(NSUInteger)number {
-    HotSellingVM *hotSellingVM = [self.viewModel.hotSellingVMList objectAtIndex:number];
-    [hotSellingVM loadNextPageHotSellingList];
+    HotSellingViewController *hotSellingViewController = [self.controllersArray objectAtIndex:number];
+    [hotSellingViewController.viewModel loadNextPageHotSellingList];
 }
 
 #pragma mark - private methods
@@ -65,6 +63,15 @@
     self.slideSwitchView.tabItemSelectedColor = [UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00];
 }
 
+- (void)initialzieControllers {
+    UIStoryboard *hotSellStoryboard = [UIStoryboard storyboardWithName:@"HotSell" bundle:[NSBundle mainBundle]];
+    for (HotSellingVM *hotSellingVM in self.viewModel.hotSellingVMList) {
+        HotSellingViewController *hotSellingViewController = [hotSellStoryboard instantiateViewControllerWithIdentifier:@"HotSellingViewController"];
+        hotSellingViewController.viewModel = hotSellingVM;
+        [self.controllersArray addObject:hotSellingViewController];
+    }
+}
+
 #pragma mark - setters and getters
 
 - (HotSellHomeVM*)viewModel {
@@ -72,6 +79,13 @@
         self.viewModel = [[HotSellHomeVM alloc] init];
     }
     return _viewModel;
+}
+
+- (NSMutableArray*)controllersArray {
+    if (_controllersArray == nil) {
+        self.controllersArray = [[NSMutableArray alloc] init];
+    }
+    return _controllersArray;
 }
 
 @end

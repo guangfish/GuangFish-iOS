@@ -6,12 +6,9 @@
 //  Copyright (c) 2014年 Scasy. All rights reserved.
 //
 
+#define WIDTH ([[UIScreen mainScreen] bounds].size.width)
 
 #import "QCSlideSwitchView.h"
-//#import "Utility.h"
-
-#define HEIGHT ([[UIScreen mainScreen] bounds].size.height)
-#define WIDTH ([[UIScreen mainScreen] bounds].size.width)
 
 @implementation QCSlideSwitchView
 
@@ -22,7 +19,7 @@
     //创建顶部可滑动的tab
     _topScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.bounds.size.width, kHeightOfTopScrollView)];
     _topScrollView.delegate = self;
-    _topScrollView.backgroundColor = [UIColor redColor];
+//    _topScrollView.backgroundColor = HeadYellowColor;
     _topScrollView.pagingEnabled = NO;
     _topScrollView.showsHorizontalScrollIndicator = NO;
     _topScrollView.showsVerticalScrollIndicator = NO;
@@ -162,7 +159,7 @@
     [self addSubview:departImage];
     _shadowImageView = [[UIImageView alloc] init];
 //    [_shadowImageView setImage:_shadowImage];
-    _shadowImageView.backgroundColor = [UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00];
+//    _shadowImageView.backgroundColor = DarkGrayColor;
     _shadowImageView.layer.cornerRadius = 1.0f;
     [_topScrollView addSubview:_shadowImageView];
     

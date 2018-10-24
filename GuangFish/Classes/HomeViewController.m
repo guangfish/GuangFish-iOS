@@ -25,7 +25,7 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.navigationController.navigationBar setShadowImage:[UIImage new]];
+    [self hideNavigationBarShadowImage];
     
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] init];
     barButtonItem.title = @"";
@@ -144,6 +144,49 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
     hud.margin = 10.0f;
     hud.removeFromSuperViewOnHide = YES;
     [hud hideAnimated:YES afterDelay:1.5];
+}
+
+- (void)hideNavigationBarShadowImage {
+    if ([self.navigationController.navigationBar respondsToSelector:@selector( setBackgroundImage:forBarMetrics:)])
+    {
+        
+        NSArray *list=self.navigationController.navigationBar.subviews;
+        
+        for (id obj in list)
+        {
+            
+            if ([UIDevice currentDevice].systemVersion.floatValue >= 10.0)
+            {//10.0的系统字段不一样
+                UIView *view =   (UIView*)obj;
+                for (id obj2 in view.subviews) {
+                    
+                    if ([obj2 isKindOfClass:[UIImageView class]]) {
+                        
+                        UIImageView *image =  (UIImageView*)obj2;
+                        image.hidden = YES;
+                    }
+                }
+            }else
+            {
+                
+                if ([obj isKindOfClass:[UIImageView class]])
+                {
+                    
+                    UIImageView *imageView=(UIImageView *)obj;
+                    NSArray *list2=imageView.subviews;
+                    for (id obj2 in list2)
+                    {
+                        if ([obj2 isKindOfClass:[UIImageView class]])
+                        {
+                            
+                            UIImageView *imageView2=(UIImageView *)obj2;
+                            imageView2.hidden=YES;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 #pragma mark - getters and setters

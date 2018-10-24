@@ -8,6 +8,7 @@
 
 #import "GLBaseTableViewController.h"
 #import "HotSellingVM.h"
+#import "MJRefresh.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
