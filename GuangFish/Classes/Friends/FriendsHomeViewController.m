@@ -11,6 +11,7 @@
 #import "FriendsListViewController.h"
 #import "MenuButton.h"
 #import "JCAlertController.h"
+#import "MBProgressHUD.h"
 
 @interface FriendsHomeViewController ()<QCSlideSwitchViewDelegate, MenuButtonDelegate>
 
@@ -110,7 +111,12 @@
         @strongify(self);
         [self hideActivityHud];
         if (![x isKindOfClass:[NSError class]]) {
-            [self showTextHud:x];
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            hud.mode = MBProgressHUDModeText;
+            hud.label.text = x;
+            hud.margin = 10.0f;
+            hud.removeFromSuperViewOnHide = YES;
+            [hud hideAnimated:YES afterDelay:6];
         }
     }];
     
@@ -222,7 +228,7 @@
         
         UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(42, 302, width - 84, 35)];
         doneButton.backgroundColor = [UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00];
-        [doneButton setTitle:@"确定" forState:(UIControlStateNormal)];
+        [doneButton setTitle:@"邀请好友" forState:(UIControlStateNormal)];
         doneButton.layer.cornerRadius = 5.0f;
         [doneButton addTarget:self action:@selector(alertDoneBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
         [contentView addSubview:doneButton];

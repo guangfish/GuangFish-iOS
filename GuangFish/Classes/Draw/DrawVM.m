@@ -149,4 +149,13 @@
     return _drawAPIManager;
 }
 
+- (void)setCode:(NSString *)code {
+    _code = code;
+    if (code.length > 0) {
+        self.doneBtnEnable = [NSNumber numberWithBool:YES];
+    } else {
+        self.doneBtnEnable = [NSNumber numberWithBool:NO];
+    }
+}
+
 @end

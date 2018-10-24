@@ -97,4 +97,13 @@
     return _orderSaveAPIManager;
 }
 
+- (void)setOrderId:(NSString *)orderId{
+    _orderId = orderId;
+    if (orderId.length > 0) {
+        self.doneBtnEnable = [NSNumber numberWithBool:YES];
+    } else {
+        self.doneBtnEnable = [NSNumber numberWithBool:NO];
+    }
+}
+
 @end

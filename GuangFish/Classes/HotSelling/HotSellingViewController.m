@@ -21,7 +21,12 @@
     
     [self initialzieModel];
     
+    self.tableView.mj_header = [MJRefreshStateHeader headerWithRefreshingBlock:^{
+        [self showActivityHudByText:@""];
+        [self.viewModel reloadHotSellingList];
+    }];
     MJRefreshAutoStateFooter *footer = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
+        [self showActivityHudByText:@""];
         [self.viewModel loadNextPageHotSellingList];
     }];
     [footer setTitle:@"" forState:(MJRefreshStateNoMoreData)];
@@ -71,6 +76,8 @@
     @weakify(self);
     [self.viewModel.requestGetProductSearchSignal subscribeNext:^(id  _Nullable x) {
         @strongify(self);
+        [self hideActivityHud];
+        [self.tableView.mj_header endRefreshing];
         if ([self.viewModel.haveMore boolValue]) {
             [self.tableView.mj_footer endRefreshing];
         } else {

@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) RACSubject *saveOrderSignal;
 @property (nonatomic, strong) NSString *orderId;
+@property (nonatomic, strong) NSNumber *doneBtnEnable;
 
 - (BOOL)isValidInput;
 - (void)saveOrderID;

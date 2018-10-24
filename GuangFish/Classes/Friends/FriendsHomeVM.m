@@ -19,7 +19,7 @@
 - (void)copyInviteCode {
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = self.inviteCode;
-    [self.inviteCodeSignal sendNext:@"邀请码已复制"];
+    [self.inviteCodeSignal sendNext:@"邀请码复制成功，分享给朋友获得多重奖励金"];
 }
 
 - (FriendsListVM*)getWJHFriendListVM {

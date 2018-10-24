@@ -26,7 +26,7 @@
 
 - (void)getData {
     self.time = [self.dataDic objectForKey:@"drawTime"];
-    self.money = [self.dataDic objectForKey:@"drawMoney"];
+    self.money = [NSString stringWithFormat:@"¥%@", [self.dataDic objectForKey:@"drawMoney"]];
 }
 
 @end

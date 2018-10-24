@@ -10,6 +10,7 @@
 
 @interface DrawViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *inputBgView;
 @property (weak, nonatomic) IBOutlet UIButton *getCodeBtn;
 @property (weak, nonatomic) IBOutlet UITextField *codeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *drawBtn;
@@ -22,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self initialzieView];
     [self initialzieModel];
 }
 
@@ -46,6 +48,17 @@
     RAC(self.viewModel, code) = self.codeTextField.rac_textSignal;
     
     @weakify(self);
+    [RACObserve(self.viewModel, doneBtnEnable) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        BOOL enable = [x boolValue];
+        self.drawBtn.enabled = enable;
+        if (enable) {
+            self.drawBtn.backgroundColor = [UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00];
+        } else {
+            self.drawBtn.backgroundColor = [UIColor colorWithRed:0.71 green:0.71 blue:0.71 alpha:1.00];
+        }
+    }];
+    
     [RACObserve(self.viewModel, sendCodeButtonTitleStr) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         self.getCodeBtn.titleLabel.text = x;
@@ -91,6 +104,14 @@
         }
         return [RACSignal empty];
     }];
+}
+
+- (void)initialzieView {
+    self.inputBgView.layer.cornerRadius = 5.0f;
+    self.inputBgView.layer.borderWidth = 1.0f;
+    self.inputBgView.layer.borderColor = [UIColor colorWithRed:0.86 green:0.86 blue:0.86 alpha:1.00].CGColor;
+    
+    self.drawBtn.layer.cornerRadius = 5.0f;
 }
 
 #pragma mark - getters and setters

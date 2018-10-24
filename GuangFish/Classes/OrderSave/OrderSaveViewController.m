@@ -11,6 +11,7 @@
 @interface OrderSaveViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UIView *inputBgView;
 @property (nonatomic, strong) UIAlertController *alertController;
 
 @end
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self initialzieView];
     [self initialzieModel];
     
     self.orderIdTextField.text = [self.viewModel getOrderIdFromPasteboard];
@@ -47,6 +49,17 @@
     
     @weakify(self);
     
+    [RACObserve(self.viewModel, doneBtnEnable) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        BOOL enable = [x boolValue];
+        self.saveButton.enabled = enable;
+        if (enable) {
+            self.saveButton.backgroundColor = [UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00];
+        } else {
+            self.saveButton.backgroundColor = [UIColor colorWithRed:0.71 green:0.71 blue:0.71 alpha:1.00];
+        }
+    }];
+    
     [self.viewModel.saveOrderSignal subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         [self hideActivityHud];
@@ -65,6 +78,14 @@
         }
         return [RACSignal empty];
     }];
+}
+
+- (void)initialzieView {
+    self.inputBgView.layer.cornerRadius = 5.0f;
+    self.inputBgView.layer.borderWidth = 1.0f;
+    self.inputBgView.layer.borderColor = [UIColor colorWithRed:0.86 green:0.86 blue:0.86 alpha:1.00].CGColor;
+    
+    self.saveButton.layer.cornerRadius = 5.0f;
 }
 
 #pragma mark - getters and setters

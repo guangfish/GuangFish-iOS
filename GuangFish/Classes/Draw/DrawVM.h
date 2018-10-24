@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSNumber *sendCodeButtonEnable;
 @property (nonatomic, strong) RACSubject *requestSendCodeSignal;
 @property (nonatomic, strong) RACSubject *requestDrawSignal;
+@property (nonatomic, strong) NSNumber *doneBtnEnable;
 
 - (void)doSendCode;
 - (BOOL)isValidInput;
