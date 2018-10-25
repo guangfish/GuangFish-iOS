@@ -13,6 +13,7 @@
 @property (nonatomic, strong) RACSubject *requestUserUpdateSignal;
 @property (nonatomic, strong) NSString *alipay;
 @property (nonatomic, strong) NSString *weixin;
+@property (nonatomic, strong) NSNumber *updateBtnEnable;
 
 - (BOOL)isValidInput;
 - (void)doUserUpdate;

@@ -80,4 +80,22 @@
     return _userUpdateAPIManager;
 }
 
+- (void)setAlipay:(NSString *)alipay {
+    _alipay = alipay;
+    if (self.alipay.length > 0 && self.weixin.length > 0) {
+        self.updateBtnEnable = [NSNumber numberWithBool:YES];
+    } else {
+        self.updateBtnEnable = [NSNumber numberWithBool:NO];
+    }
+}
+
+- (void)setWeixin:(NSString *)weixin {
+    _weixin = weixin;
+    if (self.alipay.length > 0 && self.weixin.length > 0) {
+        self.updateBtnEnable = [NSNumber numberWithBool:YES];
+    } else {
+        self.updateBtnEnable = [NSNumber numberWithBool:NO];
+    }
+}
+
 @end

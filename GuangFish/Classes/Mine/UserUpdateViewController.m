@@ -10,7 +10,9 @@
 
 @interface UserUpdateViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *alipayInputBgView;
 @property (weak, nonatomic) IBOutlet UITextField *alipayTextField;
+@property (weak, nonatomic) IBOutlet UIView *weixinInputBgView;
 @property (weak, nonatomic) IBOutlet UITextField *weixinTextField;
 @property (weak, nonatomic) IBOutlet UIButton *alipayCopyButton;
 @property (weak, nonatomic) IBOutlet UIButton *bindButton;
@@ -22,6 +24,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self initialzieView];
     
     [self initialzieModel];
 }
@@ -48,6 +52,17 @@
     RAC(self.viewModel, weixin) = self.weixinTextField.rac_textSignal;
     
     @weakify(self);
+    [RACObserve(self.viewModel, updateBtnEnable) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        BOOL enable = [x boolValue];
+        self.bindButton.enabled = enable;
+        if (enable) {
+            self.bindButton.backgroundColor = [UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00];
+        } else {
+            self.bindButton.backgroundColor = [UIColor colorWithRed:0.71 green:0.71 blue:0.71 alpha:1.00];
+        }
+    }];
+    
     [self.viewModel.requestUserUpdateSignal subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         [self hideActivityHud];
@@ -73,6 +88,18 @@
         }
         return [RACSignal empty];
     }];
+}
+
+- (void)initialzieView {
+    self.alipayInputBgView.layer.cornerRadius = 5.0f;
+    self.alipayInputBgView.layer.borderWidth = 1.0f;
+    self.alipayInputBgView.layer.borderColor = [UIColor colorWithRed:0.86 green:0.86 blue:0.86 alpha:1.00].CGColor;
+    
+    self.weixinInputBgView.layer.cornerRadius = 5.0f;
+    self.weixinInputBgView.layer.borderWidth = 1.0f;
+    self.weixinInputBgView.layer.borderColor = [UIColor colorWithRed:0.86 green:0.86 blue:0.86 alpha:1.00].CGColor;
+    
+    self.bindButton.layer.cornerRadius = 5.0f;
 }
 
 #pragma mark - getters and setters
