@@ -10,8 +10,7 @@
 
 typedef enum {
     FriendTypeWJH = 1,
-    FriendTypeWLQ,
-    FriendTypeYLQ,
+    FriendTypeYQJL
 } FriendType;
 
 @interface FriendsListVM : GLViewModel

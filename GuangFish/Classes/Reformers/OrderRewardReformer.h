@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GuangfishOrderrewardlistAPIManager.h"
+#import "GuangfishFriendlistAPIManager.h"
 #import "OrderRewardCellVM.h"
 
 extern NSString * const kOrderRewardListDataKeyHaveMorePage;

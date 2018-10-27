@@ -28,15 +28,15 @@
     return friendsListVM;
 }
 
-- (FriendsListVM*)getWLQFriendListVM {
+- (FriendsListVM*)getYQJLFriendListVM {
     FriendsListVM *friendsListVM = [[FriendsListVM alloc] init];
-    friendsListVM.friendType = FriendTypeWLQ;
+    friendsListVM.friendType = FriendTypeYQJL;
     return friendsListVM;
 }
 
 - (FriendsListVM*)getYLQFriendListVM {
     FriendsListVM *friendsListVM = [[FriendsListVM alloc] init];
-    friendsListVM.friendType = FriendTypeYLQ;
+//    friendsListVM.friendType = FriendTypeYLQ;
     return friendsListVM;
 }
 

@@ -7,12 +7,12 @@
 //
 
 #import "OrderRewardVM.h"
-#import "GuangfishOrderrewardlistAPIManager.h"
+#import "GuangfishFriendlistAPIManager.h"
 #import "OrderRewardReformer.h"
 
 @interface OrderRewardVM()<GuangfishAPIManagerParamSource, GuangfishAPIManagerCallBackDelegate>
 
-@property (nonatomic, strong) GuangfishOrderrewardlistAPIManager *orderrewardlistAPIManager;
+@property (nonatomic, strong) GuangfishFriendlistAPIManager *friendlistAPIManager;
 @property (nonatomic, strong) OrderRewardReformer *orderRewardReformer;
 @property (nonatomic, assign) NSInteger page;
 
@@ -30,9 +30,10 @@
 - (NSDictionary*)paramsForApi:(GuangfishAPIBaseManager *)manager {
     NSDictionary *params = @{};
     
-    if (manager == self.orderrewardlistAPIManager) {
+    if (manager == self.friendlistAPIManager) {
         params = @{
-                   kOrderrewardlistAPIManagerParamsKeyPageNo: [NSString stringWithFormat:@"%ld", (long)self.page]
+                   kFriendlistAPIManagerParamsKeyPageNo: [NSString stringWithFormat:@"%ld", (long)self.page],
+                   kFriendlistAPIManagerParamsKeyStatus: @"3"
                    };
     }
     
@@ -42,7 +43,7 @@
 #pragma mark - GuangfishAPIManagerCallBackDelegate
 
 - (void)managerCallAPIDidSuccess:(GuangfishAPIBaseManager *)manager {
-    if (manager == self.orderrewardlistAPIManager) {
+    if (manager == self.friendlistAPIManager) {
         self.page ++;
         NSDictionary *resultDic = [manager fetchDataWithReformer:self.orderRewardReformer];
         if ([[resultDic objectForKey:kOrderRewardListDataKeyPage] isEqualToNumber:@1]) {
@@ -55,7 +56,7 @@
 }
 
 - (void)managerCallAPIDidFailed:(GuangfishAPIBaseManager *)manager {
-    if (manager == self.orderrewardlistAPIManager) {
+    if (manager == self.friendlistAPIManager) {
         [self.requestGetOrderRewardSignal sendNext:manager.managerError];
     }
 }
@@ -68,7 +69,7 @@
 }
 
 - (void)loadNextPageOrderRewardList {
-    [self.orderrewardlistAPIManager loadData];
+    [self.friendlistAPIManager loadData];
 }
 
 #pragma mark - getters and setters
@@ -80,13 +81,13 @@
     return _orderRewardCellVMList;
 }
 
-- (GuangfishOrderrewardlistAPIManager*)orderrewardlistAPIManager {
-    if (_orderrewardlistAPIManager == nil) {
-        self.orderrewardlistAPIManager = [[GuangfishOrderrewardlistAPIManager alloc] init];
-        self.orderrewardlistAPIManager.delegate = self;
-        self.orderrewardlistAPIManager.paramSource = self;
+- (GuangfishFriendlistAPIManager*)friendlistAPIManager {
+    if (_friendlistAPIManager == nil) {
+        self.friendlistAPIManager = [[GuangfishFriendlistAPIManager alloc] init];
+        self.friendlistAPIManager.delegate = self;
+        self.friendlistAPIManager.paramSource = self;
     }
-    return _orderrewardlistAPIManager;
+    return _friendlistAPIManager;
 }
 
 - (OrderRewardReformer*)orderRewardReformer {

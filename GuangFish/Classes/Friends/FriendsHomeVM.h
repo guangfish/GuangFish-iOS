@@ -16,7 +16,7 @@
 
 - (void)copyInviteCode;
 - (FriendsListVM*)getWJHFriendListVM;
-- (FriendsListVM*)getWLQFriendListVM;
+- (FriendsListVM*)getYQJLFriendListVM;
 - (FriendsListVM*)getYLQFriendListVM;
 
 @end

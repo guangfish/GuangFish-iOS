@@ -1,42 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <array>
-        <dict>
-            <key>content</key>
-            <string>【我的钱包】“上月订单返现”+“邀请奖励”+“订单奖励”+“我的红包”的金额总和。</string>
-            <key>redtext</key>
-            <string>0,6</string>
-        </dict>
-        <dict>
-            <key>content</key>
-            <string>【订单返现】从上次提现开始至现在所有未提现的订单返现的累加。</string>
-            <key>redtext</key>
-            <string>0,6</string>
-        </dict>
-        <dict>
-            <key>content</key>
-            <string>【订单奖励】我的逛友获得并提取订单返现后，那么做为邀请人就会得到逛鱼平台的订单奖励，奖励幅度为好友订单返现的20%至100%（按每订单计算）。</string>
-            <key>redtext</key>
-            <string>0,6</string>
-        </dict>
-        <dict>
-            <key>content</key>
-            <string>【邀请奖励】我邀请了好友使用逛鱼，并且好友成功通过逛鱼完成购买并完成提现，那么作为邀请人就可以获得逛鱼平台奖励给你的30元封顶的随机邀请奖励。</string>
-            <key>redtext</key>
-            <string>0,6</string>
-        </dict>
-        <dict>
-            <key>content</key>
-            <string>【我的红包】注册逛鱼可获得随机红包；按用户活跃程度，不定期可获得随机活跃红包。
+<array>
+	<dict>
+		<key>content</key>
+		<string>【我的钱包】“上月订单返现”+“邀请奖励”+“订单奖励”+“我的红包”的金额总和。</string>
+		<key>redtext</key>
+		<string>0,6</string>
+	</dict>
+	<dict>
+		<key>content</key>
+		<string>【订单返现】从上次提现开始至现在所有未提现的订单返现的累加。</string>
+		<key>redtext</key>
+		<string>0,6</string>
+	</dict>
+	<dict>
+		<key>content</key>
+		<string>【订单奖励】我的逛友提现订单返现后，邀请人可以领取好友订单返现的20%至100%作为订单奖励。</string>
+		<key>redtext</key>
+		<string>0,6</string>
+	</dict>
+	<dict>
+		<key>content</key>
+		<string>【邀请奖励】好友绑定邀请码，并且使用逛鱼提现，邀请人可以获得平台最高30元的邀请奖励。</string>
+		<key>redtext</key>
+		<string>0,6</string>
+	</dict>
+	<dict>
+		<key>content</key>
+		<string>【我的红包】注册逛鱼可获得随机红包；按用户活跃程度，不定期可获得随机活跃红包。
 
-1.每月28,29日开启提现功能，可提取金额为"我的钱包"显示金额。
+1.提现后客服将在7个工作日内进行打款。
 
-2."我的钱包"小于起提金额3元时不可提现；仅有红包奖励时不可提现。
-
-3.提现金额最迟不超过1个工作日到达您的支付宝账户。</string>
-            <key>redtext</key>
-            <string>0,6;45,5;85,8;99,6</string>
-        </dict>
-    </array>
+2.我的钱包小于起提金额3元时不可提现；仅有红包奖励时不可提现。</string>
+		<key>redtext</key>
+		<string>0,6;69,8;83,6</string>
+	</dict>
+</array>
 </plist>

@@ -67,7 +67,7 @@
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:needText];
     if ([needText containsString:@":"]) {
         NSRange range = [needText rangeOfString:@":"];
-        [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.93 green:0.06 blue:0.32 alpha:1.00] range:NSMakeRange(range.location + 1,needText.length-(range.location + 1))];
+        [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00] range:NSMakeRange(range.location + 1,needText.length-(range.location + 1))];
     }
     
     return attrString;

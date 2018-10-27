@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -42,7 +42,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="进入逛鱼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPD-sf-9tu">
-                                <rect key="frame" x="16" y="125" width="293" height="21"/>
+                                <rect key="frame" x="16" y="124.5" width="293" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Gxx-xf-Ntw"/>
                                 </constraints>
@@ -115,7 +115,7 @@
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8E-aV-zZY">
-                                <rect key="frame" x="136" y="373" width="102" height="30"/>
+                                <rect key="frame" x="136.5" y="373" width="102" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="2co-iL-454"/>
                                     <constraint firstAttribute="height" constant="30" id="G7C-8x-CSr"/>
@@ -137,6 +137,17 @@
                                 <color key="textColor" red="0.58431372550000005" green="0.58431372550000005" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOc-8F-PkJ">
+                                <rect key="frame" x="25" y="373" width="62" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="4ao-as-hTR"/>
+                                    <constraint firstAttribute="height" constant="30" id="fk6-Jg-eck"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="游客访问">
+                                    <color key="titleColor" red="0.58431372550000005" green="0.58431372550000005" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -165,6 +176,8 @@
                             <constraint firstItem="fVr-Xe-ob2" firstAttribute="leading" secondItem="Lwg-eJ-nMi" secondAttribute="trailing" constant="8" id="l72-Os-BiF"/>
                             <constraint firstItem="lkj-F7-ggA" firstAttribute="trailing" secondItem="a9j-2H-IcP" secondAttribute="trailing" constant="16" id="nU1-xG-axp"/>
                             <constraint firstItem="d8E-aV-zZY" firstAttribute="centerX" secondItem="oGw-jh-hYd" secondAttribute="centerX" id="owZ-AN-zdH"/>
+                            <constraint firstItem="iOc-8F-PkJ" firstAttribute="leading" secondItem="lkj-F7-ggA" secondAttribute="leading" constant="25" id="r5Y-Ej-d3H"/>
+                            <constraint firstItem="iOc-8F-PkJ" firstAttribute="top" secondItem="j46-F2-qzy" secondAttribute="bottom" constant="15" id="vXm-4K-9Jr"/>
                             <constraint firstItem="lkj-F7-ggA" firstAttribute="bottom" secondItem="x4h-MY-1Je" secondAttribute="bottom" constant="20" id="yRl-Ee-jwY"/>
                             <constraint firstItem="a9j-2H-IcP" firstAttribute="centerY" secondItem="JPD-sf-9tu" secondAttribute="centerY" id="zs8-QA-7IC"/>
                         </constraints>
@@ -178,6 +191,7 @@
                         <outlet property="mobileTextField" destination="aU1-EZ-ezX" id="5i8-UO-Nvk"/>
                         <outlet property="registerButton" destination="d8E-aV-zZY" id="iE5-LO-GN6"/>
                         <outlet property="versionLabel" destination="x4h-MY-1Je" id="u4f-9f-rz6"/>
+                        <outlet property="visitorButton" destination="iOc-8F-PkJ" id="4xp-Km-tCJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="idi-45-nWO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -230,7 +244,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注册逛鱼" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhX-Xi-nGZ">
-                                                    <rect key="frame" x="16" y="39" width="293" height="21"/>
+                                                    <rect key="frame" x="16" y="39.5" width="293" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>

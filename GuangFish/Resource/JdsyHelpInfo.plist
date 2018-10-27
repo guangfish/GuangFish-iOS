@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <array>
-        <dict>
-            <key>title</key>
-            <string>1.复制拷贝京东商品标题或链接</string>
-            <key>image</key>
-            <string>jdsy1</string>
-        </dict>
-        <dict>
-            <key>title</key>
-            <string>2.打开逛鱼APP，在搜索页面搜索商品</string>
-            <key>image</key>
-            <string>jdsy2</string>
-        </dict>
-        <dict>
-            <key>title</key>
-            <string>3.点击逛鱼APP的搜索结果，用浏览器打开，完成购买</string>
-            <key>image</key>
-            <string>jdsy3</string>
-        </dict>
-        <dict>
-            <key>title</key>
-            <string>4.复制订单编号，在逛鱼APP中完成订单绑定</string>
-            <key>image</key>
-            <string>jdsy4</string>
-        </dict>
-    </array>
+<array>
+	<dict>
+		<key>title</key>
+		<string>1.复制拷贝京东商品标题或链接</string>
+		<key>image</key>
+		<string>jdsy1</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>2.打开逛鱼APP，在搜索页面搜索商品</string>
+		<key>image</key>
+		<string>jdsy2</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>3.点击搜索出的商品，返回京东</string>
+		<key>image</key>
+		<string>jdsy3</string>
+	</dict>
+	<dict>
+		<key>title</key>
+		<string>4.复制订单编号，在逛鱼APP中完成订单绑定</string>
+		<key>image</key>
+		<string>jdsy4</string>
+	</dict>
+</array>
 </plist>

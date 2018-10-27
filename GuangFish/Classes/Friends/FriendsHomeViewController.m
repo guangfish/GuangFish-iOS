@@ -12,6 +12,7 @@
 #import "MenuButton.h"
 #import "JCAlertController.h"
 #import "MBProgressHUD.h"
+#import "OrderRewardViewController.h"
 
 @interface FriendsHomeViewController ()<QCSlideSwitchViewDelegate, MenuButtonDelegate>
 
@@ -19,8 +20,8 @@
 @property (nonatomic, strong) NSMutableArray *controllersArray;
 @property (weak, nonatomic) IBOutlet QCSlideSwitchView *slideSwitchView;
 @property (weak, nonatomic) IBOutlet UIButton *wjhButton;
-@property (weak, nonatomic) IBOutlet UIButton *wlqButton;
-@property (weak, nonatomic) IBOutlet UIButton *ylqButton;
+@property (weak, nonatomic) IBOutlet UIButton *yqjlButton;
+@property (weak, nonatomic) IBOutlet UIButton *ddjlButton;
 @property (weak, nonatomic) IBOutlet UIView *wjhSelectedView;
 @property (weak, nonatomic) IBOutlet UIView *wlqSelectedView;
 @property (weak, nonatomic) IBOutlet UIView *ylqSelectedView;
@@ -126,13 +127,13 @@
         return [RACSignal empty];
     }];
     
-    self.wlqButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+    self.yqjlButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         @strongify(self)
         [self chooseWLQ];
         return [RACSignal empty];
     }];
     
-    self.ylqButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+    self.ddjlButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         @strongify(self)
         [self chooseYLQ];
         return [RACSignal empty];
@@ -141,8 +142,8 @@
 
 - (void)chooseWJH {
     [self.wjhButton setTitleColor:[UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00] forState:(UIControlStateNormal)];
-    [self.wlqButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
-    [self.ylqButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.yqjlButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.ddjlButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
     self.wjhSelectedView.hidden = NO;
     self.wlqSelectedView.hidden = YES;
     self.ylqSelectedView.hidden = YES;
@@ -151,8 +152,8 @@
 
 - (void)chooseWLQ {
     [self.wjhButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
-    [self.wlqButton setTitleColor:[UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00] forState:(UIControlStateNormal)];
-    [self.ylqButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.yqjlButton setTitleColor:[UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.ddjlButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
     self.wjhSelectedView.hidden = YES;
     self.wlqSelectedView.hidden = NO;
     self.ylqSelectedView.hidden = YES;
@@ -161,8 +162,8 @@
 
 - (void)chooseYLQ {
     [self.wjhButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
-    [self.wlqButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
-    [self.ylqButton setTitleColor:[UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.yqjlButton setTitleColor:[UIColor colorWithRed:0.61 green:0.61 blue:0.61 alpha:1.00] forState:(UIControlStateNormal)];
+    [self.ddjlButton setTitleColor:[UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00] forState:(UIControlStateNormal)];
     self.wjhSelectedView.hidden = YES;
     self.wlqSelectedView.hidden = YES;
     self.ylqSelectedView.hidden = NO;
@@ -187,15 +188,14 @@
         wjhFriendsListViewController.viewModel = [self.viewModel getWJHFriendListVM];
         wjhFriendsListViewController.title = @"未激活";
         
-        FriendsListViewController *wlqFriendsListViewController = [friendsStoryboard instantiateViewControllerWithIdentifier:@"FriendsListViewController"];
-        wlqFriendsListViewController.viewModel = [self.viewModel getWLQFriendListVM];
-        wlqFriendsListViewController.title = @"未领取";
+        FriendsListViewController *yqjlFriendsListViewController = [friendsStoryboard instantiateViewControllerWithIdentifier:@"FriendsListViewController"];
+        yqjlFriendsListViewController.viewModel = [self.viewModel getYQJLFriendListVM];
+        yqjlFriendsListViewController.title = @"邀请奖励";
         
-        FriendsListViewController *ylqFriendsListViewController = [friendsStoryboard instantiateViewControllerWithIdentifier:@"FriendsListViewController"];
-        ylqFriendsListViewController.viewModel = [self.viewModel getYLQFriendListVM];
-        ylqFriendsListViewController.title = @"已领取";
+        OrderRewardViewController *orderRewardViewController = [friendsStoryboard instantiateViewControllerWithIdentifier:@"OrderRewardViewController"];
+        orderRewardViewController.title = @"订单奖励";
         
-        [self.controllersArray addObjectsFromArray:@[wjhFriendsListViewController, wlqFriendsListViewController, ylqFriendsListViewController]];
+        [self.controllersArray addObjectsFromArray:@[wjhFriendsListViewController, yqjlFriendsListViewController, orderRewardViewController]];
     }
     return _controllersArray;
 }

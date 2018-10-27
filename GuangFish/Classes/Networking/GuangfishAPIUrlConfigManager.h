@@ -21,7 +21,7 @@
 //订单录入接口
 #define API_OrdersaveUrl                         @"/app/api/ordersave"
 //好友列表接口
-#define API_FriendlistUrl                        @"/app/api/friendlist"
+#define API_FriendlistUrl                        @"/app/api/friendlistNew"
 //订单列表接口
 #define API_OrderlistUrl                         @"/app/api/orderlist"
 //订单奖励列表接口
@@ -38,6 +38,8 @@
 #define API_UserInviteUpdateUrl                  @"/app/api/userInviteUpdate"
 //提现记录查询接口
 #define API_DrawRecordUrl                        @"/app/api/drawRecord"
+//热词查询接口
+#define API_HotWordUrl                           @"/app/api/hotword"
 
 @interface GuangfishAPIUrlConfigManager : NSObject
 
