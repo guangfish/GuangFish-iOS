@@ -31,6 +31,11 @@
     self.price = [NSString stringWithFormat:@"价格:¥%@", [self.dataDic objectForKey:@"price"]];
     self.sellNum = [NSString stringWithFormat:@"月销量(件):%@", [self.dataDic objectForKey:@"sellNum"]];
     self.commission = [NSString stringWithFormat:@"预估返现:¥%@", [self.dataDic objectForKey:@"commission"]];
+    if ([self.dataDic objectForKey:@"quanMianzhi"] != nil && ![[self.dataDic objectForKey:@"quanMianzhi"] isEqualToString:@""]) {
+        self.quanMianZhi = [NSString stringWithFormat:@"领劵省:¥%@", [self.dataDic objectForKey:@"quanMianzhi"]];
+    } else {
+        self.quanMianZhi = @"";
+    }
 }
 
 #pragma mark - public methods

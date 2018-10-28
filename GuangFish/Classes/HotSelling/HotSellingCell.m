@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sellNumLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commissionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *quanMianZhiLabel;
 
 @end
 
@@ -55,6 +56,10 @@
     [RACObserve(self.viewModel, commission) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
         [self.commissionLabel setAttributedText:[self changeLabelWithText:x]];
+    }];
+    [RACObserve(self.viewModel, quanMianZhi) subscribeNext:^(id  _Nullable x) {
+        @strongify(self)
+        [self.quanMianZhiLabel setAttributedText:[self changeLabelWithText:x]];
     }];
 }
 

@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString *price;
 @property (nonatomic, strong) NSString *sellNum;
 @property (nonatomic, strong) NSString *commission;
+@property (nonatomic, strong) NSString *quanMianZhi;
 
 - (id)initWithResponseDic:(NSDictionary*)dic;
 - (void)openTaobao;
