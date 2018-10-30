@@ -51,7 +51,8 @@
 
 - (void)slideSwitchView:(QCSlideSwitchView *)view didselectTab:(NSUInteger)number {
     HotSellingViewController *hotSellingViewController = [self.controllersArray objectAtIndex:number];
-    [hotSellingViewController.viewModel loadNextPageHotSellingList];
+//    [hotSellingViewController.viewModel loadNextPageHotSellingList];
+    [hotSellingViewController.tableView.mj_footer beginRefreshing];
 }
 
 #pragma mark - private methods

@@ -76,11 +76,9 @@
 #pragma mark - private methods
 
 - (void)cleanImageCache {
-    NSLog(@"======%lu", [SDWebImageManager sharedManager].imageCache.getSize);
     if ([SDWebImageManager sharedManager].imageCache.getSize > 100*1024*1024) {
         [[[SDWebImageManager sharedManager] imageCache] clearMemory];
         [[[SDWebImageManager sharedManager] imageCache] clearDiskOnCompletion:nil];
-        NSLog(@"------%lu", [SDWebImageManager sharedManager].imageCache.getSize);
     }
 }
 

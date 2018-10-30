@@ -15,11 +15,13 @@
 @property (nonatomic, strong) NSMutableArray *menuSectionsList;
 @property (nonatomic, strong) RACSubject *requestGetBannerSignal;
 @property (nonatomic, strong) RACSubject *requestGetdrawStatsSignal;
+@property (nonatomic, strong) RACSubject *cleanMemorySignal;
 @property (nonatomic, strong) HomeHeaderReusableVM *homeHeaderReusableVM;
 
 - (void)getBanner;
 - (void)getDrawStats;
 - (void)getHomeMenu;
 - (MineVM*)getMineVM;
+- (void)cleanMemory;
 
 @end

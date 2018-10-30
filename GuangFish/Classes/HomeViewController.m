@@ -102,7 +102,7 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake((self.view.frame.size.width - 30) / 3.0, 100);
+    return CGSizeMake((self.view.frame.size.width) / 4.0, 129);
 }
 
 - (UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
@@ -122,7 +122,11 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSMutableArray *cellArray = [self.viewModel.menuSectionsList objectAtIndex:indexPath.section];
     HomeMenuCellVM *menuCellVM = [cellArray objectAtIndex:indexPath.row];
-    [self performSegueWithIdentifier:menuCellVM.segueId sender:menuCellVM];
+    if (menuCellVM.segueId != nil && menuCellVM.segueId.length > 0) {
+        [self performSegueWithIdentifier:menuCellVM.segueId sender:menuCellVM];
+    } else {
+        [self.viewModel cleanMemory];
+    }
 }
 
 #pragma mark - private methods
@@ -133,6 +137,13 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
         @strongify(self);
         if (![x isKindOfClass:[NSError class]]) {
             [self.collectionView reloadData];
+        }
+    }];
+    
+    [self.viewModel.cleanMemorySignal subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        if (![x isKindOfClass:[NSError class]]) {
+            [self showTextHud:x];
         }
     }];
 }

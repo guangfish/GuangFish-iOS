@@ -10,6 +10,7 @@
 #import "HomeMenuCellVM.h"
 #import "GuangfishBannerAPIManager.h"
 #import "GuangfishDrawstatsAPIManager.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface HomeVM()<GuangfishAPIManagerParamSource, GuangfishAPIManagerCallBackDelegate>
 
@@ -25,6 +26,7 @@
 - (void)initializeData {
     self.requestGetBannerSignal = [RACSubject subject];
     self.requestGetdrawStatsSignal = [RACSubject subject];
+    self.cleanMemorySignal = [RACSubject subject];
     self.menuSectionsList = [[NSMutableArray alloc] init];
     self.homeHeaderReusableVM = [[HomeHeaderReusableVM alloc] init];
 }
@@ -99,6 +101,12 @@
     MineVM *mineVM = [[MineVM alloc] init];
     mineVM.totalBuySave = [NSString stringWithFormat:@"¥%@", self.totalBuySave];
     return mineVM;
+}
+
+- (void)cleanMemory {
+    [[[SDWebImageManager sharedManager] imageCache] clearMemory];
+    [[[SDWebImageManager sharedManager] imageCache] clearDiskOnCompletion:nil];
+    [self.cleanMemorySignal sendNext:@"已成功清除缓存"];
 }
 
 #pragma mark - getters and setters

@@ -173,6 +173,7 @@
     EAIntroPage *page4 = [EAIntroPage page];
     page4.bgImage = [UIImage imageNamed:@"img_ydy4"];
     EAIntroView *intro = [[EAIntroView alloc] initWithFrame:self.view.bounds andPages:@[page1,page2,page3,page4]];
+    intro.backgroundColor = [UIColor whiteColor];
     [intro setDelegate:self];
     [intro.skipButton setTitle:@"跳过" forState:(UIControlStateNormal)];
     [intro.skipButton setTitleColor:[UIColor colorWithRed:0.93 green:0.18 blue:0.42 alpha:1.00] forState:(UIControlStateNormal)];

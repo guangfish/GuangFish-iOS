@@ -33,6 +33,16 @@
 			<key>url</key>
 			<string></string>
 		</dict>
+		<dict>
+			<key>segueId</key>
+			<string></string>
+			<key>imgName</key>
+			<string>img_clean</string>
+			<key>title</key>
+			<string>清除缓存</string>
+			<key>url</key>
+			<string></string>
+		</dict>
 	</array>
 </array>
 </plist>

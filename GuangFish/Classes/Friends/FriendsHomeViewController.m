@@ -104,6 +104,10 @@
     [self.viewModel copyInviteCode];
 }
 
+- (void)alertCancelBtnAction:(id)sender {
+    [self.alertController dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - private methods
 
 - (void)initialzieModel {
@@ -215,18 +219,23 @@
         CGFloat width = self.view.frame.size.width - 88;
         [JCAlertStyle shareStyle].alertView.width = width;
         
-        UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, 367)];
+        UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, 400)];
         contentView.layer.cornerRadius = 10.0f;
         contentView.backgroundColor = [UIColor whiteColor];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 25, width - 40, 367 - 25 - 90)];
+        UIButton *cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(width - 15 - 19, 15, 19, 19)];
+        [cancelButton setImage:[UIImage imageNamed:@"img_alert_cancel"] forState:(UIControlStateNormal)];
+        [cancelButton addTarget:self action:@selector(alertCancelBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+        [contentView addSubview:cancelButton];
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 52, width - 40, 400 - 52 - 90)];
         label.font = [UIFont systemFontOfSize:16.0f];
         label.numberOfLines = 0;
         label.textColor = [UIColor colorWithRed:0.55 green:0.55 blue:0.55 alpha:1.00];
         label.text = self.viewModel.inviteCode;
         [contentView addSubview:label];
         
-        UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(42, 302, width - 84, 35)];
+        UIButton *doneButton = [[UIButton alloc] initWithFrame:CGRectMake(42, 335, width - 84, 35)];
         doneButton.backgroundColor = [UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00];
         [doneButton setTitle:@"邀请好友" forState:(UIControlStateNormal)];
         doneButton.layer.cornerRadius = 5.0f;
