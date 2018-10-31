@@ -13,6 +13,7 @@
 #import "WebViewController.h"
 #import "MineViewController.h"
 #import "MBProgressHUD.h"
+#import "GuangfishNetworkingManager.h"
 
 @interface HomeViewController ()<HomeHeaderReusableViewDelegate>
 
@@ -105,12 +106,34 @@ static NSString * const reuseIdentifier = @"HomeMenuCell";
     return CGSizeMake((self.view.frame.size.width) / 4.0, 129);
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    if ([[[GuangfishNetworkingManager sharedManager] getUserCode] isEqualToString:TestUID]) {
+        return CGSizeMake(screenWidth, 203);
+    } else {
+        return CGSizeMake(screenWidth, 366);
+    }
+}
+
 - (UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     UICollectionReusableView *reusableview = nil;
     if (kind == UICollectionElementKindSectionHeader) {
         HomeHeaderReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind : UICollectionElementKindSectionHeader withReuseIdentifier : @"HomeHeaderReusableView" forIndexPath :indexPath];
         headerView.viewModel = self.viewModel.homeHeaderReusableVM;
         headerView.delegate = self;
+        
+        if ([[[GuangfishNetworkingManager sharedManager] getUserCode] isEqualToString:TestUID]) {
+            headerView.infoView.hidden = YES;
+            
+            CGRect headerViewFrame = headerView.frame;
+            headerViewFrame.size.height = 203.f;
+            headerView.frame = headerViewFrame;
+            
+            CGRect bannerFrame = headerView.bannerView.frame;
+            bannerFrame.origin.y = 15;
+            headerView.bannerView.frame = bannerFrame;
+        }
+        
         reusableview = headerView;
     } else if (kind == UICollectionElementKindSectionFooter) {
         HomeFooterReusableView *footerView = [collectionView dequeueReusableSupplementaryViewOfKind : UICollectionElementKindSectionFooter withReuseIdentifier : @"HomeFooterReusableView" forIndexPath :indexPath];

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GLScrollView.h"
 #import "HomeHeaderReusableVM.h"
 
 @protocol HomeHeaderReusableViewDelegate <NSObject>
@@ -17,6 +18,9 @@
 @end
 
 @interface HomeHeaderReusableView : UICollectionReusableView
+
+@property (nonatomic, strong) GLScrollView *bannerView;
+@property (weak, nonatomic) IBOutlet UIView *infoView;
 
 @property (nonatomic, strong) HomeHeaderReusableVM *viewModel;
 @property (nonatomic, weak) id<HomeHeaderReusableViewDelegate> delegate;

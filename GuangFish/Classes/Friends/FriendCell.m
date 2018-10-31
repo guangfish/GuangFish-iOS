@@ -7,6 +7,7 @@
 //
 
 #import "FriendCell.h"
+#import "GuangfishNetworkingManager.h"
 
 @interface FriendCell()
 
@@ -22,7 +23,12 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    if ([[[GuangfishNetworkingManager sharedManager] getUserCode] isEqualToString:TestUID]) {
+        self.rewardMoneyLabel.hidden = YES;
+    } else {
+        self.rewardMoneyLabel.hidden = NO;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

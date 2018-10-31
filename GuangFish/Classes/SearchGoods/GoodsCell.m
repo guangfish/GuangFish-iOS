@@ -8,6 +8,7 @@
 
 #import "GoodsCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "GuangfishNetworkingManager.h"
 
 @interface GoodsCell()
 
@@ -25,7 +26,14 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    if ([[[GuangfishNetworkingManager sharedManager] getUserCode] isEqualToString:TestUID]) {
+        self.label1.hidden = YES;
+        self.label2.hidden = YES;
+    } else {
+        self.label1.hidden = NO;
+        self.label2.hidden = NO;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

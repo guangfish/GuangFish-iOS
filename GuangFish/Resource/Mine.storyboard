@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -84,7 +84,7 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HomeHeaderReusableView" id="NfY-LB-G0x" customClass="HomeHeaderReusableView">
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="HomeHeaderReusableView" id="NfY-LB-G0x" customClass="HomeHeaderReusableView">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="366"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
@@ -361,6 +361,7 @@
                                 <outlet property="DrawRecordButton" destination="ekA-C3-PS8" id="mfd-hn-ful"/>
                                 <outlet property="drawButton" destination="Qx3-ZW-jU4" id="WQb-sD-dB7"/>
                                 <outlet property="hongbaoLabel" destination="4pj-PR-398" id="uj4-ka-HGE"/>
+                                <outlet property="infoView" destination="ToT-sK-6sE" id="0Kl-HI-Oex"/>
                                 <outlet property="inviteRewardLabel" destination="U6e-iS-sJ2" id="z8i-Ra-aKu"/>
                                 <outlet property="orderMoneyLabel" destination="JaQ-W0-o5E" id="isv-cw-brd"/>
                                 <outlet property="paltformRewardLabel" destination="aIy-Wd-lHQ" id="qm7-kt-8ft"/>

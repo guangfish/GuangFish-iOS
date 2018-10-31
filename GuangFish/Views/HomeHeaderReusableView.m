@@ -7,13 +7,11 @@
 //
 
 #import "HomeHeaderReusableView.h"
-#import "GLScrollView.h"
 #import "WebViewController.h"
 #import "MBProgressHUD.h"
 
 @interface HomeHeaderReusableView()<GLScrollViewDelegate>
 
-@property (nonatomic, strong) GLScrollView *bannerView;
 @property (weak, nonatomic) IBOutlet UILabel *totalMoneyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *orderMoneyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *inviteRewardLabel;

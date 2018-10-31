@@ -8,6 +8,7 @@
 
 #import "HotSellingCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "GuangfishNetworkingManager.h"
 
 @interface HotSellingCell()
 
@@ -25,7 +26,14 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    if ([[[GuangfishNetworkingManager sharedManager] getUserCode] isEqualToString:TestUID]) {
+        self.commissionLabel.hidden = YES;
+        self.quanMianZhiLabel.hidden = YES;
+    } else {
+        self.commissionLabel.hidden = NO;
+        self.quanMianZhiLabel.hidden = NO;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
