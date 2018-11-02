@@ -10,6 +10,7 @@
 
 @interface HotSellingCellVM : GLViewModel
 
+@property (nonatomic, strong) RACSubject *openTaobaoSignal;
 @property (nonatomic, strong) NSString *imageURLStr;
 @property (nonatomic, strong) NSString *productName;
 @property (nonatomic, strong) NSString *shopName;

@@ -10,6 +10,7 @@
 
 @interface GoodsCellVM : GLViewModel
 
+@property (nonatomic, strong) RACSubject *openTaobaoSignal;
 @property (nonatomic, strong) NSString *productName;
 @property (nonatomic, strong) NSString *productImageUrlStr;
 @property (nonatomic, strong) NSString *shopName;

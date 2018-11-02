@@ -16,6 +16,10 @@
 
 @implementation GoodsCellVM
 
+- (void)initializeData {
+    self.openTaobaoSignal = [RACSubject subject];
+}
+
 - (id)initWithResponseDic:(NSDictionary *)dic {
     if ((self = [super init])) {
         self.dataDic = dic;
@@ -42,10 +46,14 @@
 - (void)openTaobao {
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     pasteboard.string = [self.dataDic objectForKey:@"tkl"];
+    NSURL *url = [NSURL URLWithString:@"taobao://item.taobao.com/item.htm"];
+    if (![[UIApplication sharedApplication] canOpenURL:url]) {
+        [self.openTaobaoSignal sendNext:[NSError errorWithDomain:@"打开淘宝失败" code:1 userInfo:nil]];
+    }
     if (@available(iOS 10.0, *)) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"taobao://item.taobao.com/item.htm"] options:@{UIApplicationOpenURLOptionUniversalLinksOnly: @NO} completionHandler:^(BOOL success) {}];
+        [[UIApplication sharedApplication] openURL:url options:@{UIApplicationOpenURLOptionUniversalLinksOnly: @NO} completionHandler:^(BOOL success) {}];
     } else {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"taobao://item.taobao.com/item.htm"]];
+        [[UIApplication sharedApplication] openURL:url];
     }
 }
 

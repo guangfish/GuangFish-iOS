@@ -9,6 +9,7 @@
 #import "GoodsCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "GuangfishNetworkingManager.h"
+#import "MBProgressHUD.h"
 
 @interface GoodsCell()
 
@@ -69,6 +70,12 @@
         @strongify(self)
         [self.label2 setAttributedText:[self changeLabelWithText:x]];
     }];
+    [self.viewModel.openTaobaoSignal subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        if ([x isKindOfClass:[NSError class]]) {
+            [self showHud];
+        }
+    }];
 }
 
 -(NSMutableAttributedString*)changeLabelWithText:(NSString*)needText {
@@ -83,6 +90,15 @@
     }
     
     return attrString;
+}
+
+- (void)showHud {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.label.text = @"请安装淘宝客户端";
+    hud.margin = 10.0f;
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hideAnimated:YES afterDelay:1.5];
 }
 
 @end
