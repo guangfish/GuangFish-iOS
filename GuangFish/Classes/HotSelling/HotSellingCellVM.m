@@ -7,6 +7,7 @@
 //
 
 #import "HotSellingCellVM.h"
+#import "WebVm.h"
 
 @interface HotSellingCellVM()
 
@@ -49,7 +50,9 @@
     pasteboard.string = [self.dataDic objectForKey:@"tkl"];
     NSURL *url = [NSURL URLWithString:@"taobao://item.taobao.com/item.htm"];
     if (![[UIApplication sharedApplication] canOpenURL:url]) {
-        [self.openTaobaoSignal sendNext:[NSError errorWithDomain:@"打开淘宝失败" code:1 userInfo:nil]];
+        WebVM *webVM = [[WebVM alloc] init];
+        webVM.urlStr = [self.dataDic objectForKey:@"tkUrl"];
+        [self.openTaobaoSignal sendNext:[NSError errorWithDomain:@"打开淘宝失败" code:1 userInfo:@{@"webVM": webVM}]];
     }
     if (@available(iOS 10.0, *)) {
         [[UIApplication sharedApplication] openURL:url options:@{UIApplicationOpenURLOptionUniversalLinksOnly: @NO} completionHandler:^(BOOL success) {}];

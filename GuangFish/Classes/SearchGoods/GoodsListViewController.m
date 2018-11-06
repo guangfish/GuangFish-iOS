@@ -98,7 +98,7 @@
 
 - (void)reloadData {
     [self.viewModel reloadGoodsList];
-    [MBProgressHUD showHUDAddedTo:self.navigationController.view.window animated:YES];
+    [self showActivityHudByText:@""];
 }
 
 #pragma mark - private methods
@@ -107,7 +107,7 @@
     @weakify(self);
     [self.viewModel.requestGetGoodsListSignal subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-        [MBProgressHUD hideHUDForView:self.navigationController.view.window animated:YES];
+        [self hideActivityHud];
         if ([self.viewModel.haveMore boolValue]) {
             [self.tableView.mj_footer endRefreshing];
         } else {
@@ -155,6 +155,15 @@
         }
     });
     dispatch_resume(_timer);
+}
+
+- (void)showActivityHudByText:(NSString*)text {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.label.text = text;
+}
+
+- (void)hideActivityHud {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 #pragma mark - getters and setters

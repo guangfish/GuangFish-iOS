@@ -9,7 +9,7 @@
 #import "HotSellingCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "GuangfishNetworkingManager.h"
-#import "MBProgressHUD.h"
+#import "WebViewController.h"
 
 @interface HotSellingCell()
 
@@ -73,7 +73,8 @@
     [self.viewModel.openTaobaoSignal subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         if ([x isKindOfClass:[NSError class]]) {
-            [self showHud];
+            NSError *error = x;
+            [self openTBByWeb:[error.userInfo objectForKey:@"webVM"]];
         }
     }];
 }
@@ -92,13 +93,24 @@
     return attrString;
 }
 
-- (void)showHud {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[UIApplication sharedApplication].keyWindow animated:YES];
-    hud.mode = MBProgressHUDModeText;
-    hud.label.text = @"请安装淘宝客户端";
-    hud.margin = 10.0f;
-    hud.removeFromSuperViewOnHide = YES;
-    [hud hideAnimated:YES afterDelay:1.5];
+- (void)openTBByWeb:(WebVM*)webVM {
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    WebViewController *webViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+    webViewController.viewModel = webVM;
+    [[self navigationController] pushViewController:webViewController animated:YES];
+}
+
+- (UINavigationController *)navigationController
+{
+    //获取当前view的superView对应的控制器
+    UIResponder *next = [self nextResponder];
+    do {
+        if ([next isKindOfClass:[UINavigationController class]]) {
+            return (UINavigationController *)next;
+        }
+        next = [next nextResponder];
+    } while (next != nil);
+    return nil;
 }
 
 @end

@@ -67,7 +67,7 @@
 
 - (WKWebView*)webView {
     if (_webView == nil) {
-        self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - 0)];
+        self.webView = [[WKWebView alloc] initWithFrame:CGRectMake(0, NaviHeight, self.view.bounds.size.width, self.view.bounds.size.height - NaviHeight)];
     }
     return _webView;
 }

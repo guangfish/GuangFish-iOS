@@ -8,6 +8,7 @@
 
 #import "HotSellingViewController.h"
 #import "HotSellingCell.h"
+#import "MBProgressHUD.h"
 
 @interface HotSellingViewController ()
 
@@ -88,6 +89,15 @@
             [self.tableView reloadData];
         }
     }];
+}
+
+- (void)showActivityHudByText:(NSString*)text {
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.label.text = text;
+}
+
+- (void)hideActivityHud {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 #pragma mark - setters and getters
