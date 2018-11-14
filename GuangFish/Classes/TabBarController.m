@@ -26,14 +26,14 @@
     
     UIStoryboard *searchStoryboard = [UIStoryboard storyboardWithName:@"Search" bundle:[NSBundle mainBundle]];
     UIStoryboard *hotSellStoryboard = [UIStoryboard storyboardWithName:@"HotSell" bundle:[NSBundle mainBundle]];
-    UIStoryboard *friendsStoryboard = [UIStoryboard storyboardWithName:@"Friends" bundle:[NSBundle mainBundle]];
+//    UIStoryboard *friendsStoryboard = [UIStoryboard storyboardWithName:@"Friends" bundle:[NSBundle mainBundle]];
     UIStoryboard *mineStoryboard = [UIStoryboard storyboardWithName:@"Mine" bundle:[NSBundle mainBundle]];
     UINavigationController *searchNavigationController = [searchStoryboard instantiateViewControllerWithIdentifier:@"SearchNavigationController"];
     UINavigationController *hotSellNavigationController = [hotSellStoryboard instantiateViewControllerWithIdentifier:@"HotSellNavigationController"];
-    UINavigationController *friendsNavigationController = [friendsStoryboard instantiateViewControllerWithIdentifier:@"FriendsNavigationController"];
+//    UINavigationController *friendsNavigationController = [friendsStoryboard instantiateViewControllerWithIdentifier:@"FriendsNavigationController"];
     UINavigationController *mineNavigationController = [mineStoryboard instantiateViewControllerWithIdentifier:@"MineNavigationController"];
     
-    self.viewControllers = @[searchNavigationController, hotSellNavigationController, friendsNavigationController, mineNavigationController];
+    self.viewControllers = @[searchNavigationController, hotSellNavigationController, mineNavigationController];
     
     UITabBarItem* itemSearch = [self.tabBar.items objectAtIndex:0];
     itemSearch.title = @"搜索";
@@ -45,12 +45,12 @@
     [itemHot setSelectedImage:[[UIImage imageNamed:@"img_tabbar_hot_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [itemHot setImage:[[UIImage imageNamed:@"img_tabbar_hot"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
-    UITabBarItem* itemFriends = [self.tabBar.items objectAtIndex:2];
-    itemFriends.title = @"逛友";
-    [itemFriends setSelectedImage:[[UIImage imageNamed:@"img_tabbar_friends_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-    [itemFriends setImage:[[UIImage imageNamed:@"img_tabbar_friends"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//    UITabBarItem* itemFriends = [self.tabBar.items objectAtIndex:2];
+//    itemFriends.title = @"逛友";
+//    [itemFriends setSelectedImage:[[UIImage imageNamed:@"img_tabbar_friends_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//    [itemFriends setImage:[[UIImage imageNamed:@"img_tabbar_friends"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
-    UITabBarItem* itemMine = [self.tabBar.items objectAtIndex:3];
+    UITabBarItem* itemMine = [self.tabBar.items objectAtIndex:2];
     itemMine.title = @"我的";
     [itemMine setSelectedImage:[[UIImage imageNamed:@"img_tabbar_mine_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [itemMine setImage:[[UIImage imageNamed:@"img_tabbar_mine"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];

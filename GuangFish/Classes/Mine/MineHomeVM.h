@@ -25,6 +25,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSNumber *drawBtnEnable;
 @property (nonatomic, strong) NSString *reason;
 @property (nonatomic, strong) NSString *version;
+@property (nonatomic, strong) NSString *totalBuySave;
+@property (nonatomic, strong) NSMutableArray *bannerDicArray;
+@property (nonatomic, strong) NSMutableArray *imageArray;
 
 - (void)logout;
 - (void)getUserData;

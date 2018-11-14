@@ -27,8 +27,8 @@
         self.window.rootViewController = tabBarController;
     } else {
         UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
-        UINavigationController *loginNavigationController = [loginStoryboard instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
-        self.window.rootViewController = loginNavigationController;
+        UINavigationController *loginChooseNavigationViewController = [loginStoryboard instantiateViewControllerWithIdentifier:@"LoginChooseNavigationViewController"];
+        self.window.rootViewController = loginChooseNavigationViewController;
     }
     
     return YES;

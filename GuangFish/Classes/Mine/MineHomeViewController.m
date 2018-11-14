@@ -7,8 +7,13 @@
 //
 
 #import "MineHomeViewController.h"
+#import "FriendsHomeViewController.h"
+#import "OrderListHomeViewController.h"
+#import "GLScrollView.h"
+#import "WebViewController.h"
+#import "GuangfishNetworkingManager.h"
 
-@interface MineHomeViewController ()
+@interface MineHomeViewController ()<GLScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *mobileLabel;
 @property (weak, nonatomic) IBOutlet UIButton *codeCopyButton;
@@ -20,6 +25,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *DrawRecordButton;
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalBuySaveLabel;
+@property (weak, nonatomic) IBOutlet UITableViewCell *bannerCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *moneyInfoCell;
+@property (nonatomic, strong) GLScrollView *bannerView;
 
 @end
 
@@ -50,12 +59,47 @@
     [self.viewModel getDrawStats];
 }
 
+#pragma mark - GLScrollViewDelegate
+
+- (void)glScrollViewDidTouchImage:(NSInteger)index {
+    NSDictionary *dic = [self.viewModel.bannerDicArray objectAtIndex:index];
+    
+    NSString *link = [dic objectForKey:@"link"];
+    if (link.length == 0) {
+        return;
+    }
+    
+    UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Mine" bundle:nil];
+    WebViewController *webViewController = [homeStoryboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+    WebVM *webVM = [[WebVM alloc] init];
+    webVM.urlStr = link;
+    webViewController.viewModel = webVM;
+    [self showViewController:webViewController sender:nil];
+}
+
 #pragma mark - UITableviewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 10) {
+    if (indexPath.row == 4) {
+        [self showFriendsVC];
+    } else if (indexPath.row == 5) {
+        [self showOrderVC];
+    } else if (indexPath.row == 11) {
         [self.viewModel cleanMemory];
     }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell* cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+
+    if ([[[GuangfishNetworkingManager sharedManager] getUserCode] isEqualToString:TestUID] && cell == self.moneyInfoCell) {
+        return 0;
+    }
+    if (![[[GuangfishNetworkingManager sharedManager] getUserCode] isEqualToString:TestUID] && cell == self.bannerCell) {
+        return 0;
+    }
+    
+    return [super tableView:tableView heightForRowAtIndexPath:indexPath];
 }
 
 /*
@@ -71,7 +115,6 @@
 #pragma mark - private methods
 
 - (void)setStatusBarBackgroundColor:(UIColor *)color {
-    
     UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
     if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
         statusBar.backgroundColor = color;
@@ -79,6 +122,8 @@
 }
 
 - (void)initialzieView {
+    [self.bannerCell addSubview:self.bannerView];
+    
     self.logoutButton.layer.borderWidth = 1.0f;
     self.logoutButton.layer.borderColor = [UIColor colorWithRed:0.94 green:0.57 blue:0.71 alpha:1.00].CGColor;
     self.logoutButton.layer.cornerRadius = 16.0f;
@@ -91,6 +136,7 @@
     RAC(self.orderMoneyLabel, text) = RACObserve(self.viewModel, orderMoney);
     RAC(self.paltformRewardLabel, text) = RACObserve(self.viewModel, paltformReward);
     RAC(self.versionLabel, text) = RACObserve(self.viewModel, version);
+    RAC(self.totalBuySaveLabel, text) = RACObserve(self.viewModel, totalBuySave);
     
     @weakify(self);
     [self.viewModel.inviteCodeSignal subscribeNext:^(id  _Nullable x) {
@@ -98,6 +144,16 @@
         [self hideActivityHud];
         if (![x isKindOfClass:[NSError class]]) {
             [self showTextHud:x];
+        }
+    }];
+    
+    [self.viewModel.requestGetBannerSignal subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        self.bannerView.imageArray = self.viewModel.imageArray;
+        if (self.bannerView.imageArray.count <= 1) {
+            self.bannerView.pageControl.hidden = YES;
+        } else {
+            self.bannerView.pageControl.hidden = NO;
         }
     }];
     
@@ -111,13 +167,6 @@
         @strongify(self);
         [self.viewModel inviteCodeCopy];
         return [RACSignal empty];
-    }];
-    
-    [self.viewModel.requestGetBannerSignal subscribeNext:^(id  _Nullable x) {
-//        @strongify(self);
-        if ([x isKindOfClass:[NSError class]]) {
-            
-        }
     }];
     
     [self.viewModel.cleanMemorySignal subscribeNext:^(id  _Nullable x) {
@@ -152,8 +201,8 @@
         [self.viewModel logout];
         
         UIStoryboard *loginStoryboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
-        UINavigationController *loginNavigationController = [loginStoryboard instantiateViewControllerWithIdentifier:@"LoginNavigationController"];
-        [UIApplication sharedApplication].keyWindow.rootViewController = loginNavigationController;
+        UINavigationController *loginChooseNavigationViewController = [loginStoryboard instantiateViewControllerWithIdentifier:@"LoginChooseNavigationViewController"];
+        [UIApplication sharedApplication].keyWindow.rootViewController = loginChooseNavigationViewController;
         
         return [RACSignal empty];
     }];
@@ -171,6 +220,18 @@
     [self performSegueWithIdentifier:@"ShowBindAccountSegue" sender:nil];
 }
 
+- (void)showFriendsVC {
+    UIStoryboard *friendsStoryboard = [UIStoryboard storyboardWithName:@"Friends" bundle:[NSBundle mainBundle]];
+    FriendsHomeViewController *friendsHomeViewController = [friendsStoryboard instantiateViewControllerWithIdentifier:@"FriendsHomeViewController"];
+    [self showViewController:friendsHomeViewController sender:nil];
+}
+
+- (void)showOrderVC {
+    UIStoryboard *searchStoryboard = [UIStoryboard storyboardWithName:@"Search" bundle:[NSBundle mainBundle]];
+    OrderListHomeViewController *orderListHomeViewController = [searchStoryboard instantiateViewControllerWithIdentifier:@"OrderListHomeViewController"];
+    [self showViewController:orderListHomeViewController sender:nil];
+}
+
 #pragma mark - getters and setters
 
 - (MineHomeVM*)viewModel {
@@ -178,6 +239,30 @@
         self.viewModel = [MineHomeVM new];
     }
     return _viewModel;
+}
+
+- (GLScrollView*)bannerView {
+    if (_bannerView == nil) {
+        self.bannerView = [[GLScrollView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 151)];
+        
+        self.bannerView.backgroundColor = [UIColor clearColor];
+        
+        self.bannerView.imageInterval = 15;               //设置图片间距
+        self.bannerView.leftMargin = 0;                   //设置左边图片露出屏幕的距离
+        self.bannerView.topMargin = 8;                    //设置顶部边距
+        self.bannerView.bottomMargin = 16;                 //设置底部边距
+        self.bannerView.autoSelectPageTime = 3;
+        self.bannerView.imageViewCornerRadius = 10;
+        
+        self.bannerView.imageShadowOffset = CGSizeMake(1, 3);
+        self.bannerView.imageShadowOpacity = 0.3;
+        self.bannerView.imageShadowRadius = 3;
+        
+        self.bannerView.pageControl.frame = CGRectMake(0, self.bannerView.frame.size.height - 30, self.bannerView.frame.size.width, 30);
+        
+        self.bannerView.delegate = self;
+    }
+    return _bannerView;
 }
 
 @end

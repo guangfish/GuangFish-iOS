@@ -132,6 +132,9 @@
 		654D2933215BD69C00333B23 /* Friends.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654D2932215BD69C00333B23 /* Friends.storyboard */; };
 		654D2935215BD6C300333B23 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654D2934215BD6C300333B23 /* Search.storyboard */; };
 		654D2937215BD6D100333B23 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 654D2936215BD6D100333B23 /* Mine.storyboard */; };
+		654DC0A5219BD2550015D376 /* LoginChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654DC0A4219BD2550015D376 /* LoginChooseViewController.m */; };
+		654DC0A8219BD2660015D376 /* LoginChooseVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 654DC0A7219BD2660015D376 /* LoginChooseVM.m */; };
+		654DC0AA219BF1520015D376 /* img_login_choose_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 654DC0A9219BF1520015D376 /* img_login_choose_bg.png */; };
 		654FB27C2176C72A00ABB64A /* DrawRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 654FB27B2176C72A00ABB64A /* DrawRecordViewController.m */; };
 		654FB27F2176C73D00ABB64A /* DrawRecordVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 654FB27E2176C73D00ABB64A /* DrawRecordVM.m */; };
 		654FB2822176CB5000ABB64A /* DrawRecordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 654FB2812176CB5000ABB64A /* DrawRecordCell.m */; };
@@ -411,6 +414,11 @@
 		654D2932215BD69C00333B23 /* Friends.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Friends.storyboard; sourceTree = "<group>"; };
 		654D2934215BD6C300333B23 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		654D2936215BD6D100333B23 /* Mine.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
+		654DC0A3219BD2550015D376 /* LoginChooseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginChooseViewController.h; sourceTree = "<group>"; };
+		654DC0A4219BD2550015D376 /* LoginChooseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginChooseViewController.m; sourceTree = "<group>"; };
+		654DC0A6219BD2660015D376 /* LoginChooseVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginChooseVM.h; sourceTree = "<group>"; };
+		654DC0A7219BD2660015D376 /* LoginChooseVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginChooseVM.m; sourceTree = "<group>"; };
+		654DC0A9219BF1520015D376 /* img_login_choose_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_login_choose_bg.png; sourceTree = "<group>"; };
 		654FB27A2176C72A00ABB64A /* DrawRecordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawRecordViewController.h; sourceTree = "<group>"; };
 		654FB27B2176C72A00ABB64A /* DrawRecordViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawRecordViewController.m; sourceTree = "<group>"; };
 		654FB27D2176C73D00ABB64A /* DrawRecordVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawRecordVM.h; sourceTree = "<group>"; };
@@ -753,6 +761,10 @@
 		6554A51520F721330052BDA5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				654DC0A3219BD2550015D376 /* LoginChooseViewController.h */,
+				654DC0A4219BD2550015D376 /* LoginChooseViewController.m */,
+				654DC0A6219BD2660015D376 /* LoginChooseVM.h */,
+				654DC0A7219BD2660015D376 /* LoginChooseVM.m */,
 				6554A51620F721440052BDA5 /* LoginViewController.h */,
 				6554A51720F721440052BDA5 /* LoginViewController.m */,
 				6554A51920F721770052BDA5 /* LoginVM.h */,
@@ -898,6 +910,7 @@
 		6584EB5D20F6412A009A381D /* images */ = {
 			isa = PBXGroup;
 			children = (
+				654DC0A9219BF1520015D376 /* img_login_choose_bg.png */,
 				653E3745219ABD4700EB2CC3 /* img_enter_gray@2x.png */,
 				653E3746219ABD4800EB2CC3 /* img_enter_gray@3x.png */,
 				653E373D219AA75700EB2CC3 /* img_mine_headbg@2x.png */,
@@ -1352,6 +1365,7 @@
 				65287B8E215E864200346335 /* img_help@3x.png in Resources */,
 				6584EB4E20F63F9D009A381D /* Assets.xcassets in Resources */,
 				65696BAC2133E14D000D3096 /* img_ddjl@3x.png in Resources */,
+				654DC0AA219BF1520015D376 /* img_login_choose_bg.png in Resources */,
 				65BF8C5F2187F0200003FC41 /* img_ydy2@2x.png in Resources */,
 				6576FED82113EFF2000C64C3 /* img_info_header@3x.png in Resources */,
 				6537FF112111FBE000174141 /* img_home_bg@2x.png in Resources */,
@@ -1433,6 +1447,7 @@
 				6548FF15217D6E8D003C27FA /* HelpInfoWithImageCellVM.m in Sources */,
 				6548FF12217D6E7D003C27FA /* HelpInfoWithImageCell.m in Sources */,
 				6548FEF7217D61D7003C27FA /* HelpVM.m in Sources */,
+				654DC0A5219BD2550015D376 /* LoginChooseViewController.m in Sources */,
 				6584EB4620F63F9B009A381D /* AppDelegate.m in Sources */,
 				652997CF20FF9232005B463B /* HomeHeaderReusableVM.m in Sources */,
 				653A6FFC217079B1001AA2E4 /* GuangfishUserInviteUpdateAPIManager.m in Sources */,
@@ -1475,6 +1490,7 @@
 				65786F6D217590AE009D5F54 /* HotSellingViewController.m in Sources */,
 				658ACFEA2109A524006FD017 /* FriendsHomeVM.m in Sources */,
 				65C955CB210E9D1D00BD5FC8 /* OrderListVM.m in Sources */,
+				654DC0A8219BD2660015D376 /* LoginChooseVM.m in Sources */,
 				6545F611210AE8CF00A31A97 /* OrderRewardVM.m in Sources */,
 				65269FCE216C36160002D30E /* BindCodeViewController.m in Sources */,
 				65287B86215E7D8700346335 /* HomeFooterReusableVM.m in Sources */,

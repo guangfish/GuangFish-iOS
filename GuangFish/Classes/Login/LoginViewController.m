@@ -9,7 +9,6 @@
 #import "LoginViewController.h"
 #import <EAIntroView/EAIntroView.h>
 #import "TabBarController.h"
-#import "HotSellHomeViewController.h"
 
 @interface LoginViewController ()<EAIntroDelegate>
 
@@ -19,7 +18,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 @property (weak, nonatomic) IBOutlet UIButton *registerButton;
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
-@property (weak, nonatomic) IBOutlet UIButton *visitorButton;
 
 @end
 
@@ -146,14 +144,6 @@
             [self showActivityHudByText:@""];
             [self.viewModel doLogin];
         }
-        return [RACSignal empty];
-    }];
-    
-    self.visitorButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
-        @strongify(self);
-        UIStoryboard *hotSellStoryboard = [UIStoryboard storyboardWithName:@"HotSell" bundle:[NSBundle mainBundle]];
-        HotSellHomeViewController *hotSellHomeViewController = [hotSellStoryboard instantiateViewControllerWithIdentifier:@"HotSellHomeViewController"];
-        [self showViewController:hotSellHomeViewController sender:nil];
         return [RACSignal empty];
     }];
 }

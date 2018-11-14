@@ -18,7 +18,6 @@
 @property (nonatomic, strong) GuangfishDrawstatsAPIManager *drawstatsAPIManager;
 
 @property (nonatomic, strong) NSString *inviteCode;
-@property (nonatomic, strong) NSString *totalBuySave;
 
 @end
 
@@ -33,7 +32,9 @@
     self.totalMoney = @"¥0.00";
     self.paltformReward = @"¥0.00";
     self.orderMoney = @"¥0.00";
+    self.totalBuySave = @"¥0.00";
     self.drawBtnEnable = [NSNumber numberWithBool:NO];
+    self.imageArray = [[NSMutableArray alloc] init];
     
     self.version = [NSString stringWithFormat:@"V%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]];
 }
@@ -57,6 +58,10 @@
 - (void)managerCallAPIDidSuccess:(GuangfishAPIBaseManager *)manager {
     if (manager == self.bannerAPIManager) {
         NSDictionary *responseDic = [manager fetchDataWithReformer:nil];
+        self.bannerDicArray = [responseDic objectForKey:@"data"];
+        for (NSDictionary *dic in self.bannerDicArray) {
+            [self.imageArray addObject:[dic objectForKey:@"imgUrl"]];
+        }
         [self.requestGetBannerSignal sendNext:@"banner获取成功"];
     } else if (manager == self.drawstatsAPIManager) {
         NSDictionary *responseDic = [manager fetchDataWithReformer:nil];
@@ -67,7 +72,7 @@
         self.hasBindAccount = [drawStatsDic objectForKey:@"hasBindAccount"];
         self.drawBtnEnable = [drawStatsDic objectForKey:@"canDraw"];
         self.reason = [drawStatsDic objectForKey:@"reason"];
-        self.totalBuySave = [[responseDic objectForKey:@"data"] objectForKey:@"totalBuySave"];
+        self.totalBuySave = [NSString stringWithFormat:@"¥%@", [[responseDic objectForKey:@"data"] objectForKey:@"totalBuySave"]];
         [self.requestGetdrawStatsSignal sendNext:@"返利信息获取成功"];
     }
 }
