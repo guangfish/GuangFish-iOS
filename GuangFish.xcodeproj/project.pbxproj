@@ -22,6 +22,7 @@
 		65287B91215E897400346335 /* img_kf@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65287B8F215E897300346335 /* img_kf@3x.png */; };
 		65287B92215E897400346335 /* img_kf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65287B90215E897300346335 /* img_kf@2x.png */; };
 		652997CF20FF9232005B463B /* HomeHeaderReusableVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 652997CE20FF9232005B463B /* HomeHeaderReusableVM.m */; };
+		652CE98021A257E700004FE9 /* GuangfishGetTklAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 652CE97F21A257E700004FE9 /* GuangfishGetTklAPIManager.m */; };
 		652ED39D215FE09600B0CD3D /* img_ckdd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 652ED399215FE09400B0CD3D /* img_ckdd@3x.png */; };
 		652ED39E215FE09600B0CD3D /* img_bddd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 652ED39A215FE09400B0CD3D /* img_bddd@2x.png */; };
 		652ED39F215FE09600B0CD3D /* img_bddd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 652ED39B215FE09500B0CD3D /* img_bddd@3x.png */; };
@@ -270,6 +271,8 @@
 		65287B90215E897300346335 /* img_kf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_kf@2x.png"; sourceTree = "<group>"; };
 		652997CD20FF9232005B463B /* HomeHeaderReusableVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeHeaderReusableVM.h; sourceTree = "<group>"; };
 		652997CE20FF9232005B463B /* HomeHeaderReusableVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHeaderReusableVM.m; sourceTree = "<group>"; };
+		652CE97E21A257E700004FE9 /* GuangfishGetTklAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishGetTklAPIManager.h; sourceTree = "<group>"; };
+		652CE97F21A257E700004FE9 /* GuangfishGetTklAPIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuangfishGetTklAPIManager.m; sourceTree = "<group>"; };
 		652ED399215FE09400B0CD3D /* img_ckdd@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_ckdd@3x.png"; sourceTree = "<group>"; };
 		652ED39A215FE09400B0CD3D /* img_bddd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_bddd@2x.png"; sourceTree = "<group>"; };
 		652ED39B215FE09500B0CD3D /* img_bddd@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_bddd@3x.png"; sourceTree = "<group>"; };
@@ -754,6 +757,8 @@
 				653A6FFE21707A66001AA2E4 /* GuangfishDrawRecordAPIManager.m */,
 				655079292184B198004664C7 /* GuangfishHotWordAPIManager.h */,
 				6550792A2184B198004664C7 /* GuangfishHotWordAPIManager.m */,
+				652CE97E21A257E700004FE9 /* GuangfishGetTklAPIManager.h */,
+				652CE97F21A257E700004FE9 /* GuangfishGetTklAPIManager.m */,
 			);
 			path = TtkAPIManagers;
 			sourceTree = "<group>";
@@ -1504,6 +1509,7 @@
 				6554A51820F721440052BDA5 /* LoginViewController.m in Sources */,
 				659D8C6A20FF159E00E590E5 /* HomeMenuCell.m in Sources */,
 				6554A4AF20F6F2090052BDA5 /* HomeHeaderReusableView.m in Sources */,
+				652CE98021A257E700004FE9 /* GuangfishGetTklAPIManager.m in Sources */,
 				658ACFE72109A510006FD017 /* FriendsHomeViewController.m in Sources */,
 				6548FF2E217DA42C003C27FA /* HelpInfoVM.m in Sources */,
 				6554A52D20F730290052BDA5 /* GuangfishFriendlistAPIManager.m in Sources */,

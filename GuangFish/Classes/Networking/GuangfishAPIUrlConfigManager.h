@@ -40,6 +40,8 @@
 #define API_DrawRecordUrl                        @"/app/api/drawRecord"
 //热词查询接口
 #define API_HotWordUrl                           @"/app/api/hotword"
+//获取淘口令接口
+#define API_GetTklUrl                            @"/app/api/getTkl"
 
 @interface GuangfishAPIUrlConfigManager : NSObject
 

@@ -8,10 +8,12 @@
 
 #import "HotSellingCellVM.h"
 #import "WebVm.h"
+#import "GuangfishGetTklAPIManager.h"
 
-@interface HotSellingCellVM()
+@interface HotSellingCellVM()<GuangfishAPIManagerParamSource, GuangfishAPIManagerCallBackDelegate>
 
 @property (nonatomic, strong) NSDictionary *dataDic;
+@property (nonatomic, strong) GuangfishGetTklAPIManager *getTklAPIManager;
 
 @end
 
@@ -43,22 +45,66 @@
     }
 }
 
+#pragma mark - GuangfishAPIManagerParamSource
+
+- (NSDictionary*)paramsForApi:(GuangfishAPIBaseManager *)manager {
+    NSDictionary *params = @{};
+    
+    if (manager == self.getTklAPIManager) {
+        params = @{
+                   kGetTklAPIManagerParamsKeyProductId: [self.dataDic objectForKey:@"productId"],
+                   kGetTklAPIManagerParamsKeyTkUrl: [self.dataDic objectForKey:@"tkUrl"],
+                   kGetTklAPIManagerParamsKeyProductName: [self.dataDic objectForKey:@"productName"],
+                   kGetTklAPIManagerParamsKeyImgUrl: [self.dataDic objectForKey:@"imgUrl"]
+                   };
+    }
+    
+    return params;
+}
+
+#pragma mark - GuangfishAPIManagerCallBackDelegate
+
+- (void)managerCallAPIDidSuccess:(GuangfishAPIBaseManager *)manager {
+    if (manager == self.getTklAPIManager) {
+        NSDictionary *dic = [manager fetchDataWithReformer:nil];
+        NSDictionary *dataDic = [dic objectForKey:@"data"];
+        NSURL *url = [NSURL URLWithString:@"taobao://item.taobao.com/item.htm"];
+        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+        pasteboard.string = [dataDic objectForKey:@"tkl"];
+        if (@available(iOS 10.0, *)) {
+            [[UIApplication sharedApplication] openURL:url options:@{UIApplicationOpenURLOptionUniversalLinksOnly: @NO} completionHandler:^(BOOL success) {}];
+        } else {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    }
+}
+
+- (void)managerCallAPIDidFailed:(GuangfishAPIBaseManager *)manager {
+    [self.openTaobaoSignal sendError:[NSError errorWithDomain:@"获取淘口令失败" code:1 userInfo:nil]];
+}
+
 #pragma mark - public methods
 
 - (void)openTaobao {
-    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.string = [self.dataDic objectForKey:@"tkl"];
     NSURL *url = [NSURL URLWithString:@"taobao://item.taobao.com/item.htm"];
     if (![[UIApplication sharedApplication] canOpenURL:url]) {
         WebVM *webVM = [[WebVM alloc] init];
         webVM.urlStr = [self.dataDic objectForKey:@"tkUrl"];
         [self.openTaobaoSignal sendNext:[NSError errorWithDomain:@"打开淘宝失败" code:1 userInfo:@{@"webVM": webVM}]];
-    }
-    if (@available(iOS 10.0, *)) {
-        [[UIApplication sharedApplication] openURL:url options:@{UIApplicationOpenURLOptionUniversalLinksOnly: @NO} completionHandler:^(BOOL success) {}];
     } else {
-        [[UIApplication sharedApplication] openURL:url];
+        [self.getTklAPIManager loadData];
     }
+}
+
+#pragma mark - getters and setters
+
+- (GuangfishGetTklAPIManager*)getTklAPIManager {
+    if (_getTklAPIManager == nil) {
+        self.getTklAPIManager = [[GuangfishGetTklAPIManager alloc] init];
+        self.getTklAPIManager.paramSource = self;
+        self.getTklAPIManager.delegate = self;
+    }
+    return _getTklAPIManager;
 }
 
 @end
