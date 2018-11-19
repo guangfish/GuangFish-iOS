@@ -16,8 +16,8 @@
 
 - (void)copyWxName {
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    pasteboard.string = @"ruth520";
-    [self.wxNameCopySignal sendNext:@"ruth520微信号已复制到剪贴板"];
+    pasteboard.string = @"ruth0520";
+    [self.wxNameCopySignal sendNext:@"ruth0520微信号已复制到剪贴板"];
 }
 
 @end

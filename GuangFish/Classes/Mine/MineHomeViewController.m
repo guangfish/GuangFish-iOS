@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalBuySaveLabel;
 @property (weak, nonatomic) IBOutlet UITableViewCell *bannerCell;
 @property (weak, nonatomic) IBOutlet UITableViewCell *moneyInfoCell;
+@property (weak, nonatomic) IBOutlet UITableViewCell *orderCell;
 @property (nonatomic, strong) GLScrollView *bannerView;
 
 @end
@@ -96,6 +97,9 @@
         return 0;
     }
     if (![[[GuangfishNetworkingManager sharedManager] getUserCode] isEqualToString:TestUID] && cell == self.bannerCell) {
+        return 0;
+    }
+    if (![[[GuangfishNetworkingManager sharedManager] getUserCode] isEqualToString:TestUID] && cell == self.orderCell) {
         return 0;
     }
     
