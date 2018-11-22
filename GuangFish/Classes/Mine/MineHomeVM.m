@@ -8,13 +8,11 @@
 
 #import "MineHomeVM.h"
 #import "GuangfishNetworkingManager.h"
-#import "GuangfishBannerAPIManager.h"
 #import "GuangfishDrawstatsAPIManager.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface MineHomeVM()<GuangfishAPIManagerParamSource, GuangfishAPIManagerCallBackDelegate>
 
-@property (nonatomic, strong) GuangfishBannerAPIManager *bannerAPIManager;
 @property (nonatomic, strong) GuangfishDrawstatsAPIManager *drawstatsAPIManager;
 
 @property (nonatomic, strong) NSString *inviteCode;
@@ -44,9 +42,7 @@
 - (NSDictionary*)paramsForApi:(GuangfishAPIBaseManager *)manager {
     NSDictionary *params = @{};
     
-    if (manager == self.bannerAPIManager) {
-        params = @{};
-    } else if (manager == self.drawstatsAPIManager) {
+    if (manager == self.drawstatsAPIManager) {
         params = @{};
     }
     
@@ -56,14 +52,7 @@
 #pragma mark - GuangfishAPIManagerCallBackDelegate
 
 - (void)managerCallAPIDidSuccess:(GuangfishAPIBaseManager *)manager {
-    if (manager == self.bannerAPIManager) {
-        NSDictionary *responseDic = [manager fetchDataWithReformer:nil];
-        self.bannerDicArray = [responseDic objectForKey:@"data"];
-        for (NSDictionary *dic in self.bannerDicArray) {
-            [self.imageArray addObject:[dic objectForKey:@"imgUrl"]];
-        }
-        [self.requestGetBannerSignal sendNext:@"banner获取成功"];
-    } else if (manager == self.drawstatsAPIManager) {
+    if (manager == self.drawstatsAPIManager) {
         NSDictionary *responseDic = [manager fetchDataWithReformer:nil];
         NSDictionary *drawStatsDic = [responseDic objectForKey:@"data"];
         self.totalMoney = [NSString stringWithFormat:@"¥%@", [drawStatsDic objectForKey:@"totalMoney"]];
@@ -78,9 +67,7 @@
 }
 
 - (void)managerCallAPIDidFailed:(GuangfishAPIBaseManager *)manager {
-    if (manager == self.bannerAPIManager) {
-        [self.requestGetBannerSignal sendNext:manager.managerError];
-    } else if (manager == self.drawstatsAPIManager) {
+    if (manager == self.drawstatsAPIManager) {
         [self.requestGetdrawStatsSignal sendNext:manager.managerError];
     }
 }
@@ -103,10 +90,6 @@
     [self.inviteCodeSignal sendNext:@"邀请码复制成功，分享给朋友获得多重奖励金"];
 }
 
-- (void)getBanner {
-    [self.bannerAPIManager loadData];
-}
-
 - (void)getDrawStats {
     [self.drawstatsAPIManager loadData];
 }
@@ -124,15 +107,6 @@
 }
 
 #pragma mark - getters and setters
-
-- (GuangfishBannerAPIManager*)bannerAPIManager {
-    if (_bannerAPIManager == nil) {
-        self.bannerAPIManager = [[GuangfishBannerAPIManager alloc] init];
-        self.bannerAPIManager.delegate = self;
-        self.bannerAPIManager.paramSource = self;
-    }
-    return _bannerAPIManager;
-}
 
 - (GuangfishDrawstatsAPIManager*)drawstatsAPIManager {
     if (_drawstatsAPIManager == nil) {

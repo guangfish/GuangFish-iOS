@@ -32,7 +32,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)logout;
 - (void)getUserData;
 - (void)inviteCodeCopy;
-- (void)getBanner;
 - (void)getDrawStats;
 - (MineVM*)getMineVM;
 - (void)cleanMemory;

@@ -16,10 +16,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *hotImageView;
 @property (weak, nonatomic) IBOutlet UILabel *productNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *shopNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *reservePriceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sellNumLabel;
 @property (weak, nonatomic) IBOutlet UILabel *commissionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *quanMianZhiLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *shopTypeImageView;
 
 @end
 
@@ -56,8 +58,21 @@
     RAC(self.shopNameLabel, text) = [RACObserve(self.viewModel, shopName) takeUntil:self.rac_prepareForReuseSignal];
     RAC(self.priceLabel, text) = [RACObserve(self.viewModel, price) takeUntil:self.rac_prepareForReuseSignal];
     RAC(self.sellNumLabel, text) = [RACObserve(self.viewModel, sellNum) takeUntil:self.rac_prepareForReuseSignal];
+    RAC(self.shopTypeImageView, image) = [RACObserve(self.viewModel, shopTypeImage) takeUntil:self.rac_prepareForReuseSignal];
     
     @weakify(self)
+    [RACObserve(self.viewModel, reservePrice) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        NSString *reservePrice = x;
+        NSAttributedString *attrStr = [[NSAttributedString alloc]initWithString:reservePrice
+                                      attributes:@{
+                                                   NSStrikethroughStyleAttributeName:@(NSUnderlineStyleSingle|NSUnderlinePatternSolid),
+                                                   NSStrikethroughColorAttributeName:[UIColor colorWithRed:0.55 green:0.55 blue:0.55 alpha:1.00]}];
+        self.reservePriceLabel.attributedText = attrStr;
+        
+        [self setupReservePriceLabel];
+    }];
+    
     [RACObserve(self.viewModel, imageURLStr) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
         [self.hotImageView sd_setImageWithURL:x];
@@ -86,7 +101,7 @@
         
         [attrString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0,range.location + 1)];
         [attrString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(range.location + 1,needText.length - (range.location + 1))];
-        [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.62 green:0.62 blue:0.62 alpha:1.00] range:NSMakeRange(0,range.location + 1)];
+        [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.37 green:0.33 blue:0.33 alpha:1.00] range:NSMakeRange(0,range.location + 1)];
         [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00] range:NSMakeRange(range.location + 1,needText.length-(range.location + 1))];
     }
     
@@ -111,6 +126,14 @@
         next = [next nextResponder];
     } while (next != nil);
     return nil;
+}
+
+- (void)setupReservePriceLabel {
+    CGSize priceLabelSize = [self.priceLabel.text boundingRectWithSize:CGSizeMake(300, self.priceLabel.frame.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.priceLabel.font} context:nil].size;
+    
+    CGRect rect = self.reservePriceLabel.frame;
+    rect.origin.x = priceLabelSize.width + 9;
+    self.reservePriceLabel.frame = rect;
 }
 
 @end

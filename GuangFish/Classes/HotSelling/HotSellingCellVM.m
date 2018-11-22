@@ -32,16 +32,22 @@
 }
 
 - (void)getData {
-    self.productName = [self.dataDic objectForKey:@"productName"];
+    self.productName = [NSString stringWithFormat:@"      %@", [self.dataDic objectForKey:@"productName"]];
     self.imageURLStr = [self.dataDic objectForKey:@"imgUrl"];
     self.shopName = [NSString stringWithFormat:@"店名:%@", [self.dataDic objectForKey:@"shopName"]];
-    self.price = [NSString stringWithFormat:@"价格:¥%@", [self.dataDic objectForKey:@"price"]];
+    self.price = [NSString stringWithFormat:@"¥%@", [self.dataDic objectForKey:@"price"]];
+    self.reservePrice = [NSString stringWithFormat:@"原价:¥%@", [self.dataDic objectForKey:@"reservePrice"]];
     self.sellNum = [NSString stringWithFormat:@"月销量(件):%@", [self.dataDic objectForKey:@"sellNum"]];
-    self.commission = [NSString stringWithFormat:@"预估返现:¥%@", [self.dataDic objectForKey:@"commission"]];
+    self.commission = [NSString stringWithFormat:@"预估返:¥%@", [self.dataDic objectForKey:@"commission"]];
     if ([self.dataDic objectForKey:@"quanMianzhi"] != nil && ![[self.dataDic objectForKey:@"quanMianzhi"] isEqualToString:@""]) {
         self.quanMianZhi = [NSString stringWithFormat:@"领劵省:¥%@", [self.dataDic objectForKey:@"quanMianzhi"]];
     } else {
         self.quanMianZhi = @"";
+    }
+    if ([[NSString stringWithFormat:@"%@", [self.dataDic objectForKey:@"shopType"]] isEqualToString:@"0"]) {
+        self.shopTypeImage = [UIImage imageNamed:@"img_taobao"];
+    } else {
+        self.shopTypeImage = [UIImage imageNamed:@"img_tianmao"];
     }
 }
 
