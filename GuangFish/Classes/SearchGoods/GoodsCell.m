@@ -18,8 +18,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *shopNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *sellNumLabel;
-@property (weak, nonatomic) IBOutlet UILabel *label1;
-@property (weak, nonatomic) IBOutlet UILabel *label2;
+@property (weak, nonatomic) IBOutlet UILabel *commissionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *quanMianZhiLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *shopTypeImageView;
+@property (weak, nonatomic) IBOutlet UILabel *reservePriceLabel;
 
 @end
 
@@ -29,11 +31,11 @@
     [super awakeFromNib];
     
     if ([[[GuangfishNetworkingManager sharedManager] getUserCode] isEqualToString:TestUID]) {
-        self.label1.hidden = YES;
-        self.label2.hidden = YES;
+        self.quanMianZhiLabel.hidden = YES;
+        self.commissionLabel.hidden = YES;
     } else {
-        self.label1.hidden = NO;
-        self.label2.hidden = NO;
+        self.quanMianZhiLabel.hidden = NO;
+        self.commissionLabel.hidden = NO;
     }
 }
 
@@ -56,19 +58,20 @@
     RAC(self.shopNameLabel, text) = [RACObserve(self.viewModel, shopName) takeUntil:self.rac_prepareForReuseSignal];
     RAC(self.priceLabel, text) = [RACObserve(self.viewModel, price) takeUntil:self.rac_prepareForReuseSignal];
     RAC(self.sellNumLabel, text) = [RACObserve(self.viewModel, sellNum) takeUntil:self.rac_prepareForReuseSignal];
+    RAC(self.shopTypeImageView, image) = [RACObserve(self.viewModel, shopTypeImage) takeUntil:self.rac_prepareForReuseSignal];
     
     @weakify(self)
     [RACObserve(self.viewModel, productImageUrlStr) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
         [self.productImageView sd_setImageWithURL:x];
     }];
-    [RACObserve(self.viewModel, labelStr1) subscribeNext:^(id  _Nullable x) {
+    [RACObserve(self.viewModel, quanMianZhi) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        [self.label1 setAttributedText:[self changeLabelWithText:x]];
+        [self.quanMianZhiLabel setAttributedText:[self changeLabelWithText:x]];
     }];
-    [RACObserve(self.viewModel, labelStr2) subscribeNext:^(id  _Nullable x) {
+    [RACObserve(self.viewModel, commission) subscribeNext:^(id  _Nullable x) {
         @strongify(self)
-        [self.label2 setAttributedText:[self changeLabelWithText:x]];
+        [self.commissionLabel setAttributedText:[self changeLabelWithText:x]];
     }];
     [self.viewModel.openTaobaoSignal subscribeNext:^(id  _Nullable x) {
         @strongify(self);
@@ -77,6 +80,21 @@
             [self openTBByWeb:[error.userInfo objectForKey:@"webVM"]];
         }
     }];
+    [RACObserve(self.viewModel, reservePrice) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        NSString *reservePrice = x;
+        NSAttributedString *attrStr = [[NSAttributedString alloc]initWithString:reservePrice
+                                                                     attributes:@{
+                                                                                  NSStrikethroughStyleAttributeName:@(NSUnderlineStyleSingle|NSUnderlinePatternSolid),
+                                                                                  NSStrikethroughColorAttributeName:[UIColor colorWithRed:0.55 green:0.55 blue:0.55 alpha:1.00]}];
+        self.reservePriceLabel.attributedText = attrStr;
+        
+        [self setupReservePriceLabel];
+    }];
+    [RACObserve(self.viewModel, hideCommission) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        self.commissionLabel.hidden = [x boolValue];
+    }];
 }
 
 -(NSMutableAttributedString*)changeLabelWithText:(NSString*)needText {
@@ -84,10 +102,10 @@
     if ([needText containsString:@":"]) {
         NSRange range = [needText rangeOfString:@":"];
         
-        [attrString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:10] range:NSMakeRange(0,range.location + 1)];
-        [attrString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:14] range:NSMakeRange(range.location + 1,needText.length - (range.location + 1))];
-        [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor blackColor] range:NSMakeRange(0,range.location + 1)];
-        [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.90 green:0.31 blue:0.33 alpha:1.00] range:NSMakeRange(range.location + 1,needText.length-(range.location + 1))];
+        [attrString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(0,range.location + 1)];
+        [attrString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:NSMakeRange(range.location + 1,needText.length - (range.location + 1))];
+        [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.37 green:0.33 blue:0.33 alpha:1.00] range:NSMakeRange(0,range.location + 1)];
+        [attrString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:0.95 green:0.18 blue:0.43 alpha:1.00] range:NSMakeRange(range.location + 1,needText.length-(range.location + 1))];
     }
     
     return attrString;
@@ -112,6 +130,14 @@
     } while (next != nil);
     return nil;
     
+}
+
+- (void)setupReservePriceLabel {
+    CGSize priceLabelSize = [self.priceLabel.text boundingRectWithSize:CGSizeMake(300, self.priceLabel.frame.size.height) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:self.priceLabel.font} context:nil].size;
+    
+    CGRect rect = self.reservePriceLabel.frame;
+    rect.origin.x = priceLabelSize.width + 9;
+    self.reservePriceLabel.frame = rect;
 }
 
 @end

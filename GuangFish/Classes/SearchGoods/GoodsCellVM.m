@@ -9,6 +9,7 @@
 #import "GoodsCellVM.h"
 #import "WebVm.h"
 #import "GuangfishGetTklAPIManager.h"
+#import "GuangfishNetworkingManager.h"
 
 @interface GoodsCellVM()<GuangfishAPIManagerParamSource, GuangfishAPIManagerCallBackDelegate>
 
@@ -21,6 +22,11 @@
 
 - (void)initializeData {
     self.openTaobaoSignal = [RACSubject subject];
+    if ([[GuangfishNetworkingManager sharedManager] isLogin]) {
+        self.hideCommission = [NSNumber numberWithBool:NO];
+    } else {
+        self.hideCommission = [NSNumber numberWithBool:YES];
+    }
 }
 
 - (id)initWithResponseDic:(NSDictionary *)dic {
@@ -32,17 +38,22 @@
 }
 
 - (void)getData {
-    self.productName = [self.dataDic objectForKey:@"productName"];
+    self.productName = [NSString stringWithFormat:@"      %@", [self.dataDic objectForKey:@"productName"]];
     self.productImageUrlStr = [self.dataDic objectForKey:@"imgUrl"];
     self.shopName = [NSString stringWithFormat:@"店名:%@", [self.dataDic objectForKey:@"shopName"]];
-    self.price = [NSString stringWithFormat:@"价格:¥%@", [self.dataDic objectForKey:@"price"]];
+    self.price = [NSString stringWithFormat:@"¥%@", [self.dataDic objectForKey:@"price"]];
+    self.reservePrice = [NSString stringWithFormat:@"原价:¥%@", [self.dataDic objectForKey:@"reservePrice"]];
     self.sellNum = [NSString stringWithFormat:@"月销量(件):%@", [self.dataDic objectForKey:@"sellNum"]];
-    if ([[self.dataDic allKeys] containsObject:@"quanMianzhi"] && ((NSString*)[self.dataDic objectForKey:@"quanMianzhi"]).length > 0) {
-        self.labelStr1 = [NSString stringWithFormat:@"领劵省:¥%@", [self.dataDic objectForKey:@"quanMianzhi"]];
-        self.labelStr2 = [NSString stringWithFormat:@"预估返现:¥%@", [self.dataDic objectForKey:@"commission"]];
+    self.commission = [NSString stringWithFormat:@"预估返:¥%@", [self.dataDic objectForKey:@"commission"]];
+    if ([self.dataDic objectForKey:@"quanMianzhi"] != nil && ![[self.dataDic objectForKey:@"quanMianzhi"] isEqualToString:@""]) {
+        self.quanMianZhi = [NSString stringWithFormat:@"领劵省:¥%@", [self.dataDic objectForKey:@"quanMianzhi"]];
     } else {
-        self.labelStr1 = [NSString stringWithFormat:@"预估返现:¥%@", [self.dataDic objectForKey:@"commission"]];
-        self.labelStr2 = @"";
+        self.quanMianZhi = @"";
+    }
+    if ([[NSString stringWithFormat:@"%@", [self.dataDic objectForKey:@"shopType"]] isEqualToString:@"0"]) {
+        self.shopTypeImage = [UIImage imageNamed:@"img_taobao"];
+    } else {
+        self.shopTypeImage = [UIImage imageNamed:@"img_tianmao"];
     }
 }
 

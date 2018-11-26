@@ -92,6 +92,10 @@
             [self openTBByWeb:[error.userInfo objectForKey:@"webVM"]];
         }
     }];
+    [RACObserve(self.viewModel, hideCommission) subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        self.commissionLabel.hidden = [x boolValue];
+    }];
 }
 
 -(NSMutableAttributedString*)changeLabelWithText:(NSString*)needText {

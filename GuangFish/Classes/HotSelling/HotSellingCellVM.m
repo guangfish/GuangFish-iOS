@@ -9,6 +9,7 @@
 #import "HotSellingCellVM.h"
 #import "WebVm.h"
 #import "GuangfishGetTklAPIManager.h"
+#import "GuangfishNetworkingManager.h"
 
 @interface HotSellingCellVM()<GuangfishAPIManagerParamSource, GuangfishAPIManagerCallBackDelegate>
 
@@ -21,6 +22,11 @@
 
 - (void)initializeData {
     self.openTaobaoSignal = [RACSubject subject];
+    if ([[GuangfishNetworkingManager sharedManager] isLogin]) {
+        self.hideCommission = [NSNumber numberWithBool:NO];
+    } else {
+        self.hideCommission = [NSNumber numberWithBool:YES];
+    }
 }
 
 - (id)initWithResponseDic:(NSDictionary *)dic {

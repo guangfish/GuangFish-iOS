@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSString *quanMianZhi;
 @property (nonatomic, strong) NSString *reservePrice;
 @property (nonatomic, strong) UIImage *shopTypeImage;
+@property (nonatomic, strong) NSNumber *hideCommission;
 
 - (id)initWithResponseDic:(NSDictionary*)dic;
 - (void)openTaobao;
