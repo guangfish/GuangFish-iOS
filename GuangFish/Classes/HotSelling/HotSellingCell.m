@@ -94,7 +94,9 @@
     }];
     [RACObserve(self.viewModel, hideCommission) subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-        self.commissionLabel.hidden = [x boolValue];
+        if (![[[GuangfishNetworkingManager sharedManager] getUserCode] isEqualToString:TestUID]) {
+            self.commissionLabel.hidden = [x boolValue];
+        }
     }];
 }
 

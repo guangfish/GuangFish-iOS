@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *time;
 @property (nonatomic, strong) NSString *money;
+@property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) UIColor *bgColor;
 
 - (id)initWithResponseDic:(NSDictionary*)dic;

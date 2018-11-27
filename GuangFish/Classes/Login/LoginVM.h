@@ -22,6 +22,5 @@
 - (void)doLogin;
 - (BOOL)isValidSendCodeInput;
 - (BOOL)isValidInput;
-- (BOOL)shouldShowRegisterViewController;
 
 @end

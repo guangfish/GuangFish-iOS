@@ -40,7 +40,8 @@
 
 - (void)managerCallAPIDidSuccess:(GuangfishAPIBaseManager *)manager {
     if (manager == self.orderSaveAPIManager) {
-        [self.saveOrderSignal sendNext:@"保存订单成功"];
+        NSDictionary *dic = [manager fetchDataWithReformer:nil];
+        [self.saveOrderSignal sendNext:[dic objectForKey:@"desc"]];
     }
 }
 

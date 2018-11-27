@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UIView *inputBgView;
 @property (nonatomic, strong) UIAlertController *alertController;
+@property (nonatomic, strong) NSString *alertMsg;
 
 @end
 
@@ -66,6 +67,7 @@
         if ([x isKindOfClass:[NSError class]]) {
             [self showTextHud:[(NSError *)x domain]];
         } else {
+            self.alertMsg = x;
             [self presentViewController:self.alertController animated:YES completion:nil];
         }
     }];
@@ -99,7 +101,7 @@
 
 - (UIAlertController*)alertController {
     if (_alertController == nil) {
-        self.alertController = [UIAlertController alertControllerWithTitle:nil message:@"订单保存成功" preferredStyle:(UIAlertControllerStyleAlert)];
+        self.alertController = [UIAlertController alertControllerWithTitle:nil message:self.alertMsg preferredStyle:(UIAlertControllerStyleAlert)];
         @weakify(self);
         UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"知道了" style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
             @strongify(self);

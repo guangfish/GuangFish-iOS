@@ -100,6 +100,7 @@
                     <connections>
                         <outlet property="phoneLoginButton" destination="IcP-Vx-eqN" id="lsh-9r-KpH"/>
                         <outlet property="visitorButton" destination="MTB-5l-q2P" id="khW-E9-t4e"/>
+                        <segue destination="HBs-mj-yad" kind="show" identifier="ShowRegisterSegue" id="h6w-ox-sx1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="taQ-QH-vv0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -481,4 +482,7 @@
         <image name="img_info_header.png" width="114" height="114"/>
         <image name="img_login_choose_bg.png" width="750" height="1294"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="h6w-ox-sx1"/>
+    </inferredMetricsTieBreakers>
 </document>

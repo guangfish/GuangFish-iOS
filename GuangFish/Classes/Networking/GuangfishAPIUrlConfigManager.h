@@ -36,8 +36,8 @@
 #define API_ProductSearchUrl                     @"/app/api/productSearch"
 //邀请码更新接口
 #define API_UserInviteUpdateUrl                  @"/app/api/userInviteUpdate"
-//提现记录查询接口
-#define API_DrawRecordUrl                        @"/app/api/drawRecord"
+//收入明细查询接口
+#define API_IncomeInfoUrl                        @"/app/api/incomeInfo"
 //热词查询接口
 #define API_HotWordUrl                           @"/app/api/hotword"
 //获取淘口令接口

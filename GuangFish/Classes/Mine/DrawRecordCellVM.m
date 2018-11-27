@@ -25,8 +25,9 @@
 }
 
 - (void)getData {
-    self.time = [self.dataDic objectForKey:@"drawTime"];
-    self.money = [NSString stringWithFormat:@"¥%@", [self.dataDic objectForKey:@"drawMoney"]];
+    self.time = [self.dataDic objectForKey:@"time"];
+    self.money = [NSString stringWithFormat:@"%@", [self.dataDic objectForKey:@"money"]];
+    self.title = [self.dataDic objectForKey:@"type"];
 }
 
 @end

@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *moneyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 
@@ -39,6 +40,7 @@
 - (void)initialzieModel {
     RAC(self.timeLabel, text) = [RACObserve(self.viewModel, time) takeUntil:self.rac_prepareForReuseSignal];
     RAC(self.moneyLabel, text) = [RACObserve(self.viewModel, money) takeUntil:self.rac_prepareForReuseSignal];
+    RAC(self.titleLabel, text) = [RACObserve(self.viewModel, title) takeUntil:self.rac_prepareForReuseSignal];
     RAC(self, backgroundColor) = [RACObserve(self.viewModel, bgColor) takeUntil:self.rac_prepareForReuseSignal];
 }
 

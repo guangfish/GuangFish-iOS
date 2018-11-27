@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginChooseVM : GLViewModel
 
+- (BOOL)shouldShowRegisterViewController;
+
 @end
 
 NS_ASSUME_NONNULL_END

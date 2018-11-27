@@ -14,7 +14,7 @@ NSString * const kDrawRecordAPIManagerParamsKeySize = @"size";
 @implementation GuangfishDrawRecordAPIManager
 
 - (NSString*)methodName {
-    return API_DrawRecordUrl;
+    return API_IncomeInfoUrl;
 }
 
 @end
