@@ -1725,7 +1725,7 @@
                                                     <color key="textColor" red="0.95686274510000002" green="0.16078431369999999" blue="0.41960784309999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="答：逛鱼是一个可以实现精准搜索，拿优惠券、取高额返利的移动端工具，极大幅度地为您节约购物时间。支持淘宝、京东等购物平台。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XS-C7-tGB">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="答：逛鱼是一个可以实现精准搜索，查优惠券、获得商品返利的移动端工具，极大幅度的为您节约购物时间。支持淘宝、京东等购物平台的商品查询。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XS-C7-tGB">
                                                     <rect key="frame" x="20" y="25" width="335" height="3.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.37254901959999998" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
@@ -1758,7 +1758,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCO-Bv-CCP">
                                                     <rect key="frame" x="20" y="25" width="335" height="3.5"/>
-                                                    <string key="text">答：逛鱼团队是一支由技术人员主导的团队。
+                                                    <string key="text">答：逛鱼团队是一只由技术人员组成的团队。
 我们向您承诺：逛鱼APP是一款不以盈利为目的的产品。</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.37254901959999998" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
@@ -1793,10 +1793,9 @@
                                                     <rect key="frame" x="20" y="25" width="335" height="3.5"/>
                                                     <string key="text">答：
 1.全品类搜索，只要淘宝、京东的商品有券或返现，都能在逛鱼平台上搜索到。
-2.其他同类APP根据商品标题搜索会出现其他品类的商品，而逛鱼能精准搜索出您所需的商品，并不做其他商品推送。
-3.逛鱼APP精小简单，操作简单便捷。
-4.无广告，不扰民。
-5.最重要的一点，返现力度高于同类APP。</string>
+2.逛鱼APP精小简单，操作简单便捷。
+3.无广告，不扰民。
+4.返现力度高于同类APP。</string>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.37254901959999998" green="0.3294117647" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>

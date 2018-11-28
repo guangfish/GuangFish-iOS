@@ -4,37 +4,31 @@
 <array>
 	<dict>
 		<key>content</key>
-		<string>【我的钱包】“上月订单返现”+“邀请奖励”+“订单奖励”+“我的红包”的金额总和。</string>
+        <string>【可提现金额】“订单返现”+“订单奖励”+“邀请奖励”结算后的金额总和。</string>
 		<key>redtext</key>
-		<string>0,6</string>
+		<string>0,7</string>
 	</dict>
 	<dict>
 		<key>content</key>
-		<string>【订单返现】从上次提现开始至现在所有未提现的订单返现的累加。</string>
+		<string>【预估订单返现】在每月28日结算周期前，预计获得的订单返现金额总和。</string>
 		<key>redtext</key>
-		<string>0,6</string>
+		<string>0,8</string>
 	</dict>
 	<dict>
 		<key>content</key>
-		<string>【订单奖励】我的逛友提现订单返现后，邀请人可以领取好友订单返现的20%至100%作为订单奖励。</string>
+        <string>【预估订单奖励】在每月28日结算周期前，预计获得的订单奖励金额总和。我的逛友产生的订单结算后，邀请人可以领取好友订单返现的20%至100%作为订单奖励。</string>
 		<key>redtext</key>
-		<string>0,6</string>
+		<string>0,8</string>
 	</dict>
 	<dict>
 		<key>content</key>
-		<string>【邀请奖励】好友绑定邀请码，并且使用逛鱼提现，邀请人可以获得平台最高30元的邀请奖励。</string>
-		<key>redtext</key>
-		<string>0,6</string>
-	</dict>
-	<dict>
-		<key>content</key>
-		<string>【我的红包】注册逛鱼可获得随机红包；按用户活跃程度，不定期可获得随机活跃红包。
+		<string>【邀请奖励】好友绑定了我的邀请码，并且使用逛鱼提现，邀请人可以获得平台最高30元的邀请奖励。
 
-1.提现后客服将在7个工作日内进行打款。
+1.提现后系统将在1个工作日内进行打款。
 
-2.我的钱包小于起提金额3元时不可提现；仅有红包奖励时不可提现。</string>
+2.可提现金额小于起提金额3元时不可提现。</string>
 		<key>redtext</key>
-		<string>0,6;69,8;83,6</string>
+        <string>0,6;77,8</string>
 	</dict>
 </array>
 </plist>
