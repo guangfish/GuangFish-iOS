@@ -26,7 +26,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="9zX-na-KiU" kind="relationship" relationship="rootViewController" id="aNx-kc-KLb"/>
+                        <segue destination="8QK-ZY-Ebv" kind="relationship" relationship="rootViewController" id="DgE-ot-SPy"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NPj-fW-wjw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -42,11 +42,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pyd-0w-bYp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTs-zo-c8D" customClass="QCSlideSwitchView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -64,11 +64,7 @@
                         <viewLayoutGuide key="safeArea" id="3lA-Up-yY5"/>
                     </view>
                     <navigationItem key="navigationItem" title="热卖" id="ZMZ-Hc-ywz">
-                        <barButtonItem key="rightBarButtonItem" image="img_search.png" id="XJq-Je-Zez">
-                            <connections>
-                                <segue destination="ts7-nC-Ywx" kind="show" animates="NO" id="wLi-3c-zrt"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="img_search.png" id="XJq-Je-Zez"/>
                     </navigationItem>
                     <connections>
                         <outlet property="slideSwitchView" destination="LTs-zo-c8D" id="gud-zC-SkH"/>
@@ -177,10 +173,10 @@
             </objects>
             <point key="canvasLocation" x="1508" y="698.5007496251875"/>
         </scene>
-        <!--Hot Selling View Controller-->
+        <!--热-->
         <scene sceneID="aWy-qo-DIH">
             <objects>
-                <tableViewController storyboardIdentifier="HotSellingViewController" id="8QK-ZY-Ebv" customClass="HotSellingViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="HotSellingViewController" title="热" id="8QK-ZY-Ebv" customClass="HotSellingViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eP7-pu-y8t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -332,6 +328,42 @@
                             <outlet property="delegate" destination="8QK-ZY-Ebv" id="BGO-sH-1Oe"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Uef-2c-aJc">
+                        <view key="titleView" contentMode="scaleToFill" id="NJ0-kw-U04">
+                            <rect key="frame" x="137.5" y="0.0" width="100" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_menu_enter2.png" translatesAutoresizingMaskIntoConstraints="NO" id="cIS-hP-mrg">
+                                    <rect key="frame" x="86" y="18" width="14" height="8"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="全部" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCV-qU-hje">
+                                    <rect key="frame" x="0.0" y="0.0" width="78" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NUv-UW-FF2">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <connections>
+                                        <action selector="menuBtnAction:" destination="8QK-ZY-Ebv" eventType="touchUpInside" id="uTt-Ov-qwK"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="img_search.png" id="3tK-cx-hUu">
+                            <connections>
+                                <segue destination="ts7-nC-Ywx" kind="show" animates="NO" id="hHR-eI-s09"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuImageView" destination="cIS-hP-mrg" id="fq3-Sk-OZY"/>
+                        <outlet property="menuLabel" destination="aCV-qU-hje" id="fCG-vS-yyh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rIm-R0-4Jo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -363,6 +395,7 @@
     </scenes>
     <resources>
         <image name="img_hot_key.png" width="19" height="20"/>
+        <image name="img_menu_enter2.png" width="13" height="8"/>
         <image name="img_search.png" width="19" height="21"/>
     </resources>
 </document>

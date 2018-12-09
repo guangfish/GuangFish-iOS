@@ -24,6 +24,7 @@
 - (void)initializeData {
     self.requestGetProductSearchSignal = [RACSubject subject];
     self.page = 1;
+    self.key = @"";
 }
 
 #pragma mark - GuangfishAPIManagerParamSource
@@ -66,6 +67,7 @@
 
 - (void)reloadHotSellingList {
     self.page = 1;
+    [self.hotSellingCellVMList removeAllObjects];
     [self loadNextPageHotSellingList];
 }
 

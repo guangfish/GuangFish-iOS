@@ -9,8 +9,16 @@
 #import "HotSellingViewController.h"
 #import "HotSellingCell.h"
 #import "MBProgressHUD.h"
+#import "NavMenuView.h"
 
-@interface HotSellingViewController ()
+@interface HotSellingViewController ()<NavMenuViewDelegate>
+
+@property (nonatomic, assign) BOOL menuIsOpen;
+@property (nonatomic, strong) NavMenuView *navMenuView;
+
+@property (weak, nonatomic) IBOutlet UILabel *menuLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *menuImageView;
+- (IBAction)menuBtnAction:(id)sender;
 
 @end
 
@@ -18,6 +26,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.menuIsOpen = NO;
+    [self.navigationController.view addSubview:self.navMenuView];
     
     [self initialzieModel];
     
@@ -32,6 +43,14 @@
     [footer setTitle:@"" forState:(MJRefreshStateNoMoreData)];
     [footer setTitle:@"" forState:(MJRefreshStateIdle)];
     self.tableView.mj_footer = footer;
+    
+    [self.viewModel reloadHotSellingList];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    self.title = @"热卖";
 }
 
 #pragma mark - Table view data source
@@ -58,6 +77,17 @@
     [hotSellingCellVM openTaobao];
 }
 
+#pragma mark - NavMenuViewDelegate
+
+- (void)navMenuViewSelected:(NSString *)name {
+    [self menuBtnAction:nil];
+    self.menuLabel.text = name;
+    self.viewModel.key = name;
+    [self.viewModel reloadHotSellingList];
+    [self.tableView reloadData];
+    self.title = @"热卖";
+}
+
 /*
 #pragma mark - Navigation
 
@@ -67,6 +97,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - events
+
+- (IBAction)menuBtnAction:(id)sender {
+    self.menuIsOpen = !self.menuIsOpen;
+    if (self.menuIsOpen) {
+        self.menuImageView.image = [UIImage imageNamed:@"img_menu_enter"];
+        self.navMenuView.hidden = NO;
+        self.tabBarController.tabBar.hidden = YES;
+    } else {
+        self.menuImageView.image = [UIImage imageNamed:@"img_menu_enter2"];
+        self.navMenuView.hidden = YES;
+        self.tabBarController.tabBar.hidden = NO;
+    }
+}
 
 #pragma mark - private methods
 
@@ -107,6 +152,15 @@
         self.viewModel = [[HotSellingVM alloc] init];
     }
     return _viewModel;
+}
+
+- (NavMenuView*)navMenuView {
+    if (_navMenuView == nil) {
+        self.navMenuView = [[NavMenuView alloc] initWithFrame:CGRectMake(0, NaviHeight, self.view.frame.size.width, self.view.frame.size.height)];
+        self.navMenuView.hidden = YES;
+        self.navMenuView.delegate = self;
+    }
+    return _navMenuView;
 }
 
 @end
