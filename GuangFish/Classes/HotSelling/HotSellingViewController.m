@@ -44,7 +44,7 @@
     [footer setTitle:@"" forState:(MJRefreshStateIdle)];
     self.tableView.mj_footer = footer;
     
-    [self.viewModel reloadHotSellingList];
+    [self.tableView.mj_header beginRefreshing];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -83,7 +83,7 @@
     [self menuBtnAction:nil];
     self.menuLabel.text = name;
     self.viewModel.key = name;
-    [self.viewModel reloadHotSellingList];
+    [self.tableView.mj_header beginRefreshing];
     [self.tableView reloadData];
     self.title = @"热卖";
 }

@@ -7,7 +7,7 @@
 //
 
 #import "LoginChooseViewController.h"
-#import "HotSellHomeViewController.h"
+#import "HotSellingViewController.h"
 #import <EAIntroView/EAIntroView.h>
 
 @interface LoginChooseViewController ()<EAIntroDelegate>
@@ -84,8 +84,8 @@
     self.visitorButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
         @strongify(self);
         UIStoryboard *hotSellStoryboard = [UIStoryboard storyboardWithName:@"HotSell" bundle:[NSBundle mainBundle]];
-        HotSellHomeViewController *hotSellHomeViewController = [hotSellStoryboard instantiateViewControllerWithIdentifier:@"HotSellHomeViewController"];
-        [self showViewController:hotSellHomeViewController sender:nil];
+        HotSellingViewController *hotSellingViewController = [hotSellStoryboard instantiateViewControllerWithIdentifier:@"HotSellingViewController"];
+        [self showViewController:hotSellingViewController sender:nil];
         return [RACSignal empty];
     }];
 }
