@@ -10,7 +10,7 @@
 #import "MJRefresh.h"
 #import "OrderRewardCell.h"
 
-@interface OrderRewardViewController ()
+@interface OrderRewardViewController ()<BaseVCManager>
 
 @end
 
@@ -36,6 +36,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - BaseVCManager
+
+- (UIView*)nodataView {
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 149) / 2.0, -100, 149, 136)];
+    imageView.image = [UIImage imageNamed:@"img_nodd"];
+    return imageView;
 }
 
 #pragma mark - Table view data source

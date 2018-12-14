@@ -11,6 +11,7 @@
 @protocol NavMenuViewDelegate <NSObject>
 
 - (void)navMenuViewSelected:(NSString*)name;
+- (void)navMenuViewClose;
 
 @end
 

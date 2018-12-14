@@ -51,6 +51,7 @@
         }
         [self.orderRewardCellVMList addObjectsFromArray:[resultDic objectForKey:kOrderRewardListDataKeyOrderRewardCellVMList]];
         self.haveMore = [resultDic objectForKey:kOrderRewardListDataKeyHaveMorePage];
+        self.isShowNodataView = self.orderRewardCellVMList.count == 0 ? @1 : @0;
         [self.requestGetOrderRewardSignal sendNext:@""];
     }
 }

@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSArray *keyDics;
 @property (nonatomic, assign) NSInteger selectedIndex;
 @property (nonatomic, strong) NSMutableArray *buttons;
+@property (nonatomic, strong) UIButton *bgCancelButton;
 
 @end
 
@@ -42,10 +43,15 @@
     [self setSelectedBtnTintColor];
 }
 
+- (void)bgCancelBtnAction:(id)sender {
+    [self.delegate navMenuViewClose];
+}
+
 #pragma mark - private methods
 
 - (void)initialzieBgView {
     self.backgroundColor = [UIColor colorWithRed:0.07 green:0.07 blue:0.07 alpha:0.8];
+    [self addSubview:self.bgCancelButton];
     [self addSubview:self.menuView];
     [self addButtons];
 }
@@ -111,6 +117,14 @@
         self.menuView.layer.mask = maskLayer;
     }
     return _menuView;
+}
+
+- (UIButton*)bgCancelButton {
+    if (_bgCancelButton == nil) {
+        self.bgCancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        [self.bgCancelButton addTarget:self action:@selector(bgCancelBtnAction:) forControlEvents:(UIControlEventTouchUpInside)];
+    }
+    return _bgCancelButton;
 }
 
 @end

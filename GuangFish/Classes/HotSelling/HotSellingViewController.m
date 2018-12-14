@@ -88,6 +88,13 @@
     self.title = @"热卖";
 }
 
+- (void)navMenuViewClose {
+    self.menuIsOpen = NO;
+    self.menuImageView.image = [UIImage imageNamed:@"img_menu_enter2"];
+    self.navMenuView.hidden = YES;
+    self.tabBarController.tabBar.hidden = NO;
+}
+
 /*
 #pragma mark - Navigation
 

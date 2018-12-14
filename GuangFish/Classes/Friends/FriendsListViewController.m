@@ -41,13 +41,19 @@
 #pragma mark - BaseVCManager
 
 - (UIView*)nodataView {
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, -100, 109, 137)];
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 109, 137)];
-    imageView.image = [UIImage imageNamed:@"img_no_friend"];
-    [view addSubview:imageView];
-    
-    return view;
+    if ([self.title isEqualToString:@"未激活"]) {
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, -100, 109, 137)];
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 109, 137)];
+        imageView.image = [UIImage imageNamed:@"img_no_friend"];
+        [view addSubview:imageView];
+        
+        return view;
+    } else {
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 119) / 2.0, -100, 119, 137)];
+        imageView.image = [UIImage imageNamed:@"img_nojh"];
+        return imageView;
+    }
 }
 
 #pragma mark - Table view data source
