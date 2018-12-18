@@ -10,8 +10,8 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "GuangfishNetworkingManager.h"
 #import "WebViewController.h"
-#import "CustomNaviViewController.h"
 #import "HotSellingViewController.h"
+#import "CustomNaviViewController.h"
 
 @interface HotSellingCell()
 
@@ -120,9 +120,7 @@
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     WebViewController *webViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"WebViewController"];
     webViewController.viewModel = webVM;
-    if ([[self navigationController].topViewController isKindOfClass:[HotSellingViewController class]]) {
-        [[self navigationController] pushViewController:webViewController animated:YES];
-    }
+    [[self navigationController] pushViewController:webViewController animated:YES];
 }
 
 - (CustomNaviViewController *)navigationController

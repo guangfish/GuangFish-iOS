@@ -12,6 +12,7 @@
 @interface WebViewController ()
 
 @property (nonatomic, strong) WKWebView *webView;
+@property (nonatomic, strong) NSString *uuidStr;
 
 @end
 
@@ -23,7 +24,8 @@
     [self.view addSubview:self.webView];
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:self.viewModel.urlStr]]];
     
-    [self.webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:NULL];
+    self.uuidStr = [self getUuid];
+    [self.webView addObserver:self forKeyPath:@"title" options:NSKeyValueObservingOptionNew context:(__bridge void * _Nullable)(self.uuidStr)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -36,7 +38,9 @@
 }
 
 - (void)dealloc {
-    [self.webView removeObserver:self forKeyPath:@"title"];
+    if (self.uuidStr != nil) {
+        [self.webView removeObserver:self forKeyPath:@"title" context:(__bridge void * _Nullable)(self.uuidStr)];
+    }
 }
 
 /*
@@ -61,6 +65,17 @@
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
     }
+}
+
+#pragma mark - private methods
+
+- (NSString*)getUuid {
+    CFUUIDRef puuid = CFUUIDCreate( nil );
+    CFStringRef uuidString = CFUUIDCreateString( nil, puuid );
+    NSString * result = (NSString *)CFBridgingRelease(CFStringCreateCopy( NULL, uuidString));
+    CFRelease(puuid);
+    CFRelease(uuidString);
+    return result;
 }
 
 #pragma mark - setters and getters
