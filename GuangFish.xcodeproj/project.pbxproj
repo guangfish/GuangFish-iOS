@@ -64,6 +64,7 @@
 		65287B8E215E864200346335 /* img_help@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65287B8A215E864100346335 /* img_help@3x.png */; };
 		65287B91215E897400346335 /* img_kf@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65287B8F215E897300346335 /* img_kf@3x.png */; };
 		65287B92215E897400346335 /* img_kf@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65287B90215E897300346335 /* img_kf@2x.png */; };
+		65295B7E21C8C25300A246F8 /* CustomNaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65295B7D21C8C25300A246F8 /* CustomNaviViewController.m */; };
 		652997CF20FF9232005B463B /* HomeHeaderReusableVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 652997CE20FF9232005B463B /* HomeHeaderReusableVM.m */; };
 		652CE98021A257E700004FE9 /* GuangfishGetTklAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 652CE97F21A257E700004FE9 /* GuangfishGetTklAPIManager.m */; };
 		652ED39D215FE09600B0CD3D /* img_ckdd@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 652ED399215FE09400B0CD3D /* img_ckdd@3x.png */; };
@@ -360,6 +361,8 @@
 		65287B8A215E864100346335 /* img_help@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_help@3x.png"; sourceTree = "<group>"; };
 		65287B8F215E897300346335 /* img_kf@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_kf@3x.png"; sourceTree = "<group>"; };
 		65287B90215E897300346335 /* img_kf@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "img_kf@2x.png"; sourceTree = "<group>"; };
+		65295B7C21C8C25300A246F8 /* CustomNaviViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomNaviViewController.h; sourceTree = "<group>"; };
+		65295B7D21C8C25300A246F8 /* CustomNaviViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomNaviViewController.m; sourceTree = "<group>"; };
 		652997CD20FF9232005B463B /* HomeHeaderReusableVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeHeaderReusableVM.h; sourceTree = "<group>"; };
 		652997CE20FF9232005B463B /* HomeHeaderReusableVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeHeaderReusableVM.m; sourceTree = "<group>"; };
 		652CE97E21A257E700004FE9 /* GuangfishGetTklAPIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuangfishGetTklAPIManager.h; sourceTree = "<group>"; };
@@ -840,6 +843,8 @@
 				65287B82215E7D6700346335 /* HomeFooterReusableView.m */,
 				65287B84215E7D8700346335 /* HomeFooterReusableVM.h */,
 				65287B85215E7D8700346335 /* HomeFooterReusableVM.m */,
+				65295B7C21C8C25300A246F8 /* CustomNaviViewController.h */,
+				65295B7D21C8C25300A246F8 /* CustomNaviViewController.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1738,6 +1743,7 @@
 				6554A4FA20F6F7680052BDA5 /* GuangfishAPIBaseManager.m in Sources */,
 				6560C83A20F87B3B0083F8BD /* HomeVM.m in Sources */,
 				6533F596217EA54600AB2122 /* HelpInfoWithTitleVM.m in Sources */,
+				65295B7E21C8C25300A246F8 /* CustomNaviViewController.m in Sources */,
 				65C4B19F2108236E00968A25 /* GoodsCell.m in Sources */,
 				6548FEFD217D6570003C27FA /* HelpInfoWithImageVM.m in Sources */,
 				6554A4FB20F6F7680052BDA5 /* GuangfishNetworkingManager.m in Sources */,

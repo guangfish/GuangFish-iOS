@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Custom Navi View Controller-->
         <scene sceneID="gOr-4n-Ppz">
             <objects>
-                <navigationController storyboardIdentifier="HotSellNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="btE-Wp-TPa" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HotSellNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="btE-Wp-TPa" customClass="CustomNaviViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="geE-sz-Ls8">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
