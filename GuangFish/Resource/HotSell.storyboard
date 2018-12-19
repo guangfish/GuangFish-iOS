@@ -369,10 +369,10 @@
             </objects>
             <point key="canvasLocation" x="1508" y="-16.641679160419791"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navi View Controller-->
         <scene sceneID="Gof-er-gOr">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ts7-nC-Ywx" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ts7-nC-Ywx" customClass="CustomNaviViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c80-wm-Kys">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

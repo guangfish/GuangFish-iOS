@@ -454,10 +454,10 @@
             </objects>
             <point key="canvasLocation" x="2799.1999999999998" y="-61.619190404797607"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navi View Controller-->
         <scene sceneID="56d-MM-0is">
             <objects>
-                <navigationController storyboardIdentifier="LoginChooseNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="dOA-KA-Pyn" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginChooseNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="dOA-KA-Pyn" customClass="CustomNaviViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="enS-y9-0Le">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

@@ -189,10 +189,10 @@
             </objects>
             <point key="canvasLocation" x="868" y="-94.002998500749626"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Custom Navi View Controller-->
         <scene sceneID="DQJ-zi-gPb">
             <objects>
-                <navigationController storyboardIdentifier="SearchNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="e0D-Fn-woa" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SearchNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="e0D-Fn-woa" customClass="CustomNaviViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r6h-oy-M7T">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

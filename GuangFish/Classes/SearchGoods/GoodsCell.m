@@ -10,6 +10,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "GuangfishNetworkingManager.h"
 #import "WebViewController.h"
+#import "CustomNaviViewController.h"
 
 @interface GoodsCell()
 
@@ -117,7 +118,7 @@
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     WebViewController *webViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"WebViewController"];
     webViewController.viewModel = webVM;
-    [[self viewController] showViewController:webViewController sender:nil];
+    [[self navigationController] pushViewController:webViewController animated:YES];
 }
 
 - (UIViewController *)viewController
@@ -132,6 +133,19 @@
     } while (next != nil);
     return nil;
     
+}
+
+- (CustomNaviViewController *)navigationController
+{
+    //获取当前view的superView对应的控制器
+    UIResponder *next = [self nextResponder];
+    do {
+        if ([next isKindOfClass:[CustomNaviViewController class]]) {
+            return (CustomNaviViewController *)next;
+        }
+        next = [next nextResponder];
+    } while (next != nil);
+    return nil;
 }
 
 - (void)setupReservePriceLabel {
